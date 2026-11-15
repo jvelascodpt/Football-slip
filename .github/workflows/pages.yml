@@ -1,0 +1,96 @@
+name: Update data and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "new = next week, refresh = re-price newest week, scores = update scores only, deploy = just deploy"
+        type: choice
+        options: [scores, new, refresh, deploy]
+        default: scores
+      week:
+        description: "Week number for 'new' (blank = the week after the newest file)"
+        required: false
+  schedule:
+    # Times are UTC. Pacific = UTC-8 in the season.
+    - cron: "17 15 * * 3"        # Wed 7:17 AM PT: build next week's picks, finalize last week
+    - cron: "23 2-6 * * 5"       # Thu night game
+    - cron: "23 15-23 * * 0"     # Sunday games
+    - cron: "23 0-6 * * 1"       # Sunday night game
+    - cron: "23 2-6 * * 2"       # Monday night game
+    - cron: "43 13 * * *"        # daily catch-up
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.event_name != 'push' && inputs.command != 'deploy'
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Run data script
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          SCHEDULE: ${{ github.event.schedule }}
+          COMMAND: ${{ inputs.command }}
+          WEEK: ${{ inputs.week }}
+        run: |
+          if [ "$SCHEDULE" = "17 15 * * 3" ]; then COMMAND=new; fi
+          COMMAND=${COMMAND:-scores}
+          if [ "$COMMAND" = "new" ] && [ -n "$WEEK" ]; then
+            node scripts/update.mjs new --week "$WEEK"
+          else
+            node scripts/update.mjs "$COMMAND"
+          fi
+      - name: Commit data
+        id: commit
+        run: |
+          git add data
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No data changes."
+          else
+            git config user.name "football-slip-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Update data ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: update
+    # Commits pushed with GITHUB_TOKEN don't trigger other workflows, so deploy here.
+    if: always() && (github.event_name == 'push' || inputs.command == 'deploy' || needs.update.outputs.changed == 'true')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Keep only the site files
+        run: mkdir _site && cp -r index.html manifest.webmanifest css js data icons _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

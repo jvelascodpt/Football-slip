@@ -1,0 +1,14 @@
+{
+  "name": "football-slip",
+  "private": true,
+  "type": "module",
+  "description": "Weekly NFL moneyline picks, win chances and parlay math. Static site plus a data script.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "week": "node scripts/update.mjs new",
+    "scores": "node scripts/update.mjs scores",
+    "refresh": "node scripts/update.mjs refresh",
+    "serve": "python3 -m http.server 8080"
+  }
+}

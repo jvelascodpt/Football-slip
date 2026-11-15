@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Football Slip</title>
+<meta name="description" content="Weekly NFL moneyline picks, win chances and parlay math.">
+<meta name="theme-color" content="#eef1f4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1722" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Football Slip">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  // Apply the saved theme before first paint to avoid a flash.
+  try { var t = localStorage.getItem("football-slip:theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Football <span>Slip</span></h1>
+      <div class="sub" id="updated">Loading…</div>
+    </div>
+    <div class="hctl">
+      <button class="iconbtn" id="theme" type="button" aria-label="Theme: auto">Auto</button>
+      <label><span hidden>Week</span><select id="week" aria-label="Week"></select></label>
+    </div>
+  </header>
+  <nav aria-label="Views">
+    <a href="#picks" data-v="picks">Picks</a>
+    <a href="#parlays" data-v="parlays">Parlays</a>
+    <a href="#tracker" data-v="tracker">Tracker</a>
+  </nav>
+  <main id="view"></main>
+  <footer>Win chances are estimates taken from sportsbook prices with the book's margin removed, as of the last update. They are not guarantees. Kalshi prices are shown for comparison. Parlays pay less than their true odds over time, so only stake what you are fine losing.</footer>
+</div>
+<div class="slip" id="slip"><div class="in"><div><b id="slipPct"></b><br><span id="slipTxt"></span></div><a href="#parlays">Open slip</a></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
