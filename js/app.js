@@ -36,7 +36,7 @@ const stateLabel = { hit: "Hit", miss: "Missed", live: "In play", pending: "Not 
 const sameWeek = (a, w) => a.season === w.season && a.week === w.week;
 const betsFor = (w) => [
   ...(w.tickets || []).map((t, i) => ({ ...t, id: t.id || `file-${w.week}-${i}`, fromFile: true })),
-  ...myBets.filter((b) => sameWeek(b, w)),
+  ...myBets.filter((b) => sameWeek(b, w)).map((b) => ({ ...b, legs: b.legs.map(withKalshiResult) })),
 ];
 const allBets = () => DATA.weeks.flatMap(betsFor);
 const yourPick = (g) => myPicks[g.id];
@@ -286,8 +286,14 @@ function parlayCard(pl, i) {
     ${canLoad ? `<div class="btnrow"><button class="btn" data-load="${i}">Load into slip</button></div>` : ""}</article>`;
 }
 
+// A logged prop leg that came from a Kalshi prop picks up the graded result from the week file.
+function withKalshiResult(l) {
+  if (!isProp(l) || l.result || !l.ticker) return l;
+  for (const w of DATA.weeks) for (const p of w.props || []) for (const x of p.legs || []) if (x.ticker === l.ticker && x.result) return { ...l, result: x.result };
+  return l;
+}
 function betCard(b) {
-  const legs = b.legs || [], s = parlayState(legs, game);
+  const legs = (b.legs || []).map(withKalshiResult), s = parlayState(legs, game);
   const del = b.fromFile ? "" : `<button class="btn ghost" data-delbet="${esc(b.id)}">${delArm === b.id ? "Tap again to delete" : "Delete"}</button>`;
   return `<article class="card${s === "hit" ? " won" : ""}"><div class="meta"><b style="color:var(--ink);font-size:15px">${esc(b.name || "Bet")}</b>${b.book ? `<span class="pill">${esc(b.book)}</span>` : ""}<span class="pill ${s === "pending" ? "" : s} sp">${stateLabel[s]}</span></div>
     ${legsList(legs, { logos: true, grade: b.fromFile ? null : b.id })}
@@ -339,7 +345,7 @@ function saveDraft() {
   const d = draft, cost = parseFloat(d.cost), payout = parseFloat(d.payout);
   const legs = d.legs.filter((l) => l.pick && (l.kind === "team" || (l.player.trim() && l.bet.trim()))).map((l) => {
     const [g, team] = l.pick.split("|");
-    return l.kind === "team" ? { kind: "team", game: g, team } : { kind: "prop", game: g, team, player: l.player.trim(), bet: l.bet.trim(), result: null };
+    return l.kind === "team" ? { kind: "team", game: g, team } : { kind: "prop", game: g, team, player: l.player.trim(), bet: l.bet.trim(), result: null, ...(l.ticker ? { ticker: l.ticker } : {}) };
   });
   if (!legs.length) { d.msg = "Add at least one complete leg."; return render(); }
   if (!(cost > 0) || !(payout > cost)) { d.msg = "Enter what you paid and what it pays (more than the cost)."; return render(); }
@@ -358,26 +364,32 @@ function viewParlays() {
 }
 
 /* ---------- props ---------- */
+// A prop leg's chance (0-1): Kalshi price (`prob`, percent) when present, else American odds.
+const propChance = (l) => (l.prob != null ? l.prob / 100 : impliedFromAmerican(l.odds) || 0.5);
 function propCard(p, i) {
   const legs = p.legs.map((l) => ({ ...l, kind: "prop" }));
   const s = parlayState(legs, game);
-  const prob = legs.reduce((a, l) => a * (impliedFromAmerican(l.odds) || 0.5), 1), pay = legs.reduce((a, l) => a * decimalFromAmerican(l.odds), 1) * 10;
+  const kalshi = legs.every((l) => l.prob != null);
+  const prob = legs.reduce((a, l) => a * propChance(l), 1);
+  const pay = kalshi ? 10 / prob : legs.reduce((a, l) => a * decimalFromAmerican(l.odds), 1) * 10;
+  const open = legs.every((l) => { const g = game(l.game); return g && !locked(g); });
   return `<article class="card${i ? "" : " feat"}${s === "hit" ? " won" : ""}">
     <div class="meta"><b style="color:var(--ink);font-size:15px">${esc(p.name)}</b>${p.tag ? `<span class="pill${i ? "" : " lock"}">${esc(p.tag)}</span>` : ""}<span class="pill ${s === "pending" ? "" : s} sp">${stateLabel[s]}</span></div>
     <ul class="legs">${legs.map((l) => {
       const g = game(l.game), st = legState(game)(l);
-      return `<li><span class="dot ${st}" title="${stateLabel[st]}"></span>${badge(l.team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span><span class="p">${fmtOdds(l.odds)}</span>
+      return `<li><span class="dot ${st}" title="${stateLabel[st]}"></span>${badge(l.team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span><span class="p">${l.prob != null ? l.prob + "%" : fmtOdds(l.odds)}</span>
         ${l.why || g ? `<p class="why">${g ? `${esc(nick(g.away))} at ${esc(nick(g.home))}, ${esc(g.kick)} PT. ` : ""}${esc(l.why || "")}</p>` : ""}</li>`;
     }).join("")}</ul>
-    ${progressBar(legs)}${s === "hit" ? winBlock(`p${wk.week}-${i}`, 10, pay, `It hit · a $10 bet paid ${money(pay)}`) : ""}
-    <div class="big"><b>${pct(prob)}</b><span>chance all ${legs.length} hit, from book prices<br>Pays about ${money(pay)} on $10 as a regular parlay</span></div>
-    ${p.note ? `<p class="note">${esc(p.note)}</p>` : ""}</article>`;
+    ${progressBar(legs)}${s === "hit" ? winBlock(`p${wk.week}-${i}`, 10, pay, `It hit · $10 at fair odds pays ${money(pay)}`) : ""}
+    <div class="big"><b>${pct(prob)}</b><span>chance all ${legs.length} hit, from ${kalshi ? "Kalshi prices" : "book prices"}<br>${kalshi ? `Fair payout on $10 is ${money(pay)}` : `Pays about ${money(pay)} on $10 as a regular parlay`}</span></div>
+    ${p.note ? `<p class="note">${esc(p.note)}</p>` : ""}
+    ${open ? `<div class="btnrow"><button class="btn ghost" data-logprop="${i}">Log this as my bet</button></div>` : ""}</article>`;
 }
 function viewProps() {
   const ps = wk.props || [];
-  return `<section class="sec"><div class="sechead"><h2>Week ${wk.week} player parlay</h2><small>Top pick first</small></div>
-    ${ps.length ? ps.map(propCard).join("") : `<div class="card"><p class="empty">This week's top player parlay posts Sunday morning, once injury reports and prop lines are settled.</p></div>`}
-    <p class="empty">Player props on the same game are related, so books price same-game parlays differently. Check your book's actual payout before betting.</p></section>`;
+  return `<section class="sec"><div class="sechead"><h2>Week ${wk.week} player props</h2><small>Next game first</small></div>
+    ${ps.length ? ps.map(propCard).join("") : `<div class="card"><p class="empty">Prop parlays appear as Kalshi opens player markets: Thursday's game usually by Tuesday morning, Sunday games later in the week.</p></div>`}
+    <p class="empty">Percentages are Kalshi's buy prices. Props in the same game are related, so the combined chance is rough. Legs are graded from Kalshi's results after the game.</p></section>`;
 }
 
 /* ---------- tracker ---------- */
@@ -536,6 +548,14 @@ $("#refresh").addEventListener("click", (e) => { const b = e.currentTarget; b.cl
 document.addEventListener("click", (e) => {
   const t = e.target.closest("[data-g]");
   if (t && !t.disabled) { setPick(game(t.dataset.g), t.dataset.t); return; }
+  const lp = e.target.closest("[data-logprop]");
+  if (lp) {
+    const p = wk.props[+lp.dataset.logprop];
+    draft = { name: p.name + " props", book: "Kalshi", cost: "", payout: "", msg: "Enter what you paid and what it pays, then save.",
+      legs: p.legs.map((l) => ({ kind: "prop", pick: `${l.game}|${l.team}`, player: l.player, bet: l.bet, ticker: l.ticker })) };
+    location.hash = "#parlays"; render(); setTimeout(() => document.querySelector(".betform")?.scrollIntoView({ block: "start" }), 50);
+    return;
+  }
   if (e.target.closest("[data-newbet]")) { draft = { name: "", book: "Kalshi", cost: "", payout: "", legs: [blankLeg()], msg: "" }; render(); return; }
   if (e.target.closest("[data-cancelbet]")) { draft = null; render(); return; }
   if (e.target.closest("[data-addleg]")) { draft.legs.push(blankLeg()); render(); return; }

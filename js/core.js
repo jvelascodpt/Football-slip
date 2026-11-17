@@ -217,7 +217,7 @@ export function cleanLeg(l) {
   if (!l || typeof l !== "object" || typeof l.game !== "string" || typeof l.team !== "string") return null;
   if (l.kind === "prop") {
     if (typeof l.player !== "string" || typeof l.bet !== "string" || !l.player.trim() || !l.bet.trim()) return null;
-    return { kind: "prop", game: l.game, team: l.team, player: l.player.slice(0, 60), bet: l.bet.slice(0, 80), result: l.result === "hit" || l.result === "miss" ? l.result : null };
+    return { kind: "prop", game: l.game, team: l.team, player: l.player.slice(0, 60), bet: l.bet.slice(0, 80), result: l.result === "hit" || l.result === "miss" ? l.result : null, ...(typeof l.ticker === "string" ? { ticker: l.ticker.slice(0, 80) } : {}) };
   }
   return { kind: "team", game: l.game, team: l.team };
 }

@@ -22,6 +22,16 @@ import path from "node:path";
 import { espnUrl, fetchKalshi, getJSON, oddsApiUrl, parseEspn, parseKalshi, parseOddsApi, resultsByTeam } from "./sources.mjs";
 import { applyScores, buildWeek, fmtUpdated } from "./build.mjs";
 import { addReports } from "./report.mjs";
+import { buildProps, fetchPropMarkets, gradeProps } from "./props.mjs";
+
+// Rebuild prop parlays for games Kalshi has opened that haven't kicked off, and grade settled legs.
+async function updateProps(w) {
+  try {
+    w.props = buildProps(w, await fetchPropMarkets());
+    const graded = await gradeProps(w);
+    console.log(`Props: ${w.props.filter((p) => p.auto).length} game parlays${graded ? `, graded ${graded} legs` : ""}.`);
+  } catch (e) { console.warn("Kalshi props unavailable:", e.message); }
+}
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(ROOT, "data");
@@ -58,7 +68,9 @@ async function updateScoresFor(season, week, games) {
   const w = await readJSON(p);
   if (!w) return 0;
   const n = applyScores(w, games || (await fetchWeek(season, week)));
-  if (n) {
+  const graded = await gradeProps(w);
+  if (graded) console.log(`week ${week}: graded ${graded} prop leg${graded === 1 ? "" : "s"}`);
+  if (n || graded) {
     w.updated = fmtUpdated(new Date());
     await writeJSON(p, w);
   }
@@ -95,6 +107,7 @@ async function cmdNew(a) {
   const w = buildWeek({ season, week, games, last: resultsByTeam(prev), odds, kalshi, existing });
   const reported = await addReports(w);
   console.log(`Matchup reports: ${reported} games.`);
+  await updateProps(w);
   await mkdir(DATA, { recursive: true });
   await writeJSON(p, w);
   await saveIndex(idx, season, week);
@@ -146,6 +159,7 @@ async function cmdReport() {
     if (e && !g.espnId) g.espnId = e.espnId;
   });
   const n = await addReports(w);
+  await updateProps(w);
   await writeJSON(p, w);
   console.log(`week ${newest.week}: matchup reports for ${n} games`);
 }

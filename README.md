@@ -46,7 +46,7 @@ tests/                node:test suites, with trimmed real API responses in tests
   scouting report. The week menu also lists look-ahead "preview" weeks from the schedule file.
 - **Parlays**: your slip, "Add your picks", suggested parlays with a progress bar, and the bets
   you placed (a gold card with confetti when one hits).
-- **Props**: the week's player-prop parlays, shown with American odds.
+- **Props**: one 3-leg Kalshi player-prop parlay per game, added as soon as Kalshi opens that game's player markets (Thursday's game is usually open by the Tuesday 5 AM run; Sunday games get added by the daily runs). Three different players from both teams, team stat leaders first, injured players skipped, each at the line priced closest to 72%. Legs are graded from Kalshi's results. "Log this as my bet" copies it into the bet form.
 - **Tracker**: your record vs Claude's, Claude by tier, by week, net on your bets, and backup.
 - A live score ticker runs across the top (straight from ESPN in the browser).
 
@@ -58,7 +58,7 @@ The script keeps these when it refreshes a week; add them by editing the JSON (o
 // on a game: scouting report, a string or a list per side
 "news": { "KC": { "s": ["Top-5 pass rush"], "w": "Thin at corner" }, "ATL": { "s": "...", "w": "..." } }
 
-// on the week: player-prop parlays; the first is the featured top pick.
+// on the week: extra hand-entered prop parlays (shown above the automatic Kalshi ones).
 // result is null until graded, then "hit" or "miss"; progress (0-1) optionally fills the bar while live.
 "props": [
   { "name": "Sunday stars", "tag": "Top pick", "note": "...",
@@ -67,7 +67,7 @@ The script keeps these when it refreshes a week; add them by editing the JSON (o
 ]
 ```
 
-The script does not fetch prop lines or grade props; those are entered by hand.
+Automatic prop parlays carry `"auto": true`; legs from Kalshi have `prob` (Kalshi price, percent) and `ticker`. Hand-entered legs can use `odds` (American) instead.
 
 ## Placed bets
 

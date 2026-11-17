@@ -33,7 +33,7 @@
       "note": "Colts 3-7, Texans 3-6. Last week: Colts beat the Dolphins 24-22; Texans lost to the Browns 27-24. Kalshi has the Texans at 85%.",
       "espnId": "401873066",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           25.4,
           74.4
@@ -400,7 +400,7 @@
       "note": "Dolphins 1-8, Bills 8-1. Last week: Dolphins lost to the Colts 24-22; Bills beat the Jets 31-12. Kalshi has the Bills at 92%.",
       "espnId": "401873070",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           5,
           95
@@ -753,7 +753,7 @@
       "note": "Saints 3-6, Bears 7-2. Last week: Saints lost to the Panthers 20-17. Kalshi has the Bears at 85%.",
       "espnId": "401873071",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           21.2,
           78.6
@@ -1122,7 +1122,7 @@
       "note": "Titans 1-8, Cowboys 4-6. Last week: Titans lost to the Jaguars 40-23; Cowboys lost to the 49ers 46-40. Kalshi has the Cowboys at 79%.",
       "espnId": "401873073",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           20,
           79.9
@@ -1490,7 +1490,7 @@
       "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 72%.",
       "espnId": "401873072",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           38.7,
           60.9
@@ -1845,7 +1845,7 @@
       "note": "Cardinals 3-7, Chiefs 7-2. Last week: Cardinals lost to the Rams 34-6; Chiefs beat the Falcons 35-13. Kalshi has the Chiefs at 91%.",
       "espnId": "401873067",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           11.7,
           88.2
@@ -2206,7 +2206,7 @@
       "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 68%.",
       "espnId": "401873076",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           64.1,
           35.6
@@ -2552,7 +2552,7 @@
       "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 57%.",
       "espnId": "401873068",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           31.1,
           68.7
@@ -2913,7 +2913,7 @@
       "note": "Jets 2-8, Chargers 1-8. Last week: Jets lost to the Bills 31-12; Chargers beat the Ravens 23-20. Kalshi has the Chargers at 63%.",
       "espnId": "401873074",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           29.9,
           69.9
@@ -3274,7 +3274,7 @@
       "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 83%.",
       "espnId": "401873075",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           14,
           85.9
@@ -3643,7 +3643,7 @@
       "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 71%.",
       "espnId": "401873069",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           81.3,
           18.5
@@ -3995,7 +3995,7 @@
       "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 59%.",
       "espnId": "401873077",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           36.2,
           63.5
@@ -4363,7 +4363,7 @@
       "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 73%.",
       "espnId": "401873078",
       "report": {
-        "updated": "2026-11-17T16:01:20.273Z",
+        "updated": "2026-11-17T16:15:42.833Z",
         "fpi": [
           76.5,
           23.4
@@ -4750,5 +4750,46 @@
       "note": "The two likeliest underdogs: Ravens 44%, Vikings 40%. Small stake only."
     }
   ],
-  "tickets": []
+  "tickets": [],
+  "props": [
+    {
+      "auto": true,
+      "game": "w11-ind-hou",
+      "name": "Colts at Texans",
+      "tag": "Thu",
+      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
+      "legs": [
+        {
+          "game": "w11-ind-hou",
+          "team": "IND",
+          "player": "Daniel Jones",
+          "bet": "150+ passing yards",
+          "prob": 73,
+          "ticker": "KXNFLPASSYDS-26NOV19INDHOU-INDDJONES17-150",
+          "result": null,
+          "why": "Team leader in passing: 193/324, 1,830 YDS, 7 TD, 12 INT."
+        },
+        {
+          "game": "w11-ind-hou",
+          "team": "HOU",
+          "player": "Nico Collins",
+          "bet": "4+ receptions",
+          "prob": 73,
+          "ticker": "KXNFLREC-26NOV19INDHOU-HOUNCOLLINS12-4",
+          "result": null,
+          "why": "Team leader in receiving: 37 REC, 478 YDS, 5 TD."
+        },
+        {
+          "game": "w11-ind-hou",
+          "team": "HOU",
+          "player": "C.J. Stroud",
+          "bet": "225+ passing yards",
+          "prob": 74,
+          "ticker": "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-225",
+          "result": null,
+          "why": "Team leader in passing: 201/320, 2,462 YDS, 19 TD, 3 INT."
+        }
+      ]
+    }
+  ]
 }
