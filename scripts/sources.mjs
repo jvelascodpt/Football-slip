@@ -37,6 +37,7 @@ export function parseEspn(json) {
     const ml = c.odds?.[0]?.moneyline;
     const dk = ml?.away?.close?.odds && ml?.home?.close?.odds ? [ml.away.close.odds, ml.home.close.odds] : null;
     const g = {
+      espnId: e.id,
       start: new Date(e.date).toISOString(),
       away: teamCode(a.team.abbreviation),
       home: teamCode(h.team.abbreviation),

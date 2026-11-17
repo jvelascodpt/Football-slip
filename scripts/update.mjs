@@ -21,6 +21,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { espnUrl, fetchKalshi, getJSON, oddsApiUrl, parseEspn, parseKalshi, parseOddsApi, resultsByTeam } from "./sources.mjs";
 import { applyScores, buildWeek, fmtUpdated } from "./build.mjs";
+import { addReports } from "./report.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = path.join(ROOT, "data");
@@ -92,6 +93,8 @@ async function cmdNew(a) {
   const p = path.join(DATA, fileName(season, week));
   const existing = await readJSON(p);
   const w = buildWeek({ season, week, games, last: resultsByTeam(prev), odds, kalshi, existing });
+  const reported = await addReports(w);
+  console.log(`Matchup reports: ${reported} games.`);
   await mkdir(DATA, { recursive: true });
   await writeJSON(p, w);
   await saveIndex(idx, season, week);
@@ -130,9 +133,26 @@ async function cmdRefresh() {
   return cmdNew({ season: newest.season, week: newest.week });
 }
 
-const run = { new: cmdNew, refresh: cmdRefresh, scores: cmdScores }[a.cmd];
+// Refresh matchup reports (injuries, ranks, predictor, headlines) for the newest week's
+// games that haven't kicked off. Picks and odds are untouched.
+async function cmdReport() {
+  const newest = (await loadIndex()).weeks.at(-1);
+  if (!newest) throw new Error("No weeks yet. Run: node scripts/update.mjs new");
+  const p = path.join(DATA, newest.file);
+  const w = await readJSON(p);
+  const espn = await fetchWeek(newest.season, newest.week);
+  w.games.forEach((g) => {
+    const e = espn.find((x) => x.away === g.away && x.home === g.home);
+    if (e && !g.espnId) g.espnId = e.espnId;
+  });
+  const n = await addReports(w);
+  await writeJSON(p, w);
+  console.log(`week ${newest.week}: matchup reports for ${n} games`);
+}
+
+const run = { new: cmdNew, refresh: cmdRefresh, scores: cmdScores, report: cmdReport }[a.cmd];
 if (!run) {
-  console.log("Usage: node scripts/update.mjs new [--week N] [--season YYYY] | refresh | scores");
+  console.log("Usage: node scripts/update.mjs new [--week N] [--season YYYY] | refresh | scores | report");
   process.exit(1);
 }
 run(a).catch((e) => { console.error(e.message); process.exit(1); });

@@ -67,7 +67,7 @@ export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = 
     .sort((a, b) => Date.parse(a.start) - Date.parse(b.start))
     .map((src) => {
       const id = gameId(week, src.away, src.home);
-      const base = { id, away: src.away, home: src.home, start: src.start, kick: fmtKick(src.start), status: src.status };
+      const base = { id, ...(src.espnId ? { espnId: src.espnId } : {}), away: src.away, home: src.home, start: src.start, kick: fmtKick(src.start), status: src.status };
       if (src.score) base.score = src.score;
       if (src.live) base.live = src.live;
       if (src.record?.some(Boolean)) base.record = src.record;
@@ -80,6 +80,7 @@ export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = 
       const info = { ...(prev?.info || {}), ...place, ...(src.status === "upcoming" || !prev ? line : {}) };
       if (Object.keys(info).length) base.info = info;
       if (prev?.news) base.news = prev.news;
+      if (prev?.report) base.report = prev.report;
       if (src.status !== "upcoming" || Date.parse(src.start) <= now.getTime()) {
         if (prev) {
           const keep = { ...prev };

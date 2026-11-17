@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       command:
-        description: "new = next week, refresh = re-price newest week, scores = update scores only, deploy = just deploy"
+        description: "new = next week, refresh = re-price newest week, scores = update scores only, report = injuries/ranks/news, deploy = just deploy"
         type: choice
-        options: [scores, new, refresh, deploy]
+        options: [scores, new, refresh, report, deploy]
         default: scores
       week:
         description: "Week number for 'new' (blank = the week after the newest file)"
@@ -20,7 +20,8 @@ on:
     - cron: "23 15-23 * * 0"     # Sunday games
     - cron: "23 0-6 * * 1"       # Sunday night game
     - cron: "23 2-6 * * 2"       # Monday night game
-    - cron: "43 13 * * *"        # daily catch-up
+    - cron: "43 13 * * *"        # daily 5:43 AM PT: catch-up scores + fresh injuries, ranks and news
+    - cron: "37 16 * * 0"        # Sun 8:37 AM PT: last injury/news check before the early games
 
 permissions:
   contents: write
@@ -53,6 +54,8 @@ jobs:
           WEEK: ${{ inputs.week }}
         run: |
           if [ "$SCHEDULE" = "0 13 * * 2" ]; then COMMAND=new; fi
+          if [ "$SCHEDULE" = "37 16 * * 0" ]; then COMMAND=report; fi
+          if [ "$SCHEDULE" = "43 13 * * *" ]; then node scripts/update.mjs scores; COMMAND=report; fi
           COMMAND=${COMMAND:-scores}
           if [ "$COMMAND" = "new" ] && [ -n "$WEEK" ]; then
             node scripts/update.mjs new --week "$WEEK"

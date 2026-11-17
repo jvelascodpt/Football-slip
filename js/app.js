@@ -111,6 +111,46 @@ function newsBlock(g) {
   return `<div class="scouting">${col(g.away)}${col(g.home)}</div>`;
 }
 
+/* ---------- matchup report ---------- */
+const ord = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th");
+const statusCls = (s) => (s === "Out" || s === "Injured Reserve" || s === "Suspension" ? "out" : s === "Doubtful" ? "doubt" : "q");
+function rankCell(v) {
+  if (!v) return `<td class="n">n/a</td>`;
+  const [val, r] = v, cls = r <= 10 ? "top" : r >= 23 ? "bot" : "";
+  return `<td class="n">${val}<span class="rk ${cls}">${ord(r)}</span></td>`;
+}
+function reportBlock(g) {
+  const r = g.report; if (!r) return "";
+  const A = r.teams[g.away] || {}, H = r.teams[g.home] || {};
+  const key = [...(A.key || []).map((i) => [g.away, i]), ...(H.key || []).map((i) => [g.home, i])];
+  const keyHtml = key.length
+    ? `<ul class="keyinj">${key.map(([t, i]) => `<li class="${statusCls(i.status)}"><span class="st">${esc(i.status)}</span><span><b>${esc(i.name)}</b> ${esc(i.pos)}, ${esc(nick(t))}${i.detail ? ` · ${esc(i.detail)}` : ""}<small>${esc(i.why)}</small></span></li>`).join("")}</ul>`
+    : `<p class="hint">No quarterbacks or team stat leaders on the injury report.</p>`;
+  const row = (label, k) => `<tr><th>${label}</th>${rankCell(A.rank?.[k])}${rankCell(H.rank?.[k])}</tr>`;
+  const form = (s) => (s.form || []).map((f) => `<span class="fm ${f.r === "W" ? "w" : f.r === "L" ? "l" : ""}" title="${esc(`${f.r} ${f.s} ${f.home ? "vs" : "at"} ${f.opp}`)}">${esc(f.r || "-")}</span>`).join("");
+  const hasRanks = A.rank?.ppg || H.rank?.ppg;
+  const injList = (t, s) => (s.injuries || []).length
+    ? `<p class="rsub">${esc(nick(t))} injury report</p><ul class="injlist">${s.injuries.map((i) => `<li><span class="st ${statusCls(i.status)}">${esc(i.status)}</span>${esc(i.name)} <small>${esc(i.pos)}${i.detail ? ` · ${esc(i.detail)}` : ""}</small></li>`).join("")}</ul>`
+    : `<p class="rsub">${esc(nick(t))}: no injuries listed</p>`;
+  const leaders = (t, s) => (s.leaders || []).length ? `<p class="rsub">${esc(nick(t))} leaders</p><ul class="injlist">${s.leaders.map((l) => `<li><span class="st">${esc(l.cat)}</span>${esc(l.name)} <small>${esc(l.value)}</small></li>`).join("")}</ul>` : "";
+  const news = (t, s) => (s.news || []).length ? `<p class="rsub">${esc(nick(t))} headlines</p><ul class="heads">${s.news.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener">${n.video ? "▶ " : ""}${esc(n.h)}</a>${n.d && !n.video ? `<small>${esc(n.d)}</small>` : ""}</li>`).join("")}</ul>` : "";
+  return `<div class="report">
+    <div class="rhead"><span>Matchup report</span>${r.fpi ? `<small>ESPN predictor: ${esc(nick(g.away))} ${Math.round(r.fpi[0])}% · ${esc(nick(g.home))} ${Math.round(r.fpi[1])}%</small>` : ""}</div>
+    <p class="rsub">Injuries that matter</p>${keyHtml}
+    ${hasRanks ? `<div class="tablewrap"><table class="ranks"><thead><tr><th></th><th class="n">${esc(nick(g.away))}</th><th class="n">${esc(nick(g.home))}</th></tr></thead><tbody>
+      <tr class="grp"><th colspan="3">Offense, per game</th></tr>${row("Points", "ppg")}${row("Yards", "ypg")}${row("Passing yds", "pass")}${row("Rushing yds", "rush")}
+      <tr class="grp"><th colspan="3">Defense, allowed per game</th></tr>${row("Points", "oppg")}${row("Yards", "oypg")}${row("Passing yds", "opass")}${row("Rushing yds", "orush")}
+      <tr class="grp"><th colspan="3">Other</th></tr>${row("Turnover diff.", "to")}
+      <tr><th>Last 5 <small class="hint">newest last</small></th><td class="n">${form(A)}</td><td class="n">${form(H)}</td></tr>
+    </tbody></table></div>` : ""}
+    ${(r.edges || []).length ? `<ul class="edges">${r.edges.map((e) => `<li>${esc(e)}</li>`).join("")}</ul>` : ""}
+    <details class="more"><summary>Full injury report, leaders and headlines</summary>
+      ${injList(g.away, A)}${injList(g.home, H)}${leaders(g.away, A)}${leaders(g.home, H)}${news(g.away, A)}${news(g.home, H)}
+      <p class="hint">Ranks are out of 32 teams. Updated ${esc(new Date(r.updated).toLocaleString("en-US", { timeZone: "America/Los_Angeles", weekday: "short", hour: "numeric", minute: "2-digit" }))} PT.</p>
+    </details>
+  </div>`;
+}
+
 function progressBar(legs) {
   if (!legs.length) return "";
   const { p, n, hit, live, bust, states } = parlayProgress(legs, game), pc = Math.round(p * 100);
@@ -169,7 +209,7 @@ function viewPicks() {
     return `<article class="card">
       <div class="meta"><span>${esc(g.kick)} PT</span>${t ? `<span class="pill ${t[0]}">${t[1]}</span>` : ""}${k.value ? `<span class="pill value">Kalshi value: ${esc(nick(k.value))}</span>` : ""}${right}</div>
       <div class="teams">${btn(g.away, 0)}${btn(g.home, 1)}</div>${bar}${k.html}${gameInfo(g)}
-      ${g.note ? `<p class="note">${esc(g.note)}</p>` : ""}${newsBlock(g)}</article>`;
+      ${g.note ? `<p class="note">${esc(g.note)}</p>` : ""}${reportBlock(g)}${newsBlock(g)}</article>`;
   }).join("");
   if (wk.preview) {
     const opens = picksOpen(wk), byes = 32 - 2 * wk.games.length;

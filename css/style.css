@@ -131,6 +131,39 @@ h2{font-family:var(--display);font-weight:600;font-size:28px;line-height:1;text-
 .scout p b.g{color:var(--good)} .scout p b.b{color:var(--bad)}
 @media (max-width:480px){.scouting{grid-template-columns:1fr}}
 .note{font-size:13.5px;color:var(--muted);margin:0}
+/* Matchup report: key injuries, offense/defense ranks, edges, then a fold with the full lists. */
+.report{display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line);padding-top:10px}
+.rhead{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.rhead span{font-family:var(--display);font-weight:600;font-size:22px;line-height:1;text-transform:uppercase;letter-spacing:.03em}
+.rhead small{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rsub{margin:4px 0 0;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.keyinj{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.keyinj li{display:flex;gap:8px;align-items:flex-start;padding:7px 9px;border-radius:9px;font-size:13.5px;line-height:1.35;border-left:4px solid var(--warn);background:color-mix(in srgb,var(--warn) 12%,var(--surface))}
+.keyinj li.out{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--surface))}
+.keyinj li.doubt{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.keyinj small{display:block;color:var(--muted);font-size:12px}
+.keyinj .st,.injlist .st{flex:none;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:999px;border:1px solid currentColor;color:var(--warn);margin-top:1px}
+.keyinj li.out .st,.injlist .st.out{color:var(--bad)}
+.keyinj li.doubt .st,.injlist .st.doubt{color:var(--accent)}
+.injlist .st:not(.out):not(.doubt):not(.q){color:var(--muted)}
+.ranks{font-size:13.5px}
+.ranks th{text-transform:none;letter-spacing:0;font-size:13px;font-weight:600;color:var(--ink)}
+.ranks thead th{font-family:var(--display);font-size:18px;text-transform:uppercase;letter-spacing:.02em}
+.ranks tr.grp th{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:10px}
+.ranks td,.ranks th{padding:5px 4px}
+.rk{display:inline-block;min-width:38px;margin-left:6px;font-size:11px;font-weight:700;padding:1px 5px;border-radius:999px;background:var(--bg);color:var(--muted);text-align:center}
+.rk.top{background:color-mix(in srgb,var(--good) 18%,var(--surface));color:var(--good)}
+.rk.bot{background:color-mix(in srgb,var(--bad) 15%,var(--surface));color:var(--bad)}
+.fm{display:inline-block;width:18px;height:18px;line-height:18px;margin-left:2px;border-radius:4px;font-size:11px;font-weight:700;text-align:center;background:var(--bg);color:var(--muted)}
+.fm.w{background:var(--good);color:#fff}.fm.l{background:var(--bad);color:#fff}
+.edges{margin:0;padding-left:18px;font-size:13.5px;line-height:1.4}
+.more summary{cursor:pointer;font-size:13.5px;font-weight:600;color:var(--ink)}
+.more[open] summary{margin-bottom:4px}
+.injlist,.heads{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13.5px}
+.injlist li{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap}
+.injlist small,.heads small{color:var(--muted);font-size:12px}
+.heads li{display:flex;flex-direction:column}
+.heads a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:2px}
 .legs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .legs li{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:var(--display);font-weight:500;font-size:21px;line-height:1;letter-spacing:.03em;text-transform:uppercase;padding:8px 0 6px;border-bottom:1px dashed var(--line)}
 .legs li:last-child{border-bottom:0}
