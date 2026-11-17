@@ -68,7 +68,7 @@ const weekNums = () => [...new Set([...DATA.weeks.map((w) => w.week), ...SCHEDUL
 const weekObj = (n) => DATA.weeks.find((w) => w.week === n) || previewWeek(n);
 function picksOpen(w) {
   const d = new Date(Math.min(...w.games.map((g) => Date.parse(g.start))));
-  while (d.getDay() !== 3) d.setDate(d.getDate() - 1);   // the Wednesday run builds the week
+  while (d.getDay() !== 2) d.setDate(d.getDate() - 1);   // the Tuesday run builds the week
   return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
 }
 
