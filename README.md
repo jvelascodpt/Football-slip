@@ -106,7 +106,7 @@ One-time setup in the repo on github.com:
 The workflow then:
 
 - deploys on every push to `main`;
-- builds next week's file every **Tuesday 7:17 AM PT** (after Monday night's game);
+- builds next week's file every **Tuesday 5:00 AM PT** (after Monday night's game);
 - updates scores hourly during Thursday, Sunday and Monday games, plus a daily catch-up;
 - can be run by hand from **Actions → Update data and deploy → Run workflow**
   (`scores`, `new`, `refresh` or `deploy`).
