@@ -122,3 +122,22 @@ test("refresh keeps the line from before kickoff and keeps scouting notes and pr
   assert.deepEqual(ne.news, { NE: { s: "a", w: "b" } });
   assert.equal(after.props.length, 1);
 });
+
+import { applyLiveScoreboard, liveText } from "../js/core.js";
+
+test("live scoreboard updates game cards without touching picks", () => {
+  const raw = fx("espn-2026-w10.json");
+  const week = { week: 10, games: [
+    { id: "w10-ne-det", away: "NE", home: "DET", pick: "DET", prob: 58, status: "upcoming" },
+    { id: "w10-kc-atl", away: "KC", home: "ATL", pick: "KC", prob: 62, status: "upcoming" },
+    { id: "w10-was-nyg", away: "WAS", home: "NYG", pick: null, prob: null, status: "upcoming" } ] };
+  assert.equal(applyLiveScoreboard([week], raw), 2);
+  assert.equal(week.games[0].status, "live");
+  assert.equal(week.games[0].pick, "DET");
+  assert.equal(week.games[1].status, "upcoming");
+  assert.equal(week.games[2].status, "final");
+  assert.equal(applyLiveScoreboard([week], raw), 0);
+  assert.equal(applyLiveScoreboard([{ week: 9, games: [] }], raw), 0);
+  assert.equal(liveText("Halftime"), "Halftime");
+  assert.equal(liveText("0:03 - 2nd"), "2nd qtr 0:03");
+});

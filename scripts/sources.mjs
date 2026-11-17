@@ -1,6 +1,6 @@
 // Fetching and parsing the three data sources. Parsers are pure and tested against
 // trimmed real responses in tests/fixtures.
-import { TEAMS, teamCode } from "../js/core.js";
+import { TEAMS, teamCode, liveText } from "../js/core.js";
 
 const UA = { "User-Agent": "football-slip-data-script", Accept: "application/json" };
 
@@ -24,11 +24,6 @@ export async function getJSON(url, { tries = 3 } = {}) {
 export const espnUrl = (season, week) =>
   `https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?seasontype=2&week=${week}&dates=${season}`;
 
-function liveText(detail) {
-  const m = /^(.*?)\s*-\s*(\d)(st|nd|rd|th)$/.exec(detail || "");
-  if (m) return `${m[2]}${m[3]} qtr ${m[1]}`.trim();
-  return detail || "";
-}
 
 export function parseEspn(json) {
   return (json.events || []).map((e) => {

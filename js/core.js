@@ -17,6 +17,37 @@ export const teamCode = (abbr) => {
   return ALIASES[a] || a;
 };
 
+// ESPN's live status ("11:46 - 3rd", "Halftime", "End of 2nd") -> "3rd qtr 11:46", "Halftime", ...
+export function liveText(detail) {
+  const m = /^(.*?)\s*-\s*(\d)(st|nd|rd|th)$/.exec(detail || "");
+  if (m) return `${m[2]}${m[3]} qtr ${m[1]}`.trim();
+  return detail || "";
+}
+
+// Apply a live ESPN scoreboard to the loaded weeks. Updates status, score and live text of
+// matching games in place and returns how many changed. Never touches picks or odds.
+export function applyLiveScoreboard(weeks, espn) {
+  const wkNo = espn?.week?.number, w = weeks.find((x) => x.week === wkNo);
+  if (!w || !Array.isArray(espn.events)) return 0;
+  let changed = 0;
+  espn.events.forEach((e) => {
+    const c = e.competitions?.[0];
+    const a = c?.competitors?.find((x) => x.homeAway === "away"), h = c?.competitors?.find((x) => x.homeAway === "home");
+    if (!a || !h) return;
+    const g = w.games.find((x) => x.away === teamCode(a.team.abbreviation) && x.home === teamCode(h.team.abbreviation));
+    if (!g) return;
+    const t = e.status?.type || {};
+    const status = t.state === "in" ? "live" : t.state === "post" && t.completed ? "final" : null;
+    if (!status) return;   // still scheduled (or postponed): leave the file's view alone
+    const before = JSON.stringify([g.status, g.score, g.live]);
+    g.status = status;
+    g.score = [Number(a.score) || 0, Number(h.score) || 0];
+    if (status === "live") g.live = liveText(t.shortDetail); else delete g.live;
+    if (JSON.stringify([g.status, g.score, g.live]) !== before) changed++;
+  });
+  return changed;
+}
+
 // Tiers by the pick's win probability (percent).
 export const TIERS = [["lock", "Lock", 72], ["lean", "Lean", 60], ["flip", "Coin flip", 0]];
 export const tierOf = (p) => TIERS.find((t) => p >= t[2]);

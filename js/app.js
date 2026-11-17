@@ -1,7 +1,7 @@
 import {
   TEAMS, TIERS, tierOf, winner, probFor, legState, parlayState, parlayProb, parlayProgress, verdict,
   pickRecord, betsNet, EDGE_BAND, cleanBets, locked, legGame, legTeam, isProp, impliedFromAmerican,
-  decimalFromAmerican, gameId,
+  decimalFromAmerican, gameId, applyLiveScoreboard,
 } from "./core.js";
 import { COLORS, espnAb, logoUrl, teamStyle } from "./teams.js";
 
@@ -417,6 +417,8 @@ async function loadTicker() {
   try {
     let d = await getJSON(ESPN), wkNo = d.week && d.week.number;
     label = wkNo ? `Week ${wkNo} scores` : "Scores";
+    // Keep the game cards as current as the ticker (the data file only updates hourly).
+    if (applyLiveScoreboard(DATA.weeks, d) && wk && wk.week === wkNo && !(document.activeElement && document.activeElement.matches("input,select"))) render();
     if (preview && d.season && d.season.type === 2 && wkNo && wkNo < 18) {
       const n = await getJSON(`${ESPN}?seasontype=2&week=${wkNo + 1}`);
       if (n.events && n.events.length) { d = n; label = `Week ${wkNo + 1} games`; }
