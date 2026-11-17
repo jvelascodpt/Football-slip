@@ -98,3 +98,27 @@ test("time formatting in Pacific time", () => {
   assert.equal(fmtKick("2026-11-16T01:20:00Z"), "Sun 5:20 PM");
   assert.equal(fmtUpdated(new Date("2026-11-15T16:00:00Z")), "Sun Nov 15, 8:00 AM PT");
 });
+
+test("ESPN game info: spread, total, moneylines, stadium and weather", () => {
+  const ev = (over) => ({ events: [{ date: "2026-11-22T18:00Z", status: { type: { state: "pre" } }, weather: { displayValue: "Mostly sunny", temperature: 48 }, competitions: [{
+    venue: { fullName: "Soldier Field", address: { city: "Chicago" }, indoor: false, ...over },
+    competitors: [{ homeAway: "away", team: { abbreviation: "NO" } }, { homeAway: "home", team: { abbreviation: "CHI" } }],
+    odds: [{ provider: { name: "DraftKings" }, details: "CHI -11.5", overUnder: 48.5, moneyline: { away: { close: { odds: "+500" } }, home: { close: { odds: "-700" } } } }],
+  }] }] });
+  const [g] = parseEspn(ev({}));
+  assert.deepEqual(g.info, { spread: "CHI -11.5", total: 48.5, mlAway: "+500", mlHome: "-700", venue: "Soldier Field", city: "Chicago", weather: "48° Mostly sunny" });
+  assert.equal(parseEspn(ev({ indoor: true }))[0].info.weather, "Indoors");
+});
+
+test("refresh keeps the line from before kickoff and keeps scouting notes and props", () => {
+  const pre = w10.map((g) => ({ ...g, status: "upcoming", score: undefined, live: undefined, info: { spread: "X -3", venue: "Old" } }));
+  const earlier = buildWeek({ season: 2026, week: 10, games: pre, now: new Date("2026-11-10T16:00:00Z") });
+  earlier.games.find((g) => g.id === "w10-ne-det").news = { NE: { s: "a", w: "b" } };
+  earlier.props = [{ name: "P", legs: [] }];
+  const after = buildWeek({ season: 2026, week: 10, games: w10.map((g) => ({ ...g, info: { venue: "New" } })), existing: earlier, now: new Date("2026-11-15T16:00:00Z") });
+  const ne = after.games.find((g) => g.id === "w10-ne-det");
+  assert.equal(ne.info.spread, "X -3");
+  assert.equal(ne.info.venue, "New");
+  assert.deepEqual(ne.news, { NE: { s: "a", w: "b" } });
+  assert.equal(after.props.length, 1);
+});

@@ -38,12 +38,45 @@ tests/                node:test suites, with trimmed real API responses in tests
 - **Results**: derived from final scores. Games already underway when picks were generated have
   no pick and don't count in the record.
 
+## What's on each tab
+
+- **Picks**: tap who you think wins (your pick, saved on this phone, locks at kickoff) next to
+  Claude's pick and win chance. Each game shows the Kalshi comparison, the spread, total and
+  American moneylines from ESPN's sportsbook feed, weather and stadium, a note, and an optional
+  scouting report. The week menu also lists look-ahead "preview" weeks from the schedule file.
+- **Parlays**: your slip, "Add your picks", suggested parlays with a progress bar, and the bets
+  you placed (a gold card with confetti when one hits).
+- **Props**: the week's player-prop parlays, shown with American odds.
+- **Tracker**: your record vs Claude's, Claude by tier, by week, net on your bets, and backup.
+- A live score ticker runs across the top (straight from ESPN in the browser).
+
+### Hand-written data in a week file
+
+The script keeps these when it refreshes a week; add them by editing the JSON (or ask Claude):
+
+```jsonc
+// on a game: scouting report, a string or a list per side
+"news": { "KC": { "s": ["Top-5 pass rush"], "w": "Thin at corner" }, "ATL": { "s": "...", "w": "..." } }
+
+// on the week: player-prop parlays; the first is the featured top pick.
+// result is null until graded, then "hit" or "miss"; progress (0-1) optionally fills the bar while live.
+"props": [
+  { "name": "Sunday stars", "tag": "Top pick", "note": "...",
+    "legs": [ { "game": "w11-ari-kc", "team": "KC", "player": "Travis Kelce", "bet": "Over 49.5 rec yds",
+                "odds": -115, "why": "...", "result": null } ] }
+]
+```
+
+The script does not fetch prop lines or grade props; those are entered by hand.
+
 ## Placed bets
 
 Save a bet from the slip ("Save as placed bet", using stake as cost and the offered payout),
-or use "Log a bet you already placed" on the Parlays tab, which also allows games already
-started. Bets are stored in this browser on this phone (localStorage). Use Tracker → Export
-bets for a backup file and Import bets to restore it on another device. Bets can also be put
+or use "+ Log a bet" on the Parlays tab: name, where (Kalshi by default), cost, payout, and
+any mix of team legs and player-prop legs, including games already started. Mark prop legs
+Hit or Miss on the bet card once the game ends. Bets and your picks are stored in this browser
+on this phone (localStorage). Use Tracker → Export for a backup file and Import to restore it
+on another device. Bets can also be put
 in a week file's `tickets` array; the script keeps those when it refreshes a week.
 
 ## Data script

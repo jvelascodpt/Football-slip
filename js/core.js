@@ -58,11 +58,21 @@ export const winner = (g) =>
 // Probability (0-1) that `team` wins game g. g.prob is the pick's probability in percent.
 export const probFor = (g, team) => (g.prob == null ? 0.5 : (team === g.pick ? g.prob : 100 - g.prob) / 100);
 
-export function legState(g) {
+// A leg is either [gameId, team] (picks, slips, suggested parlays) or an object
+// {kind:"team"|"prop", game, team, player?, bet?, odds?, result?: "hit"|"miss"|null}.
+export const legGame = (l) => (Array.isArray(l) ? l[0] : l.game);
+export const legTeam = (l) => (Array.isArray(l) ? l[1] : l.team);
+export const isProp = (l) => !Array.isArray(l) && l.kind === "prop";
+
+// Kickoff has passed or the game is underway/finished.
+export const locked = (g, now = Date.now()) => g.status !== "upcoming" || (!!g.start && now >= Date.parse(g.start));
+
+export function legState(findGame) {
   return (leg) => {
-    const game = g(leg[0]);
+    const game = findGame(legGame(leg));
+    if (isProp(leg)) return leg.result || (game && locked(game) ? "live" : "pending");
     if (!game) return "pending";
-    if (game.status === "final") return winner(game) === leg[1] ? "hit" : "miss";
+    if (game.status === "final") return winner(game) === legTeam(leg) ? "hit" : "miss";
     return game.status === "live" ? "live" : "pending";
   };
 }
@@ -74,11 +84,35 @@ export function parlayState(legs, findGame) {
   return s.some((x) => x !== "pending") ? "live" : "pending";
 }
 
+// Progress toward a parlay hitting (0-1): a hit leg counts 1; a live team leg counts .5 if
+// leading, .25 if tied; a live prop leg counts its optional `progress`. Any miss busts it.
+export function parlayProgress(legs, findGame) {
+  const st = legs.map(legState(findGame));
+  const n = legs.length, hit = st.filter((s) => s === "hit").length, live = st.filter((s) => s === "live").length;
+  const bust = st.includes("miss");
+  if (!n) return { p: 0, n, hit, live, bust, states: st };
+  const one = (l, s) => {
+    if (s === "hit") return 1;
+    if (s !== "live") return 0;
+    if (isProp(l)) return typeof l.progress === "number" ? Math.min(Math.max(l.progress, 0), 0.99) : 0;
+    const g = findGame(legGame(l));
+    if (!g || !g.score) return 0;
+    const t = legTeam(l), us = t === g.away ? g.score[0] : g.score[1], them = t === g.away ? g.score[1] : g.score[0];
+    return us > them ? 0.5 : us === them ? 0.25 : 0;
+  };
+  const p = bust ? 1 : legs.reduce((a, l, i) => a + one(l, st[i]), 0) / n;
+  return { p, n, hit, live, bust, states: st };
+}
+
 export const parlayProb = (legs, findGame) =>
   legs.reduce((a, l) => {
-    const g = findGame(l[0]);
-    return a * (g ? probFor(g, l[1]) : 0.5);
+    if (isProp(l)) return a * (l.odds != null ? impliedFromAmerican(l.odds) || 0.5 : 0.5);
+    const g = findGame(legGame(l));
+    return a * (g ? probFor(g, legTeam(l)) : 0.5);
   }, 1);
+
+// American odds -> decimal payout multiple (stake included).
+export const decimalFromAmerican = (o) => (o < 0 ? 1 + 100 / -o : 1 + o / 100);
 
 // Price check for an offered payout on a stake, given the estimated chance p (0-1).
 export function verdict(p, stake, payout) {
@@ -89,11 +123,13 @@ export function verdict(p, stake, payout) {
   return { breakEven, edge, kind };
 }
 
-export function pickRecord(games) {
+// Record for a set of picks; `who(g)` returns the picked team (default: the model's pick).
+export function pickRecord(games, who = (g) => g.pick) {
   let h = 0, m = 0, p = 0;
   games.forEach((g) => {
-    if (!g.pick) return;
-    if (g.status === "final") (winner(g) === g.pick ? h++ : m++);
+    const t = who(g);
+    if (!t) return;
+    if (g.status === "final") (winner(g) === t ? h++ : m++);
     else p++;
   });
   return { h, m, p };
@@ -144,19 +180,29 @@ export function suggestParlays(games) {
 }
 
 // Validate bets read from storage or an imported backup; drops anything malformed.
+// Legs are normalised to objects: {kind:"team", game, team} or {kind:"prop", game, team, player, bet, result}.
+export function cleanLeg(l) {
+  if (Array.isArray(l)) return typeof l[0] === "string" && typeof l[1] === "string" ? { kind: "team", game: l[0], team: l[1] } : null;
+  if (!l || typeof l !== "object" || typeof l.game !== "string" || typeof l.team !== "string") return null;
+  if (l.kind === "prop") {
+    if (typeof l.player !== "string" || typeof l.bet !== "string" || !l.player.trim() || !l.bet.trim()) return null;
+    return { kind: "prop", game: l.game, team: l.team, player: l.player.slice(0, 60), bet: l.bet.slice(0, 80), result: l.result === "hit" || l.result === "miss" ? l.result : null };
+  }
+  return { kind: "team", game: l.game, team: l.team };
+}
+
 export function cleanBets(list) {
   if (!Array.isArray(list)) return [];
   return list.flatMap((b, i) => {
     if (!b || typeof b !== "object") return [];
-    const legs = Array.isArray(b.legs)
-      ? b.legs.filter((l) => Array.isArray(l) && typeof l[0] === "string" && typeof l[1] === "string").map((l) => [l[0], l[1]])
-      : [];
+    const legs = Array.isArray(b.legs) ? b.legs.map(cleanLeg).filter(Boolean) : [];
     const cost = Number(b.cost), payout = Number(b.payout), season = Number(b.season), week = Number(b.week);
     if (!legs.length || !(cost > 0) || !(payout > 0) || !Number.isInteger(season) || !Number.isInteger(week)) return [];
     return [{
       id: typeof b.id === "string" && b.id ? b.id : `b-import-${i}-${cost}-${payout}`,
       season, week, legs, cost, payout,
       name: typeof b.name === "string" ? b.name.slice(0, 40) : `${legs.length}-leg bet`,
+      book: typeof b.book === "string" ? b.book.slice(0, 30) : "",
       placedAt: typeof b.placedAt === "string" ? b.placedAt : null,
     }];
   });

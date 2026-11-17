@@ -95,8 +95,24 @@ async function cmdNew(a) {
   await mkdir(DATA, { recursive: true });
   await writeJSON(p, w);
   await saveIndex(idx, season, week);
+  await writeSchedule(season, week);
   const picked = w.games.filter((g) => g.pick).length;
   console.log(`${existing ? "Refreshed" : "Wrote"} ${path.relative(ROOT, p)}: ${w.games.length} games, ${picked} picks, ${w.parlays.length} parlays, ${w.games.filter((g) => g.kalshi).length} with Kalshi prices.`);
+}
+
+// Look-ahead schedule for the weeks after `week`, used by the app's preview weeks.
+async function writeSchedule(season, week) {
+  const weeks = [];
+  for (let n = week + 1; n <= 18; n++) {
+    try {
+      const games = (await fetchWeek(season, n)).map((g) => ({ away: g.away, home: g.home, start: g.start, ...(g.info?.venue ? { venue: g.info.venue, city: g.info.city } : {}) }));
+      if (games.length) weeks.push({ week: n, games });
+    } catch (e) { console.warn(`Schedule for week ${n} unavailable:`, e.message); }
+  }
+  await writeJSON(path.join(DATA, `schedule-${season}.json`), { season, from: week + 1, weeks });
+  const idx = await loadIndex();
+  idx.schedule = `schedule-${season}.json`;
+  await writeJSON(path.join(DATA, "index.json"), idx);
 }
 
 async function cmdScores() {

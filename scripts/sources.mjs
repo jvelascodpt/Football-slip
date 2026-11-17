@@ -49,6 +49,17 @@ export function parseEspn(json) {
       record: [a.records?.[0]?.summary || null, h.records?.[0]?.summary || null],
       ml: dk, mlBook: dk ? c.odds[0].provider?.name || "Sportsbook" : null,
     };
+    const info = {};
+    const o = c.odds?.[0];
+    if (o?.details && o.details !== "EVEN") info.spread = o.details;
+    else if (o?.details === "EVEN") info.spread = "Pick'em";
+    if (o?.overUnder != null) info.total = o.overUnder;
+    if (dk) { info.mlAway = dk[0]; info.mlHome = dk[1]; }
+    if (c.venue?.fullName) info.venue = c.venue.fullName;
+    if (c.venue?.address?.city) info.city = c.venue.address.city;
+    if (c.venue?.indoor) info.weather = "Indoors";
+    else if (/[a-z]/i.test(e.weather?.displayValue || "")) info.weather = `${e.weather.temperature != null ? e.weather.temperature + "\u00b0 " : ""}${e.weather.displayValue}`;
+    if (Object.keys(info).length) g.info = info;
     if (status !== "upcoming") g.score = [Number(a.score) || 0, Number(h.score) || 0];
     if (status === "live") g.live = liveText(t.shortDetail);
     if (t.state === "post" && !t.completed) g.live = t.shortDetail || "Postponed";

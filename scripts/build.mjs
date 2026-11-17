@@ -72,6 +72,14 @@ export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = 
       if (src.live) base.live = src.live;
       if (src.record?.some(Boolean)) base.record = src.record;
       const prev = old.get(id);
+      // Game info: keep what we had (e.g. the line at kickoff) and add anything new.
+      // Game info: stadium/weather always refresh; the line (spread, total, moneylines) freezes at kickoff
+      // because ESPN drops it once a game starts.
+      const { venue, city, weather, ...line } = src.info || {};
+      const place = Object.fromEntries(Object.entries({ venue, city, weather }).filter(([, v]) => v != null));
+      const info = { ...(prev?.info || {}), ...place, ...(src.status === "upcoming" || !prev ? line : {}) };
+      if (Object.keys(info).length) base.info = info;
+      if (prev?.news) base.news = prev.news;
       if (src.status !== "upcoming" || Date.parse(src.start) <= now.getTime()) {
         if (prev) {
           const keep = { ...prev };
@@ -99,6 +107,7 @@ export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = 
     games: out,
     parlays: keepParlays ? existing.parlays : suggestParlays(out),
     tickets: existing?.tickets || [],
+    ...(existing?.props?.length ? { props: existing.props } : {}),
   };
 }
 

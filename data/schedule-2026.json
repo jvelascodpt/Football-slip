@@ -1,0 +1,900 @@
+{
+  "season": 2026,
+  "from": 11,
+  "weeks": [
+    {
+      "week": 11,
+      "games": [
+        {
+          "away": "IND",
+          "home": "HOU",
+          "start": "2026-11-20T01:15:00.000Z",
+          "venue": "Reliant Stadium",
+          "city": "Houston"
+        },
+        {
+          "away": "MIA",
+          "home": "BUF",
+          "start": "2026-11-22T18:00:00.000Z",
+          "venue": "Highmark Stadium",
+          "city": "Orchard Park"
+        },
+        {
+          "away": "NO",
+          "home": "CHI",
+          "start": "2026-11-22T18:00:00.000Z",
+          "venue": "Soldier Field",
+          "city": "Chicago"
+        },
+        {
+          "away": "TEN",
+          "home": "DAL",
+          "start": "2026-11-22T18:00:00.000Z",
+          "venue": "AT&T Stadium",
+          "city": "Arlington"
+        },
+        {
+          "away": "TB",
+          "home": "DET",
+          "start": "2026-11-22T18:00:00.000Z",
+          "venue": "Ford Field",
+          "city": "Detroit"
+        },
+        {
+          "away": "ARI",
+          "home": "KC",
+          "start": "2026-11-22T18:00:00.000Z",
+          "venue": "Arrowhead Stadium",
+          "city": "Kansas City"
+        },
+        {
+          "away": "PIT",
+          "home": "PHI",
+          "start": "2026-11-22T18:00:00.000Z",
+          "venue": "Lincoln Financial Field",
+          "city": "Philadelphia"
+        },
+        {
+          "away": "BAL",
+          "home": "CAR",
+          "start": "2026-11-22T18:00:00.000Z",
+          "venue": "Bank of America Stadium",
+          "city": "Charlotte"
+        },
+        {
+          "away": "NYJ",
+          "home": "LAC",
+          "start": "2026-11-22T21:05:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "LV",
+          "home": "DEN",
+          "start": "2026-11-22T21:25:00.000Z",
+          "venue": "Empower Field at Mile High",
+          "city": "Denver"
+        },
+        {
+          "away": "JAC",
+          "home": "NYG",
+          "start": "2026-11-22T21:25:00.000Z",
+          "venue": "MetLife Stadium",
+          "city": "East Rutherford"
+        },
+        {
+          "away": "MIN",
+          "home": "SF",
+          "start": "2026-11-23T01:20:00.000Z",
+          "venue": "Estadio Banorte",
+          "city": "Mexico City"
+        },
+        {
+          "away": "CIN",
+          "home": "WAS",
+          "start": "2026-11-24T01:15:00.000Z",
+          "venue": "Northwest Stadium",
+          "city": "Landover"
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "games": [
+        {
+          "away": "GB",
+          "home": "LA",
+          "start": "2026-11-26T01:00:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "CHI",
+          "home": "DET",
+          "start": "2026-11-26T18:00:00.000Z",
+          "venue": "Ford Field",
+          "city": "Detroit"
+        },
+        {
+          "away": "PHI",
+          "home": "DAL",
+          "start": "2026-11-26T21:30:00.000Z",
+          "venue": "AT&T Stadium",
+          "city": "Arlington"
+        },
+        {
+          "away": "KC",
+          "home": "BUF",
+          "start": "2026-11-27T01:20:00.000Z",
+          "venue": "Highmark Stadium",
+          "city": "Orchard Park"
+        },
+        {
+          "away": "DEN",
+          "home": "PIT",
+          "start": "2026-11-27T20:00:00.000Z",
+          "venue": "Acrisure Stadium",
+          "city": "Pittsburgh"
+        },
+        {
+          "away": "NO",
+          "home": "CIN",
+          "start": "2026-11-29T18:00:00.000Z",
+          "venue": "Paycor Stadium",
+          "city": "Cincinnati"
+        },
+        {
+          "away": "LV",
+          "home": "CLE",
+          "start": "2026-11-29T18:00:00.000Z",
+          "venue": "Huntington Bank Field",
+          "city": "Cleveland"
+        },
+        {
+          "away": "NYG",
+          "home": "IND",
+          "start": "2026-11-29T18:00:00.000Z",
+          "venue": "Lucas Oil Stadium",
+          "city": "Indianapolis"
+        },
+        {
+          "away": "NYJ",
+          "home": "MIA",
+          "start": "2026-11-29T18:00:00.000Z",
+          "venue": "Hard Rock Stadium",
+          "city": "Miami Gardens"
+        },
+        {
+          "away": "ATL",
+          "home": "MIN",
+          "start": "2026-11-29T18:00:00.000Z",
+          "venue": "U.S. Bank Stadium",
+          "city": "Minneapolis"
+        },
+        {
+          "away": "BAL",
+          "home": "HOU",
+          "start": "2026-11-29T18:00:00.000Z",
+          "venue": "Reliant Stadium",
+          "city": "Houston"
+        },
+        {
+          "away": "TEN",
+          "home": "JAC",
+          "start": "2026-11-29T21:05:00.000Z",
+          "venue": "EverBank Stadium",
+          "city": "Jacksonville"
+        },
+        {
+          "away": "WAS",
+          "home": "ARI",
+          "start": "2026-11-29T21:25:00.000Z",
+          "venue": "State Farm Stadium",
+          "city": "Glendale"
+        },
+        {
+          "away": "SEA",
+          "home": "SF",
+          "start": "2026-11-29T21:25:00.000Z",
+          "venue": "Levi's Stadium",
+          "city": "Santa Clara"
+        },
+        {
+          "away": "NE",
+          "home": "LAC",
+          "start": "2026-11-30T01:20:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "CAR",
+          "home": "TB",
+          "start": "2026-12-01T01:15:00.000Z",
+          "venue": "Raymond James Stadium",
+          "city": "Tampa"
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "games": [
+        {
+          "away": "KC",
+          "home": "LA",
+          "start": "2026-12-04T01:15:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "DET",
+          "home": "ATL",
+          "start": "2026-12-06T18:00:00.000Z",
+          "venue": "Mercedes-Benz Stadium",
+          "city": "Atlanta"
+        },
+        {
+          "away": "JAC",
+          "home": "CHI",
+          "start": "2026-12-06T18:00:00.000Z",
+          "venue": "Soldier Field",
+          "city": "Chicago"
+        },
+        {
+          "away": "CIN",
+          "home": "CLE",
+          "start": "2026-12-06T18:00:00.000Z",
+          "venue": "Huntington Bank Field",
+          "city": "Cleveland"
+        },
+        {
+          "away": "WAS",
+          "home": "TEN",
+          "start": "2026-12-06T18:00:00.000Z",
+          "venue": "Nissan Stadium",
+          "city": "Nashville"
+        },
+        {
+          "away": "GB",
+          "home": "NO",
+          "start": "2026-12-06T18:00:00.000Z",
+          "venue": "Caesars Superdome",
+          "city": "New Orleans"
+        },
+        {
+          "away": "SF",
+          "home": "NYG",
+          "start": "2026-12-06T18:00:00.000Z",
+          "venue": "MetLife Stadium",
+          "city": "East Rutherford"
+        },
+        {
+          "away": "LAC",
+          "home": "TB",
+          "start": "2026-12-06T18:00:00.000Z",
+          "venue": "Raymond James Stadium",
+          "city": "Tampa"
+        },
+        {
+          "away": "MIA",
+          "home": "DEN",
+          "start": "2026-12-06T21:05:00.000Z",
+          "venue": "Empower Field at Mile High",
+          "city": "Denver"
+        },
+        {
+          "away": "PHI",
+          "home": "ARI",
+          "start": "2026-12-06T21:05:00.000Z",
+          "venue": "State Farm Stadium",
+          "city": "Glendale"
+        },
+        {
+          "away": "CAR",
+          "home": "MIN",
+          "start": "2026-12-06T21:25:00.000Z",
+          "venue": "U.S. Bank Stadium",
+          "city": "Minneapolis"
+        },
+        {
+          "away": "BUF",
+          "home": "NE",
+          "start": "2026-12-06T21:25:00.000Z",
+          "venue": "Gillette Stadium",
+          "city": "Foxborough"
+        },
+        {
+          "away": "HOU",
+          "home": "PIT",
+          "start": "2026-12-07T01:20:00.000Z",
+          "venue": "Acrisure Stadium",
+          "city": "Pittsburgh"
+        },
+        {
+          "away": "DAL",
+          "home": "SEA",
+          "start": "2026-12-08T01:15:00.000Z",
+          "venue": "Lumen Field",
+          "city": "Seattle"
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "games": [
+        {
+          "away": "MIN",
+          "home": "NE",
+          "start": "2026-12-11T01:15:00.000Z",
+          "venue": "Gillette Stadium",
+          "city": "Foxborough"
+        },
+        {
+          "away": "ATL",
+          "home": "CLE",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "Huntington Bank Field",
+          "city": "Cleveland"
+        },
+        {
+          "away": "TEN",
+          "home": "DET",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "Ford Field",
+          "city": "Detroit"
+        },
+        {
+          "away": "CHI",
+          "home": "MIA",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "Hard Rock Stadium",
+          "city": "Miami Gardens"
+        },
+        {
+          "away": "DEN",
+          "home": "NYJ",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "MetLife Stadium",
+          "city": "East Rutherford"
+        },
+        {
+          "away": "IND",
+          "home": "PHI",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "Lincoln Financial Field",
+          "city": "Philadelphia"
+        },
+        {
+          "away": "HOU",
+          "home": "WAS",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "Northwest Stadium",
+          "city": "Landover"
+        },
+        {
+          "away": "NO",
+          "home": "CAR",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "Bank of America Stadium",
+          "city": "Charlotte"
+        },
+        {
+          "away": "TB",
+          "home": "BAL",
+          "start": "2026-12-13T18:00:00.000Z",
+          "venue": "M&T Bank Stadium",
+          "city": "Baltimore"
+        },
+        {
+          "away": "LAC",
+          "home": "LV",
+          "start": "2026-12-13T21:05:00.000Z",
+          "venue": "Allegiant Stadium",
+          "city": "Las Vegas"
+        },
+        {
+          "away": "KC",
+          "home": "CIN",
+          "start": "2026-12-13T21:25:00.000Z",
+          "venue": "Paycor Stadium",
+          "city": "Cincinnati"
+        },
+        {
+          "away": "LA",
+          "home": "SF",
+          "start": "2026-12-13T21:25:00.000Z",
+          "venue": "Levi's Stadium",
+          "city": "Santa Clara"
+        },
+        {
+          "away": "NYG",
+          "home": "SEA",
+          "start": "2026-12-13T21:25:00.000Z",
+          "venue": "Lumen Field",
+          "city": "Seattle"
+        },
+        {
+          "away": "BUF",
+          "home": "GB",
+          "start": "2026-12-14T01:20:00.000Z",
+          "venue": "Lambeau Field",
+          "city": "Green Bay"
+        },
+        {
+          "away": "PIT",
+          "home": "JAC",
+          "start": "2026-12-15T01:15:00.000Z",
+          "venue": "EverBank Stadium",
+          "city": "Jacksonville"
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "games": [
+        {
+          "away": "SF",
+          "home": "LAC",
+          "start": "2026-12-18T01:15:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "SEA",
+          "home": "PHI",
+          "start": "2026-12-19T22:00:00.000Z",
+          "venue": "Lincoln Financial Field",
+          "city": "Philadelphia"
+        },
+        {
+          "away": "CHI",
+          "home": "BUF",
+          "start": "2026-12-20T01:20:00.000Z",
+          "venue": "Highmark Stadium",
+          "city": "Orchard Park"
+        },
+        {
+          "away": "MIA",
+          "home": "GB",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "Lambeau Field",
+          "city": "Green Bay"
+        },
+        {
+          "away": "IND",
+          "home": "TEN",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "Nissan Stadium",
+          "city": "Nashville"
+        },
+        {
+          "away": "CLE",
+          "home": "NYG",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "MetLife Stadium",
+          "city": "East Rutherford"
+        },
+        {
+          "away": "BAL",
+          "home": "PIT",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "Acrisure Stadium",
+          "city": "Pittsburgh"
+        },
+        {
+          "away": "NO",
+          "home": "TB",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "Raymond James Stadium",
+          "city": "Tampa"
+        },
+        {
+          "away": "ATL",
+          "home": "WAS",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "Northwest Stadium",
+          "city": "Landover"
+        },
+        {
+          "away": "CIN",
+          "home": "CAR",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "Bank of America Stadium",
+          "city": "Charlotte"
+        },
+        {
+          "away": "JAC",
+          "home": "HOU",
+          "start": "2026-12-20T18:00:00.000Z",
+          "venue": "Reliant Stadium",
+          "city": "Houston"
+        },
+        {
+          "away": "NYJ",
+          "home": "ARI",
+          "start": "2026-12-20T21:05:00.000Z",
+          "venue": "State Farm Stadium",
+          "city": "Glendale"
+        },
+        {
+          "away": "DEN",
+          "home": "LV",
+          "start": "2026-12-20T21:25:00.000Z",
+          "venue": "Allegiant Stadium",
+          "city": "Las Vegas"
+        },
+        {
+          "away": "DAL",
+          "home": "LA",
+          "start": "2026-12-20T21:25:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "DET",
+          "home": "MIN",
+          "start": "2026-12-21T01:20:00.000Z",
+          "venue": "U.S. Bank Stadium",
+          "city": "Minneapolis"
+        },
+        {
+          "away": "NE",
+          "home": "KC",
+          "start": "2026-12-22T01:15:00.000Z",
+          "venue": "Arrowhead Stadium",
+          "city": "Kansas City"
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "games": [
+        {
+          "away": "HOU",
+          "home": "PHI",
+          "start": "2026-12-25T01:15:00.000Z",
+          "venue": "Lincoln Financial Field",
+          "city": "Philadelphia"
+        },
+        {
+          "away": "GB",
+          "home": "CHI",
+          "start": "2026-12-25T18:00:00.000Z",
+          "venue": "Soldier Field",
+          "city": "Chicago"
+        },
+        {
+          "away": "BUF",
+          "home": "DEN",
+          "start": "2026-12-25T21:30:00.000Z",
+          "venue": "Empower Field at Mile High",
+          "city": "Denver"
+        },
+        {
+          "away": "LA",
+          "home": "SEA",
+          "start": "2026-12-26T01:15:00.000Z",
+          "venue": "Lumen Field",
+          "city": "Seattle"
+        },
+        {
+          "away": "TB",
+          "home": "ATL",
+          "start": "2026-12-27T05:00:00.000Z",
+          "venue": "Mercedes-Benz Stadium",
+          "city": "Atlanta"
+        },
+        {
+          "away": "CIN",
+          "home": "IND",
+          "start": "2026-12-27T05:00:00.000Z",
+          "venue": "Lucas Oil Stadium",
+          "city": "Indianapolis"
+        },
+        {
+          "away": "WAS",
+          "home": "MIN",
+          "start": "2026-12-27T05:00:00.000Z",
+          "venue": "U.S. Bank Stadium",
+          "city": "Minneapolis"
+        },
+        {
+          "away": "CAR",
+          "home": "PIT",
+          "start": "2026-12-27T05:00:00.000Z",
+          "venue": "Acrisure Stadium",
+          "city": "Pittsburgh"
+        },
+        {
+          "away": "LAC",
+          "home": "MIA",
+          "start": "2026-12-27T18:00:00.000Z",
+          "venue": "Hard Rock Stadium",
+          "city": "Miami Gardens"
+        },
+        {
+          "away": "ARI",
+          "home": "NO",
+          "start": "2026-12-27T18:00:00.000Z",
+          "venue": "Caesars Superdome",
+          "city": "New Orleans"
+        },
+        {
+          "away": "NE",
+          "home": "NYJ",
+          "start": "2026-12-27T18:00:00.000Z",
+          "venue": "MetLife Stadium",
+          "city": "East Rutherford"
+        },
+        {
+          "away": "CLE",
+          "home": "BAL",
+          "start": "2026-12-27T18:00:00.000Z",
+          "venue": "M&T Bank Stadium",
+          "city": "Baltimore"
+        },
+        {
+          "away": "TEN",
+          "home": "LV",
+          "start": "2026-12-27T21:05:00.000Z",
+          "venue": "Allegiant Stadium",
+          "city": "Las Vegas"
+        },
+        {
+          "away": "SF",
+          "home": "KC",
+          "start": "2026-12-27T21:25:00.000Z",
+          "venue": "Arrowhead Stadium",
+          "city": "Kansas City"
+        },
+        {
+          "away": "JAC",
+          "home": "DAL",
+          "start": "2026-12-28T01:20:00.000Z",
+          "venue": "AT&T Stadium",
+          "city": "Arlington"
+        },
+        {
+          "away": "NYG",
+          "home": "DET",
+          "start": "2026-12-29T01:15:00.000Z",
+          "venue": "Ford Field",
+          "city": "Detroit"
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "games": [
+        {
+          "away": "BAL",
+          "home": "CIN",
+          "start": "2027-01-01T01:15:00.000Z",
+          "venue": "Paycor Stadium",
+          "city": "Cincinnati"
+        },
+        {
+          "away": "DEN",
+          "home": "NE",
+          "start": "2027-01-03T05:00:00.000Z",
+          "venue": "Gillette Stadium",
+          "city": "Foxborough"
+        },
+        {
+          "away": "KC",
+          "home": "LAC",
+          "start": "2027-01-03T05:00:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "LA",
+          "home": "TB",
+          "start": "2027-01-03T05:00:00.000Z",
+          "venue": "Raymond James Stadium",
+          "city": "Tampa"
+        },
+        {
+          "away": "WAS",
+          "home": "JAC",
+          "start": "2027-01-03T05:00:00.000Z",
+          "venue": "EverBank Stadium",
+          "city": "Jacksonville"
+        },
+        {
+          "away": "NO",
+          "home": "ATL",
+          "start": "2027-01-03T18:00:00.000Z",
+          "venue": "Mercedes-Benz Stadium",
+          "city": "Atlanta"
+        },
+        {
+          "away": "IND",
+          "home": "CLE",
+          "start": "2027-01-03T18:00:00.000Z",
+          "venue": "Huntington Bank Field",
+          "city": "Cleveland"
+        },
+        {
+          "away": "NYG",
+          "home": "DAL",
+          "start": "2027-01-03T18:00:00.000Z",
+          "venue": "AT&T Stadium",
+          "city": "Arlington"
+        },
+        {
+          "away": "PIT",
+          "home": "TEN",
+          "start": "2027-01-03T18:00:00.000Z",
+          "venue": "Nissan Stadium",
+          "city": "Nashville"
+        },
+        {
+          "away": "BUF",
+          "home": "MIA",
+          "start": "2027-01-03T18:00:00.000Z",
+          "venue": "Hard Rock Stadium",
+          "city": "Miami Gardens"
+        },
+        {
+          "away": "MIN",
+          "home": "NYJ",
+          "start": "2027-01-03T18:00:00.000Z",
+          "venue": "MetLife Stadium",
+          "city": "East Rutherford"
+        },
+        {
+          "away": "SEA",
+          "home": "CAR",
+          "start": "2027-01-03T18:00:00.000Z",
+          "venue": "Bank of America Stadium",
+          "city": "Charlotte"
+        },
+        {
+          "away": "LV",
+          "home": "ARI",
+          "start": "2027-01-03T21:05:00.000Z",
+          "venue": "State Farm Stadium",
+          "city": "Glendale"
+        },
+        {
+          "away": "DET",
+          "home": "CHI",
+          "start": "2027-01-03T21:25:00.000Z",
+          "venue": "Soldier Field",
+          "city": "Chicago"
+        },
+        {
+          "away": "PHI",
+          "home": "SF",
+          "start": "2027-01-04T01:20:00.000Z",
+          "venue": "Levi's Stadium",
+          "city": "Santa Clara"
+        },
+        {
+          "away": "HOU",
+          "home": "GB",
+          "start": "2027-01-05T01:15:00.000Z",
+          "venue": "Lambeau Field",
+          "city": "Green Bay"
+        }
+      ]
+    },
+    {
+      "week": 18,
+      "games": [
+        {
+          "away": "NYJ",
+          "home": "BUF",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Highmark Stadium",
+          "city": "Orchard Park"
+        },
+        {
+          "away": "CLE",
+          "home": "CIN",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Paycor Stadium",
+          "city": "Cincinnati"
+        },
+        {
+          "away": "LAC",
+          "home": "DEN",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Empower Field at Mile High",
+          "city": "Denver"
+        },
+        {
+          "away": "DET",
+          "home": "GB",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Lambeau Field",
+          "city": "Green Bay"
+        },
+        {
+          "away": "JAC",
+          "home": "IND",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Lucas Oil Stadium",
+          "city": "Indianapolis"
+        },
+        {
+          "away": "LV",
+          "home": "KC",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Arrowhead Stadium",
+          "city": "Kansas City"
+        },
+        {
+          "away": "SEA",
+          "home": "LA",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
+        },
+        {
+          "away": "CHI",
+          "home": "MIN",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "U.S. Bank Stadium",
+          "city": "Minneapolis"
+        },
+        {
+          "away": "MIA",
+          "home": "NE",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Gillette Stadium",
+          "city": "Foxborough"
+        },
+        {
+          "away": "TB",
+          "home": "NO",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Caesars Superdome",
+          "city": "New Orleans"
+        },
+        {
+          "away": "PHI",
+          "home": "NYG",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "MetLife Stadium",
+          "city": "East Rutherford"
+        },
+        {
+          "away": "SF",
+          "home": "ARI",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "State Farm Stadium",
+          "city": "Glendale"
+        },
+        {
+          "away": "DAL",
+          "home": "WAS",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Northwest Stadium",
+          "city": "Landover"
+        },
+        {
+          "away": "ATL",
+          "home": "CAR",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Bank of America Stadium",
+          "city": "Charlotte"
+        },
+        {
+          "away": "PIT",
+          "home": "BAL",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "M&T Bank Stadium",
+          "city": "Baltimore"
+        },
+        {
+          "away": "TEN",
+          "home": "HOU",
+          "start": "2027-01-10T05:00:00.000Z",
+          "venue": "Reliant Stadium",
+          "city": "Houston"
+        }
+      ]
+    }
+  ]
+}

@@ -104,3 +104,37 @@ test("cleanBets drops malformed entries", () => {
   assert.equal(out[0].name, "ok");
   assert.deepEqual(cleanBets({ not: "an array" }), []);
 });
+
+import { parlayProgress, cleanLeg, locked, decimalFromAmerican } from "../js/core.js";
+
+test("object legs and prop legs settle like array legs", () => {
+  assert.equal(parlayState([{ kind: "team", game: "a", team: "BUF" }], find), "hit");
+  assert.equal(parlayState([{ kind: "prop", game: "a", team: "BUF", player: "J. Allen", bet: "Over 1.5 TD", result: "hit" }, ["a", "BUF"]], find), "hit");
+  assert.equal(parlayState([{ kind: "prop", game: "c", team: "KC", player: "X", bet: "Y", result: null }], find), "pending");
+  assert.equal(parlayState([{ kind: "prop", game: "d", team: "LA", player: "X", bet: "Y", result: null }], find), "live");
+  assert.equal(parlayState([{ kind: "prop", game: "a", team: "BUF", player: "X", bet: "Y", result: "miss" }, ["a", "BUF"]], find), "miss");
+});
+
+test("parlay progress: hit legs count 1, a leading live leg .5, a miss busts", () => {
+  const p = parlayProgress([["a", "BUF"], ["d", "LA"], ["c", "KC"]], find);
+  close(p.p, (1 + 0.5 + 0) / 3);
+  assert.equal(p.hit, 1); assert.equal(p.live, 1); assert.equal(p.bust, false);
+  assert.equal(parlayProgress([["b", "IND"], ["a", "BUF"]], find).bust, true);
+});
+
+test("cleanLeg and cleanBets keep prop legs and a book name", () => {
+  assert.deepEqual(cleanLeg(["w10-a-b", "A"]), { kind: "team", game: "w10-a-b", team: "A" });
+  assert.equal(cleanLeg({ kind: "prop", game: "g", team: "KC", player: "", bet: "x" }), null);
+  const [b] = cleanBets([{ season: 2026, week: 10, cost: 5, payout: 30, book: "Kalshi", legs: [{ kind: "prop", game: "g", team: "KC", player: "Kelce", bet: "Over 50.5 yds", result: "hit" }] }]);
+  assert.equal(b.book, "Kalshi");
+  assert.equal(b.legs[0].result, "hit");
+});
+
+test("games lock at kickoff", () => {
+  const g = { status: "upcoming", start: "2026-11-22T18:00:00Z" };
+  assert.equal(locked(g, Date.parse("2026-11-22T17:59:00Z")), false);
+  assert.equal(locked(g, Date.parse("2026-11-22T18:00:00Z")), true);
+  assert.equal(locked({ status: "final" }), true);
+  close(decimalFromAmerican(-150), 1 + 100 / 150);
+  close(decimalFromAmerican(200), 3);
+});
