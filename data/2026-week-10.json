@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "updated": "Mon Nov 16, 6:44 PM PT",
+  "updated": "Tue Nov 17, 2:51 AM PT",
   "games": [
     {
       "id": "w10-was-nyg",
@@ -338,12 +338,11 @@
       },
       "start": "2026-11-17T01:15:00.000Z",
       "kick": "Mon 5:15 PM",
-      "status": "live",
+      "status": "final",
       "score": [
-        17,
-        7
-      ],
-      "live": "2nd qtr 0:03"
+        23,
+        20
+      ]
     }
   ],
   "parlays": [
