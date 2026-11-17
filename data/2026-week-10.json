@@ -1,7 +1,7 @@
 {
   "season": 2026,
   "week": 10,
-  "updated": "Sun Nov 15, 8:33 AM PT",
+  "updated": "Mon Nov 16, 6:35 PM PT",
   "games": [
     {
       "id": "w10-was-nyg",
@@ -28,12 +28,11 @@
       "home": "DET",
       "start": "2026-11-15T14:30:00.000Z",
       "kick": "Sun 6:30 AM",
-      "status": "live",
+      "status": "final",
       "score": [
-        3,
-        21
+        10,
+        35
       ],
-      "live": "3rd qtr 11:05",
       "record": [
         "5-4",
         "6-2"
@@ -49,7 +48,7 @@
       "home": "ATL",
       "start": "2026-11-15T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "6-2",
         "3-6"
@@ -57,7 +56,11 @@
       "pick": "KC",
       "prob": 62,
       "source": "Prototype (hand-entered)",
-      "note": "Chiefs put 35 on the Jets last week. Atlanta lost to Cincinnati by 17."
+      "note": "Chiefs put 35 on the Jets last week. Atlanta lost to Cincinnati by 17.",
+      "score": [
+        35,
+        13
+      ]
     },
     {
       "id": "w10-buf-nyj",
@@ -65,7 +68,7 @@
       "home": "NYJ",
       "start": "2026-11-15T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "7-1",
         "2-7"
@@ -73,7 +76,11 @@
       "pick": "BUF",
       "prob": 80,
       "source": "Prototype (hand-entered)",
-      "note": "Bills beat Minnesota 23-6 on Monday. The Jets lost by 23 a week ago."
+      "note": "Bills beat Minnesota 23-6 on Monday. The Jets lost by 23 a week ago.",
+      "score": [
+        31,
+        12
+      ]
     },
     {
       "id": "w10-mia-ind",
@@ -81,7 +88,7 @@
       "home": "IND",
       "start": "2026-11-15T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "1-7",
         "2-7"
@@ -89,7 +96,11 @@
       "pick": "IND",
       "prob": 67,
       "source": "Prototype (hand-entered)",
-      "note": "Miami starts Kyle McCord for the first time behind a backup center. Colts are missing six players, so the upset is live."
+      "note": "Miami starts Kyle McCord for the first time behind a backup center. Colts are missing six players, so the upset is live.",
+      "score": [
+        22,
+        24
+      ]
     },
     {
       "id": "w10-min-gb",
@@ -97,7 +108,7 @@
       "home": "GB",
       "start": "2026-11-15T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "6-2",
         "6-3"
@@ -105,7 +116,11 @@
       "pick": "GB",
       "prob": 57,
       "source": "Prototype (hand-entered)",
-      "note": "Packers scored 45 last week, Vikings scored 6. It is still a division game priced close."
+      "note": "Packers scored 45 last week, Vikings scored 6. It is still a division game priced close.",
+      "score": [
+        30,
+        10
+      ]
     },
     {
       "id": "w10-car-no",
@@ -113,7 +128,7 @@
       "home": "NO",
       "start": "2026-11-15T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "3-5",
         "3-5"
@@ -121,7 +136,11 @@
       "pick": "NO",
       "prob": 51,
       "source": "Prototype (hand-entered)",
-      "note": "True coin flip. Saints are missing their center and right tackle. Check whether Carolina's Jaelan Phillips is active."
+      "note": "True coin flip. Saints are missing their center and right tackle. Check whether Carolina's Jaelan Phillips is active.",
+      "score": [
+        20,
+        17
+      ]
     },
     {
       "id": "w10-jac-ten",
@@ -129,7 +148,7 @@
       "home": "TEN",
       "start": "2026-11-15T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "6-2",
         "1-7"
@@ -137,7 +156,11 @@
       "pick": "JAC",
       "prob": 85,
       "source": "Prototype (hand-entered)",
-      "note": "Jaguars won 33-10 in Baltimore last time out. Biggest favorite on the board."
+      "note": "Jaguars won 33-10 in Baltimore last time out. Biggest favorite on the board.",
+      "score": [
+        40,
+        23
+      ]
     },
     {
       "id": "w10-hou-cle",
@@ -145,7 +168,7 @@
       "home": "CLE",
       "start": "2026-11-15T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "3-5",
         "5-4"
@@ -153,7 +176,11 @@
       "pick": "HOU",
       "prob": 67,
       "source": "Prototype (hand-entered)",
-      "note": "Houston scored 44 last week. Cleveland is at home and took the Saints to overtime, so not a gimme."
+      "note": "Houston scored 44 last week. Cleveland is at home and took the Saints to overtime, so not a gimme.",
+      "score": [
+        24,
+        27
+      ]
     },
     {
       "id": "w10-sea-lv",
@@ -161,7 +188,7 @@
       "home": "LV",
       "start": "2026-11-15T21:05:00.000Z",
       "kick": "Sun 1:05 PM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "5-4",
         "4-5"
@@ -169,7 +196,11 @@
       "pick": "SEA",
       "prob": 73,
       "source": "Prototype (hand-entered)",
-      "note": "Seattle's defense held Arizona to 3 points. Raiders gave up 38 to the 49ers."
+      "note": "Seattle's defense held Arizona to 3 points. Raiders gave up 38 to the 49ers.",
+      "score": [
+        21,
+        13
+      ]
     },
     {
       "id": "w10-la-ari",
@@ -177,7 +208,7 @@
       "home": "ARI",
       "start": "2026-11-15T21:05:00.000Z",
       "kick": "Sun 1:05 PM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "5-4",
         "3-6"
@@ -185,7 +216,11 @@
       "pick": "LA",
       "prob": 83,
       "source": "Prototype (hand-entered)",
-      "note": "Rams beat Washington 20-13 last week. Cardinals scored 3 points."
+      "note": "Rams beat Washington 20-13 last week. Cardinals scored 3 points.",
+      "score": [
+        34,
+        6
+      ]
     },
     {
       "id": "w10-sf-dal",
@@ -193,7 +228,7 @@
       "home": "DAL",
       "start": "2026-11-15T21:25:00.000Z",
       "kick": "Sun 1:25 PM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "7-1",
         "4-5"
@@ -201,7 +236,11 @@
       "pick": "SF",
       "prob": 66,
       "source": "Prototype (hand-entered)",
-      "note": "49ers won 38-17 last week and are favored by about 4.5 on the road. Books expect a shootout."
+      "note": "49ers won 38-17 last week and are favored by about 4.5 on the road. Books expect a shootout.",
+      "score": [
+        46,
+        40
+      ]
     },
     {
       "id": "w10-pit-cin",
@@ -209,7 +248,7 @@
       "home": "CIN",
       "start": "2026-11-16T01:20:00.000Z",
       "kick": "Sun 5:20 PM",
-      "status": "upcoming",
+      "status": "final",
       "record": [
         "6-2",
         "6-2"
@@ -217,7 +256,11 @@
       "pick": "CIN",
       "prob": 61,
       "source": "Prototype (hand-entered)",
-      "note": "Both 6-2 on four-game win streaks. Bengals favored by 3.5 at home, but Pittsburgh won the first meeting 30-27."
+      "note": "Both 6-2 on four-game win streaks. Bengals favored by 3.5 at home, but Pittsburgh won the first meeting 30-27.",
+      "score": [
+        18,
+        38
+      ]
     },
     {
       "id": "w10-lac-bal",
@@ -225,7 +268,7 @@
       "home": "BAL",
       "start": "2026-11-17T01:15:00.000Z",
       "kick": "Mon 5:15 PM",
-      "status": "upcoming",
+      "status": "live",
       "record": [
         "0-8",
         "4-5"
@@ -233,7 +276,12 @@
       "pick": "BAL",
       "prob": 67,
       "source": "Prototype (hand-entered)",
-      "note": "Chargers are 0-8. Ravens are without Lamar Jackson and start newly acquired Jacoby Brissett."
+      "note": "Chargers are 0-8. Ravens are without Lamar Jackson and start newly acquired Jacoby Brissett.",
+      "score": [
+        17,
+        7
+      ],
+      "live": "2nd qtr 1:05"
     }
   ],
   "parlays": [
