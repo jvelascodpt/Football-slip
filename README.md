@@ -46,7 +46,7 @@ tests/                node:test suites, with trimmed real API responses in tests
   scouting report. The week menu also lists look-ahead "preview" weeks from the schedule file.
 - **Parlays**: your slip, "Add your picks", suggested parlays with a progress bar, and the bets
   you placed (a gold card with confetti when one hits).
-- **Props**: one 3-leg Kalshi player-prop parlay per game, added as soon as Kalshi opens that game's player markets (Thursday's game is usually open by the Tuesday 5 AM run; Sunday games get added by the daily runs). Three different players from both teams, team stat leaders first, injured players skipped, each at the line priced closest to 72%. Legs are graded from Kalshi's results. "Log this as my bet" copies it into the bet form.
+- **Props**: Kalshi player-prop parlays. Thursday and Monday games each get a 3-leg parlay from that matchup only. Saturday and Sunday games are mixed: "best three" (3 legs near 72%), "five" (5 legs near 72%) and "long shot" (3 legs near 50%), each leg from a different game. Team stat leaders first, injured players skipped, only lines with real trading. Built once Kalshi opens the markets (Thursday's game usually by the Tuesday 5 AM run), re-priced daily until a parlay's first game kicks off, and graded from Kalshi's results. "Log this as my bet" copies one into the bet form.
 - **Tracker**: your record vs Claude's, Claude by tier, by week, net on your bets, and backup.
 - A live score ticker runs across the top (straight from ESPN in the browser).
 

@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Thu Nov 19, 7:25 AM PT",
-  "refreshed": "Thu Nov 19, 7:25 AM PT",
+  "refreshed": "Thu Nov 19, 7:31 AM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -26,7 +26,7 @@
         "mlHome": "-750"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           25.1,
           74.7
@@ -379,7 +379,7 @@
         "weather": "65° Partly sunny"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           5.2,
           94.8
@@ -718,7 +718,7 @@
         "mlHome": "-625"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           21.3,
           78.5
@@ -1065,7 +1065,7 @@
         "mlHome": "-380"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           19.3,
           80.5
@@ -1426,7 +1426,7 @@
         "mlHome": "-340"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           38.4,
           61.3
@@ -1773,7 +1773,7 @@
         "mlHome": "-1350"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           11.6,
           88.3
@@ -2142,7 +2142,7 @@
         "mlHome": "+180"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           63.9,
           35.8
@@ -2510,7 +2510,7 @@
         "mlHome": "-135"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           31,
           68.7
@@ -2871,7 +2871,7 @@
         "mlHome": "-162"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           30.2,
           69.5
@@ -3240,7 +3240,7 @@
         "mlHome": "-625"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           13.6,
           86.3
@@ -3595,7 +3595,7 @@
         "mlHome": "+215"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           80.8,
           19
@@ -3955,7 +3955,7 @@
         "mlHome": "-162"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           36.6,
           63.1
@@ -4185,6 +4185,12 @@
             ],
             "injuries": [
               {
+                "name": "Christian Kirk",
+                "pos": "WR",
+                "status": "Injured Reserve",
+                "detail": "Surgery"
+              },
+              {
                 "name": "Ji'Ayir Brown",
                 "pos": "S",
                 "status": "Questionable",
@@ -4207,12 +4213,6 @@
                 "pos": "S",
                 "status": "Questionable",
                 "detail": "Knee"
-              },
-              {
-                "name": "Khalid Kareem",
-                "pos": "DE",
-                "status": "Questionable",
-                "detail": "Ankle"
               }
             ],
             "leaders": [
@@ -4331,7 +4331,7 @@
         "mlHome": "+250"
       },
       "report": {
-        "updated": "2026-11-19T15:25:12.960Z",
+        "updated": "2026-11-19T15:30:50.383Z",
         "fpi": [
           76.2,
           23.6
@@ -4730,10 +4730,11 @@
   "props": [
     {
       "auto": true,
+      "key": "w11-ind-hou",
       "game": "w11-ind-hou",
       "name": "Colts at Texans",
       "tag": "Thu",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
+      "note": "Kalshi player props near 72% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
       "legs": [
         {
           "game": "w11-ind-hou",
@@ -4757,61 +4758,27 @@
         },
         {
           "game": "w11-ind-hou",
-          "team": "IND",
-          "player": "Daniel Jones",
-          "bet": "150+ passing yards",
+          "team": "HOU",
+          "player": "C.J. Stroud",
+          "bet": "225+ passing yards",
           "prob": 70,
-          "ticker": "KXNFLPASSYDS-26NOV19INDHOU-INDDJONES17-150",
+          "ticker": "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-225",
           "result": null,
-          "why": "Team leader in passing: 193/324, 1,830 YDS, 7 TD, 12 INT."
+          "why": "Team leader in passing: 201/320, 2,462 YDS, 19 TD, 3 INT."
         }
       ]
     },
     {
       "auto": true,
-      "game": "w11-mia-buf",
-      "name": "Dolphins at Bills",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-mia-buf",
-          "team": "BUF",
-          "player": "Josh Allen",
-          "bet": "200+ passing yards",
-          "prob": 69,
-          "ticker": "KXNFLPASSYDS-26NOV22MIABUF-BUFJALLEN17-200",
-          "result": null,
-          "why": "Team leader in passing: 167/257, 2,223 YDS, 13 TD, 7 INT."
-        },
-        {
-          "game": "w11-mia-buf",
-          "team": "BUF",
-          "player": "James Cook III",
-          "bet": "80+ rushing yards",
-          "prob": 69,
-          "ticker": "KXNFLRSHYDS-26NOV22MIABUF-BUFJCOOK4-80",
-          "result": null,
-          "why": "Team leader in rushing: 187 CAR, 971 YDS, 9 TD."
-        },
-        {
-          "game": "w11-mia-buf",
-          "team": "MIA",
-          "player": "Kyle McCord",
-          "bet": "1+ passing touchdowns",
-          "prob": 62,
-          "ticker": "KXNFLPASSTDS-26NOV22MIABUF-MIAKMCCORD14-1",
-          "result": null,
-          "why": ""
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-no-chi",
-      "name": "Saints at Bears",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
+      "key": "mix-best",
+      "games": [
+        "w11-no-chi",
+        "w11-tb-det",
+        "w11-bal-car"
+      ],
+      "name": "Sunday best three",
+      "tag": "Safest",
+      "note": "Three Kalshi player props near 72% each, each from a different game.",
       "legs": [
         {
           "game": "w11-no-chi",
@@ -4824,73 +4791,51 @@
           "why": "Team leader in passing: 134/195, 1,546 YDS, 8 TD, 5 INT."
         },
         {
-          "game": "w11-no-chi",
-          "team": "NO",
-          "player": "Tyler Shough",
-          "bet": "1+ passing touchdowns",
-          "prob": 75,
-          "ticker": "KXNFLPASSTDS-26NOV22NOCHI-NOTSHOUGH6-1",
+          "game": "w11-tb-det",
+          "team": "TB",
+          "player": "Bucky Irving",
+          "bet": "50+ rushing yards",
+          "prob": 72,
+          "ticker": "KXNFLRSHYDS-26NOV22TBDET-TBBIRVING7-50",
           "result": null,
-          "why": "Team leader in passing: 229/343, 2,173 YDS, 15 TD, 7 INT."
+          "why": "Team leader in rushing: 167 CAR, 825 YDS, 7 TD."
         },
+        {
+          "game": "w11-bal-car",
+          "team": "BAL",
+          "player": "Zay Flowers",
+          "bet": "50+ receiving yards",
+          "prob": 71,
+          "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50",
+          "result": null,
+          "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD."
+        }
+      ]
+    },
+    {
+      "auto": true,
+      "key": "mix-five",
+      "games": [
+        "w11-no-chi",
+        "w11-tb-det",
+        "w11-bal-car",
+        "w11-ten-dal",
+        "w11-pit-phi"
+      ],
+      "name": "Sunday five",
+      "tag": "Medium",
+      "note": "Five Kalshi player props near 72% each, each from a different game.",
+      "legs": [
         {
           "game": "w11-no-chi",
           "team": "CHI",
-          "player": "D'Andre Swift",
-          "bet": "10+ receiving yards",
-          "prob": 63,
-          "ticker": "KXNFLRECYDS-26NOV22NOCHI-CHIDSWIFT4-10",
+          "player": "Caleb Williams",
+          "bet": "10+ rushing yards",
+          "prob": 72,
+          "ticker": "KXNFLRSHYDS-26NOV22NOCHI-CHICWILLIAMS18-10",
           "result": null,
-          "why": "Team leader in rushing: 155 CAR, 576 YDS, 10 TD."
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-ten-dal",
-      "name": "Titans at Cowboys",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-ten-dal",
-          "team": "DAL",
-          "player": "CeeDee Lamb",
-          "bet": "70+ receiving yards",
-          "prob": 73,
-          "ticker": "KXNFLRECYDS-26NOV22TENDAL-DALCLAMB88-70",
-          "result": null,
-          "why": "Team leader in receiving: 77 REC, 976 YDS, 8 TD."
+          "why": "Team leader in passing: 134/195, 1,546 YDS, 8 TD, 5 INT."
         },
-        {
-          "game": "w11-ten-dal",
-          "team": "DAL",
-          "player": "Dak Prescott",
-          "bet": "250+ passing yards",
-          "prob": 69,
-          "ticker": "KXNFLPASSYDS-26NOV22TENDAL-DALDPRESCOTT4-250",
-          "result": null,
-          "why": "Team leader in passing: 248/387, 2,724 YDS, 21 TD, 6 INT."
-        },
-        {
-          "game": "w11-ten-dal",
-          "team": "TEN",
-          "player": "Cam Ward",
-          "bet": "225+ passing yards",
-          "prob": 60,
-          "ticker": "KXNFLPASSYDS-26NOV22TENDAL-TENCWARD1-225",
-          "result": null,
-          "why": "Team leader in passing: 183/287, 1,714 YDS, 8 TD, 6 INT."
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-tb-det",
-      "name": "Buccaneers at Lions",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
         {
           "game": "w11-tb-det",
           "team": "TB",
@@ -4902,113 +4847,6 @@
           "why": "Team leader in rushing: 167 CAR, 825 YDS, 7 TD."
         },
         {
-          "game": "w11-tb-det",
-          "team": "DET",
-          "player": "Jahmyr Gibbs",
-          "bet": "70+ rushing yards",
-          "prob": 73,
-          "ticker": "KXNFLRSHYDS-26NOV22TBDET-DETJGIBBS0-70",
-          "result": null,
-          "why": "Team leader in rushing: 199 CAR, 1,000 YDS, 11 TD."
-        },
-        {
-          "game": "w11-tb-det",
-          "team": "DET",
-          "player": "Jared Goff",
-          "bet": "225+ passing yards",
-          "prob": 67,
-          "ticker": "KXNFLPASSYDS-26NOV22TBDET-DETJGOFF16-225",
-          "result": null,
-          "why": "Team leader in passing: 205/304, 2,437 YDS, 18 TD, 4 INT."
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-ari-kc",
-      "name": "Cardinals at Chiefs",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-ari-kc",
-          "team": "KC",
-          "player": "Patrick Mahomes",
-          "bet": "225+ passing yards",
-          "prob": 69,
-          "ticker": "KXNFLPASSYDS-26NOV22ARIKC-KCPMAHOMES15-225",
-          "result": null,
-          "why": "Team leader in passing: 199/298, 2,385 YDS, 19 TD, 4 INT."
-        },
-        {
-          "game": "w11-ari-kc",
-          "team": "KC",
-          "player": "Emmett Johnson",
-          "bet": "1+ touchdowns",
-          "prob": 68,
-          "ticker": "KXNFLTD-26NOV22ARIKC-KCEJOHNSON10-1",
-          "result": null,
-          "why": ""
-        },
-        {
-          "game": "w11-ari-kc",
-          "team": "ARI",
-          "player": "Elijah Higgins",
-          "bet": "10+ receiving yards",
-          "prob": 67,
-          "ticker": "KXNFLRECYDS-26NOV22ARIKC-ARIEHIGGINS84-10",
-          "result": null,
-          "why": ""
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-pit-phi",
-      "name": "Steelers at Eagles",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-pit-phi",
-          "team": "PIT",
-          "player": "Aaron Rodgers",
-          "bet": "175+ passing yards",
-          "prob": 74,
-          "ticker": "KXNFLPASSYDS-26NOV22PITPHI-PITARODGERS8-175",
-          "result": null,
-          "why": "Team leader in passing: 190/317, 2,014 YDS, 15 TD, 6 INT."
-        },
-        {
-          "game": "w11-pit-phi",
-          "team": "PHI",
-          "player": "Saquon Barkley",
-          "bet": "40+ rushing yards",
-          "prob": 77,
-          "ticker": "KXNFLRSHYDS-26NOV22PITPHI-PHISBARKLEY26-40",
-          "result": null,
-          "why": "Team leader in rushing: 69 CAR, 296 YDS, 3 TD."
-        },
-        {
-          "game": "w11-pit-phi",
-          "team": "PHI",
-          "player": "Joe Milton III",
-          "bet": "150+ passing yards",
-          "prob": 75,
-          "ticker": "KXNFLPASSYDS-26NOV22PITPHI-PHIJMILTON10-150",
-          "result": null,
-          "why": ""
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-bal-car",
-      "name": "Ravens at Panthers",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
           "game": "w11-bal-car",
           "team": "BAL",
           "player": "Zay Flowers",
@@ -5019,150 +4857,78 @@
           "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD."
         },
         {
-          "game": "w11-bal-car",
-          "team": "BAL",
-          "player": "Derrick Henry",
-          "bet": "50+ rushing yards",
-          "prob": 70,
-          "ticker": "KXNFLRSHYDS-26NOV22BALCAR-BALDHENRY22-50",
+          "game": "w11-ten-dal",
+          "team": "DAL",
+          "player": "CeeDee Lamb",
+          "bet": "70+ receiving yards",
+          "prob": 73,
+          "ticker": "KXNFLRECYDS-26NOV22TENDAL-DALCLAMB88-70",
           "result": null,
-          "why": "Team leader in rushing: 185 CAR, 699 YDS, 10 TD."
+          "why": "Team leader in receiving: 77 REC, 976 YDS, 8 TD."
         },
+        {
+          "game": "w11-pit-phi",
+          "team": "PIT",
+          "player": "Aaron Rodgers",
+          "bet": "175+ passing yards",
+          "prob": 74,
+          "ticker": "KXNFLPASSYDS-26NOV22PITPHI-PITARODGERS8-175",
+          "result": null,
+          "why": "Team leader in passing: 190/317, 2,014 YDS, 15 TD, 6 INT."
+        }
+      ]
+    },
+    {
+      "auto": true,
+      "key": "mix-long",
+      "games": [
+        "w11-bal-car",
+        "w11-no-chi",
+        "w11-ari-kc"
+      ],
+      "name": "Sunday long shot",
+      "tag": "Long shot",
+      "note": "Three coin-flip-range Kalshi player props from different games for a bigger payout. Small stake only.",
+      "legs": [
         {
           "game": "w11-bal-car",
           "team": "CAR",
           "player": "Bryce Young",
-          "bet": "225+ passing yards",
-          "prob": 65,
-          "ticker": "KXNFLPASSYDS-26NOV22BALCAR-CARBYOUNG9-225",
+          "bet": "250+ passing yards",
+          "prob": 50,
+          "ticker": "KXNFLPASSYDS-26NOV22BALCAR-CARBYOUNG9-250",
           "result": null,
           "why": "Team leader in passing: 203/338, 2,397 YDS, 16 TD, 6 INT."
+        },
+        {
+          "game": "w11-no-chi",
+          "team": "CHI",
+          "player": "Luther Burden III",
+          "bet": "60+ receiving yards",
+          "prob": 50,
+          "ticker": "KXNFLRECYDS-26NOV22NOCHI-CHILBURDEN10-60",
+          "result": null,
+          "why": "Team leader in receiving: 49 REC, 644 YDS, 4 TD."
+        },
+        {
+          "game": "w11-ari-kc",
+          "team": "KC",
+          "player": "Patrick Mahomes",
+          "bet": "10+ rushing yards",
+          "prob": 50,
+          "ticker": "KXNFLRSHYDS-26NOV22ARIKC-KCPMAHOMES15-10",
+          "result": null,
+          "why": "Team leader in passing: 199/298, 2,385 YDS, 19 TD, 4 INT."
         }
       ]
     },
     {
       "auto": true,
-      "game": "w11-lv-den",
-      "name": "Raiders at Broncos",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-lv-den",
-          "team": "LV",
-          "player": "Fernando Mendoza",
-          "bet": "150+ passing yards",
-          "prob": 65,
-          "ticker": "KXNFLPASSYDS-26NOV22LVDEN-LVFMENDOZA15-150",
-          "result": null,
-          "why": "Team leader in passing: 23/37, 191 YDS."
-        },
-        {
-          "game": "w11-lv-den",
-          "team": "DEN",
-          "player": "Bo Nix",
-          "bet": "200+ passing yards",
-          "prob": 61,
-          "ticker": "KXNFLPASSYDS-26NOV22LVDEN-DENBNIX10-200",
-          "result": null,
-          "why": "Team leader in passing: 174/287, 1,730 YDS, 11 TD, 4 INT."
-        },
-        {
-          "game": "w11-lv-den",
-          "team": "DEN",
-          "player": "Jonah Coleman",
-          "bet": "15+ receiving yards",
-          "prob": 71,
-          "ticker": "KXNFLRECYDS-26NOV22LVDEN-DENJCOLEMAN20-15",
-          "result": null,
-          "why": ""
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-jac-nyg",
-      "name": "Jaguars at Giants",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-jac-nyg",
-          "team": "NYG",
-          "player": "Cam Skattebo",
-          "bet": "40+ rushing yards",
-          "prob": 70,
-          "ticker": "KXNFLRSHYDS-26NOV22JACNYG-NYGCSKATTEBO44-40",
-          "result": null,
-          "why": "Team leader in rushing: 116 CAR, 496 YDS, 4 TD."
-        },
-        {
-          "game": "w11-jac-nyg",
-          "team": "JAC",
-          "player": "Trevor Lawrence",
-          "bet": "225+ passing yards",
-          "prob": 64,
-          "ticker": "KXNFLPASSYDS-26NOV22JACNYG-JACTLAWRENCE16-225",
-          "result": null,
-          "why": "Team leader in passing: 171/259, 2,284 YDS, 21 TD, 5 INT."
-        },
-        {
-          "game": "w11-jac-nyg",
-          "team": "NYG",
-          "player": "J.J. McCarthy",
-          "bet": "1+ passing touchdowns",
-          "prob": 75,
-          "ticker": "KXNFLPASSTDS-26NOV22JACNYG-NYGJMCCARTHY9-1",
-          "result": null,
-          "why": ""
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "game": "w11-min-sf",
-      "name": "Vikings at 49ers",
-      "tag": "Sun",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-min-sf",
-          "team": "SF",
-          "player": "Christian McCaffrey",
-          "bet": "25+ receiving yards",
-          "prob": 66,
-          "ticker": "KXNFLRECYDS-26NOV22MINSF-SFCMCCAFFREY23-25",
-          "result": null,
-          "why": "Team leader in rushing: 115 CAR, 519 YDS, 10 TD."
-        },
-        {
-          "game": "w11-min-sf",
-          "team": "SF",
-          "player": "Brock Purdy",
-          "bet": "225+ passing yards",
-          "prob": 65,
-          "ticker": "KXNFLPASSYDS-26NOV22MINSF-SFBPURDY13-225",
-          "result": null,
-          "why": "Team leader in passing: 185/264, 2,369 YDS, 20 TD, 5 INT."
-        },
-        {
-          "game": "w11-min-sf",
-          "team": "MIN",
-          "player": "Kirk Cousins",
-          "bet": "200+ passing yards",
-          "prob": 72,
-          "ticker": "KXNFLPASSYDS-26NOV22MINSF-MINKCOUSINS8-200",
-          "result": null,
-          "why": ""
-        }
-      ]
-    },
-    {
-      "auto": true,
+      "key": "w11-cin-was",
       "game": "w11-cin-was",
       "name": "Bengals at Commanders",
       "tag": "Mon",
-      "note": "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
+      "note": "Kalshi player props near 72% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
       "legs": [
         {
           "game": "w11-cin-was",
@@ -5177,22 +4943,22 @@
         {
           "game": "w11-cin-was",
           "team": "CIN",
-          "player": "Chase Brown",
-          "bet": "25+ rushing yards",
-          "prob": 80,
-          "ticker": "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25",
-          "result": null,
-          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
-        },
-        {
-          "game": "w11-cin-was",
-          "team": "CIN",
           "player": "Joe Burrow",
           "bet": "2+ passing touchdowns",
           "prob": 80,
           "ticker": "KXNFLPASSTDS-26NOV23CINWAS-CINJBURROW9-2",
           "result": null,
           "why": "Team leader in passing: 254/340, 2,795 YDS, 27 TD, 6 INT."
+        },
+        {
+          "game": "w11-cin-was",
+          "team": "CIN",
+          "player": "Chase Brown",
+          "bet": "25+ rushing yards",
+          "prob": 80,
+          "ticker": "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25",
+          "result": null,
+          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
         }
       ]
     }

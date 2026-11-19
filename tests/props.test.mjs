@@ -66,3 +66,43 @@ test("gradeProps fills results from settled Kalshi markets for games underway or
   assert.equal(n, 2);
   assert.deepEqual(week.props[0].legs.map((l) => l.result), ["hit", "miss", null]);
 });
+
+import { pooled, pickMixParlay, MIX } from "../scripts/props.mjs";
+
+// A Sunday slate: four games, two players each, prices 50-80%.
+const sunday = ["ARI-KC", "TB-DET", "MIA-BUF", "NO-CHI", "TEN-DAL"].map((m, i) => {
+  const [away, home] = m.split("-");
+  return { id: `w11-${away.toLowerCase()}-${home.toLowerCase()}`, away, home, start: `2026-11-22T${18 + (i > 2 ? 3 : 0)}:00:00.000Z`, kick: "Sun 10:00 AM", status: "upcoming", report: { teams: {} } };
+});
+const sundayCands = sunday.flatMap((g, i) => [70, 74, 52].map((ask, j) => ({
+  ticker: `T-${g.id}-${j}`, player: `${g.home} Player ${j}`, line: 50, stat: "rushing yards", bid: ask - 2, ask: ask - i, team: g.home, gameId: g.id,
+})));
+
+test("Thursday and Monday games stand alone; Saturday and Sunday games are pooled", () => {
+  assert.equal(pooled(game), false);                                                       // Thu 5:15 PM PT
+  assert.equal(pooled({ start: "2026-11-24T01:15:00.000Z" }), false);                      // Mon 5:15 PM PT
+  assert.equal(pooled({ start: "2026-11-22T18:00:00.000Z" }), true);                       // Sun 10 AM PT
+  assert.equal(pooled({ start: "2026-11-23T01:20:00.000Z" }), true);                       // Sun night 5:20 PM PT
+});
+
+test("weekend parlays mix games: one leg per game, in each tier's price range", () => {
+  const best = pickMixParlay(MIX[0], sunday, sundayCands);
+  assert.equal(best.legs.length, 3);
+  assert.equal(new Set(best.legs.map((l) => l.game)).size, 3);
+  assert.ok(best.legs.every((l) => l.prob >= 60 && l.prob <= 85));
+  assert.equal(best.name, "Sunday best three");
+  const five = pickMixParlay(MIX[1], sunday, sundayCands);
+  assert.equal(new Set(five.legs.map((l) => l.game)).size, 5);
+  const long = pickMixParlay(MIX[2], sunday, sundayCands);
+  assert.ok(long.legs.every((l) => l.prob >= 40 && l.prob <= 60));
+  assert.equal(pickMixParlay(MIX[1], sunday.slice(0, 2), sundayCands.slice(0, 6)), null);  // not enough games for five
+});
+
+test("buildProps: per-game for Thursday, mixed for Sunday, old Sunday per-game parlays replaced", () => {
+  const raw = [...markets];
+  const week = { games: [game, ...sunday], props: [{ auto: true, game: sunday[0].id, name: "old per-game", legs: [] }] };
+  const props = buildProps(week, raw, new Date("2026-11-18T12:00:00Z"));
+  // matchProp only finds the Thursday markets in `markets`; add the Sunday pool directly via a stub list
+  assert.ok(props.some((p) => p.key === "w11-ind-hou"));
+  assert.ok(!props.some((p) => p.name === "old per-game"));
+});

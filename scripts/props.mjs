@@ -64,21 +64,44 @@ export function matchProp(p, games) {
 const TARGET = 72;                      // aim for lines priced near 72%
 const liquid = (p) => p.bid != null && p.ask != null && p.bid >= 3 && p.ask - p.bid <= 6;
 const BAD_STATUS = new Set(["Out", "Injured Reserve", "Suspension", "Doubtful", "Questionable"]);
+const nick = (t) => TEAMS[t] || t;
+const ptDay = (iso) => new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", weekday: "short" }).format(new Date(iso));
 
-// One 3-leg parlay for a game: three different players (both teams represented when possible),
-// team stat leaders first, injured players skipped, each at the line priced closest to 72%.
-export function pickGameParlay(game, candidates) {
-  const rep = game.report?.teams || {};
-  const injured = new Set(Object.values(rep).flatMap((t) => (t.injuries || []).filter((i) => BAD_STATUS.has(i.status)).map((i) => i.name)));
-  const leaderOf = {};
-  Object.values(rep).forEach((t) => (t.leaders || []).forEach((l) => { leaderOf[l.name] ||= l; }));
-  const best = new Map();   // player -> best candidate
-  candidates.filter((c) => liquid(c) && c.ask >= 60 && c.ask <= 85 && !injured.has(c.player)).forEach((c) => {
+// Thursday, Monday (and other weekday) games get their own parlay; Saturday and Sunday games are pooled.
+export const pooled = (g) => ["Sat", "Sun"].includes(ptDay(g.start));
+
+// Injured players and team stat leaders, from the games' matchup reports.
+function context(games) {
+  const injured = new Set(), leaderOf = {};
+  games.forEach((g) => Object.values(g.report?.teams || {}).forEach((t) => {
+    (t.injuries || []).forEach((i) => { if (BAD_STATUS.has(i.status)) injured.add(i.name); });
+    (t.leaders || []).forEach((l) => { leaderOf[l.name] ||= l; });
+  }));
+  return { injured, leaderOf };
+}
+
+// Best line per player in [lo, hi], closest to `target`; team stat leaders first.
+function rankPlayers(cands, { lo, hi, target }, { injured, leaderOf }) {
+  const best = new Map();
+  cands.filter((c) => liquid(c) && c.ask >= lo && c.ask <= hi && !injured.has(c.player)).forEach((c) => {
     const cur = best.get(c.player);
-    if (!cur || Math.abs(c.ask - TARGET) < Math.abs(cur.ask - TARGET)) best.set(c.player, c);
+    if (!cur || Math.abs(c.ask - target) < Math.abs(cur.ask - target)) best.set(c.player, c);
   });
-  const ranked = [...best.values()].sort((x, y) =>
-    (leaderOf[y.player] ? 1 : 0) - (leaderOf[x.player] ? 1 : 0) || Math.abs(x.ask - TARGET) - Math.abs(y.ask - TARGET));
+  return [...best.values()].sort((x, y) =>
+    (leaderOf[y.player] ? 1 : 0) - (leaderOf[x.player] ? 1 : 0) || Math.abs(x.ask - target) - Math.abs(y.ask - target) || x.ticker.localeCompare(y.ticker));
+}
+
+const toLeg = (c, { leaderOf }) => {
+  const l = leaderOf[c.player];
+  return { game: c.gameId, team: c.team, player: c.player, bet: `${c.line}+ ${c.stat}`, prob: c.ask, ticker: c.ticker, result: null,
+    why: l ? `Team leader in ${l.cat.toLowerCase()}: ${l.value}.` : "" };
+};
+
+// One 3-leg parlay for a single game: three different players, both teams represented when
+// possible, team stat leaders first, injured players skipped, each at the line priced closest to 72%.
+export function pickGameParlay(game, candidates) {
+  const ctx = context([game]);
+  const ranked = rankPlayers(candidates.map((c) => ({ ...c, gameId: game.id })), { lo: 60, hi: 85, target: TARGET }, ctx);
   const legs = [];
   for (const c of ranked) {
     if (legs.length === 3) break;
@@ -88,41 +111,72 @@ export function pickGameParlay(game, candidates) {
     legs.push(c);
   }
   if (legs.length < 3) return null;
-  const nick = (t) => TEAMS[t] || t;
   return {
-    auto: true, game: game.id,
+    auto: true, key: game.id, game: game.id,
     name: `${nick(game.away)} at ${nick(game.home)}`,
     tag: game.kick ? game.kick.split(" ")[0] : "",
-    note: "Kalshi player props near 72% each, from three different players. Same-game legs are related, so treat the combined chance as rough.",
-    legs: legs.map((c) => {
-      const l = leaderOf[c.player];
-      return {
-        game: game.id, team: c.team, player: c.player, bet: `${c.line}+ ${c.stat}`, prob: c.ask, ticker: c.ticker, result: null,
-        why: l ? `Team leader in ${l.cat.toLowerCase()}: ${l.value}.` : "",
-      };
-    }),
+    note: "Kalshi player props near 72% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
+    legs: legs.map((c) => toLeg(c, ctx)),
   };
 }
 
-// Rebuild auto prop parlays for games that haven't started; keep hand-entered parlays and any
-// parlay whose game already kicked off. Returns the new props list.
+// Weekend parlays that mix games: every leg from a different game.
+export const MIX = [
+  { key: "mix-best", size: 3, lo: 60, hi: 85, target: TARGET, name: "best three", tier: "Safest",
+    note: "Three Kalshi player props near 72% each, each from a different game." },
+  { key: "mix-five", size: 5, lo: 60, hi: 85, target: TARGET, name: "five", tier: "Medium",
+    note: "Five Kalshi player props near 72% each, each from a different game." },
+  { key: "mix-long", size: 3, lo: 40, hi: 60, target: 50, name: "long shot", tier: "Long shot",
+    note: "Three coin-flip-range Kalshi player props from different games for a bigger payout. Small stake only." },
+];
+export function pickMixParlay(spec, games, candidates) {
+  const ctx = context(games);
+  const ranked = rankPlayers(candidates, spec, ctx);
+  const legs = [], usedGames = new Set();
+  // Spread the legs out: best player per game first, by kickoff-agnostic ranking.
+  for (const c of ranked) {
+    if (legs.length === spec.size) break;
+    if (usedGames.has(c.gameId)) continue;
+    usedGames.add(c.gameId); legs.push(c);
+  }
+  if (legs.length < spec.size) return null;
+  const day = ptDay(games.find((g) => g.id === legs[0].gameId).start) === "Sat" ? "Saturday" : "Sunday";
+  return { auto: true, key: spec.key, games: legs.map((c) => c.gameId), name: `${day} ${spec.name}`, tag: spec.tier, note: spec.note, legs: legs.map((c) => toLeg(c, ctx)) };
+}
+
+// Rebuild auto prop parlays that haven't started; keep hand-entered parlays and any parlay
+// with a leg whose game already kicked off (so it isn't rebuilt or duplicated). Returns the list.
 export function buildProps(week, candidates, now = new Date()) {
-  const started = (id) => { const g = week.games.find((x) => x.id === id); return !g || g.status !== "upcoming" || Date.parse(g.start) <= now.getTime(); };
-  const kept = (week.props || []).filter((p) => !p.auto || started(p.game));
-  const keptGames = new Set(kept.filter((p) => p.auto).map((p) => p.game));
+  const gameById = new Map(week.games.map((g) => [g.id, g]));
+  const started = (id) => { const g = gameById.get(id); return !g || g.status !== "upcoming" || Date.parse(g.start) <= now.getTime(); };
+  const games = (p) => p.games || (p.game ? [p.game] : (p.legs || []).map((l) => l.game));
+  const anyStarted = (p) => games(p).some(started);
+  const keyOf = (p) => p.key || p.game;
+  // Old per-game parlays for weekend games are replaced by the mixed ones unless already started.
+  const kept = (week.props || []).filter((p) => !p.auto || anyStarted(p));
+  const keptKeys = new Set(kept.filter((p) => p.auto).map(keyOf));
+
+  const open = week.games.filter((g) => !started(g.id));
   const byGame = new Map();
   candidates.forEach((c) => {
-    const m = matchProp(c, week.games);
-    if (m) { if (!byGame.has(m.game.id)) byGame.set(m.game.id, []); byGame.get(m.game.id).push({ ...c, team: m.team }); }
+    const m = matchProp(c, open);
+    if (m) { if (!byGame.has(m.game.id)) byGame.set(m.game.id, []); byGame.get(m.game.id).push({ ...c, team: m.team, gameId: m.game.id }); }
   });
-  const fresh = week.games
-    .filter((g) => !keptGames.has(g.id) && !started(g.id) && byGame.has(g.id))
-    .map((g) => pickGameParlay(g, byGame.get(g.id)))
-    .filter(Boolean);
-  const start = (p) => Date.parse(week.games.find((g) => g.id === p.game)?.start || 0);
-  // Games still to play first (soonest first), then finished ones; hand-entered parlays keep their place on top.
+  const fresh = [];
+  open.filter((g) => !pooled(g) && !keptKeys.has(g.id) && byGame.has(g.id)).forEach((g) => {
+    const p = pickGameParlay(g, byGame.get(g.id)); if (p) fresh.push(p);
+  });
+  const weekend = open.filter((g) => pooled(g) && byGame.has(g.id));
+  const pool = weekend.flatMap((g) => byGame.get(g.id));
+  MIX.filter((m) => !keptKeys.has(m.key)).forEach((m) => { const p = pickMixParlay(m, weekend, pool); if (p) fresh.push(p); });
+
+  // Weekend mixes sort together (at the weekend's first kickoff) so they stay in tier order.
+  const weekendStart = Math.min(...week.games.filter(pooled).map((g) => Date.parse(g.start)));
+  const first = (p) => (String(p.key).startsWith("mix-") ? weekendStart : Math.min(...games(p).map((id) => Date.parse(gameById.get(id)?.start || 0))));
+  const order = (p) => MIX.findIndex((m) => m.key === p.key);
+  // Parlays still to play first (soonest first), then finished ones; hand-entered parlays stay on top.
   const manual = kept.filter((p) => !p.auto), auto = [...kept.filter((p) => p.auto), ...fresh];
-  auto.sort((x, y) => (started(x.game) - started(y.game)) || start(x) - start(y));
+  auto.sort((x, y) => (anyStarted(x) - anyStarted(y)) || first(x) - first(y) || order(x) - order(y));
   return [...manual, ...auto];
 }
 
