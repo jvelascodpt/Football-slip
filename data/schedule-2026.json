@@ -48,13 +48,6 @@
           "city": "Cincinnati"
         },
         {
-          "away": "LV",
-          "home": "CLE",
-          "start": "2026-11-29T18:00:00.000Z",
-          "venue": "Huntington Bank Field",
-          "city": "Cleveland"
-        },
-        {
           "away": "NYG",
           "home": "IND",
           "start": "2026-11-29T18:00:00.000Z",
@@ -76,6 +69,13 @@
           "city": "Minneapolis"
         },
         {
+          "away": "TEN",
+          "home": "JAC",
+          "start": "2026-11-29T18:00:00.000Z",
+          "venue": "EverBank Stadium",
+          "city": "Jacksonville"
+        },
+        {
           "away": "BAL",
           "home": "HOU",
           "start": "2026-11-29T18:00:00.000Z",
@@ -83,11 +83,11 @@
           "city": "Houston"
         },
         {
-          "away": "TEN",
-          "home": "JAC",
+          "away": "NE",
+          "home": "LAC",
           "start": "2026-11-29T21:05:00.000Z",
-          "venue": "EverBank Stadium",
-          "city": "Jacksonville"
+          "venue": "SoFi Stadium",
+          "city": "Inglewood"
         },
         {
           "away": "WAS",
@@ -104,11 +104,11 @@
           "city": "Santa Clara"
         },
         {
-          "away": "NE",
-          "home": "LAC",
+          "away": "LV",
+          "home": "CLE",
           "start": "2026-11-30T01:20:00.000Z",
-          "venue": "SoFi Stadium",
-          "city": "Inglewood"
+          "venue": "Huntington Bank Field",
+          "city": "Cleveland"
         },
         {
           "away": "CAR",

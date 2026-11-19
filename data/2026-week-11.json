@@ -1,10 +1,12 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Tue Nov 17, 7:55 AM PT",
+  "updated": "Thu Nov 19, 7:25 AM PT",
+  "refreshed": "Thu Nov 19, 7:25 AM PT",
   "games": [
     {
       "id": "w11-ind-hou",
+      "espnId": "401873066",
       "away": "IND",
       "home": "HOU",
       "start": "2026-11-20T01:15:00.000Z",
@@ -19,21 +21,12 @@
         "city": "Houston",
         "weather": "Indoors",
         "spread": "HOU -12.5",
-        "total": 44.5,
-        "mlAway": "+500",
-        "mlHome": "-700"
+        "total": 43.5,
+        "mlAway": "+525",
+        "mlHome": "-750"
       },
-      "pick": "HOU",
-      "prob": 84,
-      "source": "Draft Kings",
-      "kalshi": [
-        16,
-        85
-      ],
-      "note": "Colts 3-7, Texans 3-6. Last week: Colts beat the Dolphins 24-22; Texans lost to the Browns 27-24. Kalshi has the Texans at 85%.",
-      "espnId": "401873066",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           25.1,
           74.7
@@ -354,10 +347,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "HOU",
+      "prob": 85,
+      "source": "DraftKings",
+      "kalshi": [
+        16,
+        85
+      ],
+      "note": "Colts 3-7, Texans 3-6. Last week: Colts beat the Dolphins 24-22; Texans lost to the Browns 27-24. Kalshi has the Texans at 85%."
     },
     {
       "id": "w11-mia-buf",
+      "espnId": "401873070",
       "away": "MIA",
       "home": "BUF",
       "start": "2026-11-22T18:00:00.000Z",
@@ -372,20 +374,12 @@
         "city": "Orchard Park",
         "spread": "BUF -16.5",
         "total": 45.5,
-        "mlAway": "+750",
-        "mlHome": "-1200"
+        "mlAway": "+850",
+        "mlHome": "-1450",
+        "weather": "65° Partly sunny"
       },
-      "pick": "BUF",
-      "prob": 89,
-      "source": "Draft Kings",
-      "kalshi": [
-        9,
-        92
-      ],
-      "note": "Dolphins 1-8, Bills 8-1. Last week: Dolphins lost to the Colts 24-22; Bills beat the Jets 31-12. Kalshi has the Bills at 92%.",
-      "espnId": "401873070",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           5.2,
           94.8
@@ -692,10 +686,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "BUF",
+      "prob": 90,
+      "source": "DraftKings",
+      "kalshi": [
+        9,
+        92
+      ],
+      "note": "Dolphins 1-8, Bills 8-1. Last week: Dolphins lost to the Colts 24-22; Bills beat the Jets 31-12. Kalshi has the Bills at 92%."
     },
     {
       "id": "w11-no-chi",
+      "espnId": "401873071",
       "away": "NO",
       "home": "CHI",
       "start": "2026-11-22T18:00:00.000Z",
@@ -708,23 +711,14 @@
       "info": {
         "venue": "Soldier Field",
         "city": "Chicago",
-        "weather": "50° Cloudy",
+        "weather": "53° Cloudy",
         "spread": "CHI -11.5",
         "total": 48.5,
-        "mlAway": "+490",
-        "mlHome": "-675"
+        "mlAway": "+455",
+        "mlHome": "-625"
       },
-      "pick": "CHI",
-      "prob": 84,
-      "source": "Draft Kings",
-      "kalshi": [
-        16,
-        85
-      ],
-      "note": "Saints 3-6, Bears 7-2. Last week: Saints lost to the Panthers 20-17. Kalshi has the Bears at 85%.",
-      "espnId": "401873071",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           21.3,
           78.5
@@ -1039,10 +1033,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "CHI",
+      "prob": 83,
+      "source": "DraftKings",
+      "kalshi": [
+        16,
+        85
+      ],
+      "note": "Saints 3-6, Bears 7-2. Last week: Saints lost to the Panthers 20-17. Kalshi has the Bears at 85%."
     },
     {
       "id": "w11-ten-dal",
+      "espnId": "401873073",
       "away": "TEN",
       "home": "DAL",
       "start": "2026-11-22T18:00:00.000Z",
@@ -1058,20 +1061,11 @@
         "weather": "Indoors",
         "spread": "DAL -8.5",
         "total": 54.5,
-        "mlAway": "+330",
-        "mlHome": "-425"
+        "mlAway": "+300",
+        "mlHome": "-380"
       },
-      "pick": "DAL",
-      "prob": 78,
-      "source": "Draft Kings",
-      "kalshi": [
-        22,
-        79
-      ],
-      "note": "Titans 1-8, Cowboys 4-6. Last week: Titans lost to the Jaguars 40-23; Cowboys lost to the 49ers 46-40. Kalshi has the Cowboys at 79%.",
-      "espnId": "401873073",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           19.3,
           80.5
@@ -1400,10 +1394,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "DAL",
+      "prob": 76,
+      "source": "DraftKings",
+      "kalshi": [
+        24,
+        77
+      ],
+      "note": "Titans 1-8, Cowboys 4-6. Last week: Titans lost to the Jaguars 40-23; Cowboys lost to the 49ers 46-40. Kalshi has the Cowboys at 77%."
     },
     {
       "id": "w11-tb-det",
+      "espnId": "401873072",
       "away": "TB",
       "home": "DET",
       "start": "2026-11-22T18:00:00.000Z",
@@ -1417,22 +1420,13 @@
         "venue": "Ford Field",
         "city": "Detroit",
         "weather": "Indoors",
-        "spread": "DET -6.5",
-        "total": 45.5,
-        "mlAway": "+215",
-        "mlHome": "-265"
+        "spread": "DET -7",
+        "total": 43.5,
+        "mlAway": "+270",
+        "mlHome": "-340"
       },
-      "pick": "DET",
-      "prob": 70,
-      "source": "Draft Kings",
-      "kalshi": [
-        29,
-        72
-      ],
-      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 72%.",
-      "espnId": "401873072",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           38.4,
           61.3
@@ -1747,10 +1741,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "DET",
+      "prob": 74,
+      "source": "DraftKings",
+      "kalshi": [
+        26,
+        75
+      ],
+      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 75%."
     },
     {
       "id": "w11-ari-kc",
+      "espnId": "401873067",
       "away": "ARI",
       "home": "KC",
       "start": "2026-11-22T18:00:00.000Z",
@@ -1763,23 +1766,14 @@
       "info": {
         "venue": "Arrowhead Stadium",
         "city": "Kansas City",
-        "weather": "47° Sunny",
-        "spread": "KC -16.5",
-        "total": 41.5,
-        "mlAway": "+850",
-        "mlHome": "-1450"
+        "weather": "48° Mostly cloudy",
+        "spread": "KC -15.5",
+        "total": 40.5,
+        "mlAway": "+800",
+        "mlHome": "-1350"
       },
-      "pick": "KC",
-      "prob": 90,
-      "source": "Draft Kings",
-      "kalshi": [
-        9,
-        91
-      ],
-      "note": "Cardinals 3-7, Chiefs 7-2. Last week: Cardinals lost to the Rams 34-6; Chiefs beat the Falcons 35-13. Kalshi has the Chiefs at 91%.",
-      "espnId": "401873067",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           11.6,
           88.3
@@ -2116,10 +2110,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "KC",
+      "prob": 89,
+      "source": "DraftKings",
+      "kalshi": [
+        9,
+        92
+      ],
+      "note": "Cardinals 3-7, Chiefs 7-2. Last week: Cardinals lost to the Rams 34-6; Chiefs beat the Falcons 35-13. Kalshi has the Chiefs at 92%."
     },
     {
       "id": "w11-pit-phi",
+      "espnId": "401873076",
       "away": "PIT",
       "home": "PHI",
       "start": "2026-11-22T18:00:00.000Z",
@@ -2132,23 +2135,14 @@
       "info": {
         "venue": "Lincoln Financial Field",
         "city": "Philadelphia",
-        "weather": "61° Intermittent clouds",
+        "weather": "62° Cloudy",
         "spread": "PIT -4.5",
-        "total": 38.5,
+        "total": 37.5,
         "mlAway": "-218",
         "mlHome": "+180"
       },
-      "pick": "PIT",
-      "prob": 66,
-      "source": "Draft Kings",
-      "kalshi": [
-        68,
-        34
-      ],
-      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 68%.",
-      "espnId": "401873076",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           63.9,
           35.8
@@ -2465,7 +2459,7 @@
                 "d": "Tim McManus explains why keeping Sean Mannion in charge of playcalling gives the Eagles a chance to evaluate their offense.",
                 "url": "https://www.espn.com/video/clip/_/id/50526910/why-eagles-sticking-sean-mannion-playcaller",
                 "video": true,
-                "at": "2026-11-19T04:23:48Z"
+                "at": "2026-11-19T14:55:18Z"
               },
               {
                 "h": "Nick Sirianni: Joe Milton getting starting QB nod in Week 11",
@@ -2484,10 +2478,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "PIT",
+      "prob": 66,
+      "source": "DraftKings",
+      "kalshi": [
+        67,
+        34
+      ],
+      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 67%."
     },
     {
       "id": "w11-bal-car",
+      "espnId": "401873068",
       "away": "BAL",
       "home": "CAR",
       "start": "2026-11-22T18:00:00.000Z",
@@ -2500,23 +2503,14 @@
       "info": {
         "venue": "Bank of America Stadium",
         "city": "Charlotte",
-        "weather": "66° Partly sunny",
+        "weather": "64° Cloudy",
         "spread": "CAR -2.5",
         "total": 43.5,
-        "mlAway": "+120",
-        "mlHome": "-142"
+        "mlAway": "+114",
+        "mlHome": "-135"
       },
-      "pick": "CAR",
-      "prob": 56,
-      "source": "Draft Kings",
-      "kalshi": [
-        44,
-        57
-      ],
-      "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 57%.",
-      "espnId": "401873068",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           31,
           68.7
@@ -2845,10 +2839,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "CAR",
+      "prob": 55,
+      "source": "DraftKings",
+      "kalshi": [
+        44,
+        57
+      ],
+      "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 57%."
     },
     {
       "id": "w11-nyj-lac",
+      "espnId": "401873074",
       "away": "NYJ",
       "home": "LAC",
       "start": "2026-11-22T21:05:00.000Z",
@@ -2861,23 +2864,14 @@
       "info": {
         "venue": "SoFi Stadium",
         "city": "Inglewood",
-        "weather": "69° Mostly cloudy",
-        "spread": "LAC -3.5",
-        "total": 40.5,
-        "mlAway": "+150",
-        "mlHome": "-180"
+        "weather": "69° Partly sunny",
+        "spread": "LAC -3",
+        "total": 41.5,
+        "mlAway": "+136",
+        "mlHome": "-162"
       },
-      "pick": "LAC",
-      "prob": 62,
-      "source": "Draft Kings",
-      "kalshi": [
-        38,
-        63
-      ],
-      "note": "Jets 2-8, Chargers 1-8. Last week: Jets lost to the Bills 31-12; Chargers beat the Ravens 23-20. Kalshi has the Chargers at 63%.",
-      "espnId": "401873074",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           30.2,
           69.5
@@ -3214,10 +3208,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "LAC",
+      "prob": 59,
+      "source": "DraftKings",
+      "kalshi": [
+        41,
+        60
+      ],
+      "note": "Jets 2-8, Chargers 1-8. Last week: Jets lost to the Bills 31-12; Chargers beat the Ravens 23-20. Kalshi has the Chargers at 60%."
     },
     {
       "id": "w11-lv-den",
+      "espnId": "401873075",
       "away": "LV",
       "home": "DEN",
       "start": "2026-11-22T21:25:00.000Z",
@@ -3230,23 +3233,14 @@
       "info": {
         "venue": "Empower Field at Mile High",
         "city": "Denver",
-        "weather": "48° Intermittent clouds",
+        "weather": "46° Intermittent clouds",
         "spread": "DEN -10",
         "total": 40.5,
-        "mlAway": "+410",
-        "mlHome": "-550"
+        "mlAway": "+455",
+        "mlHome": "-625"
       },
-      "pick": "DEN",
-      "prob": 81,
-      "source": "Draft Kings",
-      "kalshi": [
-        18,
-        83
-      ],
-      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 83%.",
-      "espnId": "401873075",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           13.6,
           86.3
@@ -3569,10 +3563,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "DEN",
+      "prob": 83,
+      "source": "DraftKings",
+      "kalshi": [
+        17,
+        83
+      ],
+      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 83%."
     },
     {
       "id": "w11-jac-nyg",
+      "espnId": "401873069",
       "away": "JAC",
       "home": "NYG",
       "start": "2026-11-22T21:25:00.000Z",
@@ -3585,23 +3588,14 @@
       "info": {
         "venue": "MetLife Stadium",
         "city": "East Rutherford",
-        "weather": "59° Cloudy",
+        "weather": "58° Cloudy",
         "spread": "JAX -6",
         "total": 46.5,
         "mlAway": "-265",
         "mlHome": "+215"
       },
-      "pick": "JAC",
-      "prob": 70,
-      "source": "Draft Kings",
-      "kalshi": [
-        71,
-        30
-      ],
-      "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 71%.",
-      "espnId": "401873069",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           80.8,
           19
@@ -3930,10 +3924,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "JAC",
+      "prob": 70,
+      "source": "DraftKings",
+      "kalshi": [
+        72,
+        30
+      ],
+      "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 72%."
     },
     {
       "id": "w11-min-sf",
+      "espnId": "401873077",
       "away": "MIN",
       "home": "SF",
       "start": "2026-11-23T01:20:00.000Z",
@@ -3948,20 +3951,11 @@
         "city": "Mexico City",
         "spread": "SF -3",
         "total": 46.5,
-        "mlAway": "+140",
-        "mlHome": "-166"
+        "mlAway": "+136",
+        "mlHome": "-162"
       },
-      "pick": "SF",
-      "prob": 60,
-      "source": "Draft Kings",
-      "kalshi": [
-        41,
-        59
-      ],
-      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 59%.",
-      "espnId": "401873077",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           36.6,
           63.1
@@ -4305,10 +4299,19 @@
             ]
           }
         }
-      }
+      },
+      "pick": "SF",
+      "prob": 59,
+      "source": "DraftKings",
+      "kalshi": [
+        41,
+        60
+      ],
+      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 60%."
     },
     {
       "id": "w11-cin-was",
+      "espnId": "401873078",
       "away": "CIN",
       "home": "WAS",
       "start": "2026-11-24T01:15:00.000Z",
@@ -4321,23 +4324,14 @@
       "info": {
         "venue": "Northwest Stadium",
         "city": "Landover",
-        "weather": "50° Mostly clear",
+        "weather": "52° Partly cloudy",
         "spread": "CIN -6.5",
-        "total": 52.5,
-        "mlAway": "-298",
-        "mlHome": "+240"
+        "total": 53.5,
+        "mlAway": "-310",
+        "mlHome": "+250"
       },
-      "pick": "CIN",
-      "prob": 72,
-      "source": "Draft Kings",
-      "kalshi": [
-        73,
-        28
-      ],
-      "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 73%.",
-      "espnId": "401873078",
       "report": {
-        "updated": "2026-11-19T15:22:29.093Z",
+        "updated": "2026-11-19T15:25:12.960Z",
         "fpi": [
           76.2,
           23.6
@@ -4658,7 +4652,15 @@
             ]
           }
         }
-      }
+      },
+      "pick": "CIN",
+      "prob": 73,
+      "source": "DraftKings",
+      "kalshi": [
+        73,
+        28
+      ],
+      "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 73%."
     }
   ],
   "parlays": [
@@ -4667,12 +4669,12 @@
       "tag": "Safest",
       "legs": [
         [
-          "w11-ari-kc",
-          "KC"
-        ],
-        [
           "w11-mia-buf",
           "BUF"
+        ],
+        [
+          "w11-ari-kc",
+          "KC"
         ],
         [
           "w11-ind-hou",
@@ -4686,12 +4688,12 @@
       "tag": "Medium",
       "legs": [
         [
-          "w11-ari-kc",
-          "KC"
-        ],
-        [
           "w11-mia-buf",
           "BUF"
+        ],
+        [
+          "w11-ari-kc",
+          "KC"
         ],
         [
           "w11-ind-hou",
@@ -4717,11 +4719,11 @@
           "BAL"
         ],
         [
-          "w11-min-sf",
-          "MIN"
+          "w11-nyj-lac",
+          "NYJ"
         ]
       ],
-      "note": "The two likeliest underdogs: Ravens 44%, Vikings 40%. Small stake only."
+      "note": "The two likeliest underdogs: Ravens 45%, Jets 41%. Small stake only."
     }
   ],
   "tickets": [],
@@ -5194,6 +5196,5 @@
         }
       ]
     }
-  ],
-  "refreshed": "Thu Nov 19, 7:22 AM PT"
+  ]
 }

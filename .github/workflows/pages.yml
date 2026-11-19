@@ -24,9 +24,9 @@ on:
     - cron: "23 15-23 * * 0"     # Sunday games
     - cron: "23 0-6 * * 1"       # Sunday night game
     - cron: "23 2-6 * * 2"       # Monday night game
-    - cron: "43 13 * * *"        # daily 5:43 AM PT: catch-up scores + fresh injuries, ranks and news
-    - cron: "13 19 * * *"        # daily 11:13 AM PT: second injuries/news/props refresh
-    - cron: "37 16 * * 0"        # Sun 8:37 AM PT: last injury/news check before the early games
+    - cron: "43 13 * * *"        # daily 5:43 AM PT: scores, then re-price picks + injuries, ranks, news, props
+    - cron: "13 19 * * *"        # daily 11:13 AM PT: second re-price + refresh
+    - cron: "37 16 * * 0"        # Sun 8:37 AM PT: last re-price + injury check before the early games
 
 permissions:
   contents: write
@@ -60,8 +60,8 @@ jobs:
         run: |
           case "$SCHEDULE" in
             "0 13 * * 2"|"30 15 * * 2"|"0 19 * * 2") COMMAND=new ;;
-            "37 16 * * 0") COMMAND=report ;;
-            "43 13 * * *"|"13 19 * * *") node scripts/update.mjs scores; COMMAND=report ;;
+            "37 16 * * 0") COMMAND=refresh ;;
+            "43 13 * * *"|"13 19 * * *") node scripts/update.mjs scores; COMMAND=refresh ;;
           esac
           COMMAND=${COMMAND:-scores}
           if [ "$COMMAND" = "new" ] && [ -n "$WEEK" ]; then
