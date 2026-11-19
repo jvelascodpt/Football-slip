@@ -493,7 +493,9 @@ function route() { const h = (location.hash || "#picks").slice(1); return ["pick
 function render() {
   const v = route();
   document.querySelectorAll("nav a").forEach((a) => { a.classList.toggle("on", a.dataset.v === v); a.setAttribute("aria-current", a.dataset.v === v ? "page" : "false"); });
-  $("#updated").textContent = `${wk.season} season · updated ${wk.updated || ""}`;
+  // "picks Tue 5:00 AM" is when the picks were set; "updated" is the latest injuries/news/props/scores run.
+  const short = (s) => String(s || "").replace(/^(\w{3}) \w{3} \d+, /, "$1 ");
+  $("#updated").textContent = `${wk.season} season · picks set ${short(wk.updated)}${wk.refreshed && wk.refreshed !== wk.updated ? ` · updated ${short(wk.refreshed)}` : ""}`;
   $("#view").innerHTML = v === "picks" ? viewPicks() : v === "parlays" ? viewParlays() : v === "props" ? viewProps() : viewTracker();
   document.querySelectorAll("[data-win]").forEach((el) => { if (!celebrated.has(el.dataset.win)) celebrated.set(el.dataset.win, Date.now()); });
   calc();

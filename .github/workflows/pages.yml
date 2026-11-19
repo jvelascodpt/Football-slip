@@ -15,12 +15,17 @@ on:
         required: false
   schedule:
     # Times are UTC. Pacific = UTC-8 in the season.
+    # GitHub can start scheduled runs hours late, so key runs have backups; every command is
+    # safe to repeat (a second Tuesday run won't build an extra week).
     - cron: "0 13 * * 2"         # Tue 5:00 AM PT: build next week's picks, finalize last week
+    - cron: "30 15 * * 2"        # Tue 7:30 AM PT: backup
+    - cron: "0 19 * * 2"         # Tue 11:00 AM PT: backup
     - cron: "23 2-6 * * 5"       # Thu night game
     - cron: "23 15-23 * * 0"     # Sunday games
     - cron: "23 0-6 * * 1"       # Sunday night game
     - cron: "23 2-6 * * 2"       # Monday night game
     - cron: "43 13 * * *"        # daily 5:43 AM PT: catch-up scores + fresh injuries, ranks and news
+    - cron: "13 19 * * *"        # daily 11:13 AM PT: second injuries/news/props refresh
     - cron: "37 16 * * 0"        # Sun 8:37 AM PT: last injury/news check before the early games
 
 permissions:
@@ -53,9 +58,11 @@ jobs:
           COMMAND: ${{ inputs.command }}
           WEEK: ${{ inputs.week }}
         run: |
-          if [ "$SCHEDULE" = "0 13 * * 2" ]; then COMMAND=new; fi
-          if [ "$SCHEDULE" = "37 16 * * 0" ]; then COMMAND=report; fi
-          if [ "$SCHEDULE" = "43 13 * * *" ]; then node scripts/update.mjs scores; COMMAND=report; fi
+          case "$SCHEDULE" in
+            "0 13 * * 2"|"30 15 * * 2"|"0 19 * * 2") COMMAND=new ;;
+            "37 16 * * 0") COMMAND=report ;;
+            "43 13 * * *"|"13 19 * * *") node scripts/update.mjs scores; COMMAND=report ;;
+          esac
           COMMAND=${COMMAND:-scores}
           if [ "$COMMAND" = "new" ] && [ -n "$WEEK" ]; then
             node scripts/update.mjs new --week "$WEEK"

@@ -71,7 +71,7 @@ async function updateScoresFor(season, week, games) {
   const graded = await gradeProps(w);
   if (graded) console.log(`week ${week}: graded ${graded} prop leg${graded === 1 ? "" : "s"}`);
   if (n || graded) {
-    w.updated = fmtUpdated(new Date());
+    w.refreshed = fmtUpdated(new Date());
     await writeJSON(p, w);
   }
   console.log(`week ${week}: ${n} game${n === 1 ? "" : "s"} updated`);
@@ -83,6 +83,15 @@ async function cmdNew(a) {
   const newest = idx.weeks.at(-1);
   let season = Number(a.season) || newest?.season;
   let week = Number(a.week) || (newest ? newest.week + 1 : null);
+  // Scheduled runs fire more than once on Tuesdays (GitHub can start them hours late), so a
+  // second run must not build the week after next: skip while the newest week still has games to play.
+  if (!a.week && newest) {
+    const cur = await readJSON(path.join(DATA, newest.file));
+    if (cur?.games?.some((g) => g.status === "upcoming")) {
+      console.log(`Week ${newest.week} still has games to play; not building week ${newest.week + 1} yet.`);
+      return;
+    }
+  }
   if (!season || !week) {
     const cur = await getJSON("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard");
     season = season || cur.season.year;
@@ -160,6 +169,7 @@ async function cmdReport() {
   });
   const n = await addReports(w);
   await updateProps(w);
+  w.refreshed = fmtUpdated(new Date());
   await writeJSON(p, w);
   console.log(`week ${newest.week}: matchup reports for ${n} games`);
 }

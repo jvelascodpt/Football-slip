@@ -105,6 +105,7 @@ export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = 
     season,
     week,
     updated: fmtUpdated(now),
+    refreshed: fmtUpdated(now),
     games: out,
     parlays: keepParlays ? existing.parlays : suggestParlays(out),
     tickets: existing?.tickets || [],
