@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Thu Nov 19, 7:25 AM PT",
-  "refreshed": "Thu Nov 19, 7:51 AM PT",
+  "updated": "Thu Nov 19, 1:47 PM PT",
+  "refreshed": "Thu Nov 19, 1:47 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -21,12 +21,12 @@
         "city": "Houston",
         "weather": "Indoors",
         "spread": "HOU -12.5",
-        "total": 43.5,
-        "mlAway": "+525",
-        "mlHome": "-750"
+        "total": 44.5,
+        "mlAway": "+502",
+        "mlHome": "-700"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           25.1,
           74.7
@@ -169,6 +169,13 @@
             ],
             "news": [
               {
+                "h": "Colts-Texans odds, best bets: Is Houston laying too many points?",
+                "d": "Odds, analysis and recommended plays to help you bet Thursday's Colts-Texans game.",
+                "url": "https://www.espn.com/espn/betting/story/_/id/50436635/nfl-week-11-odds-colts-texans-betting-preview-props",
+                "video": false,
+                "at": "2026-11-19T18:57:00Z"
+              },
+              {
                 "h": "Why can't Richardson beat out struggling Jones as Colts QB1?",
                 "d": "Daniel Jones has some of the worst numbers in the NFL, yet Anthony Richardson can't get on the field for the woeful Colts.",
                 "url": "https://www.espn.com/nfl/story/_/id/50521994/colts-anthony-richardson-daniel-jones-quarterback",
@@ -181,13 +188,6 @@
                 "url": "https://www.espn.com/video/clip/_/id/50526581/colts-biggest-challenge-going-week-11-matchup-vs-texans",
                 "video": true,
                 "at": "2026-11-19T02:12:52Z"
-              },
-              {
-                "h": "Texans DE Hunter, RB Marks to miss TNF; Colts rule out CB Ward, starting OTs",
-                "d": "The Texans and Colts ruled out several key contributors for their Thursday night matchup.",
-                "url": "https://www.espn.com/nfl/story/_/id/50524890/texans-rule-hunter-marks-colts-rule-ward-starting-ots",
-                "video": false,
-                "at": "2026-11-19T11:38:18Z"
               }
             ]
           },
@@ -233,12 +233,6 @@
             "key": [],
             "injuries": [
               {
-                "name": "Jaylin Smith",
-                "pos": "CB",
-                "status": "Injured Reserve",
-                "detail": "Strain"
-              },
-              {
                 "name": "Danielle Hunter",
                 "pos": "DE",
                 "status": "Out",
@@ -255,6 +249,12 @@
                 "pos": "LB",
                 "status": "Questionable",
                 "detail": "Groin"
+              },
+              {
+                "name": "Jaylin Smith",
+                "pos": "CB",
+                "status": "Questionable",
+                "detail": "Strain"
               },
               {
                 "name": "Wyatt Teller",
@@ -324,6 +324,13 @@
             ],
             "news": [
               {
+                "h": "Colts-Texans odds, best bets: Is Houston laying too many points?",
+                "d": "Odds, analysis and recommended plays to help you bet Thursday's Colts-Texans game.",
+                "url": "https://www.espn.com/espn/betting/story/_/id/50436635/nfl-week-11-odds-colts-texans-betting-preview-props",
+                "video": false,
+                "at": "2026-11-19T18:57:00Z"
+              },
+              {
                 "h": "How Houston has banded together through backbreaking losses and adversity",
                 "d": "Houston enters \"Thursday Night Football\" against the Indianapolis Colts with a 32.4% chance of making the playoffs.",
                 "url": "https://www.espn.com/nfl/story/_/id/50502967/texans-playoff-hopes-kamari-lassiter-cj-stroud",
@@ -336,21 +343,14 @@
                 "url": "https://www.espn.com/nfl/story/_/id/50524890/texans-rule-hunter-marks-colts-rule-ward-starting-ots",
                 "video": false,
                 "at": "2026-11-19T11:38:18Z"
-              },
-              {
-                "h": "Stroud: Texans' home skid and 17-point collapse fuel 'scary' urgency vs Colts",
-                "d": "— C.J. Stroud certainly isn’t thrilled with where his Houston Texans are entering Thursday night’s AFC South matchup with Indianapolis.",
-                "url": "http://www.espn.com/nfl/preview?gameId=401873066",
-                "video": false,
-                "at": "2026-11-18T18:58:35Z"
               }
             ]
           }
         }
       },
       "pick": "HOU",
-      "prob": 85,
-      "source": "DraftKings",
+      "prob": 84,
+      "source": "Draft Kings",
       "kalshi": [
         16,
         85
@@ -373,13 +373,13 @@
         "venue": "Highmark Stadium",
         "city": "Orchard Park",
         "spread": "BUF -16.5",
-        "total": 45.5,
+        "total": 44.5,
         "mlAway": "+850",
-        "mlHome": "-1450",
+        "mlHome": "-1440",
         "weather": "65° Partly sunny"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           5.2,
           94.8
@@ -437,6 +437,12 @@
                 "detail": "Knee"
               },
               {
+                "name": "Caleb Douglas",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Shoulder"
+              },
+              {
                 "name": "Andrew Meyer",
                 "pos": "C",
                 "status": "Questionable",
@@ -453,12 +459,6 @@
                 "pos": "WR",
                 "status": "Questionable",
                 "detail": "Quadriceps"
-              },
-              {
-                "name": "JuJu Brents",
-                "pos": "CB",
-                "status": "Questionable",
-                "detail": "Neck"
               }
             ],
             "leaders": [
@@ -583,8 +583,28 @@
                 17
               ]
             },
-            "key": [],
+            "key": [
+              {
+                "name": "Dalton Kincaid",
+                "pos": "TE",
+                "status": "Questionable",
+                "detail": "Thumb",
+                "why": "Team leader in receiving"
+              }
+            ],
             "injuries": [
+              {
+                "name": "T.J. Sanders",
+                "pos": "DT",
+                "status": "Questionable",
+                "detail": "Shoulder"
+              },
+              {
+                "name": "Dalton Kincaid",
+                "pos": "TE",
+                "status": "Questionable",
+                "detail": "Thumb"
+              },
               {
                 "name": "Dee Alford",
                 "pos": "CB",
@@ -602,18 +622,6 @@
                 "pos": "CB",
                 "status": "Questionable",
                 "detail": "Groin"
-              },
-              {
-                "name": "Jackson Hawes",
-                "pos": "TE",
-                "status": "Questionable",
-                "detail": "Shoulder"
-              },
-              {
-                "name": "Cole Bishop",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Shoulder"
               }
             ],
             "leaders": [
@@ -677,11 +685,11 @@
             ],
             "news": [
               {
-                "h": "Josh Allen powers Bills past Jets 31-12 for best start in 35 years. New York loses Geno Smith twice",
-                "d": "— Josh Allen and the Buffalo Bills are off to the franchise's best start in 35 years.",
-                "url": "http://www.espn.com/nfl/recap?gameId=401873054",
+                "h": "Whether it's against backup QBs or not, the Bills' defense is rolling",
+                "d": "Buffalo will face another backup QB in Week 11 with Kyle McCord set to start in place of Malik Willis for the Dolphins.",
+                "url": "https://www.espn.com/nfl/story/_/id/50531689/bills-defense-backup-qbs-amani-hooker",
                 "video": false,
-                "at": "2026-11-15T22:44:35Z"
+                "at": "2026-11-19T17:33:20Z"
               }
             ]
           }
@@ -689,7 +697,7 @@
       },
       "pick": "BUF",
       "prob": 90,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
         9,
         92
@@ -711,14 +719,14 @@
       "info": {
         "venue": "Soldier Field",
         "city": "Chicago",
-        "weather": "53° Cloudy",
+        "weather": "55° Cloudy",
         "spread": "CHI -11.5",
         "total": 48.5,
-        "mlAway": "+455",
-        "mlHome": "-625"
+        "mlAway": "+448",
+        "mlHome": "-610"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           21.3,
           78.5
@@ -784,6 +792,12 @@
                 "detail": "Biceps"
               },
               {
+                "name": "Jordyn Tyson",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Chest"
+              },
+              {
                 "name": "Martin Emerson Jr.",
                 "pos": "CB",
                 "status": "Questionable",
@@ -800,12 +814,6 @@
                 "pos": "CB",
                 "status": "Questionable",
                 "detail": "Thigh"
-              },
-              {
-                "name": "Jordyn Tyson",
-                "pos": "WR",
-                "status": "Questionable",
-                "detail": "Chest"
               }
             ],
             "leaders": [
@@ -868,6 +876,13 @@
               }
             ],
             "news": [
+              {
+                "h": "Pass rush part of the focus for the Saints and Bears going into Sunday's game",
+                "d": "— Carl Granderson and Chase Young form a potent 1-2 punch on defense for the New Orleans Saints. Jeffery Simmons is a force on the defensive line for the Chicago Bears.",
+                "url": "http://www.espn.com/nfl/preview?gameId=401873071",
+                "video": false,
+                "at": "2026-11-19T19:10:36Z"
+              },
               {
                 "h": "Three-win Saints, Kellen Moore face defining stretch of games",
                 "d": "Starting with the Bears on Sunday, the head coach's tenure and the team's season sits at a crucial crossroads.",
@@ -1035,8 +1050,8 @@
         }
       },
       "pick": "CHI",
-      "prob": 83,
-      "source": "DraftKings",
+      "prob": 82,
+      "source": "Draft Kings",
       "kalshi": [
         16,
         85
@@ -1060,12 +1075,12 @@
         "city": "Arlington",
         "weather": "Indoors",
         "spread": "DAL -8.5",
-        "total": 54.5,
-        "mlAway": "+300",
-        "mlHome": "-380"
+        "total": 55.5,
+        "mlAway": "+307",
+        "mlHome": "-387"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           19.3,
           80.5
@@ -1116,6 +1131,13 @@
             },
             "key": [
               {
+                "name": "Carnell Tate",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Shoulder",
+                "why": "Team leader in receiving"
+              },
+              {
                 "name": "Anthony Hill Jr.",
                 "pos": "LB",
                 "status": "Questionable",
@@ -1125,10 +1147,16 @@
             ],
             "injuries": [
               {
-                "name": "Fernando Carmona",
-                "pos": "G",
-                "status": "Injured Reserve",
-                "detail": "Sprain"
+                "name": "Carnell Tate",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Shoulder"
+              },
+              {
+                "name": "Kevin Winston Jr.",
+                "pos": "S",
+                "status": "Questionable",
+                "detail": "Shoulder"
               },
               {
                 "name": "Cody Barton",
@@ -1141,12 +1169,6 @@
                 "pos": "LB",
                 "status": "Questionable",
                 "detail": "Neck"
-              },
-              {
-                "name": "John Franklin-Myers",
-                "pos": "DE",
-                "status": "Questionable",
-                "detail": "Back"
               },
               {
                 "name": "Tony Adams",
@@ -1216,6 +1238,13 @@
             ],
             "news": [
               {
+                "h": "Cowboys face last-place Titans with new play-caller on defense and fading playoff hopes",
+                "d": "— The Dallas Cowboys have made their biggest move of the season to try to fix a broken defense, just in time for consecutive games against last-place...",
+                "url": "http://www.espn.com/nfl/preview?gameId=401873073",
+                "video": false,
+                "at": "2026-11-19T20:21:50Z"
+              },
+              {
                 "h": "Rookies added to Titans' roster",
                 "d": "Turron Davenport breaks down how the team is adding reinforcements on both sides of the ball with rookies Carnell Tate, Anthony Hill Jr. and Fernando Carmona.Rookies added to Titans' roster",
                 "url": "https://www.espn.com/video/clip/_/id/50523886/rookies-added-titans-roster",
@@ -1228,13 +1257,6 @@
                 "url": "https://www.espn.com/nfl/story/_/id/50523261/titans-wr-wandale-robinson-season-ankle-injury",
                 "video": false,
                 "at": "2026-11-18T19:45:54Z"
-              },
-              {
-                "h": "Titans put WR Wan'Dale Robinson on IR due to ankle injury",
-                "d": "The Titans placed wide receiver Wan'Dale Robinson on injured reserve Tuesday.",
-                "url": "https://www.espn.com/nfl/story/_/id/50513594/titans-put-wr-wandale-robinson-ankle-ir",
-                "video": false,
-                "at": "2026-11-18T11:41:21Z"
               }
             ]
           },
@@ -1371,25 +1393,25 @@
             ],
             "news": [
               {
-                "h": "Cowboys make change to defensive play-calling duties",
-                "d": "Todd Archer reports on the Cowboys turning to Mike Pettine as defensive play-caller after taking the responsibility from Christian Parker.",
-                "url": "https://www.espn.com/video/clip/_/id/50525106/cowboys-make-change-defensive-play-calling-duties",
-                "video": true,
-                "at": "2026-11-18T23:39:21Z"
+                "h": "Cowboys face last-place Titans with new play-caller on defense and fading playoff hopes",
+                "d": "— The Dallas Cowboys have made their biggest move of the season to try to fix a broken defense, just in time for consecutive games against last-place...",
+                "url": "http://www.espn.com/nfl/preview?gameId=401873073",
+                "video": false,
+                "at": "2026-11-19T20:21:50Z"
               },
               {
-                "h": "Why Stephen A. can't defend Cowboys DC Christian Parker",
-                "d": "Why Stephen A. can't defend Cowboys DC Christian Parker",
-                "url": "https://www.espn.com/video/clip/_/id/50521799/why-stephen-defend-cowboys-dc-christian-parker",
-                "video": true,
-                "at": "2026-11-18T15:53:56Z"
+                "h": "Cowboys' Parker: I'm still DC, have 'job to do' after losing playcalling duties",
+                "d": "Cowboys defensive coordinator Christian Parker said he briefly considered leaving the team after informed he was being stripped of playcalling responsibilities.",
+                "url": "https://www.espn.com/nfl/story/_/id/50532679/cowboys-christian-parker-dc-job-do",
+                "video": false,
+                "at": "2026-11-19T20:01:23Z"
               },
               {
-                "h": "'Get Up' crew confused by Cowboys DC losing playcalling duties",
-                "d": "'Get Up' crew confused by Cowboys DC losing playcalling duties",
-                "url": "https://www.espn.com/video/clip/_/id/50521328/get-crew-confused-cowboys-dc-losing-playcalling-duties",
+                "h": "'A walking atrocity!' Stephen A. can't even laugh about Cowboys' defense",
+                "d": "'A walking atrocity!' Stephen A. can't even laugh about Cowboys' defense",
+                "url": "https://www.espn.com/video/clip/_/id/50531854/a-walking-atrocity-stephen-even-laugh-cowboys-defense",
                 "video": true,
-                "at": "2026-11-18T15:17:21Z"
+                "at": "2026-11-19T16:21:01Z"
               }
             ]
           }
@@ -1397,7 +1419,7 @@
       },
       "pick": "DAL",
       "prob": 76,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
         24,
         77
@@ -1420,13 +1442,13 @@
         "venue": "Ford Field",
         "city": "Detroit",
         "weather": "Indoors",
-        "spread": "DET -7",
-        "total": 43.5,
-        "mlAway": "+270",
-        "mlHome": "-340"
+        "spread": "DET -6",
+        "total": 45.5,
+        "mlAway": "+230",
+        "mlHome": "-281"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           38.4,
           61.3
@@ -1498,6 +1520,12 @@
                 "detail": "Sprain"
               },
               {
+                "name": "Baker Mayfield",
+                "pos": "QB",
+                "status": "Questionable",
+                "detail": "Strain"
+              },
+              {
                 "name": "Antoine Winfield Jr.",
                 "pos": "S",
                 "status": "Questionable",
@@ -1508,12 +1536,6 @@
                 "pos": "LB",
                 "status": "Questionable",
                 "detail": "Sprain"
-              },
-              {
-                "name": "Baker Mayfield",
-                "pos": "QB",
-                "status": "Questionable",
-                "detail": "Strain"
               }
             ],
             "leaders": [
@@ -1633,16 +1655,16 @@
                 "detail": "Surgery"
               },
               {
-                "name": "D.J. Reed",
-                "pos": "CB",
-                "status": "Questionable",
-                "detail": "Hip"
-              },
-              {
                 "name": "Sione Vaki",
                 "pos": "RB",
                 "status": "Questionable",
                 "detail": "Ankle"
+              },
+              {
+                "name": "D.J. Reed",
+                "pos": "CB",
+                "status": "Questionable",
+                "detail": "Hip"
               },
               {
                 "name": "Tyler Lacy",
@@ -1743,13 +1765,13 @@
         }
       },
       "pick": "DET",
-      "prob": 74,
-      "source": "DraftKings",
+      "prob": 71,
+      "source": "Draft Kings",
       "kalshi": [
-        26,
-        75
+        29,
+        72
       ],
-      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 75%."
+      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 72%."
     },
     {
       "id": "w11-ari-kc",
@@ -1766,14 +1788,14 @@
       "info": {
         "venue": "Arrowhead Stadium",
         "city": "Kansas City",
-        "weather": "48° Mostly cloudy",
+        "weather": "49° Mostly cloudy",
         "spread": "KC -15.5",
         "total": 40.5,
-        "mlAway": "+800",
-        "mlHome": "-1350"
+        "mlAway": "+840",
+        "mlHome": "-1420"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           11.6,
           88.3
@@ -1987,11 +2009,11 @@
             },
             "key": [
               {
-                "name": "Nick Bolton",
-                "pos": "LB",
+                "name": "Kenneth Walker III",
+                "pos": "RB",
                 "status": "Questionable",
-                "detail": "Shin",
-                "why": "Team leader in tackles"
+                "detail": "Soreness",
+                "why": "Team leader in rushing"
               }
             ],
             "injuries": [
@@ -2000,6 +2022,12 @@
                 "pos": "TE",
                 "status": "Injured Reserve",
                 "detail": "Fracture"
+              },
+              {
+                "name": "Kenneth Walker III",
+                "pos": "RB",
+                "status": "Questionable",
+                "detail": "Soreness"
               },
               {
                 "name": "Omarr Norman-Lott",
@@ -2018,12 +2046,6 @@
                 "pos": "OT",
                 "status": "Questionable",
                 "detail": "Ankle"
-              },
-              {
-                "name": "Nick Bolton",
-                "pos": "LB",
-                "status": "Questionable",
-                "detail": "Shin"
               }
             ],
             "leaders": [
@@ -2087,6 +2109,13 @@
             ],
             "news": [
               {
+                "h": "Chiefs are flying high but can ill afford to overlook the lowly Cardinals when they meet Sunday",
+                "d": "— If ever there was a time for an NFL team to overlook somebody, it just might be Sunday afternoon at Arrowhead Stadium, where the Kansas City Chiefs will continue their pursuit of another AFC West title against the injured, downtrodden Arizona...",
+                "url": "http://www.espn.com/nfl/preview?gameId=401873067",
+                "video": false,
+                "at": "2026-11-19T19:09:36Z"
+              },
+              {
                 "h": "Kansas City Chiefs tight end Travis Kelce's top moments at Arrowhead Stadium",
                 "d": "Kelce's greatest Arrowhead moments include his first catch, lots of playoff magic, and meeting the love of his life, Taylor Swift.",
                 "url": "https://www.espn.com/nfl/story/_/id/50513358/chiefs-travis-kelce-100-games-arrowhead-taylor-swift",
@@ -2099,21 +2128,14 @@
                 "url": "https://www.espn.com/video/clip/_/id/50517516/week-11-offers-another-impressive-milestone-travis-kelce",
                 "video": true,
                 "at": "2026-11-18T04:40:52Z"
-              },
-              {
-                "h": "Emmett Johnson, Jaxon Smith-Njigba shine in big offensive week for Africa's NFL stars",
-                "d": "Week 10 in the 2026 NFL season was one of the most noteworthy in terms of standout performances from offensive players in the NFL with known African ties.",
-                "url": "https://www.espn.com/espn/story/_/id/50509931/emmett-johnson-jaxon-smith-njigba-shine-big-offensive-week-africa-nfl-stars",
-                "video": false,
-                "at": "2026-11-17T11:45:40Z"
               }
             ]
           }
         }
       },
       "pick": "KC",
-      "prob": 89,
-      "source": "DraftKings",
+      "prob": 90,
+      "source": "Draft Kings",
       "kalshi": [
         9,
         92
@@ -2135,14 +2157,14 @@
       "info": {
         "venue": "Lincoln Financial Field",
         "city": "Philadelphia",
-        "weather": "62° Cloudy",
+        "weather": "60° Cloudy",
         "spread": "PIT -4.5",
         "total": 37.5,
-        "mlAway": "-218",
-        "mlHome": "+180"
+        "mlAway": "-204",
+        "mlHome": "+171"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           63.9,
           35.8
@@ -2194,6 +2216,12 @@
             "key": [],
             "injuries": [
               {
+                "name": "Michael Pittman Jr.",
+                "pos": "WR",
+                "status": "Injured Reserve",
+                "detail": "Plantar Fasciitis"
+              },
+              {
                 "name": "Gennings Dunker",
                 "pos": "G",
                 "status": "Injured Reserve",
@@ -2208,7 +2236,7 @@
               {
                 "name": "Nick Herbig",
                 "pos": "LB",
-                "status": "Doubtful",
+                "status": "Questionable",
                 "detail": "Hip"
               },
               {
@@ -2216,12 +2244,6 @@
                 "pos": "LB",
                 "status": "Questionable",
                 "detail": "Hand"
-              },
-              {
-                "name": "DeShon Elliott",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Knee"
               }
             ],
             "leaders": [
@@ -2370,18 +2392,6 @@
                 "detail": "Plantar Fasciitis"
               },
               {
-                "name": "Nolan Smith Jr.",
-                "pos": "LB",
-                "status": "Questionable",
-                "detail": "Illness"
-              },
-              {
-                "name": "Zack Baun",
-                "pos": "LB",
-                "status": "Questionable",
-                "detail": "Back"
-              },
-              {
                 "name": "Dontayvion Wicks",
                 "pos": "WR",
                 "status": "Questionable",
@@ -2392,6 +2402,18 @@
                 "pos": "WR",
                 "status": "Questionable",
                 "detail": "Hamstring"
+              },
+              {
+                "name": "Nolan Smith Jr.",
+                "pos": "LB",
+                "status": "Questionable",
+                "detail": "Illness"
+              },
+              {
+                "name": "Zack Baun",
+                "pos": "LB",
+                "status": "Questionable",
+                "detail": "Back"
               }
             ],
             "leaders": [
@@ -2480,13 +2502,13 @@
         }
       },
       "pick": "PIT",
-      "prob": 66,
-      "source": "DraftKings",
+      "prob": 65,
+      "source": "Draft Kings",
       "kalshi": [
-        67,
-        34
+        68,
+        33
       ],
-      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 67%."
+      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 68%."
     },
     {
       "id": "w11-bal-car",
@@ -2503,14 +2525,14 @@
       "info": {
         "venue": "Bank of America Stadium",
         "city": "Charlotte",
-        "weather": "64° Cloudy",
-        "spread": "CAR -2.5",
+        "weather": "61° Cloudy",
+        "spread": "CAR -3",
         "total": 43.5,
-        "mlAway": "+114",
-        "mlHome": "-135"
+        "mlAway": "+124",
+        "mlHome": "-147"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           31,
           68.7
@@ -2570,28 +2592,28 @@
             ],
             "injuries": [
               {
+                "name": "Marlon Humphrey",
+                "pos": "CB",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
                 "name": "Lamar Jackson",
                 "pos": "QB",
                 "status": "Injured Reserve",
                 "detail": "Surgery"
               },
               {
-                "name": "Olaivavega Ioane",
-                "pos": "G",
+                "name": "Nnamdi Madubuike",
+                "pos": "DT",
                 "status": "Questionable",
-                "detail": "Shoulder"
+                "detail": "Hamstring"
               },
               {
                 "name": "Jaylinn Hawkins",
                 "pos": "S",
                 "status": "Questionable",
                 "detail": "Knee"
-              },
-              {
-                "name": "Nnamdi Madubuike",
-                "pos": "DT",
-                "status": "Questionable",
-                "detail": "Hamstring"
               },
               {
                 "name": "Adisa Isaac",
@@ -2661,25 +2683,25 @@
             ],
             "news": [
               {
-                "h": "Ravens' Humphrey apologizes for quip that Baltimore 'best at making criminals'",
-                "d": "Ravens cornerback Marlon Humphrey apologized Wednesday for the derogatory comment he recently made about Baltimore on his podcast.",
-                "url": "https://www.espn.com/nfl/story/_/id/50524109/ravens-humphrey-apologizes-criminals-quip-podcast",
-                "video": false,
-                "at": "2026-11-19T03:37:02Z"
+                "h": "Ravens' DC supports decision to set Marlon Humphrey as inactive vs. Panthers",
+                "d": "Ravens' DC supports decision to set Marlon Humphrey as inactive vs. Panthers",
+                "url": "https://www.espn.com/video/clip/_/id/50532410/ravens-dc-supports-decision-set-marlon-humphrey-inactive-vs-panthers",
+                "video": true,
+                "at": "2026-11-19T17:46:50Z"
               },
               {
-                "h": "Ravens' Flowers 'super frustrated' by latest late-game fumble",
-                "d": "Ravens wide receiver Zay Flowers said he was \"super frustrated\" after having the ball ripped away around midfield in the final two minutes of a loss to the Chargers on Monday night.",
-                "url": "https://www.espn.com/nfl/story/_/id/50523527/ravens-flowers-super-frustrated-latest-late-game-fumble",
+                "h": "Ravens send CB Humphrey home, say he'll be inactive after 'criminals' comment",
+                "d": "The Ravens have sent cornerback Marlon Humphrey home from the facility, and he will be inactive for Sunday's game against the Panthers.",
+                "url": "https://www.espn.com/nfl/story/_/id/50532199/ravens-send-marlon-humphrey-home-say-inactive",
                 "video": false,
-                "at": "2026-11-18T20:29:38Z"
+                "at": "2026-11-19T18:16:26Z"
               },
               {
-                "h": "The NFL's current worst team? Lamar-less Ravens making that case",
-                "d": "The Ravens have gone 38 days without a win. It has been 24 days since they've had a lead.",
-                "url": "https://www.espn.com/nfl/story/_/id/50521008/nfl-current-worst-team-lamar-jackson-ravens-making-case-week-11",
+                "h": "Fantasy buzz: Breaking down 11 key fantasy football stats for Week 11",
+                "d": "Michael F. Florio offers his favorite fantasy stats so far this season ahead of Week 11.",
+                "url": "https://www.espn.com/fantasy/football/story/_/id/40699880/fantasy-football-injuries-position-battles-nfl-news-analysis",
                 "video": false,
-                "at": "2026-11-18T17:40:53Z"
+                "at": "2026-11-19T17:03:58Z"
               }
             ]
           },
@@ -2731,26 +2753,26 @@
                 "detail": "Surgery"
               },
               {
-                "name": "Bobby Okereke",
-                "pos": "LB",
-                "status": "Questionable",
-                "detail": "Foot"
-              },
-              {
                 "name": "Tommy Tremble",
                 "pos": "TE",
                 "status": "Questionable",
                 "detail": "Knee"
               },
               {
-                "name": "Isaiah Simmons",
-                "pos": "S",
+                "name": "Darren Waller",
+                "pos": "TE",
                 "status": "Questionable",
                 "detail": "Knee"
               },
               {
-                "name": "Darren Waller",
-                "pos": "TE",
+                "name": "Bobby Okereke",
+                "pos": "LB",
+                "status": "Questionable",
+                "detail": "Foot"
+              },
+              {
+                "name": "Isaiah Simmons",
+                "pos": "S",
                 "status": "Questionable",
                 "detail": "Knee"
               }
@@ -2816,6 +2838,13 @@
             ],
             "news": [
               {
+                "h": "Ravens' DC supports decision to set Marlon Humphrey as inactive vs. Panthers",
+                "d": "Ravens' DC supports decision to set Marlon Humphrey as inactive vs. Panthers",
+                "url": "https://www.espn.com/video/clip/_/id/50532410/ravens-dc-supports-decision-set-marlon-humphrey-inactive-vs-panthers",
+                "video": true,
+                "at": "2026-11-19T17:46:50Z"
+              },
+              {
                 "h": "Panthers secondary set for boost with return of CB Mike Jackson",
                 "d": "Panthers starting cornerback Mike Jackson, who has been sidelined since injuring his groin in Week 3, plans to be in the lineup Sunday against the Ravens.",
                 "url": "https://www.espn.com/nfl/story/_/id/50524458/panthers-cb-mike-jackson-set-return-sunday-vs-ravens",
@@ -2828,26 +2857,19 @@
                 "url": "https://www.espn.com/video/clip/_/id/50524249/panthers-monitoring-statuses-their-tight-ends",
                 "video": true,
                 "at": "2026-11-18T21:52:17Z"
-              },
-              {
-                "h": "Is Chuba Hubbard the biggest X factor to spark a Panthers turnaround?",
-                "d": "Meet Carolina's team captain, a locker room leader and a relentless running back who is \"chasing greatness myself.\"",
-                "url": "https://www.espn.com/nfl/story/_/id/50463509/chuba-hubbard-x-factor-spark-carolina-panthers",
-                "video": false,
-                "at": "2026-11-17T19:29:01Z"
               }
             ]
           }
         }
       },
       "pick": "CAR",
-      "prob": 55,
-      "source": "DraftKings",
+      "prob": 57,
+      "source": "Draft Kings",
       "kalshi": [
-        44,
-        57
+        43,
+        59
       ],
-      "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 57%."
+      "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 59%."
     },
     {
       "id": "w11-nyj-lac",
@@ -2867,11 +2889,11 @@
         "weather": "69° Partly sunny",
         "spread": "LAC -3",
         "total": 41.5,
-        "mlAway": "+136",
-        "mlHome": "-162"
+        "mlAway": "+143",
+        "mlHome": "-169"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           30.2,
           69.5
@@ -3185,11 +3207,11 @@
             ],
             "news": [
               {
-                "h": "Fantasy buzz: Kirk Cousins, Stefon Diggs bring reliability to fantasy lineups",
-                "d": "Every lineup needs consistent, week-to-week performers and Tristan has three players to start down the stretch.",
+                "h": "Fantasy buzz: Breaking down 11 key fantasy football stats for Week 11",
+                "d": "Michael F. Florio offers his favorite fantasy stats so far this season ahead of Week 11.",
                 "url": "https://www.espn.com/fantasy/football/story/_/id/40699880/fantasy-football-injuries-position-battles-nfl-news-analysis",
                 "video": false,
-                "at": "2026-11-18T16:28:52Z"
+                "at": "2026-11-19T17:03:58Z"
               },
               {
                 "h": "Kyle Hamilton says Ravens 'disgracing' standards after losing to 0-8 Chargers",
@@ -3210,13 +3232,13 @@
         }
       },
       "pick": "LAC",
-      "prob": 59,
-      "source": "DraftKings",
+      "prob": 60,
+      "source": "Draft Kings",
       "kalshi": [
-        41,
-        60
+        40,
+        61
       ],
-      "note": "Jets 2-8, Chargers 1-8. Last week: Jets lost to the Bills 31-12; Chargers beat the Ravens 23-20. Kalshi has the Chargers at 60%."
+      "note": "Jets 2-8, Chargers 1-8. Last week: Jets lost to the Bills 31-12; Chargers beat the Ravens 23-20. Kalshi has the Chargers at 61%."
     },
     {
       "id": "w11-lv-den",
@@ -3233,14 +3255,14 @@
       "info": {
         "venue": "Empower Field at Mile High",
         "city": "Denver",
-        "weather": "46° Intermittent clouds",
+        "weather": "45° Intermittent clouds",
         "spread": "DEN -10",
         "total": 40.5,
-        "mlAway": "+455",
-        "mlHome": "-625"
+        "mlAway": "+427",
+        "mlHome": "-569"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           13.6,
           86.3
@@ -3306,6 +3328,12 @@
                 "detail": "Stinger"
               },
               {
+                "name": "Brock Bowers",
+                "pos": "TE",
+                "status": "Questionable",
+                "detail": "Ankle"
+              },
+              {
                 "name": "Tonka Hemingway",
                 "pos": "DT",
                 "status": "Questionable",
@@ -3322,12 +3350,6 @@
                 "pos": "PK",
                 "status": "Questionable",
                 "detail": "Hip"
-              },
-              {
-                "name": "Brock Bowers",
-                "pos": "TE",
-                "status": "Questionable",
-                "detail": "Ankle"
               }
             ],
             "leaders": [
@@ -3391,6 +3413,13 @@
             ],
             "news": [
               {
+                "h": "Christian Bale: You don't get many people like Al Davis",
+                "d": "Christian Bale: You don't get many people like Al Davis",
+                "url": "https://www.espn.com/video/clip/_/id/50532442/get-many-people-al-davis",
+                "video": true,
+                "at": "2026-11-19T18:22:15Z"
+              },
+              {
                 "h": "Kurt Warner: Fernando Mendoza played 'too fast' in his NFL debut",
                 "d": "Kurt Warner: Fernando Mendoza played 'too fast' in his NFL debut",
                 "url": "https://www.espn.com/video/clip/_/id/50522711/fernando-mendoza-played-too-fast-nfl-debut",
@@ -3403,13 +3432,6 @@
                 "url": "https://www.espn.com/nfl/story/_/id/50504017/raiders-fans-seated-fernando-mendoza-touchdown-tribute",
                 "video": false,
                 "at": "2026-11-16T23:13:41Z"
-              },
-              {
-                "h": "Raiders TE Brock Bowers day-to-day with ankle injury",
-                "d": "Brock Bowers is day-to-day with an ankle injury that forced him to miss the entire second half of the Raiders' loss to the Seahawks.",
-                "url": "https://www.espn.com/nfl/story/_/id/50501232/raiders-te-brock-bowers-avoids-major-ankle-injury-source-says",
-                "video": false,
-                "at": "2026-11-16T21:42:58Z"
               }
             ]
           },
@@ -3469,6 +3491,12 @@
                 "detail": "Surgery"
               },
               {
+                "name": "Riley Moss",
+                "pos": "CB",
+                "status": "Questionable",
+                "detail": "Concussion"
+              },
+              {
                 "name": "Kris Abrams-Draine",
                 "pos": "CB",
                 "status": "Questionable",
@@ -3479,12 +3507,6 @@
                 "pos": "S",
                 "status": "Questionable",
                 "detail": "Hamstring"
-              },
-              {
-                "name": "Talanoa Hufanga",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Ankle"
               },
               {
                 "name": "Jaylen Waddle",
@@ -3554,6 +3576,13 @@
             ],
             "news": [
               {
+                "h": "Sources: Broncos sign CB Riley Moss to four-year extension",
+                "d": "The Broncos locked up a key piece of their secondary by signing cornerback Riley Moss to a four-year extension, sources said.",
+                "url": "https://www.espn.com/nfl/story/_/id/50532392/sources-broncos-sign-cb-riley-moss-four-year-extension",
+                "video": false,
+                "at": "2026-11-19T18:16:18Z"
+              },
+              {
                 "h": "What Broncos are doing to try to make Bo Nix more consistent throughout games",
                 "d": "Nix has a knack for coming through big late in games, but the Broncos want him to play better earlier to lessen the fourth-quarter drama.",
                 "url": "https://www.espn.com/nfl/story/_/id/50503491/broncos-qb-bo-nix-more-consistency-all-four-quarters-clutch",
@@ -3565,13 +3594,13 @@
         }
       },
       "pick": "DEN",
-      "prob": 83,
-      "source": "DraftKings",
+      "prob": 82,
+      "source": "Draft Kings",
       "kalshi": [
         17,
-        83
+        84
       ],
-      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 83%."
+      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 84%."
     },
     {
       "id": "w11-jac-nyg",
@@ -3588,14 +3617,14 @@
       "info": {
         "venue": "MetLife Stadium",
         "city": "East Rutherford",
-        "weather": "58° Cloudy",
+        "weather": "59° Cloudy",
         "spread": "JAX -6",
         "total": 46.5,
-        "mlAway": "-265",
-        "mlHome": "+215"
+        "mlAway": "-264",
+        "mlHome": "+217"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           80.8,
           19
@@ -3646,32 +3675,14 @@
             },
             "key": [
               {
-                "name": "Travon Walker",
-                "pos": "DE",
+                "name": "Bhayshul Tuten",
+                "pos": "RB",
                 "status": "Questionable",
-                "detail": "Ribs",
-                "why": "Team leader in sacks"
+                "detail": "Ankle",
+                "why": "Team leader in rushing"
               }
             ],
             "injuries": [
-              {
-                "name": "Danny Striggow",
-                "pos": "DE",
-                "status": "Questionable",
-                "detail": "Concussion"
-              },
-              {
-                "name": "Antonio Johnson",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Ankle"
-              },
-              {
-                "name": "Travon Walker",
-                "pos": "DE",
-                "status": "Questionable",
-                "detail": "Ribs"
-              },
               {
                 "name": "LeQuint Allen Jr.",
                 "pos": "RB",
@@ -3679,10 +3690,28 @@
                 "detail": "Hamstring"
               },
               {
+                "name": "Bhayshul Tuten",
+                "pos": "RB",
+                "status": "Questionable",
+                "detail": "Ankle"
+              },
+              {
                 "name": "Chris Rodriguez Jr.",
                 "pos": "RB",
                 "status": "Questionable",
                 "detail": "Hand"
+              },
+              {
+                "name": "Jakobi Meyers",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Ankle"
+              },
+              {
+                "name": "Danny Striggow",
+                "pos": "DE",
+                "status": "Questionable",
+                "detail": "Concussion"
               }
             ],
             "leaders": [
@@ -3746,6 +3775,13 @@
             ],
             "news": [
               {
+                "h": "Jaguars getting welcomed reinforcements",
+                "d": "Michael DiRocco breaks explains how Jessie Bates and Jordan Davis are preparing for their Jaguars' debut.",
+                "url": "https://www.espn.com/video/clip/_/id/50532242/jaguars-getting-welcomed-reinforcements",
+                "video": true,
+                "at": "2026-11-19T17:10:32Z"
+              },
+              {
                 "h": "Jaguars rule starting center Robert Hainsey (knee) out for Giants game",
                 "d": "Jaguars center Robert Hainsey will miss Sunday's game against the Giants because of a knee injury, coach Liam Coen said Wednesday.",
                 "url": "https://www.espn.com/nfl/story/_/id/50522085/jaguars-rule-center-robert-hainsey-knee-giants-game",
@@ -3758,13 +3794,6 @@
                 "url": "https://www.espn.com/video/clip/_/id/50520649/kyle-brandt-dismisses-notion-jags-blow-giants-sunday",
                 "video": true,
                 "at": "2026-11-18T14:39:57Z"
-              },
-              {
-                "h": "Jaguars outscoring opponents by 125 points through 10 weeks: Three reasons why",
-                "d": "Sunday's victory over the Titans was Jacksonville's fifth win by 17 or more points this season -- the most in the NFL.",
-                "url": "https://www.espn.com/nfl/story/_/id/50498566/jaguars-outscoring-opponents-10-weeks",
-                "video": false,
-                "at": "2026-11-16T17:35:23Z"
               }
             ]
           },
@@ -3831,13 +3860,13 @@
                 "name": "Malik Harrison",
                 "pos": "LB",
                 "status": "Questionable",
-                "detail": "Groin"
+                "detail": ""
               },
               {
                 "name": "Jason Pinnock",
                 "pos": "S",
                 "status": "Questionable",
-                "detail": "Back"
+                "detail": ""
               }
             ],
             "leaders": [
@@ -3901,25 +3930,25 @@
             ],
             "news": [
               {
+                "h": "Jaguars visit the Giants in a matchup of two unexpected division leaders",
+                "d": "— John Harbaugh had no time this week for analyzing what has made the Jacksonville Jaguars one of the NFL's top teams.",
+                "url": "http://www.espn.com/nfl/preview?gameId=401873069",
+                "video": false,
+                "at": "2026-11-19T19:37:36Z"
+              },
+              {
+                "h": "'Protect yourself': Stephen A. implores Skattebo to end backflips",
+                "d": "'Protect yourself': Stephen A. implores Skattebo to end backflips",
+                "url": "https://www.espn.com/video/clip/_/id/50531780/stephen-implores-skattebo-end-backflips",
+                "video": true,
+                "at": "2026-11-19T16:14:49Z"
+              },
+              {
                 "h": "Giants RB Cam Skattebo to nix backflips in wake of Aidan Hutchinson's injury",
                 "d": "Giants RB Cam Skattebo said he is holding off on doing any more backflips after Lions DE Aidan Hutchinson suffered a major knee injury while leaping and celebrating a sack.",
                 "url": "https://www.espn.com/nfl/story/_/id/50524576/rb-skattebo-nix-backflips-wake-hutchinson-injury",
                 "video": false,
                 "at": "2026-11-18T23:13:37Z"
-              },
-              {
-                "h": "Giants schedule turns tough",
-                "d": "Jordan Raanan details the Giants' rough portion of their schedule over the next six weeks.",
-                "url": "https://www.espn.com/video/clip/_/id/50523885/giants-schedule-turns-tough",
-                "video": true,
-                "at": "2026-11-18T21:06:33Z"
-              },
-              {
-                "h": "Kyle Brandt dismisses notion Jags will blow out Giants on Sunday",
-                "d": "Kyle Brandt dismisses notion Jags will blow out Giants on Sunday",
-                "url": "https://www.espn.com/video/clip/_/id/50520649/kyle-brandt-dismisses-notion-jags-blow-giants-sunday",
-                "video": true,
-                "at": "2026-11-18T14:39:57Z"
               }
             ]
           }
@@ -3927,7 +3956,7 @@
       },
       "pick": "JAC",
       "prob": 70,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
         72,
         30
@@ -3951,11 +3980,11 @@
         "city": "Mexico City",
         "spread": "SF -3",
         "total": 46.5,
-        "mlAway": "+136",
-        "mlHome": "-162"
+        "mlAway": "+140",
+        "mlHome": "-167"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           36.6,
           63.1
@@ -4113,25 +4142,25 @@
             ],
             "news": [
               {
+                "h": "Vikings-49ers matchup in Mexico features the best defense vs. the best offense",
+                "d": "When Brock Purdy last walked off the field after playing Minnesota in 2024, he sought out Vikings defensive coordinator Brian Flores an complimented him on...",
+                "url": "http://www.espn.com/nfl/preview?gameId=401873077",
+                "video": false,
+                "at": "2026-11-19T19:09:35Z"
+              },
+              {
+                "h": "Vikings' Cousins channeling Dantonio's 'slow down' maxim amid whirlwind month",
+                "d": "As he manages the whirlwind of his professional and personal life this month, Vikings QB Kirk Cousins has relied on a maxim he often heard from his college coach Mark Dantonio at Michigan State -- when things speed up, try to slow down.",
+                "url": "https://www.espn.com/nfl/story/_/id/50532748/vikings-cousins-channeling-dantonio-maxim-amid-whirlwind-month",
+                "video": false,
+                "at": "2026-11-19T19:23:16Z"
+              },
+              {
                 "h": "What Stephen A. is looking to see from Vikings in 'litmus test' vs. 49ers",
                 "d": "What Stephen A. is looking to see from Vikings in 'litmus test' vs. 49ers",
                 "url": "https://www.espn.com/video/clip/_/id/50531471/what-stephen-looking-see-vikings-litmus-test-vs-49ers",
                 "video": true,
                 "at": "2026-11-19T15:29:04Z"
-              },
-              {
-                "h": "Justin Jefferson getting back into a flow with Kirk Cousins",
-                "d": "Kevin Seifert details the next step of getting Justin Jefferson back into the flow of the Vikings' offense with Kirk Cousins.",
-                "url": "https://www.espn.com/video/clip/_/id/50525758/justin-jefferson-getting-back-flow-kirk-cousins",
-                "video": true,
-                "at": "2026-11-19T01:01:29Z"
-              },
-              {
-                "h": "Can the Vikings make a Super Bowl run with Kirk Cousins?",
-                "d": "Can the Vikings make a Super Bowl run with Kirk Cousins?",
-                "url": "https://www.espn.com/video/clip/_/id/50520478/can-vikings-make-super-bowl-run-kirk-cousins",
-                "video": true,
-                "at": "2026-11-18T14:15:49Z"
               }
             ]
           },
@@ -4191,6 +4220,12 @@
                 "detail": "Surgery"
               },
               {
+                "name": "Mike Evans",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Tendinitis"
+              },
+              {
                 "name": "Ji'Ayir Brown",
                 "pos": "S",
                 "status": "Questionable",
@@ -4207,12 +4242,6 @@
                 "pos": "CB",
                 "status": "Questionable",
                 "detail": "Shoulder"
-              },
-              {
-                "name": "Siran Neal",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Knee"
               }
             ],
             "leaders": [
@@ -4276,38 +4305,38 @@
             ],
             "news": [
               {
+                "h": "Vikings-49ers matchup in Mexico features the best defense vs. the best offense",
+                "d": "When Brock Purdy last walked off the field after playing Minnesota in 2024, he sought out Vikings defensive coordinator Brian Flores an complimented him on...",
+                "url": "http://www.espn.com/nfl/preview?gameId=401873077",
+                "video": false,
+                "at": "2026-11-19T19:09:35Z"
+              },
+              {
+                "h": "Nick Bosa looks to end defensive struggles",
+                "d": "Nick Wagoner reports on Nick Bosa looking to end his 4-game drought of not having a sack in their next matchup vs. the Vikings.",
+                "url": "https://www.espn.com/video/clip/_/id/50531808/nick-bosa-looks-end-defensive-struggles",
+                "video": true,
+                "at": "2026-11-19T16:09:49Z"
+              },
+              {
                 "h": "Niners' Nick Bosa on 4-game sack drought: 'Don't think I'm playing my best'",
                 "d": "Niners star Nick Bosa acknowledged his performance this season, including four straight games with no sacks, hasn't been up to his usual standard.",
                 "url": "https://www.espn.com/nfl/story/_/id/50526309/niners-nick-bosa-says-better-amid-4-game-sack-drought",
                 "video": false,
                 "at": "2026-11-19T01:47:36Z"
-              },
-              {
-                "h": "Why the 49ers are practicing in Colorado before Vikings matchup",
-                "d": "Nick Wagoner breaks down the thought process as to why the 49ers are practicing in Colorado before heading to Mexico City.",
-                "url": "https://www.espn.com/video/clip/_/id/50525602/why-49ers-practicing-colorado-vikings-matchup",
-                "video": true,
-                "at": "2026-11-19T00:44:41Z"
-              },
-              {
-                "h": "Sources: Brandon Aiyuk contacted Jayden Daniels to mend friendship with star QB",
-                "d": "Brandon Aiyuk and Jayden Daniels have patched up their relationship after a falling out earlier this year, sources told ESPN.",
-                "url": "https://www.espn.com/nfl/story/_/id/50522814/sources-brandon-aiyuk-mended-friendship-jayden-daniels",
-                "video": false,
-                "at": "2026-11-18T18:50:43Z"
               }
             ]
           }
         }
       },
       "pick": "SF",
-      "prob": 59,
-      "source": "DraftKings",
+      "prob": 60,
+      "source": "Draft Kings",
       "kalshi": [
-        41,
-        60
+        40,
+        61
       ],
-      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 60%."
+      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 61%."
     },
     {
       "id": "w11-cin-was",
@@ -4325,13 +4354,13 @@
         "venue": "Northwest Stadium",
         "city": "Landover",
         "weather": "52° Partly cloudy",
-        "spread": "CIN -6.5",
+        "spread": "CIN -6",
         "total": 53.5,
-        "mlAway": "-310",
-        "mlHome": "+250"
+        "mlAway": "-292",
+        "mlHome": "+239"
       },
       "report": {
-        "updated": "2026-11-19T15:50:50.507Z",
+        "updated": "2026-11-19T21:47:38.948Z",
         "fpi": [
           76.2,
           23.6
@@ -4383,22 +4412,22 @@
             "key": [],
             "injuries": [
               {
-                "name": "Andrei Iosivas",
-                "pos": "WR",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
+                "name": "Dax Hill",
+                "pos": "CB",
+                "status": "Questionable",
+                "detail": "Illness"
+              },
+              {
+                "name": "Dylan Fairchild",
+                "pos": "G",
+                "status": "Questionable",
+                "detail": "Oblique"
               },
               {
                 "name": "Kyle Dugger",
                 "pos": "S",
                 "status": "Questionable",
                 "detail": "Quadriceps"
-              },
-              {
-                "name": "Myles Hinton",
-                "pos": "OT",
-                "status": "Questionable",
-                "detail": "Illness"
               },
               {
                 "name": "Oren Burks",
@@ -4478,7 +4507,7 @@
                 "d": "Can the Bengals succeed in the postseason with a pass-heavy offense?",
                 "url": "https://www.espn.com/video/clip/_/id/50531470/can-bengals-succeed-postseason-pass-heavy-offense",
                 "video": true,
-                "at": "2026-11-19T15:26:43Z"
+                "at": "2026-11-19T15:48:55Z"
               },
               {
                 "h": "Can the Bengals keep winning while throwing so much?",
@@ -4488,11 +4517,11 @@
                 "at": "2026-11-16T20:17:29Z"
               },
               {
-                "h": "Burrow's mindset after big divisional win",
-                "d": "Ben Baby recaps Joe Burrow and the Bengals' divisional win against the Steelers.",
-                "url": "https://www.espn.com/video/clip/_/id/50502064/burrow-mindset-big-divisional-win",
-                "video": true,
-                "at": "2026-11-16T17:08:52Z"
+                "h": "Joe Burrow's 4-TD night puts QB in company of Tom Brady, Peyton Manning",
+                "d": "Bengals QB Joe Burrow threw for 409 yards with four touchdowns and no interceptions Sunday night, becoming just the third player in NFL history after Tom Brady and Peyton Manning to throw at least 20 passing touchdowns in a five-game span.",
+                "url": "https://www.espn.com/nfl/story/_/id/50499235/bengals-joe-burrow-4-touchdowns-win-vs-steelers-puts-company-tom-brady-peyton-manning",
+                "video": false,
+                "at": "2026-11-16T13:07:43Z"
               }
             ]
           },
@@ -4556,16 +4585,16 @@
                 "detail": "Calf"
               },
               {
-                "name": "Colson Yankoff",
-                "pos": "TE",
-                "status": "Questionable",
-                "detail": "Knee"
+                "name": "Daron Payne",
+                "pos": "DT",
+                "status": "Injured Reserve",
+                "detail": "Surgery"
               },
               {
-                "name": "Lucas Patrick",
-                "pos": "G",
+                "name": "Quan Martin",
+                "pos": "S",
                 "status": "Questionable",
-                "detail": "Concussion"
+                "detail": "Shoulder"
               }
             ],
             "leaders": [
@@ -4654,8 +4683,8 @@
         }
       },
       "pick": "CIN",
-      "prob": 73,
-      "source": "DraftKings",
+      "prob": 72,
+      "source": "Draft Kings",
       "kalshi": [
         73,
         28
@@ -4723,7 +4752,7 @@
           "NYJ"
         ]
       ],
-      "note": "The two likeliest underdogs: Ravens 45%, Jets 41%. Small stake only."
+      "note": "The two likeliest underdogs: Ravens 43%, Jets 40%. Small stake only."
     }
   ],
   "tickets": [
@@ -4796,7 +4825,7 @@
       "key": "mix-safe",
       "games": [
         "w11-ari-kc",
-        "w11-min-sf",
+        "w11-tb-det",
         "w11-pit-phi"
       ],
       "name": "Sunday safe bet",
@@ -4814,24 +4843,24 @@
           "why": "Team leader in passing: 199/298, 2,385 YDS, 19 TD, 4 INT."
         },
         {
-          "game": "w11-min-sf",
-          "team": "SF",
-          "player": "Christian McCaffrey",
-          "bet": "30+ rushing yards",
+          "game": "w11-tb-det",
+          "team": "DET",
+          "player": "Jared Goff",
+          "bet": "200+ passing yards",
           "prob": 80,
-          "ticker": "KXNFLRSHYDS-26NOV22MINSF-SFCMCCAFFREY23-30",
+          "ticker": "KXNFLPASSYDS-26NOV22TBDET-DETJGOFF16-200",
           "result": null,
-          "why": "Team leader in rushing: 115 CAR, 519 YDS, 10 TD."
+          "why": "Team leader in passing: 205/304, 2,437 YDS, 18 TD, 4 INT."
         },
         {
           "game": "w11-pit-phi",
           "team": "PIT",
-          "player": "Aaron Rodgers",
-          "bet": "1+ passing touchdowns",
-          "prob": 79,
-          "ticker": "KXNFLPASSTDS-26NOV22PITPHI-PITARODGERS8-1",
+          "player": "DK Metcalf",
+          "bet": "20+ receiving yards",
+          "prob": 80,
+          "ticker": "KXNFLRECYDS-26NOV22PITPHI-PITDMETCALF4-20",
           "result": null,
-          "why": "Team leader in passing: 190/317, 2,014 YDS, 15 TD, 6 INT."
+          "why": "Team leader in receiving: 35 REC, 432 YDS, 2 TD."
         }
       ]
     },
@@ -4840,9 +4869,9 @@
       "key": "mix-medium",
       "games": [
         "w11-no-chi",
-        "w11-tb-det",
         "w11-bal-car",
-        "w11-jac-nyg"
+        "w11-pit-phi",
+        "w11-tb-det"
       ],
       "name": "Sunday medium bet",
       "tag": "Medium",
@@ -4859,65 +4888,32 @@
           "why": "Team leader in passing: 134/195, 1,546 YDS, 8 TD, 5 INT."
         },
         {
-          "game": "w11-tb-det",
-          "team": "DET",
-          "player": "Jahmyr Gibbs",
-          "bet": "20+ receiving yards",
-          "prob": 70,
-          "ticker": "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20",
-          "result": null,
-          "why": "Team leader in rushing: 199 CAR, 1,000 YDS, 11 TD."
-        },
-        {
           "game": "w11-bal-car",
-          "team": "BAL",
-          "player": "Derrick Henry",
-          "bet": "50+ rushing yards",
+          "team": "CAR",
+          "player": "Tetairoa McMillan",
+          "bet": "4+ receptions",
           "prob": 70,
-          "ticker": "KXNFLRSHYDS-26NOV22BALCAR-BALDHENRY22-50",
+          "ticker": "KXNFLREC-26NOV22BALCAR-CARTMCMILLAN4-4",
           "result": null,
-          "why": "Team leader in rushing: 185 CAR, 699 YDS, 10 TD."
+          "why": "Team leader in receiving: 49 REC, 660 YDS, 3 TD."
         },
         {
-          "game": "w11-jac-nyg",
-          "team": "NYG",
-          "player": "Cam Skattebo",
-          "bet": "40+ rushing yards",
+          "game": "w11-pit-phi",
+          "team": "PIT",
+          "player": "DK Metcalf",
+          "bet": "3+ receptions",
           "prob": 70,
-          "ticker": "KXNFLRSHYDS-26NOV22JACNYG-NYGCSKATTEBO44-40",
+          "ticker": "KXNFLREC-26NOV22PITPHI-PITDMETCALF4-3",
           "result": null,
-          "why": "Team leader in rushing: 116 CAR, 496 YDS, 4 TD."
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "key": "mix-payout",
-      "games": [
-        "w11-no-chi",
-        "w11-tb-det"
-      ],
-      "name": "Sunday high payout",
-      "tag": "High payout",
-      "note": "Two longer-shot Kalshi player props near 40% each, from different games. Fewer legs, bigger return. Small stake only.",
-      "legs": [
-        {
-          "game": "w11-no-chi",
-          "team": "CHI",
-          "player": "Luther Burden III",
-          "bet": "70+ receiving yards",
-          "prob": 40,
-          "ticker": "KXNFLRECYDS-26NOV22NOCHI-CHILBURDEN10-70",
-          "result": null,
-          "why": "Team leader in receiving: 49 REC, 644 YDS, 4 TD."
+          "why": "Team leader in receiving: 35 REC, 432 YDS, 2 TD."
         },
         {
           "game": "w11-tb-det",
           "team": "DET",
           "player": "Amon-Ra St. Brown",
-          "bet": "90+ receiving yards",
-          "prob": 40,
-          "ticker": "KXNFLRECYDS-26NOV22TBDET-DETASTBROWN14-90",
+          "bet": "6+ receptions",
+          "prob": 70,
+          "ticker": "KXNFLREC-26NOV22TBDET-DETASTBROWN14-6",
           "result": null,
           "why": "Team leader in receiving: 65 REC, 755 YDS, 7 TD."
         }
@@ -4925,41 +4921,34 @@
     },
     {
       "auto": true,
-      "key": "w11-cin-was",
-      "game": "w11-cin-was",
-      "name": "Bengals at Commanders",
-      "tag": "Mon · Safe",
-      "note": "Safe bet: three Kalshi player props near 80% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
+      "key": "mix-payout",
+      "games": [
+        "w11-nyj-lac",
+        "w11-ten-dal"
+      ],
+      "name": "Sunday high payout",
+      "tag": "High payout",
+      "note": "Two longer-shot Kalshi player props near 40% each, from different games. Fewer legs, bigger return. Small stake only.",
       "legs": [
         {
-          "game": "w11-cin-was",
-          "team": "CIN",
-          "player": "Joe Burrow",
-          "bet": "2+ passing touchdowns",
-          "prob": 80,
-          "ticker": "KXNFLPASSTDS-26NOV23CINWAS-CINJBURROW9-2",
+          "game": "w11-nyj-lac",
+          "team": "LAC",
+          "player": "Justin Herbert",
+          "bet": "225+ passing yards",
+          "prob": 40,
+          "ticker": "KXNFLPASSYDS-26NOV22NYJLAC-LACJHERBERT10-225",
           "result": null,
-          "why": "Team leader in passing: 254/340, 2,795 YDS, 27 TD, 6 INT."
+          "why": "Team leader in passing: 156/253, 1,720 YDS, 6 TD, 11 INT."
         },
         {
-          "game": "w11-cin-was",
-          "team": "CIN",
-          "player": "Chase Brown",
-          "bet": "25+ rushing yards",
-          "prob": 80,
-          "ticker": "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25",
+          "game": "w11-ten-dal",
+          "team": "DAL",
+          "player": "Dak Prescott",
+          "bet": "300+ passing yards",
+          "prob": 40,
+          "ticker": "KXNFLPASSYDS-26NOV22TENDAL-DALDPRESCOTT4-300",
           "result": null,
-          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
-        },
-        {
-          "game": "w11-cin-was",
-          "team": "WAS",
-          "player": "Jayden Daniels",
-          "bet": "1+ passing touchdowns",
-          "prob": 87,
-          "ticker": "KXNFLPASSTDS-26NOV23CINWAS-WASJDANIELS5-1",
-          "result": null,
-          "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT."
+          "why": "Team leader in passing: 248/387, 2,724 YDS, 21 TD, 6 INT."
         }
       ]
     }
@@ -5068,6 +5057,55 @@
       "player": "Jayden Daniels",
       "bet": "1+ passing touchdowns",
       "prob": 87,
+      "result": null
+    },
+    "KXNFLPASSYDS-26NOV22TBDET-DETJGOFF16-200": {
+      "game": "w11-tb-det",
+      "player": "Jared Goff",
+      "bet": "200+ passing yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV22PITPHI-PITDMETCALF4-20": {
+      "game": "w11-pit-phi",
+      "player": "DK Metcalf",
+      "bet": "20+ receiving yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLREC-26NOV22BALCAR-CARTMCMILLAN4-4": {
+      "game": "w11-bal-car",
+      "player": "Tetairoa McMillan",
+      "bet": "4+ receptions",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLREC-26NOV22PITPHI-PITDMETCALF4-3": {
+      "game": "w11-pit-phi",
+      "player": "DK Metcalf",
+      "bet": "3+ receptions",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLREC-26NOV22TBDET-DETASTBROWN14-6": {
+      "game": "w11-tb-det",
+      "player": "Amon-Ra St. Brown",
+      "bet": "6+ receptions",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLPASSYDS-26NOV22NYJLAC-LACJHERBERT10-225": {
+      "game": "w11-nyj-lac",
+      "player": "Justin Herbert",
+      "bet": "225+ passing yards",
+      "prob": 40,
+      "result": null
+    },
+    "KXNFLPASSYDS-26NOV22TENDAL-DALDPRESCOTT4-300": {
+      "game": "w11-ten-dal",
+      "player": "Dak Prescott",
+      "bet": "300+ passing yards",
+      "prob": 40,
       "result": null
     }
   }
