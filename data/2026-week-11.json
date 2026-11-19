@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Thu Nov 19, 7:25 AM PT",
-  "refreshed": "Thu Nov 19, 7:38 AM PT",
+  "refreshed": "Thu Nov 19, 7:51 AM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -26,7 +26,7 @@
         "mlHome": "-750"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           25.1,
           74.7
@@ -379,7 +379,7 @@
         "weather": "65° Partly sunny"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           5.2,
           94.8
@@ -718,7 +718,7 @@
         "mlHome": "-625"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           21.3,
           78.5
@@ -1065,7 +1065,7 @@
         "mlHome": "-380"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           19.3,
           80.5
@@ -1426,7 +1426,7 @@
         "mlHome": "-340"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           38.4,
           61.3
@@ -1773,7 +1773,7 @@
         "mlHome": "-1350"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           11.6,
           88.3
@@ -2142,7 +2142,7 @@
         "mlHome": "+180"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           63.9,
           35.8
@@ -2510,7 +2510,7 @@
         "mlHome": "-135"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           31,
           68.7
@@ -2871,7 +2871,7 @@
         "mlHome": "-162"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           30.2,
           69.5
@@ -3240,7 +3240,7 @@
         "mlHome": "-625"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           13.6,
           86.3
@@ -3595,7 +3595,7 @@
         "mlHome": "+215"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           80.8,
           19
@@ -3955,7 +3955,7 @@
         "mlHome": "-162"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           36.6,
           63.1
@@ -4331,7 +4331,7 @@
         "mlHome": "+250"
       },
       "report": {
-        "updated": "2026-11-19T15:38:00.257Z",
+        "updated": "2026-11-19T15:50:50.507Z",
         "fpi": [
           76.2,
           23.6
@@ -4940,5 +4940,112 @@
         }
       ]
     }
-  ]
+  ],
+  "markets": {
+    "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-200": {
+      "game": "w11-ind-hou",
+      "player": "C.J. Stroud",
+      "bet": "200+ passing yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
+      "game": "w11-ind-hou",
+      "player": "Nico Collins",
+      "bet": "40+ receiving yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20": {
+      "game": "w11-ind-hou",
+      "player": "Tyler Warren",
+      "bet": "20+ receiving yards",
+      "prob": 79,
+      "result": null
+    },
+    "KXNFLPASSYDS-26NOV22ARIKC-KCPMAHOMES15-200": {
+      "game": "w11-ari-kc",
+      "player": "Patrick Mahomes",
+      "bet": "200+ passing yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLRSHYDS-26NOV22MINSF-SFCMCCAFFREY23-30": {
+      "game": "w11-min-sf",
+      "player": "Christian McCaffrey",
+      "bet": "30+ rushing yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLPASSTDS-26NOV22PITPHI-PITARODGERS8-1": {
+      "game": "w11-pit-phi",
+      "player": "Aaron Rodgers",
+      "bet": "1+ passing touchdowns",
+      "prob": 79,
+      "result": null
+    },
+    "KXNFLPASSTDS-26NOV22NOCHI-CHICWILLIAMS18-2": {
+      "game": "w11-no-chi",
+      "player": "Caleb Williams",
+      "bet": "2+ passing touchdowns",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20": {
+      "game": "w11-tb-det",
+      "player": "Jahmyr Gibbs",
+      "bet": "20+ receiving yards",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLRSHYDS-26NOV22BALCAR-BALDHENRY22-50": {
+      "game": "w11-bal-car",
+      "player": "Derrick Henry",
+      "bet": "50+ rushing yards",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLRSHYDS-26NOV22JACNYG-NYGCSKATTEBO44-40": {
+      "game": "w11-jac-nyg",
+      "player": "Cam Skattebo",
+      "bet": "40+ rushing yards",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV22NOCHI-CHILBURDEN10-70": {
+      "game": "w11-no-chi",
+      "player": "Luther Burden III",
+      "bet": "70+ receiving yards",
+      "prob": 40,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV22TBDET-DETASTBROWN14-90": {
+      "game": "w11-tb-det",
+      "player": "Amon-Ra St. Brown",
+      "bet": "90+ receiving yards",
+      "prob": 40,
+      "result": null
+    },
+    "KXNFLPASSTDS-26NOV23CINWAS-CINJBURROW9-2": {
+      "game": "w11-cin-was",
+      "player": "Joe Burrow",
+      "bet": "2+ passing touchdowns",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25": {
+      "game": "w11-cin-was",
+      "player": "Chase Brown",
+      "bet": "25+ rushing yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLPASSTDS-26NOV23CINWAS-WASJDANIELS5-1": {
+      "game": "w11-cin-was",
+      "player": "Jayden Daniels",
+      "bet": "1+ passing touchdowns",
+      "prob": 87,
+      "result": null
+    }
+  }
 }

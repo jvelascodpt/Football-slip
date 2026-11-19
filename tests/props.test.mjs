@@ -59,13 +59,20 @@ test("buildProps keeps hand-entered and started parlays, rebuilds the rest", () 
   assert.deepEqual(after, before);   // game started: nothing rebuilt or dropped
 });
 
-test("gradeProps fills results from settled Kalshi markets for games underway or final", async () => {
-  const week = { games: [{ ...game, status: "final" }], props: [{ auto: true, game: game.id, legs: [
-    { game: game.id, ticker: "A", result: null }, { game: game.id, ticker: "B", result: null }, { game: game.id, ticker: "C", result: null },
-  ] }] };
-  const n = await gradeProps(week, async (t) => ({ A: { result: "yes" }, B: { result: "no" }, C: { result: "" } })[t]);
+test("gradeProps saves live prices and settled results for every tracked leg", async () => {
+  const week = { games: [{ ...game, status: "live" }], props: [{ auto: true, key: game.id, game: game.id, legs: [
+    { game: game.id, ticker: "A", result: null, prob: 80 }, { game: game.id, ticker: "B", result: null, prob: 75 },
+  ] }], markets: { OLD: { game: game.id, player: "x", bet: "y", prob: 70, result: null } } };
+  const n = await gradeProps(week, async (ts) => {
+    assert.deepEqual(ts.sort(), ["A", "B", "OLD"]);   // an earlier version's leg is still tracked
+    return [{ ticker: "A", result: "yes" }, { ticker: "B", yes_bid_dollars: "0.6000", yes_ask_dollars: "0.6400" }, { ticker: "OLD", result: "no" }];
+  });
   assert.equal(n, 2);
-  assert.deepEqual(week.props[0].legs.map((l) => l.result), ["hit", "miss", null]);
+  assert.deepEqual(week.props[0].legs.map((l) => [l.result, l.live]), [["hit", undefined], [null, 62]]);
+  assert.equal(week.markets.OLD.result, "miss");
+  assert.equal(week.markets.B.live, 62);
+  const upcoming = { games: [game], props: [{ legs: [{ game: game.id, ticker: "Z", result: null }] }] };
+  assert.equal(await gradeProps(upcoming, async () => { throw new Error("should not fetch"); }), 0);
 });
 
 import { pooled, pickMixParlay, MIX } from "../scripts/props.mjs";

@@ -43,7 +43,9 @@ export async function fetchPropMarkets() {
     for (let i = 0; i < 5; i++) {
       const j = await getJSON(`${API}/markets?series_ticker=${series}&status=open&limit=1000${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ""}`);
       (j.markets || []).forEach((m) => { const p = parsePropMarket(m, series); if (p) out.push(p); });
-      cursor = j.cursor; if (!cursor) break;
+      cursor = j.cursor;
+      await new Promise((r) => setTimeout(r, 400));   // be gentle with Kalshi's rate limit
+      if (!cursor) break;
     }
   }
   return out;
@@ -180,19 +182,48 @@ export function buildProps(week, candidates, now = new Date()) {
   return [...manual, ...auto];
 }
 
-// Fill in hit/miss from Kalshi for legs whose market has settled. Returns the number graded.
-export async function gradeProps(week, fetchMarket = (t) => getJSON(`${API}/markets/${t}`).then((j) => j.market)) {
-  let n = 0;
-  for (const p of week.props || []) {
-    for (const l of p.legs || []) {
-      if (!l.ticker || l.result) continue;
-      const g = week.games.find((x) => x.id === l.game);
-      if (!g || g.status === "upcoming") continue;
-      try {
-        const m = await fetchMarket(l.ticker);
-        if (m && (m.result === "yes" || m.result === "no")) { l.result = m.result === "yes" ? "hit" : "miss"; n++; }
-      } catch (e) { /* try again next run */ }
-    }
+// Every prop leg the app has suggested this week, by Kalshi ticker, so bets logged from an
+// earlier version of a parlay still get live prices and results after a re-price.
+export function trackMarkets(week) {
+  week.markets ||= {};
+  (week.props || []).forEach((p) => (p.legs || []).forEach((l) => {
+    if (!l.ticker) return;
+    const m = (week.markets[l.ticker] ||= { game: l.game, player: l.player, bet: l.bet, prob: l.prob, result: null });
+    if (l.result && !m.result) m.result = l.result;
+  }));
+  return week.markets;
+}
+
+const fetchMarketsBatch = async (tickers) => {
+  const out = [];
+  for (let i = 0; i < tickers.length; i += 50) {
+    const j = await getJSON(`${API}/markets?tickers=${tickers.slice(i, i + 50).map(encodeURIComponent).join(",")}&limit=100`);
+    out.push(...(j.markets || []));
   }
+  return out;
+};
+
+// For games underway or finished: save each tracked market's live price (percent) and, once
+// Kalshi settles it, the result; copy both onto the matching parlay legs. Returns legs graded.
+export async function gradeProps(week, fetchMarkets = fetchMarketsBatch, now = new Date()) {
+  const markets = trackMarkets(week);
+  const status = (id) => week.games.find((g) => g.id === id)?.status;
+  const due = Object.keys(markets).filter((t) => !markets[t].result && status(markets[t].game) && status(markets[t].game) !== "upcoming");
+  let n = 0;
+  if (due.length) {
+    let fetched = [];
+    try { fetched = await fetchMarkets(due); } catch (e) { return 0; }   // try again next run
+    fetched.forEach((km) => {
+      const m = markets[km.ticker]; if (!m) return;
+      if (km.result === "yes" || km.result === "no") { m.result = km.result === "yes" ? "hit" : "miss"; n++; delete m.live; return; }
+      const bid = cents(km.yes_bid_dollars), ask = cents(km.yes_ask_dollars), last = cents(km.last_price_dollars);
+      const live = bid != null && ask != null && ask > 0 ? Math.round((bid + ask) / 2) : last;
+      if (live != null) { m.live = live; m.liveAt = now.toISOString(); }
+    });
+  }
+  (week.props || []).forEach((p) => (p.legs || []).forEach((l) => {
+    const m = l.ticker && markets[l.ticker]; if (!m) return;
+    if (m.result) { l.result = m.result; delete l.live; } else if (m.live != null) l.live = m.live;
+  }));
   return n;
 }

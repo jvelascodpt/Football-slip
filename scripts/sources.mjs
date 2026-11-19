@@ -4,16 +4,21 @@ import { TEAMS, teamCode, liveText } from "../js/core.js";
 
 const UA = { "User-Agent": "football-slip-data-script", Accept: "application/json" };
 
-export async function getJSON(url, { tries = 3 } = {}) {
+export async function getJSON(url, { tries = 4 } = {}) {
   let err;
   for (let i = 0; i < tries; i++) {
+    let wait = 1000 * 2 ** i;
     try {
       const r = await fetch(url, { headers: UA });
+      if (r.status === 429) {   // rate limited: honour Retry-After, else back off harder
+        wait = Math.max(wait, (Number(r.headers.get("retry-after")) || 5 * (i + 1)) * 1000);
+        throw new Error(`429 Too Many Requests for ${url.replace(/apiKey=[^&]+/, "apiKey=***")}`);
+      }
       if (!r.ok) throw new Error(`${r.status} ${r.statusText} for ${url.replace(/apiKey=[^&]+/, "apiKey=***")}`);
       return await r.json();
     } catch (e) {
       err = e;
-      if (i < tries - 1) await new Promise((res) => setTimeout(res, 1000 * 2 ** i));
+      if (i < tries - 1) await new Promise((res) => setTimeout(res, wait));
     }
   }
   throw err;

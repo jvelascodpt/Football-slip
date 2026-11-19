@@ -236,13 +236,15 @@ function viewPicks() {
 function legItem(l, i, opts = {}) {
   const g = game(legGame(l)), s = legState(game)(l), team = legTeam(l);
   if (isProp(l)) {
-    const grade = opts.grade ? `<span class="p"><button class="grade${l.result === "hit" ? " on hit" : ""}" data-grade="${opts.grade}|${i}|hit">Hit</button> <button class="grade${l.result === "miss" ? " on miss" : ""}" data-grade="${opts.grade}|${i}|miss">Miss</button></span>` : "";
-    return `<li><span class="dot ${s}" title="${stateLabel[s]}"></span>${badge(team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span>${l.odds != null ? `<span class="p">${fmtOdds(l.odds)}</span>` : ""}${grade}</li>`;
+    // Hand-entered prop legs are graded by tapping; legs from the Props tab grade from Kalshi.
+    const grade = opts.grade && !l.ticker ? `<span class="p"><button class="grade${l.result === "hit" ? " on hit" : ""}" data-grade="${opts.grade}|${i}|hit">Hit</button> <button class="grade${l.result === "miss" ? " on miss" : ""}" data-grade="${opts.grade}|${i}|miss">Miss</button></span>` : "";
+    const price = s === "hit" ? "Hit" : s === "miss" ? "Missed" : opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : l.prob != null ? `${l.prob}%` : l.odds != null ? fmtOdds(l.odds) : "";
+    return `<li><span class="dot ${s}" title="${stateLabel[s]}"></span>${badge(team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span>${price && !grade ? `<span class="p">${price}</span>` : ""}${grade}</li>`;
   }
   if (!g) return `<li><span class="dot"></span><span>${esc(nick(team))} (game not found)</span></li>`;
   const opp = team === g.away ? g.home : g.away;
   return `<li><span class="dot ${s}" title="${stateLabel[s]}"></span>${opts.logos ? badge(team) : ""}<span><b>${esc(nick(team))}</b> over ${esc(nick(opp))}</span>
-    <span class="p">${Math.round(probFor(g, team) * 100)}%</span>${opts.removable ? `<button data-rm="${i}" aria-label="Remove ${esc(nick(team))}">×</button>` : ""}</li>`;
+    <span class="p">${s === "hit" ? "Hit" : s === "miss" ? "Missed" : opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : `${Math.round(probFor(g, team) * 100)}%`}</span>${opts.removable ? `<button data-rm="${i}" aria-label="Remove ${esc(nick(team))}">×</button>` : ""}</li>`;
 }
 const legsList = (legs, opts) => `<ul class="legs">${legs.map((l, i) => legItem(l, i, opts)).join("")}</ul>`;
 
@@ -286,20 +288,60 @@ function parlayCard(pl, i) {
     ${canLoad ? `<div class="btnrow"><button class="btn" data-load="${i}">Load into slip</button></div>` : ""}</article>`;
 }
 
-// A logged prop leg that came from a Kalshi prop picks up the graded result from the week file.
-function withKalshiResult(l) {
-  if (!isProp(l) || l.result || !l.ticker) return l;
-  for (const w of DATA.weeks) for (const p of w.props || []) for (const x of p.legs || []) if (x.ticker === l.ticker && x.result) return { ...l, result: x.result };
-  return l;
+// Kalshi market data saved by the data script, by ticker: opening price, live price, result.
+function marketFor(ticker) {
+  for (const w of DATA.weeks) {
+    if (w.markets && w.markets[ticker]) return w.markets[ticker];
+    for (const p of w.props || []) for (const x of p.legs || []) if (x.ticker === ticker) return x;
+  }
+  return null;
 }
-function betCard(b) {
+// A logged prop leg that came from a Kalshi prop picks up the live price and graded result.
+function withKalshiResult(l) {
+  if (!isProp(l) || !l.ticker) return l;
+  const m = marketFor(l.ticker); if (!m) return l;
+  return { ...l, result: l.result || m.result || null, live: m.live, prob: l.prob ?? m.prob };
+}
+
+/* ---------- live chance to hit ---------- */
+// ESPN in-game win probability per game, fetched when the quarter changes: {gameId: {away, home, period, label}}.
+const liveWP = {};
+const periodLabel = (g) => (g.live || "").replace(/\s*\d+:\d+$/, "") || "live";
+// Chance (0-1) a leg hits now, and before kickoff.
+function legChanceNow(l) {
+  const s = legState(game)(l);
+  if (s === "hit") return 1;
+  if (s === "miss") return 0;
+  if (isProp(l)) return s === "live" && l.live != null ? l.live / 100 : l.prob != null ? l.prob / 100 : impliedFromAmerican(l.odds) || 0.5;
+  const g = game(legGame(l)), t = legTeam(l);
+  if (g && s === "live" && liveWP[g.id]) return t === g.away ? liveWP[g.id].away : liveWP[g.id].home;
+  return g ? probFor(g, t) : 0.5;
+}
+function legChanceStart(l) {
+  if (isProp(l)) return l.prob != null ? l.prob / 100 : impliedFromAmerican(l.odds) || 0.5;
+  const g = game(legGame(l)); return g ? probFor(g, legTeam(l)) : 0.5;
+}
+const betChance = (legs, f) => legs.reduce((a, l) => a * f(l), 1);
+// Locked = first game has kicked off; active = locked and not yet won or lost.
+const betLocked = (legs) => legs.some((l) => { const g = game(legGame(l)); return g && locked(g); });
+const betActive = (legs) => betLocked(legs) && !["hit", "miss"].includes(parlayState(legs, game));
+function liveChanceLine(legs) {
+  const now = betChance(legs, legChanceNow), start = betChance(legs, legChanceStart);
+  const liveGames = [...new Set(legs.map(legGame))].map(game).filter((g) => g && g.status === "live");
+  const when = liveGames.length ? liveGames.map((g) => `${nick(g.home)} ${liveWP[g.id]?.label || periodLabel(g)}`).join(", ") : "between games";
+  const cls = now > start + 0.02 ? "g" : now < start - 0.02 ? "b" : "w";
+  return `<p class="verdict"><b class="${cls}">Chance to hit now: ${pct(now)}</b> · ${pct(start)} at kickoff<br><small class="hint">Updated each quarter (${esc(when)}). Team legs use ESPN's live win probability; props use Kalshi's live price.</small></p>`;
+}
+
+function betCard(b, opts = {}) {
   const legs = (b.legs || []).map(withKalshiResult), s = parlayState(legs, game);
-  const del = b.fromFile ? "" : `<button class="btn ghost" data-delbet="${esc(b.id)}">${delArm === b.id ? "Tap again to delete" : "Delete"}</button>`;
-  return `<article class="card${s === "hit" ? " won" : ""}"><div class="meta"><b style="color:var(--ink);font-size:15px">${esc(b.name || "Bet")}</b>${b.book ? `<span class="pill">${esc(b.book)}</span>` : ""}<span class="pill ${s === "pending" ? "" : s} sp">${stateLabel[s]}</span></div>
-    ${legsList(legs, { logos: true, grade: b.fromFile ? null : b.id })}
-    ${progressBar(legs)}${s === "hit" ? winBlock("b" + b.id, +b.cost, +b.payout) : ""}
+  const del = b.fromFile || opts.compact ? "" : `<button class="btn ghost" data-delbet="${esc(b.id)}">${delArm === b.id ? "Tap again to delete" : "Delete"}</button>`;
+  const needsManual = legs.some((l) => isProp(l) && !l.ticker) && !b.fromFile;
+  return `<article class="card${s === "hit" ? " won" : ""}"><div class="meta"><b style="color:var(--ink);font-size:15px">${esc(b.name || "Bet")}</b>${b.book ? `<span class="pill">${esc(b.book)}</span>` : ""}${opts.compact ? `<span class="pill">Week ${b.week}</span>` : ""}<span class="pill ${s === "pending" ? "" : s} sp">${stateLabel[s]}</span></div>
+    ${legsList(legs, { logos: true, grade: b.fromFile || opts.compact ? null : b.id, live: betActive(legs) })}
+    ${progressBar(legs)}${betActive(legs) ? liveChanceLine(legs) : ""}${s === "hit" ? winBlock("b" + b.id, +b.cost, +b.payout) : ""}
     <div class="big"><b>${money(+b.payout)}</b><span>pays on ${money(+b.cost)}<br>Needs ${(b.cost / b.payout * 100).toFixed(1)}% to break even</span></div>
-    ${legs.some(isProp) && !b.fromFile ? `<p class="hint">Mark prop legs Hit or Miss once the game ends.</p>` : ""}
+    ${needsManual && !opts.compact ? `<p class="hint">Mark hand-entered prop legs Hit or Miss once the game ends. Legs logged from the Props tab grade themselves.</p>` : ""}
     ${del ? `<div class="btnrow">${del}</div>` : ""}</article>`;
 }
 
@@ -366,6 +408,12 @@ function viewParlays() {
 /* ---------- props ---------- */
 // A prop leg's chance (0-1): Kalshi price (`prob`, percent) when present, else American odds.
 const propChance = (l) => (l.prob != null ? l.prob / 100 : impliedFromAmerican(l.odds) || 0.5);
+// The bet you logged from this prop parlay, if any (same Kalshi markets).
+function loggedBet(p) {
+  const want = p.legs.map((l) => l.ticker).filter(Boolean).sort().join(",");
+  if (!want) return null;
+  return myBets.find((b) => b.legs.map((l) => l.ticker).filter(Boolean).sort().join(",") === want) || null;
+}
 function propCard(p, i) {
   const legs = p.legs.map((l) => ({ ...l, kind: "prop" }));
   const s = parlayState(legs, game);
@@ -383,7 +431,8 @@ function propCard(p, i) {
     ${progressBar(legs)}${s === "hit" ? winBlock(`p${wk.week}-${i}`, 10, pay, `It hit · $10 at fair odds pays ${money(pay)}`) : ""}
     <div class="big"><b>${pct(prob)}</b><span>chance all ${legs.length} hit, from ${kalshi ? "Kalshi prices" : "book prices"}<br>${kalshi ? `Fair payout on $10 is ${money(pay)}` : `Pays about ${money(pay)} on $10 as a regular parlay`}</span></div>
     ${p.note ? `<p class="note">${esc(p.note)}</p>` : ""}
-    ${open ? `<div class="btnrow"><button class="btn ghost" data-logprop="${i}">Log this as my bet</button></div>` : ""}</article>`;
+    ${loggedBet(p) ? `<p class="logged">✓ Logged as your bet${betLocked(legs) ? " · <a href=\"#tracker\">see it in Tracker</a>" : " · <a href=\"#parlays\">see it in Parlays</a>"}</p>`
+      : open ? `<div class="btnrow"><button class="btn ghost" data-logprop="${i}">Log this as my bet</button></div>` : ""}</article>`;
 }
 function viewProps() {
   const ps = wk.props || [];
@@ -409,7 +458,11 @@ function viewTracker() {
     const net = wb.net ? `${wb.net > 0 ? "+" : "-"}${money(Math.abs(wb.net))}` : "$0.00";
     return `<tr><td>Week ${w.week}</td><td class="n">${z.h}-${z.m}</td><td class="n">${x.h}-${x.m}</td><td class="n">${x.p}</td><td class="n">${ps.filter((s) => s === "hit").length}-${ps.filter((s) => s === "miss").length}</td><td class="n">${net}</td></tr>`;
   }).join("");
-  return `<section class="sec">
+  // Bets whose first game has kicked off and that haven't won or lost yet.
+  const active = allBets().filter((b) => betActive(b.legs.map(withKalshiResult)));
+  const activeHtml = `<section class="sec"><div class="sechead"><h2>Active bets</h2><small>${active.length ? `${active.length} in play` : "Locked once a game kicks off"}</small></div>
+    ${active.length ? active.map((b) => betCard(b, { compact: true })).join("") : `<div class="card"><p class="empty">No bets in play right now. A bet shows up here once its first game kicks off, with its chance to hit updated each quarter.</p></div>`}</section>`;
+  return `${activeHtml}<section class="sec">
     <div class="summary">
       <div class="tile"><b>${y.h}-${y.m}</b><span>Your picks${ySettled ? ", " + Math.round(y.h / ySettled * 100) + "% correct" : ""}</span></div>
       <div class="tile"><b>${r.h}-${r.m}</b><span>Claude's picks${settled ? ", " + Math.round(r.h / settled * 100) + "% correct" : ""}</span></div>
@@ -461,6 +514,37 @@ function tkItem(t) {
   const fin = t.state === "post", aLo = fin && t.as < t.hs, hLo = fin && t.hs < t.as;
   return `<span class="tk"><span class="tm ${aLo ? "lo" : ""}">${tm(t.away)} ${t.as}</span><span class="tm ${hLo ? "lo" : ""}">${tm(t.home)} ${t.hs}</span><span class="st${fin ? "" : " live"}">${fin ? "Final" : esc(t.detail)}</span></span>`;
 }
+// Each quarter (when ESPN's period for a game in one of your active bets changes, or a game
+// ends): fetch ESPN's live win probability for that game and reload the week file, which the
+// game-day data runs update with Kalshi's live prop prices. Returns true if anything changed.
+const lastPeriod = {};
+async function refreshLiveChances() {
+  const ids = new Set(allBets().filter((b) => betActive(b.legs.map(withKalshiResult))).flatMap((b) => b.legs.map(legGame)));
+  const due = [...ids].map(game).filter((g) => g && (g.status === "live" || (g.status === "final" && lastPeriod[g.id] && lastPeriod[g.id] !== "F")))
+    .filter((g) => lastPeriod[g.id] !== (g.status === "final" ? "F" : g.period));
+  if (!due.length) return false;
+  for (const g of due) {
+    lastPeriod[g.id] = g.status === "final" ? "F" : g.period;
+    if (g.status !== "live" || !g.espnId) continue;
+    try {
+      const wp = (await getJSON(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${g.espnId}`)).winprobability;
+      const last = wp && wp[wp.length - 1];
+      if (last && last.homeWinPercentage != null) liveWP[g.id] = { home: last.homeWinPercentage, away: 1 - last.homeWinPercentage, label: periodLabel(g) };
+    } catch (e) { /* keep the pre-game number */ }
+  }
+  // Pick up Kalshi live prices / results the data runs saved since this page loaded.
+  try {
+    const idx = await (await fetch("data/index.json", { cache: "no-cache" })).json();
+    for (const w of DATA.weeks) {
+      const f = idx.weeks.find((x) => x.season === w.season && x.week === w.week);
+      if (!f || !w.games.some((g) => due.includes(g))) continue;
+      const fresh = await (await fetch("data/" + f.file, { cache: "no-cache" })).json();
+      w.markets = fresh.markets; w.props = fresh.props;
+    }
+  } catch (e) { /* offline: keep what we have */ }
+  return true;
+}
+
 let tkTimer;
 async function loadTicker() {
   clearTimeout(tkTimer);
@@ -470,7 +554,9 @@ async function loadTicker() {
     let d = await getJSON(ESPN), wkNo = d.week && d.week.number;
     label = wkNo ? `Week ${wkNo} scores` : "Scores";
     // Keep the game cards as current as the ticker (the data file only updates hourly).
-    if (applyLiveScoreboard(DATA.weeks, d) && wk && wk.week === wkNo && !(document.activeElement && document.activeElement.matches("input,select"))) render();
+    const changed = applyLiveScoreboard(DATA.weeks, d);
+    const quarters = await refreshLiveChances();
+    if ((changed || quarters) && wk && !(document.activeElement && document.activeElement.matches("input,select"))) render();
     if (preview && d.season && d.season.type === 2 && wkNo && wkNo < 18) {
       const n = await getJSON(`${ESPN}?seasontype=2&week=${wkNo + 1}`);
       if (n.events && n.events.length) { d = n; label = `Week ${wkNo + 1} games`; }

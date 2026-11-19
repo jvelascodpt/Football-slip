@@ -43,6 +43,7 @@ export function applyLiveScoreboard(weeks, espn) {
     g.status = status;
     g.score = [Number(a.score) || 0, Number(h.score) || 0];
     if (status === "live") g.live = liveText(t.shortDetail); else delete g.live;
+    if (status === "live") { g.period = e.status?.period || null; if (e.id) g.espnId ||= e.id; } else delete g.period;
     if (JSON.stringify([g.status, g.score, g.live]) !== before) changed++;
   });
   return changed;

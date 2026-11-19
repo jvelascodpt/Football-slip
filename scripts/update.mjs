@@ -22,11 +22,12 @@ import path from "node:path";
 import { espnUrl, fetchKalshi, getJSON, oddsApiUrl, parseEspn, parseKalshi, parseOddsApi, resultsByTeam } from "./sources.mjs";
 import { applyScores, buildWeek, fmtUpdated } from "./build.mjs";
 import { addReports } from "./report.mjs";
-import { buildProps, fetchPropMarkets, gradeProps } from "./props.mjs";
+import { buildProps, fetchPropMarkets, gradeProps, trackMarkets } from "./props.mjs";
 
 // Rebuild prop parlays for games Kalshi has opened that haven't kicked off, and grade settled legs.
 async function updateProps(w) {
   try {
+    trackMarkets(w);   // remember the current legs before a re-price replaces them
     w.props = buildProps(w, await fetchPropMarkets());
     const graded = await gradeProps(w);
     console.log(`Props: ${w.props.filter((p) => p.auto).length} game parlays${graded ? `, graded ${graded} legs` : ""}.`);

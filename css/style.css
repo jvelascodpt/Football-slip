@@ -243,3 +243,6 @@ footer{color:var(--on-turf-muted);font-size:12.5px;border-top:2px solid rgba(255
 [hidden]{display:none!important}
 @media (max-width:380px){.summary{grid-template-columns:1fr 1fr}.team .nm{font-size:20px;letter-spacing:0}.big b{font-size:44px}h1{font-size:28px}}
 @media (prefers-reduced-motion:reduce){.toast{transition:none}}
+.logged{margin:0;font-size:14px;font-weight:600;color:var(--good)}
+.logged a{color:var(--good)}
+.verdict small.hint{display:block;margin-top:2px}
