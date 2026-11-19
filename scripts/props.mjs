@@ -61,7 +61,7 @@ export function matchProp(p, games) {
   return null;
 }
 
-const TARGET = 72;                      // aim for lines priced near 72%
+const TARGET = 72;                      // default aim for a line's price
 const liquid = (p) => p.bid != null && p.ask != null && p.bid >= 3 && p.ask - p.bid <= 6;
 const BAD_STATUS = new Set(["Out", "Injured Reserve", "Suspension", "Doubtful", "Questionable"]);
 const nick = (t) => TEAMS[t] || t;
@@ -97,11 +97,11 @@ const toLeg = (c, { leaderOf }) => {
     why: l ? `Team leader in ${l.cat.toLowerCase()}: ${l.value}.` : "" };
 };
 
-// One 3-leg parlay for a single game: three different players, both teams represented when
-// possible, team stat leaders first, injured players skipped, each at the line priced closest to 72%.
+// Thursday/Monday safe bet for a single game: three different players, both teams represented when
+// possible, team stat leaders first, injured players skipped, each at the line priced closest to 80%.
 export function pickGameParlay(game, candidates) {
   const ctx = context([game]);
-  const ranked = rankPlayers(candidates.map((c) => ({ ...c, gameId: game.id })), { lo: 60, hi: 85, target: TARGET }, ctx);
+  const ranked = rankPlayers(candidates.map((c) => ({ ...c, gameId: game.id })), { lo: 72, hi: 88, target: 80 }, ctx);   // safe bet only
   const legs = [];
   for (const c of ranked) {
     if (legs.length === 3) break;
@@ -114,20 +114,20 @@ export function pickGameParlay(game, candidates) {
   return {
     auto: true, key: game.id, game: game.id,
     name: `${nick(game.away)} at ${nick(game.home)}`,
-    tag: game.kick ? game.kick.split(" ")[0] : "",
-    note: "Kalshi player props near 72% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
+    tag: `${game.kick ? game.kick.split(" ")[0] + " · " : ""}Safe`,
+    note: "Safe bet: three Kalshi player props near 80% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
     legs: legs.map((c) => toLeg(c, ctx)),
   };
 }
 
 // Weekend parlays that mix games: every leg from a different game.
 export const MIX = [
-  { key: "mix-best", size: 3, lo: 60, hi: 85, target: TARGET, name: "best three", tier: "Safest",
-    note: "Three Kalshi player props near 72% each, each from a different game." },
-  { key: "mix-five", size: 5, lo: 60, hi: 85, target: TARGET, name: "five", tier: "Medium",
-    note: "Five Kalshi player props near 72% each, each from a different game." },
-  { key: "mix-long", size: 3, lo: 40, hi: 60, target: 50, name: "long shot", tier: "Long shot",
-    note: "Three coin-flip-range Kalshi player props from different games for a bigger payout. Small stake only." },
+  { key: "mix-safe", size: 3, lo: 72, hi: 88, target: 80, name: "safe bet", tier: "Safe",
+    note: "Three Kalshi player props near 80% each, each from a different game." },
+  { key: "mix-medium", size: 4, lo: 62, hi: 78, target: 70, name: "medium bet", tier: "Medium",
+    note: "Four Kalshi player props near 70% each, each from a different game." },
+  { key: "mix-payout", size: 2, lo: 32, hi: 48, target: 40, name: "high payout", tier: "High payout",
+    note: "Two longer-shot Kalshi player props near 40% each, from different games. Fewer legs, bigger return. Small stake only." },
 ];
 export function pickMixParlay(spec, games, candidates) {
   const ctx = context(games);

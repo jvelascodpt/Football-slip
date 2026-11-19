@@ -41,10 +41,11 @@ test("game parlay: three players, both teams, leaders first, injured and thin ma
   assert.ok(!players.includes("Hurt Guy") && !players.includes("Thin Market"));
   assert.ok(new Set(p.legs.map((l) => l.team)).size === 2);
   const jt = p.legs.find((l) => l.player === "Jonathan Taylor");
-  assert.equal(jt.bet, "40+ rushing yards");   // 67% is closer to 72% than 81%
-  assert.equal(jt.prob, 67);
+  assert.equal(jt.bet, "30+ rushing yards");   // safe bet: the 81% line, not the 67% one
+  assert.equal(jt.prob, 81);
+  assert.ok(p.legs.every((l) => l.prob >= 72 && l.prob <= 88));
   assert.match(jt.why, /Team leader in rushing/);
-  assert.equal(p.tag, "Thu");
+  assert.equal(p.tag, "Thu · Safe");
 });
 
 test("buildProps keeps hand-entered and started parlays, rebuilds the rest", () => {
@@ -74,7 +75,7 @@ const sunday = ["ARI-KC", "TB-DET", "MIA-BUF", "NO-CHI", "TEN-DAL"].map((m, i) =
   const [away, home] = m.split("-");
   return { id: `w11-${away.toLowerCase()}-${home.toLowerCase()}`, away, home, start: `2026-11-22T${18 + (i > 2 ? 3 : 0)}:00:00.000Z`, kick: "Sun 10:00 AM", status: "upcoming", report: { teams: {} } };
 });
-const sundayCands = sunday.flatMap((g, i) => [70, 74, 52].map((ask, j) => ({
+const sundayCands = sunday.flatMap((g, i) => [70, 80, 42].map((ask, j) => ({
   ticker: `T-${g.id}-${j}`, player: `${g.home} Player ${j}`, line: 50, stat: "rushing yards", bid: ask - 2, ask: ask - i, team: g.home, gameId: g.id,
 })));
 
@@ -85,17 +86,17 @@ test("Thursday and Monday games stand alone; Saturday and Sunday games are poole
   assert.equal(pooled({ start: "2026-11-23T01:20:00.000Z" }), true);                       // Sun night 5:20 PM PT
 });
 
-test("weekend parlays mix games: one leg per game, in each tier's price range", () => {
-  const best = pickMixParlay(MIX[0], sunday, sundayCands);
-  assert.equal(best.legs.length, 3);
-  assert.equal(new Set(best.legs.map((l) => l.game)).size, 3);
-  assert.ok(best.legs.every((l) => l.prob >= 60 && l.prob <= 85));
-  assert.equal(best.name, "Sunday best three");
-  const five = pickMixParlay(MIX[1], sunday, sundayCands);
-  assert.equal(new Set(five.legs.map((l) => l.game)).size, 5);
-  const long = pickMixParlay(MIX[2], sunday, sundayCands);
-  assert.ok(long.legs.every((l) => l.prob >= 40 && l.prob <= 60));
-  assert.equal(pickMixParlay(MIX[1], sunday.slice(0, 2), sundayCands.slice(0, 6)), null);  // not enough games for five
+test("Sunday parlays: safe (3 near 80%), medium (4 near 70%), high payout (2 near 40%), one leg per game", () => {
+  const [safe, medium, payout] = MIX.map((m) => pickMixParlay(m, sunday, sundayCands));
+  assert.equal(safe.name, "Sunday safe bet");
+  assert.equal(safe.legs.length, 3);
+  assert.ok(safe.legs.every((l) => l.prob >= 72 && l.prob <= 88));
+  assert.equal(medium.legs.length, 4);
+  assert.ok(medium.legs.every((l) => l.prob >= 62 && l.prob <= 78));
+  assert.equal(payout.legs.length, 2);
+  assert.ok(payout.legs.every((l) => l.prob >= 32 && l.prob <= 48));
+  [safe, medium, payout].forEach((p) => assert.equal(new Set(p.legs.map((l) => l.game)).size, p.legs.length));
+  assert.equal(pickMixParlay(MIX[1], sunday.slice(0, 2), sundayCands.slice(0, 6)), null);  // not enough games for four legs
 });
 
 test("buildProps: per-game for Thursday, mixed for Sunday, old Sunday per-game parlays replaced", () => {
