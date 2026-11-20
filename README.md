@@ -69,6 +69,19 @@ The script keeps these when it refreshes a week; add them by editing the JSON (o
 
 Automatic prop parlays carry `"auto": true`; legs from Kalshi have `prob` (Kalshi price, percent) and `ticker`. Hand-entered legs can use `odds` (American) instead.
 
+## Learning from results
+
+Every data run rebuilds `data/learning.json` from all settled weeks:
+
+- **Claude's parlay record**: won-lost for every recommended parlay by type (Safe three, Five
+  favorites, Underdog swing, weekend safe/medium/high payout props, Thursday/Monday safe bets),
+  next to how many wins the prices expected. Prop parlays count the version locked at kickoff.
+- **Calibration**: for moneyline picks (by win-chance range) and prop legs (by stat type), how
+  often they hit vs the price they were picked at. Once a kind has 8 settled legs, the gap becomes
+  a ranking adjustment, scaled by n / (n + 50) and capped at 6 points. Picks and prop legs are
+  ranked with it when building suggested parlays and prop parlays; displayed win chances stay the
+  market's. The Tracker tab shows the record, the numbers and every adjustment in use.
+
 ## Placed bets
 
 Save a bet from the slip ("Save as placed bet", using stake as cost and the offered payout),

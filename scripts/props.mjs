@@ -3,6 +3,7 @@
 // are graded automatically. Parsing and selection are pure and tested in tests/props.test.mjs.
 import { TEAMS } from "../js/core.js";
 import { getJSON } from "./sources.mjs";
+import { propAdj } from "./learn.mjs";
 
 const API = "https://api.elections.kalshi.com/trade-api/v2";
 // Kalshi series -> how a leg reads: "60+ rushing yards".
@@ -73,24 +74,26 @@ const ptDay = (iso) => new Intl.DateTimeFormat("en-US", { timeZone: "America/Los
 export const pooled = (g) => ["Sat", "Sun"].includes(ptDay(g.start));
 
 // Injured players and team stat leaders, from the games' matchup reports.
-function context(games) {
+function context(games, learning = null) {
   const injured = new Set(), leaderOf = {};
   games.forEach((g) => Object.values(g.report?.teams || {}).forEach((t) => {
     (t.injuries || []).forEach((i) => { if (BAD_STATUS.has(i.status)) injured.add(i.name); });
     (t.leaders || []).forEach((l) => { leaderOf[l.name] ||= l; });
   }));
-  return { injured, leaderOf };
+  return { injured, leaderOf, learning };
 }
 
 // Best line per player in [lo, hi], closest to `target`; team stat leaders first.
-function rankPlayers(cands, { lo, hi, target }, { injured, leaderOf }) {
+// Stat types that have beaten their Kalshi prices (learned, in points) rank higher.
+function rankPlayers(cands, { lo, hi, target }, { injured, leaderOf, learning }) {
+  const score = (c) => Math.abs(c.ask - target) - propAdj(learning, c.stat);
   const best = new Map();
   cands.filter((c) => liquid(c) && c.ask >= lo && c.ask <= hi && !injured.has(c.player)).forEach((c) => {
     const cur = best.get(c.player);
     if (!cur || Math.abs(c.ask - target) < Math.abs(cur.ask - target)) best.set(c.player, c);
   });
   return [...best.values()].sort((x, y) =>
-    (leaderOf[y.player] ? 1 : 0) - (leaderOf[x.player] ? 1 : 0) || Math.abs(x.ask - target) - Math.abs(y.ask - target) || x.ticker.localeCompare(y.ticker));
+    (leaderOf[y.player] ? 1 : 0) - (leaderOf[x.player] ? 1 : 0) || score(x) - score(y) || x.ticker.localeCompare(y.ticker));
 }
 
 const toLeg = (c, { leaderOf }) => {
@@ -101,8 +104,8 @@ const toLeg = (c, { leaderOf }) => {
 
 // Thursday/Monday safe bet for a single game: three different players, both teams represented when
 // possible, team stat leaders first, injured players skipped, each at the line priced closest to 80%.
-export function pickGameParlay(game, candidates) {
-  const ctx = context([game]);
+export function pickGameParlay(game, candidates, learning = null) {
+  const ctx = context([game], learning);
   const ranked = rankPlayers(candidates.map((c) => ({ ...c, gameId: game.id })), { lo: 72, hi: 88, target: 80 }, ctx);   // safe bet only
   const legs = [];
   for (const c of ranked) {
@@ -131,8 +134,8 @@ export const MIX = [
   { key: "mix-payout", size: 2, lo: 32, hi: 48, target: 40, name: "high payout", tier: "High payout",
     note: "Two longer-shot Kalshi player props near 40% each, from different games. Fewer legs, bigger return. Small stake only." },
 ];
-export function pickMixParlay(spec, games, candidates) {
-  const ctx = context(games);
+export function pickMixParlay(spec, games, candidates, learning = null) {
+  const ctx = context(games, learning);
   const ranked = rankPlayers(candidates, spec, ctx);
   const legs = [], usedGames = new Set();
   // Spread the legs out: best player per game first, by kickoff-agnostic ranking.
@@ -148,7 +151,7 @@ export function pickMixParlay(spec, games, candidates) {
 
 // Rebuild auto prop parlays that haven't started; keep hand-entered parlays and any parlay
 // with a leg whose game already kicked off (so it isn't rebuilt or duplicated). Returns the list.
-export function buildProps(week, candidates, now = new Date()) {
+export function buildProps(week, candidates, now = new Date(), learning = null) {
   const gameById = new Map(week.games.map((g) => [g.id, g]));
   const started = (id) => { const g = gameById.get(id); return !g || g.status !== "upcoming" || Date.parse(g.start) <= now.getTime(); };
   const games = (p) => p.games || (p.game ? [p.game] : (p.legs || []).map((l) => l.game));
@@ -166,11 +169,11 @@ export function buildProps(week, candidates, now = new Date()) {
   });
   const fresh = [];
   open.filter((g) => !pooled(g) && !keptKeys.has(g.id) && byGame.has(g.id)).forEach((g) => {
-    const p = pickGameParlay(g, byGame.get(g.id)); if (p) fresh.push(p);
+    const p = pickGameParlay(g, byGame.get(g.id), learning); if (p) fresh.push(p);
   });
   const weekend = open.filter((g) => pooled(g) && byGame.has(g.id));
   const pool = weekend.flatMap((g) => byGame.get(g.id));
-  MIX.filter((m) => !keptKeys.has(m.key)).forEach((m) => { const p = pickMixParlay(m, weekend, pool); if (p) fresh.push(p); });
+  MIX.filter((m) => !keptKeys.has(m.key)).forEach((m) => { const p = pickMixParlay(m, weekend, pool, learning); if (p) fresh.push(p); });
 
   // Weekend mixes sort together (at the weekend's first kickoff) so they stay in tier order.
   const weekendStart = Math.min(...week.games.filter(pooled).map((g) => Date.parse(g.start)));

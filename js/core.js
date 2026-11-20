@@ -183,13 +183,15 @@ export function betsNet(bets, findGame) {
 
 // Three suggested parlays from the games still to play: safest (top 3 favourites),
 // medium (top 5 favourites) and long shot (the two likeliest underdogs).
-export function suggestParlays(games) {
+// `adj(prob)` is a learned ranking adjustment in points (see scripts/learn.mjs): favorites in price
+// ranges that have beaten their prices rank higher; the underdogs in those games rank lower.
+export function suggestParlays(games, adj = () => 0) {
   const open = games.filter((g) => g.status === "upcoming" && g.pick && g.prob != null);
-  const favs = open.slice().sort((a, b) => b.prob - a.prob);
+  const favs = open.slice().sort((a, b) => (b.prob + adj(b.prob)) - (a.prob + adj(a.prob)) || b.prob - a.prob);
   const dogs = open
     .filter((g) => g.prob < 75)
-    .map((g) => ({ g, team: g.pick === g.away ? g.home : g.away, p: 100 - g.prob }))
-    .sort((a, b) => b.p - a.p);
+    .map((g) => ({ g, team: g.pick === g.away ? g.home : g.away, p: 100 - g.prob, rank: 100 - g.prob - adj(g.prob) }))
+    .sort((a, b) => b.rank - a.rank || b.p - a.p);
   const nick = (t) => TEAMS[t] || t;
   const out = [];
   if (favs.length >= 3) {

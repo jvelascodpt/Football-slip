@@ -11,5 +11,6 @@
       "file": "2026-week-11.json"
     }
   ],
-  "schedule": "schedule-2026.json"
+  "schedule": "schedule-2026.json",
+  "learning": "learning.json"
 }

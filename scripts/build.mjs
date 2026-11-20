@@ -1,6 +1,7 @@
 // Turns parsed source data into a week file. Pure: no network, no file system.
 import { TEAMS, consensusAwayProb, gameId, impliedFromAmerican, noVig, suggestParlays, EDGE_BAND } from "../js/core.js";
 import { kalshiFor, oddsFor } from "./sources.mjs";
+import { mlAdj } from "./learn.mjs";
 
 const nick = (t) => TEAMS[t] || t;
 
@@ -60,7 +61,7 @@ const SCORE_FIELDS = ["status", "score", "live", "kick", "start"];
 
 // Build (or refresh) a week. Games that already kicked off keep the pick they had in
 // `existing`, or get no pick if they had none. Placed bets ("tickets") are always kept.
-export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = [], existing = null, now = new Date() }) {
+export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = [], existing = null, now = new Date(), learning = null }) {
   const old = new Map((existing?.games || []).map((g) => [g.id, g]));
   const out = games
     .slice()
@@ -107,7 +108,7 @@ export function buildWeek({ season, week, games, last = {}, odds = [], kalshi = 
     updated: fmtUpdated(now),
     refreshed: fmtUpdated(now),
     games: out,
-    parlays: keepParlays ? existing.parlays : suggestParlays(out),
+    parlays: keepParlays ? existing.parlays : suggestParlays(out, (p) => mlAdj(learning, p)),
     tickets: existing?.tickets || [],
     ...(existing?.props?.length ? { props: existing.props } : {}),
   };

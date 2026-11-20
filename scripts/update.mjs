@@ -23,12 +23,25 @@ import { espnUrl, fetchKalshi, getJSON, oddsApiUrl, parseEspn, parseKalshi, pars
 import { applyScores, buildWeek, fmtUpdated } from "./build.mjs";
 import { addReports } from "./report.mjs";
 import { buildProps, fetchPropMarkets, gradeProps, trackMarkets } from "./props.mjs";
+import { buildLearning } from "./learn.mjs";
+import { parlayState } from "../js/core.js";
+
+// Recompute what Claude has learned from every settled week; saves data/learning.json and returns it.
+async function updateLearning() {
+  const idx = await loadIndex();
+  const weeks = (await Promise.all(idx.weeks.map((w) => readJSON(path.join(DATA, w.file))))).filter(Boolean);
+  const byId = new Map(weeks.flatMap((w) => w.games.map((g) => [g.id, g])));
+  const learning = buildLearning(weeks, (id) => byId.get(id), parlayState);
+  await writeJSON(path.join(DATA, "learning.json"), learning);
+  if (idx.learning !== "learning.json") { idx.learning = "learning.json"; await writeJSON(path.join(DATA, "index.json"), idx); }
+  return learning;
+}
 
 // Rebuild prop parlays for games Kalshi has opened that haven't kicked off, and grade settled legs.
-async function updateProps(w) {
+async function updateProps(w, learning = null) {
   try {
     trackMarkets(w);   // remember the current legs before a re-price replaces them
-    w.props = buildProps(w, await fetchPropMarkets());
+    w.props = buildProps(w, await fetchPropMarkets(), new Date(), learning);
     const graded = await gradeProps(w);
     console.log(`Props: ${w.props.filter((p) => p.auto).length} game parlays${graded ? `, graded ${graded} legs` : ""}.`);
   } catch (e) { console.warn("Kalshi props unavailable:", e.message); }
@@ -114,14 +127,16 @@ async function cmdNew(a) {
 
   const p = path.join(DATA, fileName(season, week));
   const existing = await readJSON(p);
-  const w = buildWeek({ season, week, games, last: resultsByTeam(prev), odds, kalshi, existing });
+  const learning = await updateLearning();   // includes last week's finals, written just above
+  const w = buildWeek({ season, week, games, last: resultsByTeam(prev), odds, kalshi, existing, learning });
   const reported = await addReports(w);
   console.log(`Matchup reports: ${reported} games.`);
-  await updateProps(w);
+  await updateProps(w, learning);
   await mkdir(DATA, { recursive: true });
   await writeJSON(p, w);
   await saveIndex(idx, season, week);
   await writeSchedule(season, week);
+  await updateLearning();
   const picked = w.games.filter((g) => g.pick).length;
   console.log(`${existing ? "Refreshed" : "Wrote"} ${path.relative(ROOT, p)}: ${w.games.length} games, ${picked} picks, ${w.parlays.length} parlays, ${w.games.filter((g) => g.kalshi).length} with Kalshi prices.`);
 }
@@ -147,6 +162,7 @@ async function cmdScores() {
   if (!newest) throw new Error("No weeks yet. Run: node scripts/update.mjs new");
   await updateScoresFor(newest.season, newest.week);
   if (newest.week > 1) await updateScoresFor(newest.season, newest.week - 1);
+  await updateLearning();
 }
 
 const a = args(process.argv.slice(2));
@@ -169,7 +185,7 @@ async function cmdReport() {
     if (e && !g.espnId) g.espnId = e.espnId;
   });
   const n = await addReports(w);
-  await updateProps(w);
+  await updateProps(w, await updateLearning());
   w.refreshed = fmtUpdated(new Date());
   await writeJSON(p, w);
   console.log(`week ${newest.week}: matchup reports for ${n} games`);

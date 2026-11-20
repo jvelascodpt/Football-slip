@@ -13,7 +13,7 @@ const store = {
 };
 
 /* ---------- state ---------- */
-let DATA = { weeks: [] }, SCHEDULE = { weeks: [] };
+let DATA = { weeks: [] }, SCHEDULE = { weeks: [] }, LEARNING = null;
 let wk = null;
 let slip = [];            // [[gameId, team], ...]
 let stake = 10, offered = "", betName = "";
@@ -507,11 +507,52 @@ function viewTracker() {
     <div class="card tablewrap"><table><thead><tr><th>Week</th><th class="n">You</th><th class="n">Claude</th><th class="n">Pending</th><th class="n">Parlays</th><th class="n">Bets net</th></tr></thead><tbody>${weeks}</tbody></table></div>
     ${settled ? "" : `<p class="empty">Tracking starts with week ${DATA.weeks[0].week}. Results fill in as games finish.</p>`}
   </section>
+  ${learningHtml()}
   <section class="sec">
     <div class="sechead"><h2>Back up your bets</h2></div>
     <div class="card">
       <p class="note">Your picks and bets are stored in this browser on this phone only (${myBets.length} bet${myBets.length === 1 ? "" : "s"}, ${Object.keys(myPicks).length} pick${Object.keys(myPicks).length === 1 ? "" : "s"}). Export a backup now and then, and import it on a new phone or after clearing Safari data.</p>
       <div class="btnrow"><button class="btn" data-export>Export</button><label class="btn ghost" for="importFile">Import</label><input id="importFile" type="file" accept="application/json,.json" hidden></div>
+    </div>
+  </section>`;
+}
+
+/* ---------- Claude's parlay record and what it's learning ---------- */
+function learningHtml() {
+  const L = LEARNING; if (!L) return "";
+  const types = Object.entries(L.parlays || {});
+  const w = types.reduce((a, [, r]) => a + r.w, 0), l = types.reduce((a, [, r]) => a + r.l, 0), exp = types.reduce((a, [, r]) => a + r.expected, 0);
+  const rows = types.sort((a, b) => (b[1].w + b[1].l) - (a[1].w + a[1].l)).map(([name, r]) => {
+    const n = r.w + r.l;
+    return `<tr><td>${esc(name)}</td><td class="n">${r.w}-${r.l}</td><td class="n">${Math.round(r.w / n * 100)}%</td><td class="n">${Math.round(r.expected / n * 100)}%</td></tr>`;
+  }).join("");
+  const adjCell = (s) => s.n < (L.minN || 8)
+    ? `<span class="hint">${s.n}/${L.minN || 8}</span>`
+    : s.adj > 0 ? `<b class="g">+${s.adj} pts</b>` : s.adj < 0 ? `<b class="b">${s.adj} pts</b>` : "none";
+  const table = (title, label, obj, order) => {
+    const keys = Object.keys(obj || {}).sort(order || ((a, b) => obj[b].n - obj[a].n));
+    if (!keys.length) return "";
+    return `<p class="rsub">${title}</p><div class="tablewrap"><table class="learn"><thead><tr><th>${label}</th><th class="n">Hit</th><th class="n">Priced</th><th class="n">Actual</th><th class="n">Adjust</th></tr></thead><tbody>${
+      keys.map((k) => { const s = obj[k]; return `<tr><td>${esc(k)}</td><td class="n">${s.hits}/${s.n}</td><td class="n">${Math.round(s.expected / s.n * 100)}%</td><td class="n">${Math.round(s.hits / s.n * 100)}%</td><td class="n">${adjCell(s)}</td></tr>`; }).join("")}</tbody></table></div>`;
+  };
+  const mlOrder = ["85+", "72-84", "60-71", "50-59"];
+  return `<section class="sec">
+    <div class="sechead"><h2>Claude's parlays</h2><small>Every parlay Claude recommended</small></div>
+    ${types.length ? `<div class="summary">
+      <div class="tile"><b>${w}-${l}</b><span>Won-lost, all types</span></div>
+      <div class="tile"><b>${w + l ? Math.round(w / (w + l) * 100) : 0}%</b><span>Hit rate</span></div>
+      <div class="tile"><b>${(exp).toFixed(1)}</b><span>Wins the prices expected</span></div>
+    </div>
+    <div class="card tablewrap"><table><thead><tr><th>Type</th><th class="n">W-L</th><th class="n">Hit</th><th class="n">Expected</th></tr></thead><tbody>${rows}</tbody></table>
+      <p class="hint">Suggested moneyline parlays and prop parlays, counted once every leg is settled. Prop parlays count the version that was locked at its first kickoff. "Expected" is how often the prices said it should hit.</p></div>`
+      : `<div class="card"><p class="empty">No recommended parlays settled yet.</p></div>`}
+  </section>
+  <section class="sec">
+    <div class="sechead"><h2>What Claude is learning</h2><small>Weeks ${esc((L.weeks || []).join(", "))}</small></div>
+    <div class="card">
+      <p class="note">After each week, Claude compares how often each kind of leg hit with the price it was picked at. Kinds that keep beating their prices get ranked higher when building the next picks and parlays; kinds that fall short get ranked lower. Nothing changes until a kind has ${L.minN || 8} settled legs, and the adjustment grows slowly with more evidence (never more than ${L.maxAdj || 6} points), so one lucky or unlucky week can't swing it. The win chances shown stay the market's; only the ranking changes. "Adjust" shows how many settled legs it has (like 3/${L.minN || 8}) until there are enough.</p>
+      ${table("Moneyline picks, by win chance", "Range", L.ml, (a, b) => mlOrder.indexOf(a) - mlOrder.indexOf(b))}
+      ${table("Player props, by stat", "Stat", L.props)}
     </div>
   </section>`;
 }
@@ -733,6 +774,7 @@ async function load() {
   const weeks = await Promise.all(idx.weeks.map((w) => get("data/" + w.file)));
   DATA = { weeks: weeks.sort((a, b) => a.season - b.season || a.week - b.week) };
   if (!DATA.weeks.length) throw new Error("No weeks in data/index.json");
+  if (idx.learning) { try { LEARNING = await get("data/" + idx.learning); } catch (e) { /* optional */ } }
   if (idx.schedule) {
     try {
       const sc = await get("data/" + idx.schedule), have = new Set(DATA.weeks.map((w) => w.week));
