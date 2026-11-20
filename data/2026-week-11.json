@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Thu Nov 19, 5:14 PM PT",
-  "refreshed": "Thu Nov 19, 6:15 PM PT",
+  "refreshed": "Fri Nov 20, 2:10 AM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -11,7 +11,7 @@
       "home": "HOU",
       "start": "2026-11-20T01:15:00.000Z",
       "kick": "Thu 5:15 PM",
-      "status": "live",
+      "status": "final",
       "record": [
         "3-7",
         "3-6"
@@ -374,9 +374,8 @@
       "note": "Colts 3-7, Texans 3-6. Last week: Colts beat the Dolphins 24-22; Texans lost to the Browns 27-24. Kalshi has the Texans at 85%.",
       "score": [
         3,
-        14
-      ],
-      "live": "2nd qtr 6:48"
+        26
+      ]
     },
     {
       "id": "w11-mia-buf",
@@ -4850,9 +4849,8 @@
           "bet": "40+ receiving yards",
           "prob": 80,
           "ticker": "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40",
-          "result": null,
-          "why": "Team leader in receiving: 37 REC, 478 YDS, 5 TD.",
-          "live": 100
+          "result": "hit",
+          "why": "Team leader in receiving: 37 REC, 478 YDS, 5 TD."
         },
         {
           "game": "w11-ind-hou",
@@ -4861,9 +4859,8 @@
           "bet": "200+ passing yards",
           "prob": 79,
           "ticker": "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-200",
-          "result": null,
-          "why": "Team leader in passing: 201/320, 2,462 YDS, 19 TD, 3 INT.",
-          "live": 94
+          "result": "miss",
+          "why": "Team leader in passing: 201/320, 2,462 YDS, 19 TD, 3 INT."
         },
         {
           "game": "w11-ind-hou",
@@ -4872,9 +4869,8 @@
           "bet": "20+ receiving yards",
           "prob": 79,
           "ticker": "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20",
-          "result": null,
-          "why": "Team leader in receiving: 40 REC, 276 YDS, 2 TD.",
-          "live": 47
+          "result": "hit",
+          "why": "Team leader in receiving: 40 REC, 276 YDS, 2 TD."
         }
       ]
     },
@@ -5017,8 +5013,7 @@
       "player": "C.J. Stroud",
       "bet": "200+ passing yards",
       "prob": 80,
-      "result": null,
-      "live": 94,
+      "result": "miss",
       "liveAt": "2026-11-20T02:15:39.227Z"
     },
     "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
@@ -5026,8 +5021,7 @@
       "player": "Nico Collins",
       "bet": "40+ receiving yards",
       "prob": 80,
-      "result": null,
-      "live": 100,
+      "result": "hit",
       "liveAt": "2026-11-20T02:15:39.227Z"
     },
     "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20": {
@@ -5035,8 +5029,7 @@
       "player": "Tyler Warren",
       "bet": "20+ receiving yards",
       "prob": 79,
-      "result": null,
-      "live": 47,
+      "result": "hit",
       "liveAt": "2026-11-20T02:15:39.227Z"
     },
     "KXNFLPASSYDS-26NOV22ARIKC-KCPMAHOMES15-200": {
