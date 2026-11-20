@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T11:50:07.330Z",
+  "updated": "2026-11-20T21:32:14.149Z",
   "weeks": [
     10,
     11
@@ -38,18 +38,18 @@
     }
   },
   "props": {
-    "passing yards": {
-      "n": 1,
-      "hits": 0,
-      "expected": 0.8,
-      "gap": -80,
-      "adj": 0
-    },
     "receiving yards": {
       "n": 2,
       "hits": 2,
       "expected": 1.59,
       "gap": 20.5,
+      "adj": 0
+    },
+    "passing yards": {
+      "n": 1,
+      "hits": 0,
+      "expected": 0.79,
+      "gap": -79,
       "adj": 0
     }
   },
