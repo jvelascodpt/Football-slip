@@ -35,7 +35,7 @@ const game = (id) => (wk && wk.games.find((g) => g.id === id)) || allGames().fin
 const stateLabel = { hit: "Hit", miss: "Missed", live: "In play", pending: "Not started" };
 const sameWeek = (a, w) => a.season === w.season && a.week === w.week;
 const betsFor = (w) => [
-  ...(w.tickets || []).map((t, i) => ({ ...t, id: t.id || `file-${w.week}-${i}`, fromFile: true })),
+  ...(w.tickets || []).map((t, i) => ({ season: w.season, week: w.week, ...t, id: t.id || `file-${w.week}-${i}`, fromFile: true })),
   ...myBets.filter((b) => sameWeek(b, w)).map((b) => ({ ...b, legs: b.legs.map(withKalshiResult) })),
 ];
 const allBets = () => DATA.weeks.flatMap(betsFor);
@@ -238,7 +238,8 @@ function legItem(l, i, opts = {}) {
   if (isProp(l)) {
     // Hand-entered prop legs are graded by tapping; legs from the Props tab grade from Kalshi.
     const grade = opts.grade && !l.ticker ? `<span class="p"><button class="grade${l.result === "hit" ? " on hit" : ""}" data-grade="${opts.grade}|${i}|hit">Hit</button> <button class="grade${l.result === "miss" ? " on miss" : ""}" data-grade="${opts.grade}|${i}|miss">Miss</button></span>` : "";
-    const price = s === "hit" ? "Hit" : s === "miss" ? "Missed" : opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : l.prob != null ? `${l.prob}%` : l.odds != null ? fmtOdds(l.odds) : "";
+    const stat = l.statNow != null ? ` (${l.statNow} ${l.statUnit})` : "";
+    const price = s === "hit" ? `Hit${stat}` : s === "miss" ? `Missed${stat}` : l.statNow != null && s === "live" ? `${l.statNow}/${l.statLine} ${l.statUnit}` : opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : l.prob != null ? `${l.prob}%` : l.odds != null ? fmtOdds(l.odds) : "";
     return `<li><span class="dot ${s}" title="${stateLabel[s]}"></span>${badge(team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span>${price && !grade ? `<span class="p">${price}</span>` : ""}${grade}</li>`;
   }
   if (!g) return `<li><span class="dot"></span><span>${esc(nick(team))} (game not found)</span></li>`;
@@ -297,10 +298,42 @@ function marketFor(ticker) {
   return null;
 }
 // A logged prop leg that came from a Kalshi prop picks up the live price and graded result.
+// ESPN live box score per game, fetched while it's live: {gameId: {normName: {passYds, ...}}}.
+const liveStats = {};
+const normName = (n) => String(n || "").toLowerCase().replace(/\b(jr|sr|ii|iii|iv|v)\b\.?/g, "").replace(/[^a-z]/g, "");
+const STAT_OF = { "passing yards": "passYds", "rushing yards": "rushYds", "receiving yards": "recYds", "receptions": "rec", "passing touchdowns": "passTD", "touchdowns": "td" };
+const STAT_UNIT = { passYds: "pass yds", rushYds: "rush yds", recYds: "rec yds", rec: "catches", passTD: "pass TD", td: "TD" };
+function parseBox(summary) {
+  const out = {};
+  (summary?.boxscore?.players || []).forEach((t) => (t.statistics || []).forEach((cat) => {
+    const col = (lbl) => (cat.labels || []).indexOf(lbl);
+    (cat.athletes || []).forEach((a) => {
+      const n = normName(a.athlete?.displayName); if (!n || !a.stats) return;
+      const v = (lbl) => { const i = col(lbl); return i < 0 ? 0 : parseFloat(a.stats[i]) || 0; };
+      const st = (out[n] ||= { passYds: 0, rushYds: 0, recYds: 0, rec: 0, passTD: 0, td: 0 });
+      if (cat.name === "passing") { st.passYds = v("YDS"); st.passTD = v("TD"); }
+      if (cat.name === "rushing") { st.rushYds = v("YDS"); st.td += v("TD"); }
+      if (cat.name === "receiving") { st.recYds = v("YDS"); st.rec = v("REC"); st.td += v("TD"); }
+    });
+  }));
+  return out;
+}
+// A logged prop leg picks up Kalshi's live price and settled result, and, while its game is on,
+// the player's live number from ESPN's box score: it shows as Hit as soon as he reaches the line.
 function withKalshiResult(l) {
-  if (!isProp(l) || !l.ticker) return l;
-  const m = marketFor(l.ticker); if (!m) return l;
-  return { ...l, result: l.result || m.result || null, live: m.live, prob: l.prob ?? m.prob };
+  if (!isProp(l)) return l;
+  let out = l;
+  const m = l.ticker && marketFor(l.ticker);
+  if (m) out = { ...l, result: l.result || m.result || null, live: m.live, prob: l.prob ?? m.prob };
+  if (out.result) return out;
+  const g = game(l.game), box = liveStats[l.game], bm = /^(\d+(?:\.\d+)?)\+\s+(.+)$/.exec(l.bet || "");
+  if (!g || !box || !bm || g.status === "upcoming") return out;
+  const key = STAT_OF[bm[2].toLowerCase()]; if (!key) return out;
+  const line = Number(bm[1]), now = box[normName(l.player)]?.[key] ?? 0;
+  const extra = { statNow: now, statLine: line, statUnit: STAT_UNIT[key], progress: Math.min(now / line, 0.99) };
+  if (now >= line) return { ...out, ...extra, result: "hit", provisional: true };
+  if (g.status === "final") return { ...out, ...extra, result: "miss", provisional: true };
+  return { ...out, ...extra };
 }
 
 /* ---------- live chance to hit ---------- */
@@ -330,7 +363,7 @@ function liveChanceLine(legs) {
   const liveGames = [...new Set(legs.map(legGame))].map(game).filter((g) => g && g.status === "live");
   const when = liveGames.length ? liveGames.map((g) => `${nick(g.home)} ${liveWP[g.id]?.label || periodLabel(g)}`).join(", ") : "between games";
   const cls = now > start + 0.02 ? "g" : now < start - 0.02 ? "b" : "w";
-  return `<p class="verdict"><b class="${cls}">Chance to hit now: ${pct(now)}</b> · ${pct(start)} at kickoff<br><small class="hint">Updated each quarter (${esc(when)}). Team legs use ESPN's live win probability; props use Kalshi's live price.</small></p>`;
+  return `<p class="verdict"><b class="${cls}">Chance to hit now: ${pct(now)}</b> · ${pct(start)} at kickoff<br><small class="hint">Live (${esc(when)}). Team legs use ESPN's live win probability. Props show the player's live stats from ESPN and turn to Hit once he reaches the line; their chance uses Kalshi's live price, refreshed each quarter.</small></p>`;
 }
 
 function betCard(b, opts = {}) {
@@ -415,7 +448,7 @@ function loggedBet(p) {
   return myBets.find((b) => b.legs.map((l) => l.ticker).filter(Boolean).sort().join(",") === want) || null;
 }
 function propCard(p, i) {
-  const legs = p.legs.map((l) => ({ ...l, kind: "prop" }));
+  const legs = p.legs.map((l) => withKalshiResult({ ...l, kind: "prop" }));
   const s = parlayState(legs, game);
   const kalshi = legs.every((l) => l.prob != null);
   const prob = legs.reduce((a, l) => a * propChance(l), 1);
@@ -425,7 +458,7 @@ function propCard(p, i) {
     <div class="meta"><b style="color:var(--ink);font-size:15px">${esc(p.name)}</b>${p.tag ? `<span class="pill${i ? "" : " lock"}">${esc(p.tag)}</span>` : ""}<span class="pill ${s === "pending" ? "" : s} sp">${stateLabel[s]}</span></div>
     <ul class="legs">${legs.map((l) => {
       const g = game(l.game), st = legState(game)(l);
-      return `<li><span class="dot ${st}" title="${stateLabel[st]}"></span>${badge(l.team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span><span class="p">${l.prob != null ? l.prob + "%" : fmtOdds(l.odds)}</span>
+      return `<li><span class="dot ${st}" title="${stateLabel[st]}"></span>${badge(l.team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span><span class="p">${st === "hit" ? `Hit${l.statNow != null ? ` (${l.statNow} ${l.statUnit})` : ""}` : st === "miss" ? `Missed${l.statNow != null ? ` (${l.statNow} ${l.statUnit})` : ""}` : l.statNow != null && st === "live" ? `${l.statNow}/${l.statLine} ${l.statUnit}` : l.prob != null ? l.prob + "%" : fmtOdds(l.odds)}</span>
         ${l.why || g ? `<p class="why">${g ? `${esc(nick(g.away))} at ${esc(nick(g.home))}, ${esc(g.kick)} PT. ` : ""}${esc(l.why || "")}</p>` : ""}</li>`;
     }).join("")}</ul>
     ${progressBar(legs)}${s === "hit" ? winBlock(`p${wk.week}-${i}`, 10, pay, `It hit · $10 at fair odds pays ${money(pay)}`) : ""}
@@ -519,29 +552,36 @@ function tkItem(t) {
 // game-day data runs update with Kalshi's live prop prices. Returns true if anything changed.
 const lastPeriod = {};
 async function refreshLiveChances() {
-  const ids = new Set(allBets().filter((b) => betActive(b.legs.map(withKalshiResult))).flatMap((b) => b.legs.map(legGame)));
-  const due = [...ids].map(game).filter((g) => g && (g.status === "live" || (g.status === "final" && lastPeriod[g.id] && lastPeriod[g.id] !== "F")))
-    .filter((g) => lastPeriod[g.id] !== (g.status === "final" ? "F" : g.period));
-  if (!due.length) return false;
-  for (const g of due) {
+  // Games that matter: in an active bet of yours, or in this week's suggested prop parlays.
+  const ids = new Set([
+    ...allBets().filter((b) => betActive(b.legs.map(withKalshiResult))).flatMap((b) => b.legs.map(legGame)),
+    ...(wk?.props || []).flatMap((p) => p.legs.map((l) => l.game)),
+  ]);
+  const games = [...ids].map(game).filter((g) => g && g.espnId && (g.status === "live" || (g.status === "final" && lastPeriod[g.id] && lastPeriod[g.id] !== "F")));
+  if (!games.length) return false;
+  const quarterChanged = games.filter((g) => lastPeriod[g.id] !== (g.status === "final" ? "F" : g.period));
+  // Box score every update (about once a minute while live), so props flip to Hit right away.
+  for (const g of games) {
     lastPeriod[g.id] = g.status === "final" ? "F" : g.period;
-    if (g.status !== "live" || !g.espnId) continue;
     try {
-      const wp = (await getJSON(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${g.espnId}`)).winprobability;
-      const last = wp && wp[wp.length - 1];
-      if (last && last.homeWinPercentage != null) liveWP[g.id] = { home: last.homeWinPercentage, away: 1 - last.homeWinPercentage, label: periodLabel(g) };
-    } catch (e) { /* keep the pre-game number */ }
+      const sum = await getJSON(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${g.espnId}`);
+      liveStats[g.id] = parseBox(sum);
+      const wp = sum.winprobability, last = wp && wp[wp.length - 1];
+      if (g.status === "live" && last && last.homeWinPercentage != null) liveWP[g.id] = { home: last.homeWinPercentage, away: 1 - last.homeWinPercentage, label: periodLabel(g) };
+    } catch (e) { /* keep what we have */ }
   }
-  // Pick up Kalshi live prices / results the data runs saved since this page loaded.
-  try {
-    const idx = await (await fetch("data/index.json", { cache: "no-cache" })).json();
-    for (const w of DATA.weeks) {
-      const f = idx.weeks.find((x) => x.season === w.season && x.week === w.week);
-      if (!f || !w.games.some((g) => due.includes(g))) continue;
-      const fresh = await (await fetch("data/" + f.file, { cache: "no-cache" })).json();
-      w.markets = fresh.markets; w.props = fresh.props;
-    }
-  } catch (e) { /* offline: keep what we have */ }
+  // Each quarter: pick up Kalshi live prices / results the data runs saved since this page loaded.
+  if (quarterChanged.length) {
+    try {
+      const idx = await (await fetch("data/index.json", { cache: "no-cache" })).json();
+      for (const w of DATA.weeks) {
+        const f = idx.weeks.find((x) => x.season === w.season && x.week === w.week);
+        if (!f || !w.games.some((g) => quarterChanged.includes(g))) continue;
+        const fresh = await (await fetch("data/" + f.file, { cache: "no-cache" })).json();
+        w.markets = fresh.markets; w.props = fresh.props;
+      }
+    } catch (e) { /* offline: keep what we have */ }
+  }
   return true;
 }
 
