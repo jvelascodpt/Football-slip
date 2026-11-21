@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Sat Nov 21, 12:15 PM PT",
-  "refreshed": "Sat Nov 21, 12:15 PM PT",
+  "updated": "Sat Nov 21, 3:46 PM PT",
+  "refreshed": "Sat Nov 21, 3:46 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -399,7 +399,7 @@
         "weather": "66° Partly sunny"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           5.1,
           94.8
@@ -723,7 +723,7 @@
       },
       "pick": "BUF",
       "prob": 90,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
         9,
         92
@@ -748,11 +748,11 @@
         "weather": "56° Showers",
         "spread": "CHI -11.5",
         "total": 48.5,
-        "mlAway": "+435",
-        "mlHome": "-581"
+        "mlAway": "+456",
+        "mlHome": "-620"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           21.2,
           78.6
@@ -1083,8 +1083,8 @@
         }
       },
       "pick": "CHI",
-      "prob": 82,
-      "source": "DraftKings",
+      "prob": 83,
+      "source": "Draft Kings",
       "kalshi": [
         16,
         85
@@ -1109,11 +1109,11 @@
         "weather": "Indoors",
         "spread": "DAL -7.5",
         "total": 54.5,
-        "mlAway": "+285",
-        "mlHome": "-356"
+        "mlAway": "+273",
+        "mlHome": "-339"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           19.4,
           80.5
@@ -1451,8 +1451,8 @@
         }
       },
       "pick": "DAL",
-      "prob": 75,
-      "source": "DraftKings",
+      "prob": 74,
+      "source": "Draft Kings",
       "kalshi": [
         24,
         77
@@ -1476,12 +1476,12 @@
         "city": "Detroit",
         "weather": "Indoors",
         "spread": "DET -4.5",
-        "total": 46.5,
-        "mlAway": "+178",
-        "mlHome": "-213"
+        "total": 47.5,
+        "mlAway": "+185",
+        "mlHome": "-222"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           38.6,
           61.1
@@ -1691,7 +1691,7 @@
               {
                 "name": "Cade Mays",
                 "pos": "C",
-                "status": "Out",
+                "status": "Injured Reserve",
                 "detail": "Sprain"
               },
               {
@@ -1805,13 +1805,13 @@
         }
       },
       "pick": "DET",
-      "prob": 65,
-      "source": "DraftKings",
+      "prob": 66,
+      "source": "Draft Kings",
       "kalshi": [
         32,
         69
       ],
-      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi sells the Buccaneers at 32%, cheaper than the 35% estimate."
+      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 69%."
     },
     {
       "id": "w11-ari-kc",
@@ -1828,14 +1828,14 @@
       "info": {
         "venue": "Arrowhead Stadium",
         "city": "Kansas City",
-        "weather": "51° Sunny",
+        "weather": "50° Sunny",
         "spread": "KC -15.5",
         "total": 40.5,
-        "mlAway": "+910",
-        "mlHome": "-1620"
+        "mlAway": "+920",
+        "mlHome": "-1660"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           11.4,
           88.5
@@ -1993,6 +1993,13 @@
             ],
             "news": [
               {
+                "h": "Cardinals rule out rookie Carson Beck, turn to 40-year-old Josh Johnson vs. Chiefs",
+                "d": "Cardinals rookie quarterback Carson Beck has been downgraded to out, paving the way for 40-year-old Josh Johnson to start against the Chiefs.",
+                "url": "https://www.espn.com/nfl/story/_/id/50553035/cardinals-downgrade-qb-carson-beck-josh-johnson-set-start",
+                "video": false,
+                "at": "2026-11-21T21:41:11Z"
+              },
+              {
                 "h": "Mike LaFleur: Cardinals proceeding as if Josh Johnson will start",
                 "d": "Mike LaFleur: Cardinals proceeding as if Josh Johnson will start",
                 "url": "https://www.espn.com/video/clip/_/id/50542830/cardinals-proceeding-josh-johnson-start",
@@ -2005,13 +2012,6 @@
                 "url": "http://www.espn.com/nfl/preview?gameId=401873067",
                 "video": false,
                 "at": "2026-11-19T21:25:04Z"
-              },
-              {
-                "h": "Source: Cardinals' Gardner Minshew has surgery to repair right UCL",
-                "d": "Cardinals quarterback Gardner Minshew II had surgery on his right ulnar collateral ligament on Monday, a source told ESPN.",
-                "url": "https://www.espn.com/nfl/story/_/id/50517561/source-cardinals-qb-gardner-minshew-surgery-repair-right-ucl",
-                "video": false,
-                "at": "2026-11-18T05:06:06Z"
               }
             ]
           },
@@ -2181,8 +2181,8 @@
         }
       },
       "pick": "KC",
-      "prob": 90,
-      "source": "DraftKings",
+      "prob": 91,
+      "source": "Draft Kings",
       "kalshi": [
         9,
         92
@@ -2207,11 +2207,11 @@
         "weather": "62° Cloudy",
         "spread": "PIT -3.5",
         "total": 37.5,
-        "mlAway": "-191",
-        "mlHome": "+160"
+        "mlAway": "-189",
+        "mlHome": "+158"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           63.5,
           36.2
@@ -2358,7 +2358,7 @@
                 "d": "The Steelers have activated wide receiver Roman Wilson from injured reserve ahead of Sunday's game against the Eagles.",
                 "url": "https://www.espn.com/nfl/story/_/id/50552701/sources-steelers-activate-wr-roman-wilson-ir-eagles-game",
                 "video": false,
-                "at": "2026-11-21T20:11:10Z"
+                "at": "2026-11-21T20:54:35Z"
               },
               {
                 "h": "How Steelers' wide receiver corps gets big boost in Week 11",
@@ -2419,7 +2419,7 @@
               {
                 "name": "Zack Baun",
                 "pos": "LB",
-                "status": "Out",
+                "status": "Injured Reserve",
                 "detail": "Back",
                 "why": "Team leader in tackles"
               },
@@ -2433,22 +2433,16 @@
             ],
             "injuries": [
               {
-                "name": "Zack Baun",
-                "pos": "LB",
-                "status": "Out",
-                "detail": "Back"
-              },
-              {
-                "name": "Will Shipley",
-                "pos": "RB",
-                "status": "Injured Reserve",
-                "detail": "Plantar Fasciitis"
-              },
-              {
                 "name": "Dontayvion Wicks",
                 "pos": "WR",
-                "status": "Out",
+                "status": "Injured Reserve",
                 "detail": "Ankle"
+              },
+              {
+                "name": "Zack Baun",
+                "pos": "LB",
+                "status": "Injured Reserve",
+                "detail": "Back"
               },
               {
                 "name": "Jalen Hurts",
@@ -2461,6 +2455,12 @@
                 "pos": "LB",
                 "status": "Doubtful",
                 "detail": "Ankle"
+              },
+              {
+                "name": "Will Shipley",
+                "pos": "RB",
+                "status": "Questionable",
+                "detail": "Plantar Fasciitis"
               }
             ],
             "leaders": [
@@ -2550,12 +2550,12 @@
       },
       "pick": "PIT",
       "prob": 63,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
-        66,
+        65,
         36
       ],
-      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 66%."
+      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 65%."
     },
     {
       "id": "w11-bal-car",
@@ -2572,14 +2572,14 @@
       "info": {
         "venue": "Bank of America Stadium",
         "city": "Charlotte",
-        "weather": "59° Cloudy",
+        "weather": "58° Cloudy",
         "spread": "CAR -3",
         "total": 43.5,
-        "mlAway": "+125",
-        "mlHome": "-148"
+        "mlAway": "+127",
+        "mlHome": "-151"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           30.8,
           69
@@ -2794,16 +2794,16 @@
             "key": [],
             "injuries": [
               {
-                "name": "Isaiah Simmons",
-                "pos": "S",
-                "status": "Out",
-                "detail": "Knee"
-              },
-              {
-                "name": "Mike Jackson",
-                "pos": "CB",
+                "name": "Jonathon Brooks",
+                "pos": "RB",
                 "status": "Injured Reserve",
                 "detail": "Surgery"
+              },
+              {
+                "name": "Isaiah Simmons",
+                "pos": "S",
+                "status": "Injured Reserve",
+                "detail": "Knee"
               },
               {
                 "name": "Bobby Okereke",
@@ -2812,13 +2812,13 @@
                 "detail": "Foot"
               },
               {
-                "name": "Tommy Tremble",
-                "pos": "TE",
+                "name": "Mike Jackson",
+                "pos": "CB",
                 "status": "Questionable",
-                "detail": "Knee"
+                "detail": "Surgery"
               },
               {
-                "name": "Darren Waller",
+                "name": "Tommy Tremble",
                 "pos": "TE",
                 "status": "Questionable",
                 "detail": "Knee"
@@ -2910,10 +2910,10 @@
         }
       },
       "pick": "CAR",
-      "prob": 57,
-      "source": "DraftKings",
+      "prob": 58,
+      "source": "Draft Kings",
       "kalshi": [
-        42,
+        43,
         58
       ],
       "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 58%."
@@ -2936,11 +2936,11 @@
         "weather": "68° Intermittent clouds",
         "spread": "LAC -3",
         "total": 42.5,
-        "mlAway": "+144",
-        "mlHome": "-171"
+        "mlAway": "+143",
+        "mlHome": "-170"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           36.3,
           63.4
@@ -3144,20 +3144,12 @@
                 28
               ]
             },
-            "key": [
-              {
-                "name": "Daiyan Henley",
-                "pos": "LB",
-                "status": "Out",
-                "detail": "Soreness",
-                "why": "Team leader in tackles"
-              }
-            ],
+            "key": [],
             "injuries": [
               {
                 "name": "Rodney Shelley",
                 "pos": "CB",
-                "status": "Out",
+                "status": "Injured Reserve",
                 "detail": "Ankle"
               },
               {
@@ -3167,10 +3159,10 @@
                 "detail": "Calf"
               },
               {
-                "name": "Daiyan Henley",
-                "pos": "LB",
-                "status": "Out",
-                "detail": "Soreness"
+                "name": "Trey Pipkins III",
+                "pos": "OT",
+                "status": "Questionable",
+                "detail": "Knee"
               },
               {
                 "name": "Isas Waxter",
@@ -3264,8 +3256,8 @@
         }
       },
       "pick": "LAC",
-      "prob": 61,
-      "source": "DraftKings",
+      "prob": 60,
+      "source": "Draft Kings",
       "kalshi": [
         40,
         61
@@ -3290,11 +3282,11 @@
         "weather": "43° Intermittent clouds",
         "spread": "DEN -10.5",
         "total": 40.5,
-        "mlAway": "+457",
-        "mlHome": "-620"
+        "mlAway": "+447",
+        "mlHome": "-600"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           13.4,
           86.5
@@ -3625,8 +3617,8 @@
         }
       },
       "pick": "DEN",
-      "prob": 83,
-      "source": "DraftKings",
+      "prob": 82,
+      "source": "Draft Kings",
       "kalshi": [
         18,
         83
@@ -3655,7 +3647,7 @@
         "mlHome": "+211"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           81.4,
           18.5
@@ -3987,7 +3979,7 @@
       },
       "pick": "JAC",
       "prob": 69,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
         71,
         30
@@ -4012,10 +4004,10 @@
         "spread": "SF -3",
         "total": 46.5,
         "mlAway": "+145",
-        "mlHome": "-172"
+        "mlHome": "-173"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           36.7,
           63
@@ -4238,12 +4230,6 @@
             ],
             "injuries": [
               {
-                "name": "C.J. West",
-                "pos": "DT",
-                "status": "Injured Reserve",
-                "detail": "Knee"
-              },
-              {
                 "name": "Nate Hobbs",
                 "pos": "CB",
                 "status": "Injured Reserve",
@@ -4266,6 +4252,12 @@
                 "pos": "QB",
                 "status": "Questionable",
                 "detail": "Illness"
+              },
+              {
+                "name": "Mike Evans",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Tendinitis"
               }
             ],
             "leaders": [
@@ -4355,7 +4347,7 @@
       },
       "pick": "SF",
       "prob": 61,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
         39,
         62
@@ -4380,11 +4372,11 @@
         "weather": "52° Intermittent clouds",
         "spread": "CIN -6",
         "total": 54.5,
-        "mlAway": "-304",
-        "mlHome": "+247"
+        "mlAway": "-302",
+        "mlHome": "+246"
       },
       "report": {
-        "updated": "2026-11-21T20:15:08.039Z",
+        "updated": "2026-11-21T23:46:15.210Z",
         "fpi": [
           76,
           23.8
@@ -4436,6 +4428,12 @@
             "key": [],
             "injuries": [
               {
+                "name": "Andrei Iosivas",
+                "pos": "WR",
+                "status": "Injured Reserve",
+                "detail": "Surgery"
+              },
+              {
                 "name": "Oren Burks",
                 "pos": "LB",
                 "status": "Injured Reserve",
@@ -4454,16 +4452,10 @@
                 "detail": "Fracture"
               },
               {
-                "name": "Andrei Iosivas",
-                "pos": "WR",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
-              },
-              {
-                "name": "Dax Hill",
-                "pos": "CB",
+                "name": "Kyle Dugger",
+                "pos": "S",
                 "status": "Questionable",
-                "detail": "Illness"
+                "detail": "Quadriceps"
               }
             ],
             "leaders": [
@@ -4603,22 +4595,22 @@
                 "detail": "Surgery"
               },
               {
+                "name": "Amik Robertson",
+                "pos": "CB",
+                "status": "Questionable",
+                "detail": "Ankle"
+              },
+              {
+                "name": "Lucas Patrick",
+                "pos": "G",
+                "status": "Questionable",
+                "detail": "Concussion"
+              },
+              {
                 "name": "Rachaad White",
                 "pos": "RB",
                 "status": "Questionable",
                 "detail": "Heel"
-              },
-              {
-                "name": "Treylon Burks",
-                "pos": "WR",
-                "status": "Questionable",
-                "detail": "Foot"
-              },
-              {
-                "name": "Quan Martin",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Shoulder"
               }
             ],
             "leaders": [
@@ -4708,7 +4700,7 @@
       },
       "pick": "CIN",
       "prob": 72,
-      "source": "DraftKings",
+      "source": "Draft Kings",
       "kalshi": [
         73,
         28
@@ -4808,24 +4800,14 @@
       "auto": true,
       "key": "mix-safe",
       "games": [
-        "w11-mia-buf",
         "w11-jac-nyg",
-        "w11-bal-car"
+        "w11-bal-car",
+        "w11-lv-den"
       ],
       "name": "Sunday safe bet",
       "tag": "Safe",
       "note": "Three Kalshi player props near 80% each, each from a different game.",
       "legs": [
-        {
-          "game": "w11-mia-buf",
-          "team": "BUF",
-          "player": "Josh Allen",
-          "bet": "175+ passing yards",
-          "prob": 80,
-          "ticker": "KXNFLPASSYDS-26NOV22MIABUF-BUFJALLEN17-175",
-          "result": null,
-          "why": "Team leader in passing: 167/257, 2,223 YDS, 13 TD, 7 INT."
-        },
         {
           "game": "w11-jac-nyg",
           "team": "JAC",
@@ -4845,6 +4827,16 @@
           "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40",
           "result": null,
           "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD."
+        },
+        {
+          "game": "w11-lv-den",
+          "team": "DEN",
+          "player": "Jaylen Waddle",
+          "bet": "20+ receiving yards",
+          "prob": 80,
+          "ticker": "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20",
+          "result": null,
+          "why": "Team leader in receiving: 30 REC, 337 YDS, 2 TD."
         }
       ]
     },
@@ -4852,8 +4844,8 @@
       "auto": true,
       "key": "mix-medium",
       "games": [
+        "w11-no-chi",
         "w11-ari-kc",
-        "w11-pit-phi",
         "w11-bal-car",
         "w11-tb-det"
       ],
@@ -4861,6 +4853,16 @@
       "tag": "Medium",
       "note": "Four Kalshi player props near 70% each, each from a different game.",
       "legs": [
+        {
+          "game": "w11-no-chi",
+          "team": "NO",
+          "player": "Tyler Shough",
+          "bet": "200+ passing yards",
+          "prob": 70,
+          "ticker": "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200",
+          "result": null,
+          "why": "Team leader in passing: 229/343, 2,173 YDS, 15 TD, 7 INT."
+        },
         {
           "game": "w11-ari-kc",
           "team": "KC",
@@ -4870,16 +4872,6 @@
           "ticker": "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3",
           "result": null,
           "why": "Team leader in receiving: 35 REC, 512 YDS, 2 TD."
-        },
-        {
-          "game": "w11-pit-phi",
-          "team": "PIT",
-          "player": "DK Metcalf",
-          "bet": "3+ receptions",
-          "prob": 70,
-          "ticker": "KXNFLREC-26NOV22PITPHI-PITDMETCALF4-3",
-          "result": null,
-          "why": "Team leader in receiving: 35 REC, 432 YDS, 2 TD."
         },
         {
           "game": "w11-bal-car",
@@ -4907,23 +4899,13 @@
       "auto": true,
       "key": "mix-payout",
       "games": [
-        "w11-lv-den",
-        "w11-ten-dal"
+        "w11-ten-dal",
+        "w11-mia-buf"
       ],
       "name": "Sunday high payout",
       "tag": "High payout",
       "note": "Two longer-shot Kalshi player props near 40% each, from different games. Fewer legs, bigger return. Small stake only.",
       "legs": [
-        {
-          "game": "w11-lv-den",
-          "team": "LV",
-          "player": "Ashton Jeanty",
-          "bet": "5+ receptions",
-          "prob": 40,
-          "ticker": "KXNFLREC-26NOV22LVDEN-LVAJEANTY2-5",
-          "result": null,
-          "why": "Team leader in rushing: 123 CAR, 380 YDS, 1 TD."
-        },
         {
           "game": "w11-ten-dal",
           "team": "DAL",
@@ -4933,6 +4915,16 @@
           "ticker": "KXNFLREC-26NOV22TENDAL-DALJWILLIAMS33-3",
           "result": null,
           "why": "Team leader in rushing: 170 CAR, 692 YDS, 9 TD."
+        },
+        {
+          "game": "w11-mia-buf",
+          "team": "BUF",
+          "player": "Dalton Kincaid",
+          "bet": "40+ receiving yards",
+          "prob": 40,
+          "ticker": "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40",
+          "result": null,
+          "why": "Team leader in receiving: 32 REC, 487 YDS, 2 TD."
         }
       ]
     },
@@ -4957,12 +4949,12 @@
         {
           "game": "w11-cin-was",
           "team": "CIN",
-          "player": "Chase Brown",
-          "bet": "3+ receptions",
-          "prob": 80,
-          "ticker": "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3",
+          "player": "Ja'Marr Chase",
+          "bet": "60+ receiving yards",
+          "prob": 81,
+          "ticker": "KXNFLRECYDS-26NOV23CINWAS-CINJCHASE1-60",
           "result": null,
-          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
+          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
         },
         {
           "game": "w11-cin-was",
@@ -5018,110 +5010,12 @@
     }
   ],
   "markets": {
-    "KXNFLPASSTDS-26NOV22TENDAL-DALDPRESCOTT4-2": {
-      "game": "w11-ten-dal",
-      "player": "Dak Prescott",
-      "bet": "2+ passing touchdowns",
-      "prob": 80,
-      "result": null
-    },
     "KXNFLPASSYDS-26NOV22MIABUF-BUFJALLEN17-175": {
       "game": "w11-mia-buf",
       "player": "Josh Allen",
       "bet": "175+ passing yards",
       "prob": 80,
       "result": null
-    },
-    "KXNFLPASSYDS-26NOV22TBDET-DETJGOFF16-200": {
-      "game": "w11-tb-det",
-      "player": "Jared Goff",
-      "bet": "200+ passing yards",
-      "prob": 80,
-      "result": null
-    },
-    "KXNFLPASSYDS-26NOV22NYJLAC-LACJHERBERT10-175": {
-      "game": "w11-nyj-lac",
-      "player": "Justin Herbert",
-      "bet": "175+ passing yards",
-      "prob": 70,
-      "result": null
-    },
-    "KXNFLPASSYDS-26NOV22TENDAL-DALDPRESCOTT4-250": {
-      "game": "w11-ten-dal",
-      "player": "Dak Prescott",
-      "bet": "250+ passing yards",
-      "prob": 70,
-      "result": null
-    },
-    "KXNFLREC-26NOV22JACNYG-NYGMNABERS1-5": {
-      "game": "w11-jac-nyg",
-      "player": "Malik Nabers",
-      "bet": "5+ receptions",
-      "prob": 70,
-      "result": null
-    },
-    "KXNFLREC-26NOV22PITPHI-PITDMETCALF4-3": {
-      "game": "w11-pit-phi",
-      "player": "DK Metcalf",
-      "bet": "3+ receptions",
-      "prob": 70,
-      "result": null
-    },
-    "KXNFLRECYDS-26NOV22ARIKC-KCTKELCE87-50": {
-      "game": "w11-ari-kc",
-      "player": "Travis Kelce",
-      "bet": "50+ receiving yards",
-      "prob": 40,
-      "result": null
-    },
-    "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-80": {
-      "game": "w11-bal-car",
-      "player": "Zay Flowers",
-      "bet": "80+ receiving yards",
-      "prob": 40,
-      "result": null
-    },
-    "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
-      "game": "w11-cin-was",
-      "player": "Jayden Daniels",
-      "bet": "175+ passing yards",
-      "prob": 80,
-      "result": null
-    },
-    "KXNFLRECYDS-26NOV23CINWAS-WASSDIGGS3-25": {
-      "game": "w11-cin-was",
-      "player": "Stefon Diggs",
-      "bet": "25+ receiving yards",
-      "prob": 80,
-      "result": null
-    },
-    "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250": {
-      "game": "w11-cin-was",
-      "player": "Joe Burrow",
-      "bet": "250+ passing yards",
-      "prob": 81,
-      "result": null
-    },
-    "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
-      "game": "w11-ind-hou",
-      "player": "Nico Collins",
-      "bet": "40+ receiving yards",
-      "prob": 80,
-      "result": "hit"
-    },
-    "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-200": {
-      "game": "w11-ind-hou",
-      "player": "C.J. Stroud",
-      "bet": "200+ passing yards",
-      "prob": 79,
-      "result": "miss"
-    },
-    "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20": {
-      "game": "w11-ind-hou",
-      "player": "Tyler Warren",
-      "bet": "20+ receiving yards",
-      "prob": 79,
-      "result": "hit"
     },
     "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3": {
       "game": "w11-jac-nyg",
@@ -5140,6 +5034,13 @@
     "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3": {
       "game": "w11-ari-kc",
       "player": "Travis Kelce",
+      "bet": "3+ receptions",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLREC-26NOV22PITPHI-PITDMETCALF4-3": {
+      "game": "w11-pit-phi",
+      "player": "DK Metcalf",
       "bet": "3+ receptions",
       "prob": 70,
       "result": null
@@ -5172,11 +5073,74 @@
       "prob": 40,
       "result": null
     },
+    "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250": {
+      "game": "w11-cin-was",
+      "player": "Joe Burrow",
+      "bet": "250+ passing yards",
+      "prob": 80,
+      "result": null
+    },
     "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3": {
       "game": "w11-cin-was",
       "player": "Chase Brown",
       "bet": "3+ receptions",
       "prob": 80,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV23CINWAS-WASSDIGGS3-25": {
+      "game": "w11-cin-was",
+      "player": "Stefon Diggs",
+      "bet": "25+ receiving yards",
+      "prob": 79,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
+      "game": "w11-ind-hou",
+      "player": "Nico Collins",
+      "bet": "40+ receiving yards",
+      "prob": 80,
+      "result": "hit"
+    },
+    "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-200": {
+      "game": "w11-ind-hou",
+      "player": "C.J. Stroud",
+      "bet": "200+ passing yards",
+      "prob": 79,
+      "result": "miss"
+    },
+    "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20": {
+      "game": "w11-ind-hou",
+      "player": "Tyler Warren",
+      "bet": "20+ receiving yards",
+      "prob": 79,
+      "result": "hit"
+    },
+    "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20": {
+      "game": "w11-lv-den",
+      "player": "Jaylen Waddle",
+      "bet": "20+ receiving yards",
+      "prob": 80,
+      "result": null
+    },
+    "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
+      "game": "w11-no-chi",
+      "player": "Tyler Shough",
+      "bet": "200+ passing yards",
+      "prob": 70,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40": {
+      "game": "w11-mia-buf",
+      "player": "Dalton Kincaid",
+      "bet": "40+ receiving yards",
+      "prob": 40,
+      "result": null
+    },
+    "KXNFLRECYDS-26NOV23CINWAS-CINJCHASE1-60": {
+      "game": "w11-cin-was",
+      "player": "Ja'Marr Chase",
+      "bet": "60+ receiving yards",
+      "prob": 81,
       "result": null
     }
   }
