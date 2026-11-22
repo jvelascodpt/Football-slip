@@ -20,6 +20,17 @@
 <script>
   // Apply the saved theme before first paint to avoid a flash.
   try { var t = localStorage.getItem("football-slip:theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  // Out-of-date check: phones can keep this page for up to 10 minutes after an update. If the
+  // deployed version (version.txt, never cached) differs from this page's, reload once.
+  (function () {
+    var mine = "__APP_VERSION__";
+    if (mine.indexOf("__") === 0) return;   // local copy, not a deploy
+    fetch("version.txt", { cache: "no-store" }).then(function (r) { return r.ok ? r.text() : ""; }).then(function (v) {
+      v = (v || "").trim();
+      var key = "football-slip:reloaded-for";
+      if (v && v !== mine && sessionStorage.getItem(key) !== v) { sessionStorage.setItem(key, v); location.reload(); }
+    }).catch(function () {});
+  })();
 </script>
 </head>
 <body>
