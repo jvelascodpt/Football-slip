@@ -114,3 +114,20 @@ test("buildProps: per-game for Thursday, mixed for Sunday, old Sunday per-game p
   assert.ok(props.some((p) => p.key === "w11-ind-hou"));
   assert.ok(!props.some((p) => p.name === "old per-game"));
 });
+
+test("gradeProps saves each player's final stat from ESPN for finished games", async () => {
+  const week = { games: [{ ...game, status: "final", espnId: "401873066" }], props: [{ auto: true, key: game.id, game: game.id, legs: [
+    { game: game.id, ticker: "S", player: "C.J. Stroud", bet: "200+ passing yards", prob: 80, result: "miss" },
+    { game: game.id, ticker: "C", player: "Nico Collins", bet: "40+ receiving yards", prob: 80, result: "hit" },
+  ] }] };
+  const box = { boxscore: { players: [{ statistics: [
+    { name: "passing", labels: ["C/ATT", "YDS", "AVG", "TD", "INT"], athletes: [{ athlete: { displayName: "C.J. Stroud" }, stats: ["15/22", "183", "8.3", "2", "0"] }] },
+    { name: "receiving", labels: ["REC", "YDS", "AVG", "TD", "LONG"], athletes: [{ athlete: { displayName: "Nico Collins" }, stats: ["2", "48", "24", "1", "42"] }] },
+  ] }] } };
+  let calls = 0;
+  await gradeProps(week, async () => [], new Date(), async (id) => { calls++; assert.equal(id, "401873066"); return box; });
+  assert.deepEqual(week.props[0].legs.map((l) => l.actual), [183, 48]);
+  assert.equal(week.markets.S.actual, 183);
+  await gradeProps(week, async () => [], new Date(), async () => { calls++; return box; });
+  assert.equal(calls, 1);   // saved once, not refetched
+});

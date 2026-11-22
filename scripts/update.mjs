@@ -81,10 +81,11 @@ async function updateScoresFor(season, week, games) {
   const p = path.join(DATA, fileName(season, week));
   const w = await readJSON(p);
   if (!w) return 0;
+  const before = JSON.stringify(w);
   const n = applyScores(w, games || (await fetchWeek(season, week)));
   const graded = await gradeProps(w);
   if (graded) console.log(`week ${week}: graded ${graded} prop leg${graded === 1 ? "" : "s"}`);
-  if (n || graded) {
+  if (JSON.stringify(w) !== before) {   // scores, results, live prices or final player stats changed
     w.refreshed = fmtUpdated(new Date());
     await writeJSON(p, w);
   }

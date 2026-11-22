@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Sat Nov 21, 3:46 PM PT",
-  "refreshed": "Sat Nov 21, 3:46 PM PT",
+  "refreshed": "Sat Nov 21, 9:03 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -4984,7 +4984,8 @@
           "prob": 80,
           "ticker": "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40",
           "result": "hit",
-          "why": "Team leader in receiving: 37 REC, 478 YDS, 5 TD."
+          "why": "Team leader in receiving: 37 REC, 478 YDS, 5 TD.",
+          "actual": 58
         },
         {
           "game": "w11-ind-hou",
@@ -4994,7 +4995,8 @@
           "prob": 79,
           "ticker": "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-200",
           "result": "miss",
-          "why": "Team leader in passing: 201/320, 2,462 YDS, 19 TD, 3 INT."
+          "why": "Team leader in passing: 201/320, 2,462 YDS, 19 TD, 3 INT.",
+          "actual": 194
         },
         {
           "game": "w11-ind-hou",
@@ -5004,7 +5006,8 @@
           "prob": 79,
           "ticker": "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20",
           "result": "hit",
-          "why": "Team leader in receiving: 40 REC, 276 YDS, 2 TD."
+          "why": "Team leader in receiving: 40 REC, 276 YDS, 2 TD.",
+          "actual": 22
         }
       ]
     }
@@ -5099,21 +5102,24 @@
       "player": "Nico Collins",
       "bet": "40+ receiving yards",
       "prob": 80,
-      "result": "hit"
+      "result": "hit",
+      "actual": 58
     },
     "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-200": {
       "game": "w11-ind-hou",
       "player": "C.J. Stroud",
       "bet": "200+ passing yards",
       "prob": 79,
-      "result": "miss"
+      "result": "miss",
+      "actual": 194
     },
     "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20": {
       "game": "w11-ind-hou",
       "player": "Tyler Warren",
       "bet": "20+ receiving yards",
       "prob": 79,
-      "result": "hit"
+      "result": "hit",
+      "actual": 22
     },
     "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20": {
       "game": "w11-lv-den",

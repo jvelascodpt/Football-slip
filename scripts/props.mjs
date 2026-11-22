@@ -1,7 +1,7 @@
 // Player-prop parlays from Kalshi's NFL player markets, built per game as soon as Kalshi opens
 // them (Thursday games are usually open by Tuesday). Kalshi also settles each market, so legs
 // are graded automatically. Parsing and selection are pure and tested in tests/props.test.mjs.
-import { TEAMS } from "../js/core.js";
+import { TEAMS, parseBox, propLine, statFor } from "../js/core.js";
 import { getJSON } from "./sources.mjs";
 import { propAdj } from "./learn.mjs";
 
@@ -208,7 +208,9 @@ const fetchMarketsBatch = async (tickers) => {
 
 // For games underway or finished: save each tracked market's live price (percent) and, once
 // Kalshi settles it, the result; copy both onto the matching parlay legs. Returns legs graded.
-export async function gradeProps(week, fetchMarkets = fetchMarketsBatch, now = new Date()) {
+const fetchSummary = (espnId) => getJSON(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=${espnId}`);
+
+export async function gradeProps(week, fetchMarkets = fetchMarketsBatch, now = new Date(), getSummary = fetchSummary) {
   const markets = trackMarkets(week);
   const status = (id) => week.games.find((g) => g.id === id)?.status;
   const due = Object.keys(markets).filter((t) => !markets[t].result && status(markets[t].game) && status(markets[t].game) !== "upcoming");
@@ -224,9 +226,23 @@ export async function gradeProps(week, fetchMarkets = fetchMarketsBatch, now = n
       if (live != null) { m.live = live; m.liveAt = now.toISOString(); }
     });
   }
+  // Final games: save each player's final number (e.g. 183 passing yards) from ESPN's box score,
+  // so a settled leg can show how it compared with its line.
+  const finals = [...new Set(Object.values(markets).filter((m) => m.actual == null && status(m.game) === "final").map((m) => m.game))];
+  for (const id of finals) {
+    const g = week.games.find((x) => x.id === id);
+    if (!g?.espnId) continue;
+    let box;
+    try { box = parseBox(await getSummary(g.espnId)); } catch (e) { continue; }   // try again next run
+    if (!box || !Object.keys(box).length) continue;
+    Object.values(markets).filter((m) => m.game === id && m.actual == null).forEach((m) => {
+      const pl = propLine(m.bet); if (pl) m.actual = statFor(box, m.player, pl.key);
+    });
+  }
   (week.props || []).forEach((p) => (p.legs || []).forEach((l) => {
     const m = l.ticker && markets[l.ticker]; if (!m) return;
     if (m.result) { l.result = m.result; delete l.live; } else if (m.live != null) l.live = m.live;
+    if (m.actual != null) l.actual = m.actual;
   }));
   return n;
 }

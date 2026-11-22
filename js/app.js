@@ -1,7 +1,7 @@
 import {
   TEAMS, TIERS, tierOf, winner, probFor, legState, parlayState, parlayProb, parlayProgress, verdict,
   pickRecord, betsNet, EDGE_BAND, cleanBets, locked, legGame, legTeam, isProp, impliedFromAmerican,
-  decimalFromAmerican, gameId, applyLiveScoreboard,
+  decimalFromAmerican, gameId, applyLiveScoreboard, normName, parseBox, propLine, statFor,
 } from "./core.js";
 import { COLORS, espnAb, logoUrl, teamStyle } from "./teams.js";
 
@@ -233,19 +233,25 @@ function viewPicks() {
 }
 
 /* ---------- parlays ---------- */
+// "Hit · 48/40 rec yds", "Missed · 183/200 pass yds", "118/200 pass yds" (live), or "" if no stats.
+function propLabel(l, s) {
+  const stat = l.statNow != null ? `${l.statNow}/${l.statLine} ${l.statUnit}` : "";
+  if (s === "hit") return stat ? `Hit · ${stat}` : "Hit";
+  if (s === "miss") return stat ? `Missed · ${stat}` : "Missed";
+  return s === "live" ? stat : "";
+}
 function legItem(l, i, opts = {}) {
   const g = game(legGame(l)), s = legState(game)(l), team = legTeam(l);
   if (isProp(l)) {
     // Hand-entered prop legs are graded by tapping; legs from the Props tab grade from Kalshi.
     const grade = opts.grade && !l.ticker ? `<span class="p"><button class="grade${l.result === "hit" ? " on hit" : ""}" data-grade="${opts.grade}|${i}|hit">Hit</button> <button class="grade${l.result === "miss" ? " on miss" : ""}" data-grade="${opts.grade}|${i}|miss">Miss</button></span>` : "";
-    const stat = l.statNow != null ? ` (${l.statNow} ${l.statUnit})` : "";
-    const price = s === "hit" ? `Hit${stat}` : s === "miss" ? `Missed${stat}` : l.statNow != null && s === "live" ? `${l.statNow}/${l.statLine} ${l.statUnit}` : opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : l.prob != null ? `${l.prob}%` : l.odds != null ? fmtOdds(l.odds) : "";
+    const price = propLabel(l, s) || (opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : l.prob != null ? `${l.prob}%` : l.odds != null ? fmtOdds(l.odds) : "");
     return `<li><span class="dot ${s}" title="${stateLabel[s]}"></span>${badge(team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span>${price && !grade ? `<span class="p">${price}</span>` : ""}${grade}</li>`;
   }
   if (!g) return `<li><span class="dot"></span><span>${esc(nick(team))} (game not found)</span></li>`;
   const opp = team === g.away ? g.home : g.away;
   return `<li><span class="dot ${s}" title="${stateLabel[s]}"></span>${opts.logos ? badge(team) : ""}<span><b>${esc(nick(team))}</b> over ${esc(nick(opp))}</span>
-    <span class="p">${s === "hit" ? "Hit" : s === "miss" ? "Missed" : opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : `${Math.round(probFor(g, team) * 100)}%`}</span>${opts.removable ? `<button data-rm="${i}" aria-label="Remove ${esc(nick(team))}">×</button>` : ""}</li>`;
+    <span class="p">${s === "hit" || s === "miss" ? `${s === "hit" ? "Hit" : "Missed"}${g.score ? ` · ${Math.max(...g.score)}-${Math.min(...g.score)}` : ""}` : opts.live && s === "live" ? `${Math.round(legChanceNow(l) * 100)}% now` : `${Math.round(probFor(g, team) * 100)}%`}</span>${opts.removable ? `<button data-rm="${i}" aria-label="Remove ${esc(nick(team))}">×</button>` : ""}</li>`;
 }
 const legsList = (legs, opts) => `<ul class="legs">${legs.map((l, i) => legItem(l, i, opts)).join("")}</ul>`;
 
@@ -303,38 +309,26 @@ function marketFor(ticker) {
 // A logged prop leg that came from a Kalshi prop picks up the live price and graded result.
 // ESPN live box score per game, fetched while it's live: {gameId: {normName: {passYds, ...}}}.
 const liveStats = {};
-const normName = (n) => String(n || "").toLowerCase().replace(/\b(jr|sr|ii|iii|iv|v)\b\.?/g, "").replace(/[^a-z]/g, "");
-const STAT_OF = { "passing yards": "passYds", "rushing yards": "rushYds", "receiving yards": "recYds", "receptions": "rec", "passing touchdowns": "passTD", "touchdowns": "td" };
-const STAT_UNIT = { passYds: "pass yds", rushYds: "rush yds", recYds: "rec yds", rec: "catches", passTD: "pass TD", td: "TD" };
-function parseBox(summary) {
-  const out = {};
-  (summary?.boxscore?.players || []).forEach((t) => (t.statistics || []).forEach((cat) => {
-    const col = (lbl) => (cat.labels || []).indexOf(lbl);
-    (cat.athletes || []).forEach((a) => {
-      const n = normName(a.athlete?.displayName); if (!n || !a.stats) return;
-      const v = (lbl) => { const i = col(lbl); return i < 0 ? 0 : parseFloat(a.stats[i]) || 0; };
-      const st = (out[n] ||= { passYds: 0, rushYds: 0, recYds: 0, rec: 0, passTD: 0, td: 0 });
-      if (cat.name === "passing") { st.passYds = v("YDS"); st.passTD = v("TD"); }
-      if (cat.name === "rushing") { st.rushYds = v("YDS"); st.td += v("TD"); }
-      if (cat.name === "receiving") { st.recYds = v("YDS"); st.rec = v("REC"); st.td += v("TD"); }
-    });
-  }));
-  return out;
-}
 // A logged prop leg picks up Kalshi's live price and settled result, and, while its game is on,
 // the player's live number from ESPN's box score: it shows as Hit as soon as he reaches the line.
 function withKalshiResult(l) {
   if (!isProp(l)) return l;
   let out = l;
   const m = l.ticker && marketFor(l.ticker);
-  if (m) out = { ...l, result: l.result || m.result || null, live: m.live, prob: l.prob ?? m.prob };
-  if (out.result) return out;
-  const g = game(l.game), box = liveStats[l.game], bm = /^(\d+(?:\.\d+)?)\+\s+(.+)$/.exec(l.bet || "");
-  if (!g || !box || !bm || g.status === "upcoming") return out;
-  const key = STAT_OF[bm[2].toLowerCase()]; if (!key) return out;
-  const line = Number(bm[1]), now = box[normName(l.player)]?.[key] ?? 0;
-  const extra = { statNow: now, statLine: line, statUnit: STAT_UNIT[key], progress: Math.min(now / line, 0.99) };
-  if (now >= line) return { ...out, ...extra, result: "hit", provisional: true };
+  if (m) out = { ...l, result: l.result || m.result || null, live: m.live, prob: l.prob ?? m.prob, actual: l.actual ?? m.actual };
+  const pl = propLine(l.bet), g = game(l.game);
+  if (!pl || !g) return out;
+  const extra = { statLine: pl.line, statUnit: pl.unit };
+  // Settled: show the player's final number saved by the data script (or the box score if loaded).
+  if (out.result) {
+    const now = out.actual ?? (liveStats[l.game] ? statFor(liveStats[l.game], l.player, pl.key) : null);
+    return now == null ? out : { ...out, ...extra, statNow: now };
+  }
+  const box = liveStats[l.game];
+  if (!box || g.status === "upcoming") return out;
+  const now = statFor(box, l.player, pl.key);
+  Object.assign(extra, { statNow: now, progress: Math.min(now / pl.line, 0.99) });
+  if (now >= pl.line) return { ...out, ...extra, result: "hit", provisional: true };
   if (g.status === "final") return { ...out, ...extra, result: "miss", provisional: true };
   return { ...out, ...extra };
 }
@@ -456,7 +450,7 @@ function propCard(p, i) {
     <div class="meta"><b style="color:var(--ink);font-size:15px">${esc(p.name)}</b>${p.tag ? `<span class="pill${i ? "" : " lock"}">${esc(p.tag)}</span>` : ""}<span class="pill ${s === "pending" ? "" : s} sp">${stateLabel[s]}</span></div>
     <ul class="legs">${legs.map((l) => {
       const g = game(l.game), st = legState(game)(l);
-      return `<li><span class="dot ${st}" title="${stateLabel[st]}"></span>${badge(l.team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span><span class="p">${st === "hit" ? `Hit${l.statNow != null ? ` (${l.statNow} ${l.statUnit})` : ""}` : st === "miss" ? `Missed${l.statNow != null ? ` (${l.statNow} ${l.statUnit})` : ""}` : l.statNow != null && st === "live" ? `${l.statNow}/${l.statLine} ${l.statUnit}` : l.prob != null ? l.prob + "%" : fmtOdds(l.odds)}</span>
+      return `<li><span class="dot ${st}" title="${stateLabel[st]}"></span>${badge(l.team)}<span><b>${esc(l.player)}</b> ${esc(l.bet)}</span><span class="p">${propLabel(l, st) || (l.prob != null ? l.prob + "%" : fmtOdds(l.odds))}</span>
         ${l.why || g ? `<p class="why">${g ? `${esc(nick(g.away))} at ${esc(nick(g.home))}, ${esc(g.kick)} PT. ` : ""}${esc(l.why || "")}</p>` : ""}</li>`;
     }).join("")}</ul>
     ${progressBar(legs)}${s === "hit" ? winBlock(`p${wk.week}-${i}`, 10, pay, `It hit · $10 at fair odds pays ${money(pay)}`) : ""}

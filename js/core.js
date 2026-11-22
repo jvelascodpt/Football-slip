@@ -49,6 +49,34 @@ export function applyLiveScoreboard(weeks, espn) {
   return changed;
 }
 
+/* ---------- ESPN box score (live and final player stats) ---------- */
+export const normName = (n) => String(n || "").toLowerCase().replace(/\b(jr|sr|ii|iii|iv|v)\b\.?/g, "").replace(/[^a-z]/g, "");
+export const STAT_OF = { "passing yards": "passYds", "rushing yards": "rushYds", "receiving yards": "recYds", "receptions": "rec", "passing touchdowns": "passTD", "touchdowns": "td" };
+export const STAT_UNIT = { passYds: "pass yds", rushYds: "rush yds", recYds: "rec yds", rec: "catches", passTD: "pass TD", td: "TD" };
+export function parseBox(summary) {
+  const out = {};
+  (summary?.boxscore?.players || []).forEach((t) => (t.statistics || []).forEach((cat) => {
+    const col = (lbl) => (cat.labels || []).indexOf(lbl);
+    (cat.athletes || []).forEach((a) => {
+      const n = normName(a.athlete?.displayName); if (!n || !a.stats) return;
+      const v = (lbl) => { const i = col(lbl); return i < 0 ? 0 : parseFloat(a.stats[i]) || 0; };
+      const st = (out[n] ||= { passYds: 0, rushYds: 0, recYds: 0, rec: 0, passTD: 0, td: 0 });
+      if (cat.name === "passing") { st.passYds = v("YDS"); st.passTD = v("TD"); }
+      if (cat.name === "rushing") { st.rushYds = v("YDS"); st.td += v("TD"); }
+      if (cat.name === "receiving") { st.recYds = v("YDS"); st.rec = v("REC"); st.td += v("TD"); }
+    });
+  }));
+  return out;
+}
+// For a prop bet like "40+ receiving yards": its stat key, line and unit, or null.
+export function propLine(bet) {
+  const m = /^(\d+(?:\.\d+)?)\+\s+(.+)$/.exec(bet || "");
+  const key = m && STAT_OF[m[2].toLowerCase()];
+  return key ? { key, line: Number(m[1]), unit: STAT_UNIT[key] } : null;
+}
+// A player's number for that stat from a parsed box score (0 if he has none).
+export const statFor = (box, player, key) => box?.[normName(player)]?.[key] ?? 0;
+
 // Tiers by the pick's win probability (percent).
 export const TIERS = [["lock", "Lock", 72], ["lean", "Lean", 60], ["flip", "Coin flip", 0]];
 export const tierOf = (p) => TIERS.find((t) => p >= t[2]);
