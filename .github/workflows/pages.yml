@@ -97,7 +97,13 @@ jobs:
         with:
           ref: main
       - name: Keep only the site files
-        run: mkdir _site && cp -r index.html manifest.webmanifest css js data icons _site/
+        run: |
+          mkdir _site && cp -r index.html manifest.webmanifest css js data icons _site/
+          # Version the CSS and scripts per deploy so phones load new code on the first refresh
+          # instead of a cached copy (GitHub Pages lets browsers keep files for 10 minutes).
+          V="${GITHUB_SHA::8}-${GITHUB_RUN_NUMBER}"
+          sed -i "s#css/style.css#css/style.css?v=$V#; s#js/app.js#js/app.js?v=$V#" _site/index.html
+          sed -i -E "s#from \"\./(core|teams)\.js\"#from \"./\1.js?v=$V\"#g" _site/js/*.js
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
