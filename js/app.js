@@ -278,6 +278,9 @@ function calc() {
   $("#placeHint").textContent = ok ? `Saves on this phone with cost ${money(stake)} and payout ${money(off)}.` : "Enter the payout to save this as a placed bet.";
 }
 
+// The bet you logged from a suggested parlay, if any (same teams in the same games).
+const legKey = (legs) => legs.map((l) => `${legGame(l)}|${legTeam(l)}`).sort().join(",");
+const loggedTeamBet = (pl) => myBets.find((b) => sameWeek(b, wk) && legKey(b.legs) === legKey(pl.legs)) || null;
 function parlayCard(pl, i) {
   const p = parlayProb(pl.legs, game), s = parlayState(pl.legs, game);
   const canLoad = pl.legs.every((l) => game(l[0])?.status === "upcoming");
@@ -286,7 +289,7 @@ function parlayCard(pl, i) {
     ${legsList(pl.legs, {})}${progressBar(pl.legs)}
     <div class="big"><b>${pct(p)}</b><span>estimated chance before kickoff<br>Fair payout on $10 is ${money(10 / p)}.</span></div>
     ${pl.note ? `<p class="note">${esc(pl.note)}</p>` : ""}
-    ${canLoad ? `<div class="btnrow"><button class="btn" data-load="${i}">Load into slip</button></div>` : ""}</article>`;
+    ${loggedTeamBet(pl) ? `<p class="logged">✓ Logged as your bet</p>` : canLoad ? `<div class="btnrow"><button class="btn ghost" data-logparlay="${i}">Log this as my bet</button></div>` : ""}</article>`;
 }
 
 // Kalshi market data saved by the data script, by ticker: opening price, live price, result.
@@ -416,13 +419,21 @@ function saveDraft() {
   draft = null; render(); toast("Bet saved.");
 }
 
+// Your bets for the selected week (the newest week by default, so the list resets each Tuesday
+// when the new week is built), grouped: in play, won, busted, then not started.
 function viewParlays() {
-  const bets = betsFor(wk);
-  return `<section class="sec"><div class="sechead"><h2>Your slip</h2><small>Hit chance multiplies each leg</small></div>${builder()}</section>
+  const bets = betsFor(wk).map((b) => ({ b, s: parlayState(b.legs.map(withKalshiResult), game), started: betLocked(b.legs.map(withKalshiResult)) }));
+  const group = (label, list) => (list.length ? `<p class="rsub grp">${label} · ${list.length}</p>${list.map((x) => betCard(x.b)).join("")}` : "");
+  const live = bets.filter((x) => x.s !== "hit" && x.s !== "miss" && x.started);
+  const won = bets.filter((x) => x.s === "hit"), busted = bets.filter((x) => x.s === "miss");
+  const waiting = bets.filter((x) => x.s !== "hit" && x.s !== "miss" && !x.started);
+  const summary = bets.length ? `${live.length} in play · ${won.length} won · ${busted.length} busted${waiting.length ? ` · ${waiting.length} not started` : ""}` : "Resets Tuesday";
+  return `<section class="sec"><div class="sechead"><h2>Your bets</h2><small>${summary}</small></div>
+    ${betForm()}
+    ${bets.length ? group("In play", live) + group("Won", won) + group("Busted", busted) + group("Not started", waiting)
+      : `<div class="card"><p class="empty">No bets for week ${wk.week} yet. Log one below from the suggested parlays or the Props tab, or tap + Log a bet. This list starts fresh each Tuesday with the new week.</p></div>`}</section>
   <section class="sec"><div class="sechead"><h2>Suggested for week ${wk.week}</h2></div>
-    ${(wk.parlays || []).map(parlayCard).join("") || `<p class="empty">No suggestions yet.</p>`}</section>
-  <section class="sec"><div class="sechead"><h2>Bets you placed</h2><small>Settle as games finish</small></div>
-    ${betForm()}${bets.slice().reverse().map(betCard).join("") || `<p class="empty">None saved for week ${wk.week} yet.</p>`}</section>`;
+    ${(wk.parlays || []).map(parlayCard).join("") || `<p class="empty">No suggestions yet.</p>`}</section>`;
 }
 
 /* ---------- props ---------- */
@@ -730,7 +741,14 @@ document.addEventListener("click", (e) => {
     delArm = null; myBets = myBets.filter((x) => x.id !== id); saveBets(); render(); return;
   }
   const rm = e.target.closest("[data-rm]"); if (rm) { slip.splice(+rm.dataset.rm, 1); render(); return; }
-  const ld = e.target.closest("[data-load]"); if (ld) { const pl = wk.parlays[+ld.dataset.load]; slip = pl.legs.map((l) => l.slice()); offered = ""; betName = pl.name; render(); window.scrollTo(0, 0); return; }
+  const lpl = e.target.closest("[data-logparlay]");
+  if (lpl) {
+    const pl = wk.parlays[+lpl.dataset.logparlay];
+    draft = { name: pl.name, book: "Kalshi", cost: "", payout: "", msg: "Enter what you paid and what it pays, then save.",
+      legs: pl.legs.map(([id, t]) => ({ kind: "team", pick: `${id}|${t}`, player: "", bet: "" })) };
+    render(); setTimeout(() => document.querySelector(".betform")?.scrollIntoView({ block: "start" }), 50);
+    return;
+  }
   if (e.target.closest("[data-clear]")) { slip = []; offered = ""; betName = ""; render(); return; }
   if (e.target.closest("[data-place]")) {
     const off = parseFloat(offered); if (!(off > stake)) return;
