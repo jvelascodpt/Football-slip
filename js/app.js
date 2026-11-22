@@ -250,7 +250,7 @@ function legItem(l, i, opts = {}) {
 const legsList = (legs, opts) => `<ul class="legs">${legs.map((l, i) => legItem(l, i, opts)).join("")}</ul>`;
 
 function builder() {
-  if (!slip.length) return `<div class="card"><p class="empty">Your slip is empty. Add your picks below, or load one of the suggested parlays.</p></div>`;
+  if (!slip.length) return `<div class="card"><p class="empty">Your slip is empty. Load one of the suggested parlays below to see its chance and price.</p></div>`;
   return `<div class="card">
     ${legsList(slip, { removable: true })}
     <div class="big" id="bBig"></div>
@@ -378,18 +378,6 @@ function betCard(b, opts = {}) {
     ${del ? `<div class="btnrow">${del}</div>` : ""}</article>`;
 }
 
-const openPicks = () => wk.games.filter((g) => !locked(g) && myPicks[g.id]);
-function fromPicks() {
-  const open = openPicks();
-  if (!open.length) return `<section class="sec"><div class="sechead"><h2>Add your picks</h2></div><div class="card"><p class="empty">Make picks on the Picks tab and they'll show up here to add to your slip.</p></div></section>`;
-  return `<section class="sec"><div class="sechead"><h2>Add your picks</h2><small>Games that haven't kicked off</small></div>
-    <div class="card"><ul class="legs">${open.map((g) => {
-      const t = myPicks[g.id], on = slip.some((l) => l[0] === g.id && l[1] === t);
-      return `<li>${badge(t)}<span><b>${esc(nick(t))}</b> over ${esc(nick(t === g.away ? g.home : g.away))}</span><span class="p">${Math.round(probFor(g, t) * 100)}%</span>
-        <button class="add${on ? " on" : ""}" data-addpick="${g.id}" aria-pressed="${on}">${on ? "✓ Added" : "+ Add"}</button></li>`;
-    }).join("")}</ul>
-    <div class="btnrow"><button class="btn ghost" data-addall>Add all</button></div></div></section>`;
-}
 
 const blankLeg = () => ({ kind: "team", pick: "", player: "", bet: "" });
 function teamOptions(sel) {
@@ -431,7 +419,6 @@ function saveDraft() {
 function viewParlays() {
   const bets = betsFor(wk);
   return `<section class="sec"><div class="sechead"><h2>Your slip</h2><small>Hit chance multiplies each leg</small></div>${builder()}</section>
-  ${fromPicks()}
   <section class="sec"><div class="sechead"><h2>Suggested for week ${wk.week}</h2></div>
     ${(wk.parlays || []).map(parlayCard).join("") || `<p class="empty">No suggestions yet.</p>`}</section>
   <section class="sec"><div class="sechead"><h2>Bets you placed</h2><small>Settle as games finish</small></div>
@@ -742,9 +729,6 @@ document.addEventListener("click", (e) => {
     if (delArm !== id) { delArm = id; render(); return; }
     delArm = null; myBets = myBets.filter((x) => x.id !== id); saveBets(); render(); return;
   }
-  const ap = e.target.closest("[data-addpick]");
-  if (ap) { const id = ap.dataset.addpick, team = myPicks[id], had = slip.some((l) => l[0] === id); slip = slip.filter((l) => l[0] !== id); if (!had && team) slip.push([id, team]); render(); return; }
-  if (e.target.closest("[data-addall]")) { openPicks().forEach((g) => { slip = slip.filter((l) => l[0] !== g.id); slip.push([g.id, myPicks[g.id]]); }); render(); return; }
   const rm = e.target.closest("[data-rm]"); if (rm) { slip.splice(+rm.dataset.rm, 1); render(); return; }
   const ld = e.target.closest("[data-load]"); if (ld) { const pl = wk.parlays[+ld.dataset.load]; slip = pl.legs.map((l) => l.slice()); offered = ""; betName = pl.name; render(); window.scrollTo(0, 0); return; }
   if (e.target.closest("[data-clear]")) { slip = []; offered = ""; betName = ""; render(); return; }
