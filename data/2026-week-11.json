@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Sat Nov 21, 3:46 PM PT",
-  "refreshed": "Sat Nov 21, 9:03 PM PT",
+  "updated": "Sun Nov 22, 12:28 PM PT",
+  "refreshed": "Sun Nov 22, 12:28 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -382,9 +382,6 @@
       "espnId": "401873070",
       "away": "MIA",
       "home": "BUF",
-      "start": "2026-11-22T18:00:00.000Z",
-      "kick": "Sun 10:00 AM",
-      "status": "upcoming",
       "record": [
         "1-8",
         "8-1"
@@ -728,16 +725,21 @@
         9,
         92
       ],
-      "note": "Dolphins 1-8, Bills 8-1. Last week: Dolphins lost to the Colts 24-22; Bills beat the Jets 31-12. Kalshi has the Bills at 92%."
+      "note": "Dolphins 1-8, Bills 8-1. Last week: Dolphins lost to the Colts 24-22; Bills beat the Jets 31-12. Kalshi has the Bills at 92%.",
+      "start": "2026-11-22T18:00:00.000Z",
+      "kick": "Sun 10:00 AM",
+      "status": "live",
+      "score": [
+        9,
+        23
+      ],
+      "live": "4th qtr 14:56"
     },
     {
       "id": "w11-no-chi",
       "espnId": "401873071",
       "away": "NO",
       "home": "CHI",
-      "start": "2026-11-22T18:00:00.000Z",
-      "kick": "Sun 10:00 AM",
-      "status": "upcoming",
       "record": [
         "3-6",
         "7-2"
@@ -1089,16 +1091,21 @@
         16,
         85
       ],
-      "note": "Saints 3-6, Bears 7-2. Last week: Saints lost to the Panthers 20-17. Kalshi has the Bears at 85%."
+      "note": "Saints 3-6, Bears 7-2. Last week: Saints lost to the Panthers 20-17. Kalshi has the Bears at 85%.",
+      "start": "2026-11-22T18:00:00.000Z",
+      "kick": "Sun 10:00 AM",
+      "status": "live",
+      "score": [
+        10,
+        19
+      ],
+      "live": "4th qtr 13:41"
     },
     {
       "id": "w11-ten-dal",
       "espnId": "401873073",
       "away": "TEN",
       "home": "DAL",
-      "start": "2026-11-22T18:00:00.000Z",
-      "kick": "Sun 10:00 AM",
-      "status": "upcoming",
       "record": [
         "1-8",
         "4-6"
@@ -1457,16 +1464,21 @@
         24,
         77
       ],
-      "note": "Titans 1-8, Cowboys 4-6. Last week: Titans lost to the Jaguars 40-23; Cowboys lost to the 49ers 46-40. Kalshi has the Cowboys at 77%."
+      "note": "Titans 1-8, Cowboys 4-6. Last week: Titans lost to the Jaguars 40-23; Cowboys lost to the 49ers 46-40. Kalshi has the Cowboys at 77%.",
+      "start": "2026-11-22T18:00:00.000Z",
+      "kick": "Sun 10:00 AM",
+      "status": "live",
+      "score": [
+        23,
+        41
+      ],
+      "live": "4th qtr 13:18"
     },
     {
       "id": "w11-tb-det",
       "espnId": "401873072",
       "away": "TB",
       "home": "DET",
-      "start": "2026-11-22T18:00:00.000Z",
-      "kick": "Sun 10:00 AM",
-      "status": "upcoming",
       "record": [
         "3-6",
         "7-2"
@@ -1811,16 +1823,21 @@
         32,
         69
       ],
-      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 69%."
+      "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 69%.",
+      "start": "2026-11-22T18:00:00.000Z",
+      "kick": "Sun 10:00 AM",
+      "status": "live",
+      "score": [
+        14,
+        17
+      ],
+      "live": "4th qtr 10:28"
     },
     {
       "id": "w11-ari-kc",
       "espnId": "401873067",
       "away": "ARI",
       "home": "KC",
-      "start": "2026-11-22T18:00:00.000Z",
-      "kick": "Sun 10:00 AM",
-      "status": "upcoming",
       "record": [
         "3-7",
         "7-2"
@@ -2187,16 +2204,21 @@
         9,
         92
       ],
-      "note": "Cardinals 3-7, Chiefs 7-2. Last week: Cardinals lost to the Rams 34-6; Chiefs beat the Falcons 35-13. Kalshi has the Chiefs at 92%."
+      "note": "Cardinals 3-7, Chiefs 7-2. Last week: Cardinals lost to the Rams 34-6; Chiefs beat the Falcons 35-13. Kalshi has the Chiefs at 92%.",
+      "start": "2026-11-22T18:00:00.000Z",
+      "kick": "Sun 10:00 AM",
+      "status": "live",
+      "score": [
+        7,
+        34
+      ],
+      "live": "4th qtr 9:37"
     },
     {
       "id": "w11-pit-phi",
       "espnId": "401873076",
       "away": "PIT",
       "home": "PHI",
-      "start": "2026-11-22T18:00:00.000Z",
-      "kick": "Sun 10:00 AM",
-      "status": "upcoming",
       "record": [
         "6-3",
         "2-7"
@@ -2555,16 +2577,21 @@
         65,
         36
       ],
-      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 65%."
+      "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 65%.",
+      "start": "2026-11-22T18:00:00.000Z",
+      "kick": "Sun 10:00 AM",
+      "status": "live",
+      "score": [
+        9,
+        16
+      ],
+      "live": "4th qtr 13:12"
     },
     {
       "id": "w11-bal-car",
       "espnId": "401873068",
       "away": "BAL",
       "home": "CAR",
-      "start": "2026-11-22T18:00:00.000Z",
-      "kick": "Sun 10:00 AM",
-      "status": "upcoming",
       "record": [
         "4-6",
         "4-5"
@@ -2916,7 +2943,15 @@
         43,
         58
       ],
-      "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 58%."
+      "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 58%.",
+      "start": "2026-11-22T18:00:00.000Z",
+      "kick": "Sun 10:00 AM",
+      "status": "live",
+      "score": [
+        26,
+        29
+      ],
+      "live": "3rd qtr 2:34"
     },
     {
       "id": "w11-nyj-lac",
@@ -2933,14 +2968,14 @@
       "info": {
         "venue": "SoFi Stadium",
         "city": "Inglewood",
-        "weather": "68° Intermittent clouds",
+        "weather": "66° Partly sunny",
         "spread": "LAC -3",
-        "total": 42.5,
-        "mlAway": "+143",
-        "mlHome": "-170"
+        "total": 43.5,
+        "mlAway": "+152",
+        "mlHome": "-181"
       },
       "report": {
-        "updated": "2026-11-21T23:46:15.210Z",
+        "updated": "2026-11-22T20:28:12.850Z",
         "fpi": [
           36.3,
           63.4
@@ -2992,10 +3027,10 @@
             "key": [],
             "injuries": [
               {
-                "name": "David Onyemata",
-                "pos": "DT",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
+                "name": "Trevin Wallace",
+                "pos": "LB",
+                "status": "Out",
+                "detail": "Groin"
               },
               {
                 "name": "Isaiah Williams",
@@ -3004,22 +3039,22 @@
                 "detail": "Ribs"
               },
               {
-                "name": "Dylan Parham",
-                "pos": "G",
-                "status": "Questionable",
-                "detail": "Knee"
+                "name": "Jelani Woods",
+                "pos": "TE",
+                "status": "Out",
+                "detail": "Coach's Decision"
               },
               {
-                "name": "Harrison Phillips",
-                "pos": "DT",
-                "status": "Questionable",
+                "name": "Nate Lynn",
+                "pos": "DE",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Omar Cooper Jr.",
+                "pos": "WR",
+                "status": "Out",
                 "detail": "Ankle"
-              },
-              {
-                "name": "Trevin Wallace",
-                "pos": "LB",
-                "status": "Questionable",
-                "detail": "Groin"
               }
             ],
             "leaders": [
@@ -3083,6 +3118,13 @@
             ],
             "news": [
               {
+                "h": "Why the Jets' next two games have major implications on the 2027 draft",
+                "d": "At two wins, New York will play two of the three remaining one-win teams in Weeks 11 and 12.",
+                "url": "https://www.espn.com/nfl/story/_/id/50543176/jets-face-chargers-dolphins-impact-2027-draft",
+                "video": false,
+                "at": "2026-11-22T11:00:01Z"
+              },
+              {
                 "h": "Jets QB Geno Smith (ankle) cleared to start vs. Chargers",
                 "d": "Jets quarterback Geno Smith made it through the practice week with no setbacks and was cleared to face the Chargers.",
                 "url": "https://www.espn.com/nfl/story/_/id/50543665/jets-qb-geno-smith-ankle-cleared-start-vs-chargers",
@@ -3095,13 +3137,6 @@
                 "url": "http://www.espn.com/nfl/preview?gameId=401873074",
                 "video": false,
                 "at": "2026-11-20T22:11:32Z"
-              },
-              {
-                "h": "Jets look to turn around offensive struggles",
-                "d": "Rich Cimini reports on the Jets' struggles on offense as they've gone without a TD in the last nine quarters.",
-                "url": "https://www.espn.com/video/clip/_/id/50534359/jets-look-turn-offensive-struggles",
-                "video": true,
-                "at": "2026-11-19T21:55:04Z"
               }
             ]
           },
@@ -3144,13 +3179,33 @@
                 28
               ]
             },
-            "key": [],
+            "key": [
+              {
+                "name": "Daiyan Henley",
+                "pos": "LB",
+                "status": "Out",
+                "detail": "Soreness",
+                "why": "Team leader in tackles"
+              }
+            ],
             "injuries": [
               {
-                "name": "Rodney Shelley",
+                "name": "Tarheeb Still",
                 "pos": "CB",
-                "status": "Injured Reserve",
+                "status": "Out",
                 "detail": "Ankle"
+              },
+              {
+                "name": "Brenen Thompson",
+                "pos": "WR",
+                "status": "Out",
+                "detail": "Hamstring"
+              },
+              {
+                "name": "KeAndre Lambert-Smith",
+                "pos": "WR",
+                "status": "Out",
+                "detail": "Coach's Decision"
               },
               {
                 "name": "Kendall Williamson",
@@ -3159,22 +3214,10 @@
                 "detail": "Calf"
               },
               {
-                "name": "Trey Pipkins III",
-                "pos": "OT",
-                "status": "Questionable",
-                "detail": "Knee"
-              },
-              {
-                "name": "Isas Waxter",
-                "pos": "CB",
-                "status": "Questionable",
-                "detail": "Ankle"
-              },
-              {
-                "name": "Tarheeb Still",
-                "pos": "CB",
-                "status": "Questionable",
-                "detail": "Ankle"
+                "name": "Daiyan Henley",
+                "pos": "LB",
+                "status": "Out",
+                "detail": "Soreness"
               }
             ],
             "leaders": [
@@ -3243,20 +3286,13 @@
                 "url": "http://www.espn.com/nfl/preview?gameId=401873074",
                 "video": false,
                 "at": "2026-11-20T22:11:32Z"
-              },
-              {
-                "h": "Kyle Hamilton says Ravens 'disgracing' standards after losing to 0-8 Chargers",
-                "d": "Pro Bowl safety Kyle Hamilton vented after the Ravens' 23-20 loss to the previously winless Chargers on Monday night, which was one of the most embarrassing defeats in team history.",
-                "url": "https://www.espn.com/nfl/story/_/id/50508744/kyle-hamilton-says-ravens-disgracing-standards-loss-previously-winless-chargers",
-                "video": false,
-                "at": "2026-11-17T14:45:17Z"
               }
             ]
           }
         }
       },
       "pick": "LAC",
-      "prob": 60,
+      "prob": 62,
       "source": "Draft Kings",
       "kalshi": [
         40,
@@ -3279,14 +3315,14 @@
       "info": {
         "venue": "Empower Field at Mile High",
         "city": "Denver",
-        "weather": "43° Intermittent clouds",
+        "weather": "43° Mostly sunny",
         "spread": "DEN -10.5",
         "total": 40.5,
-        "mlAway": "+447",
-        "mlHome": "-600"
+        "mlAway": "+438",
+        "mlHome": "-587"
       },
       "report": {
-        "updated": "2026-11-21T23:46:15.210Z",
+        "updated": "2026-11-22T20:28:12.850Z",
         "fpi": [
           13.4,
           86.5
@@ -3335,45 +3371,37 @@
                 10
               ]
             },
-            "key": [
-              {
-                "name": "Brock Bowers",
-                "pos": "TE",
-                "status": "Questionable",
-                "detail": "Ankle",
-                "why": "Team leader in receiving"
-              }
-            ],
+            "key": [],
             "injuries": [
+              {
+                "name": "Dont'e Thornton Jr.",
+                "pos": "WR",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Dalton Johnson",
+                "pos": "S",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Tristin McCollum",
+                "pos": "S",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Bryce Cabeldue",
+                "pos": "G",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
               {
                 "name": "Tonka Hemingway",
                 "pos": "DT",
                 "status": "Out",
                 "detail": "Stinger"
-              },
-              {
-                "name": "Patrick Johnson",
-                "pos": "DE",
-                "status": "Injured Reserve",
-                "detail": "Stinger"
-              },
-              {
-                "name": "Folorunso Fatukasi",
-                "pos": "DT",
-                "status": "Questionable",
-                "detail": "Toe"
-              },
-              {
-                "name": "Brock Bowers",
-                "pos": "TE",
-                "status": "Questionable",
-                "detail": "Ankle"
-              },
-              {
-                "name": "Matt Gay",
-                "pos": "PK",
-                "status": "Questionable",
-                "detail": "Hip"
               }
             ],
             "leaders": [
@@ -3498,37 +3526,45 @@
                 6
               ]
             },
-            "key": [],
+            "key": [
+              {
+                "name": "Sam Ehlinger",
+                "pos": "QB",
+                "status": "Out",
+                "detail": "Coach's Decision",
+                "why": "Quarterback"
+              }
+            ],
             "injuries": [
               {
-                "name": "Caleb Lohner",
-                "pos": "TE",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
-              },
-              {
-                "name": "Eyioma Uwazurike",
-                "pos": "DE",
-                "status": "Injured Reserve",
-                "detail": "Shoulder"
-              },
-              {
-                "name": "RJ Harvey",
-                "pos": "RB",
-                "status": "Injured Reserve",
-                "detail": "Knee"
-              },
-              {
-                "name": "Tyler Badie",
-                "pos": "RB",
-                "status": "Injured Reserve",
-                "detail": "Fracture"
+                "name": "Lil'Jordan Humphrey",
+                "pos": "WR",
+                "status": "Out",
+                "detail": "Coach's Decision"
               },
               {
                 "name": "Brandon Jones",
                 "pos": "S",
-                "status": "Questionable",
+                "status": "Out",
                 "detail": "Hamstring"
+              },
+              {
+                "name": "Sam Ehlinger",
+                "pos": "QB",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Gavin Ortega",
+                "pos": "OT",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Kage Casey",
+                "pos": "OT",
+                "status": "Out",
+                "detail": "Coach's Decision"
               }
             ],
             "leaders": [
@@ -3592,25 +3628,25 @@
             ],
             "news": [
               {
+                "h": "Why Tom Jackson was such a special person",
+                "d": "Why Tom Jackson was such a special person",
+                "url": "https://www.espn.com/video/clip/_/id/50563922/why-tom-jackson-was-such-special-person",
+                "video": true,
+                "at": "2026-11-22T19:32:31Z"
+              },
+              {
+                "h": "Tom Jackson, Broncos star LB and Hall of Fame broadcaster at ESPN, dies at 75",
+                "d": "Tom Jackson, a foundational player on the Broncos \"Orange Crush\" defense and a fixture at ESPN as a Hall of Fame broadcaster, has died. He was 75.",
+                "url": "https://www.espn.com/nfl/story/_/id/50561778/tom-jackson-broncos-star-espn-legend-dies-75",
+                "video": false,
+                "at": "2026-11-22T19:39:58Z"
+              },
+              {
                 "h": "Broncos looking to put pressure on Mendoza",
                 "d": "Jeff Legwold previews how the Broncos plan to put pressure on Fernando Mendoza.",
                 "url": "https://www.espn.com/video/clip/_/id/50544585/broncos-looking-put-pressure-mendoza",
                 "video": true,
                 "at": "2026-11-20T23:46:55Z"
-              },
-              {
-                "h": "Peyton Manning enshrined in ESPN Fantasy Football Hall of Fame",
-                "d": "Peyton Manning, who retired as the top scorer of the ESPN fantasy football era, is the latest inductee in the ESPN Fantasy Football Hall of Fame.",
-                "url": "https://www.espn.com/fantasy/football/story/_/id/50541172/fantasy-football-hall-fame-peyton-manning",
-                "video": false,
-                "at": "2026-11-20T15:56:11Z"
-              },
-              {
-                "h": "Can the Broncos continue winning run vs. the Raiders?",
-                "d": "Can the Broncos continue winning run vs. the Raiders?",
-                "url": "https://www.espn.com/video/clip/_/id/50540924/can-broncos-continue-winning-run-vs-raiders",
-                "video": true,
-                "at": "2026-11-20T14:18:30Z"
               }
             ]
           }
@@ -3620,10 +3656,10 @@
       "prob": 82,
       "source": "Draft Kings",
       "kalshi": [
-        18,
-        83
+        17,
+        84
       ],
-      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 83%."
+      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 84%."
     },
     {
       "id": "w11-jac-nyg",
@@ -3640,14 +3676,14 @@
       "info": {
         "venue": "MetLife Stadium",
         "city": "East Rutherford",
-        "weather": "59° Rain",
+        "weather": "60° Rain",
         "spread": "JAX -6",
-        "total": 46.5,
-        "mlAway": "-256",
-        "mlHome": "+211"
+        "total": 45.5,
+        "mlAway": "-266",
+        "mlHome": "+218"
       },
       "report": {
-        "updated": "2026-11-21T23:46:15.210Z",
+        "updated": "2026-11-22T20:28:12.850Z",
         "fpi": [
           81.4,
           18.5
@@ -3699,10 +3735,16 @@
             "key": [],
             "injuries": [
               {
-                "name": "B.J. Green II",
+                "name": "Matt Dickerson",
                 "pos": "DE",
-                "status": "Injured Reserve",
-                "detail": "Forearm"
+                "status": "Out",
+                "detail": "Neck"
+              },
+              {
+                "name": "CJ Williams",
+                "pos": "WR",
+                "status": "Out",
+                "detail": "Coach's Decision"
               },
               {
                 "name": "Danny Striggow",
@@ -3711,22 +3753,16 @@
                 "detail": "Concussion"
               },
               {
+                "name": "Albert Regis",
+                "pos": "DT",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
                 "name": "Robert Hainsey",
                 "pos": "C",
                 "status": "Out",
                 "detail": "Sprain"
-              },
-              {
-                "name": "Eric Murray",
-                "pos": "S",
-                "status": "Injured Reserve",
-                "detail": "Elbow"
-              },
-              {
-                "name": "Matt Dickerson",
-                "pos": "DE",
-                "status": "Questionable",
-                "detail": "Neck"
               }
             ],
             "leaders": [
@@ -3790,6 +3826,13 @@
             ],
             "news": [
               {
+                "h": "'Receiving Trust': Behind Lawrence and Washington's elite partnership",
+                "d": "'Receiving Trust': Behind Lawrence and Washington's elite partnership",
+                "url": "https://www.espn.com/video/clip/_/id/50559070/lawrence-washington-elite-partnership",
+                "video": true,
+                "at": "2026-11-22T16:46:00Z"
+              },
+              {
                 "h": "How good has Trevor Lawrence been this year?",
                 "d": "Mike DiRocco breaks down Jaguars QB Trevor Lawrence's performance thus far in the season.",
                 "url": "https://www.espn.com/video/clip/_/id/50543580/how-good-trevor-lawrence-year",
@@ -3802,13 +3845,6 @@
                 "url": "https://www.espn.com/nfl/story/_/id/50535497/jacksonville-jaguars-bhayshul-tuten-rb-stats-fantasy",
                 "video": false,
                 "at": "2026-11-20T11:00:03Z"
-              },
-              {
-                "h": "Jaguars visit the Giants in a matchup of two unexpected division leaders",
-                "d": "— John Harbaugh had no time this week for analyzing what has made the Jacksonville Jaguars one of the NFL's top teams.",
-                "url": "http://www.espn.com/nfl/preview?gameId=401873069",
-                "video": false,
-                "at": "2026-11-19T21:25:07Z"
               }
             ]
           },
@@ -3851,45 +3887,37 @@
                 20
               ]
             },
-            "key": [
-              {
-                "name": "Jaxson Dart",
-                "pos": "QB",
-                "status": "Injured Reserve",
-                "detail": "Surgery",
-                "why": "Quarterback"
-              }
-            ],
+            "key": [],
             "injuries": [
               {
-                "name": "Tyrone Tracy Jr.",
+                "name": "Jason Pinnock",
+                "pos": "S",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Josh Sills",
+                "pos": "G",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Nic Jones",
+                "pos": "CB",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "J.C. Davis",
+                "pos": "OT",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Greg Desrosiers Jr.",
                 "pos": "RB",
-                "status": "Injured Reserve",
-                "detail": "Strain"
-              },
-              {
-                "name": "Tremaine Edmunds",
-                "pos": "LB",
-                "status": "Injured Reserve",
-                "detail": "Chest"
-              },
-              {
-                "name": "Braxton Berrios",
-                "pos": "WR",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
-              },
-              {
-                "name": "Chauncey Golston",
-                "pos": "DE",
-                "status": "Injured Reserve",
-                "detail": "Neck"
-              },
-              {
-                "name": "Jaxson Dart",
-                "pos": "QB",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
+                "status": "Out",
+                "detail": "Coach's Decision"
               }
             ],
             "leaders": [
@@ -3978,13 +4006,13 @@
         }
       },
       "pick": "JAC",
-      "prob": 69,
+      "prob": 70,
       "source": "Draft Kings",
       "kalshi": [
-        71,
-        30
+        72,
+        29
       ],
-      "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 71%."
+      "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 72%."
     },
     {
       "id": "w11-min-sf",
@@ -4001,13 +4029,13 @@
       "info": {
         "venue": "Estadio Banorte",
         "city": "Mexico City",
-        "spread": "SF -3",
+        "spread": "SF -3.5",
         "total": 46.5,
-        "mlAway": "+145",
-        "mlHome": "-173"
+        "mlAway": "+159",
+        "mlHome": "-190"
       },
       "report": {
-        "updated": "2026-11-21T23:46:15.210Z",
+        "updated": "2026-11-22T20:28:12.850Z",
         "fpi": [
           36.7,
           63
@@ -4158,25 +4186,25 @@
             ],
             "news": [
               {
+                "h": "Kirk Cousins on pace to make history as 1st QB to play 18 regular-season games",
+                "d": "Vikings quarterback Kirk Cousins is poised to become the first quarterback in the modern era to play 18 regular-season games.",
+                "url": "https://www.espn.com/nfl/story/_/id/50557919/vikings-qb-kirk-cousins-pace-make-nfl-history",
+                "video": false,
+                "at": "2026-11-22T16:12:17Z"
+              },
+              {
+                "h": "Best bets for Vikings-49ers: Tips, analysis and our top prop plays",
+                "d": "Odds, analysis and recommended plays to help you bet Sunday night's Vikings-49ers game.",
+                "url": "https://www.espn.com/espn/betting/story/_/id/50511549/nfl-week-11-odds-vikings-49ers-betting-preview-props",
+                "video": false,
+                "at": "2026-11-22T11:32:20Z"
+              },
+              {
                 "h": "Vikings take on Mexico City",
                 "d": "Kevin Seifert discusses what the Vikings must do to ensure a win over the 49ers.",
                 "url": "https://www.espn.com/video/clip/_/id/50543714/vikings-take-mexico-city",
                 "video": true,
                 "at": "2026-11-20T22:03:43Z"
-              },
-              {
-                "h": "Why Stephen A. is picking the Vikings to beat the 49ers on SNF",
-                "d": "Why Stephen A. is picking the Vikings to beat the 49ers on SNF",
-                "url": "https://www.espn.com/video/clip/_/id/50541437/why-stephen-picking-vikings-beat-49ers-snf",
-                "video": true,
-                "at": "2026-11-20T15:47:43Z"
-              },
-              {
-                "h": "How Vikings brought Mexico City's elevation to Minnesota",
-                "d": "Rather than spending the week in high altitude like Denver, the Vikings trained in a facility at home.",
-                "url": "https://www.espn.com/nfl/story/_/id/50531651/vikings-49ers-mexico-city-elevation-minnesota",
-                "video": false,
-                "at": "2026-11-21T01:05:49Z"
               }
             ]
           },
@@ -4236,6 +4264,12 @@
                 "detail": "Groin"
               },
               {
+                "name": "Mike Evans",
+                "pos": "WR",
+                "status": "Questionable",
+                "detail": "Tendinitis"
+              },
+              {
                 "name": "Dre Greenlaw",
                 "pos": "LB",
                 "status": "Questionable",
@@ -4252,12 +4286,6 @@
                 "pos": "QB",
                 "status": "Questionable",
                 "detail": "Illness"
-              },
-              {
-                "name": "Mike Evans",
-                "pos": "WR",
-                "status": "Questionable",
-                "detail": "Tendinitis"
               }
             ],
             "leaders": [
@@ -4321,6 +4349,13 @@
             ],
             "news": [
               {
+                "h": "Best bets for Vikings-49ers: Tips, analysis and our top prop plays",
+                "d": "Odds, analysis and recommended plays to help you bet Sunday night's Vikings-49ers game.",
+                "url": "https://www.espn.com/espn/betting/story/_/id/50511549/nfl-week-11-odds-vikings-49ers-betting-preview-props",
+                "video": false,
+                "at": "2026-11-22T11:32:20Z"
+              },
+              {
                 "h": "In Mexico City, 49ers' Fred Warner can represent his heritage and boost DPOY case",
                 "d": "Warner will represent his heritage again Sunday in Mexico City. This time while in the middle of the best Defensive Player of the Year campaign of his career.",
                 "url": "https://www.espn.com/nfl/story/_/id/50535108/san-francisco-49ers-fred-warner-mexican-heritage-dpoy",
@@ -4333,26 +4368,19 @@
                 "url": "https://www.espn.com/video/clip/_/id/50544013/49ers-preparing-vikings-dominant-defense",
                 "video": true,
                 "at": "2026-11-20T22:42:24Z"
-              },
-              {
-                "h": "Police investigate man's death after alleged altercation at 49ers-Cowboys game",
-                "d": "Police are investigating the death of a man who was allegedly involved in an altercation before Sunday's game between the Cowboys and 49ers at AT&T Stadium.",
-                "url": "https://www.espn.com/nfl/story/_/id/50543613/police-investigate-man-death-incident-cowboys-game",
-                "video": false,
-                "at": "2026-11-20T22:37:47Z"
               }
             ]
           }
         }
       },
       "pick": "SF",
-      "prob": 61,
+      "prob": 63,
       "source": "Draft Kings",
       "kalshi": [
-        39,
-        62
+        37,
+        64
       ],
-      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 62%."
+      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 64%."
     },
     {
       "id": "w11-cin-was",
@@ -4369,14 +4397,14 @@
       "info": {
         "venue": "Northwest Stadium",
         "city": "Landover",
-        "weather": "52° Intermittent clouds",
+        "weather": "53° Partly cloudy",
         "spread": "CIN -6",
         "total": 54.5,
-        "mlAway": "-302",
-        "mlHome": "+246"
+        "mlAway": "-296",
+        "mlHome": "+241"
       },
       "report": {
-        "updated": "2026-11-21T23:46:15.210Z",
+        "updated": "2026-11-22T20:28:12.850Z",
         "fpi": [
           76,
           23.8
@@ -4428,6 +4456,12 @@
             "key": [],
             "injuries": [
               {
+                "name": "Dalton Risner",
+                "pos": "G",
+                "status": "Out",
+                "detail": "Knee"
+              },
+              {
                 "name": "Andrei Iosivas",
                 "pos": "WR",
                 "status": "Injured Reserve",
@@ -4440,22 +4474,16 @@
                 "detail": "Groin"
               },
               {
-                "name": "Dalton Risner",
-                "pos": "G",
-                "status": "Out",
-                "detail": "Knee"
-              },
-              {
-                "name": "Swayze Bozeman",
-                "pos": "LB",
-                "status": "Injured Reserve",
-                "detail": "Fracture"
-              },
-              {
                 "name": "Kyle Dugger",
                 "pos": "S",
                 "status": "Questionable",
                 "detail": "Quadriceps"
+              },
+              {
+                "name": "Dax Hill",
+                "pos": "CB",
+                "status": "Questionable",
+                "detail": "Illness"
               }
             ],
             "leaders": [
@@ -4595,16 +4623,16 @@
                 "detail": "Surgery"
               },
               {
-                "name": "Amik Robertson",
-                "pos": "CB",
-                "status": "Questionable",
-                "detail": "Ankle"
-              },
-              {
                 "name": "Lucas Patrick",
                 "pos": "G",
                 "status": "Questionable",
                 "detail": "Concussion"
+              },
+              {
+                "name": "Amik Robertson",
+                "pos": "CB",
+                "status": "Questionable",
+                "detail": "Ankle"
               },
               {
                 "name": "Rachaad White",
@@ -4798,138 +4826,6 @@
   "props": [
     {
       "auto": true,
-      "key": "mix-safe",
-      "games": [
-        "w11-jac-nyg",
-        "w11-bal-car",
-        "w11-lv-den"
-      ],
-      "name": "Sunday safe bet",
-      "tag": "Safe",
-      "note": "Three Kalshi player props near 80% each, each from a different game.",
-      "legs": [
-        {
-          "game": "w11-jac-nyg",
-          "team": "JAC",
-          "player": "Parker Washington",
-          "bet": "3+ receptions",
-          "prob": 80,
-          "ticker": "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3",
-          "result": null,
-          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD."
-        },
-        {
-          "game": "w11-bal-car",
-          "team": "BAL",
-          "player": "Zay Flowers",
-          "bet": "40+ receiving yards",
-          "prob": 80,
-          "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40",
-          "result": null,
-          "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD."
-        },
-        {
-          "game": "w11-lv-den",
-          "team": "DEN",
-          "player": "Jaylen Waddle",
-          "bet": "20+ receiving yards",
-          "prob": 80,
-          "ticker": "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20",
-          "result": null,
-          "why": "Team leader in receiving: 30 REC, 337 YDS, 2 TD."
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "key": "mix-medium",
-      "games": [
-        "w11-no-chi",
-        "w11-ari-kc",
-        "w11-bal-car",
-        "w11-tb-det"
-      ],
-      "name": "Sunday medium bet",
-      "tag": "Medium",
-      "note": "Four Kalshi player props near 70% each, each from a different game.",
-      "legs": [
-        {
-          "game": "w11-no-chi",
-          "team": "NO",
-          "player": "Tyler Shough",
-          "bet": "200+ passing yards",
-          "prob": 70,
-          "ticker": "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200",
-          "result": null,
-          "why": "Team leader in passing: 229/343, 2,173 YDS, 15 TD, 7 INT."
-        },
-        {
-          "game": "w11-ari-kc",
-          "team": "KC",
-          "player": "Travis Kelce",
-          "bet": "3+ receptions",
-          "prob": 70,
-          "ticker": "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3",
-          "result": null,
-          "why": "Team leader in receiving: 35 REC, 512 YDS, 2 TD."
-        },
-        {
-          "game": "w11-bal-car",
-          "team": "BAL",
-          "player": "Zay Flowers",
-          "bet": "50+ receiving yards",
-          "prob": 70,
-          "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50",
-          "result": null,
-          "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD."
-        },
-        {
-          "game": "w11-tb-det",
-          "team": "DET",
-          "player": "Jahmyr Gibbs",
-          "bet": "20+ receiving yards",
-          "prob": 70,
-          "ticker": "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20",
-          "result": null,
-          "why": "Team leader in rushing: 199 CAR, 1,000 YDS, 11 TD."
-        }
-      ]
-    },
-    {
-      "auto": true,
-      "key": "mix-payout",
-      "games": [
-        "w11-ten-dal",
-        "w11-mia-buf"
-      ],
-      "name": "Sunday high payout",
-      "tag": "High payout",
-      "note": "Two longer-shot Kalshi player props near 40% each, from different games. Fewer legs, bigger return. Small stake only.",
-      "legs": [
-        {
-          "game": "w11-ten-dal",
-          "team": "DAL",
-          "player": "Javonte Williams",
-          "bet": "3+ receptions",
-          "prob": 40,
-          "ticker": "KXNFLREC-26NOV22TENDAL-DALJWILLIAMS33-3",
-          "result": null,
-          "why": "Team leader in rushing: 170 CAR, 692 YDS, 9 TD."
-        },
-        {
-          "game": "w11-mia-buf",
-          "team": "BUF",
-          "player": "Dalton Kincaid",
-          "bet": "40+ receiving yards",
-          "prob": 40,
-          "ticker": "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40",
-          "result": null,
-          "why": "Team leader in receiving: 32 REC, 487 YDS, 2 TD."
-        }
-      ]
-    },
-    {
-      "auto": true,
       "key": "w11-cin-was",
       "game": "w11-cin-was",
       "name": "Bengals at Commanders",
@@ -4948,23 +4844,23 @@
         },
         {
           "game": "w11-cin-was",
-          "team": "CIN",
-          "player": "Ja'Marr Chase",
-          "bet": "60+ receiving yards",
-          "prob": 81,
-          "ticker": "KXNFLRECYDS-26NOV23CINWAS-CINJCHASE1-60",
+          "team": "WAS",
+          "player": "Jayden Daniels",
+          "bet": "175+ passing yards",
+          "prob": 79,
+          "ticker": "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175",
           "result": null,
-          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
+          "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT."
         },
         {
           "game": "w11-cin-was",
-          "team": "WAS",
-          "player": "Stefon Diggs",
-          "bet": "25+ receiving yards",
-          "prob": 79,
-          "ticker": "KXNFLRECYDS-26NOV23CINWAS-WASSDIGGS3-25",
+          "team": "CIN",
+          "player": "Ja'Marr Chase",
+          "bet": "6+ receptions",
+          "prob": 81,
+          "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
           "result": null,
-          "why": "Team leader in receiving: 36 REC, 386 YDS, 6 TD."
+          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
         }
       ]
     },
@@ -5010,16 +4906,147 @@
           "actual": 22
         }
       ]
+    },
+    {
+      "auto": true,
+      "key": "mix-safe",
+      "games": [
+        "w11-jac-nyg",
+        "w11-bal-car",
+        "w11-lv-den"
+      ],
+      "name": "Sunday safe bet",
+      "tag": "Safe",
+      "note": "Three Kalshi player props near 80% each, each from a different game.",
+      "legs": [
+        {
+          "game": "w11-jac-nyg",
+          "team": "JAC",
+          "player": "Parker Washington",
+          "bet": "3+ receptions",
+          "prob": 80,
+          "ticker": "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3",
+          "result": null,
+          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD."
+        },
+        {
+          "game": "w11-bal-car",
+          "team": "BAL",
+          "player": "Zay Flowers",
+          "bet": "40+ receiving yards",
+          "prob": 80,
+          "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40",
+          "result": null,
+          "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD.",
+          "live": 100
+        },
+        {
+          "game": "w11-lv-den",
+          "team": "DEN",
+          "player": "Jaylen Waddle",
+          "bet": "20+ receiving yards",
+          "prob": 80,
+          "ticker": "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20",
+          "result": null,
+          "why": "Team leader in receiving: 30 REC, 337 YDS, 2 TD."
+        }
+      ]
+    },
+    {
+      "auto": true,
+      "key": "mix-medium",
+      "games": [
+        "w11-no-chi",
+        "w11-ari-kc",
+        "w11-bal-car",
+        "w11-tb-det"
+      ],
+      "name": "Sunday medium bet",
+      "tag": "Medium",
+      "note": "Four Kalshi player props near 70% each, each from a different game.",
+      "legs": [
+        {
+          "game": "w11-no-chi",
+          "team": "NO",
+          "player": "Tyler Shough",
+          "bet": "200+ passing yards",
+          "prob": 70,
+          "ticker": "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200",
+          "result": null,
+          "why": "Team leader in passing: 229/343, 2,173 YDS, 15 TD, 7 INT.",
+          "live": 51
+        },
+        {
+          "game": "w11-ari-kc",
+          "team": "KC",
+          "player": "Travis Kelce",
+          "bet": "3+ receptions",
+          "prob": 70,
+          "ticker": "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3",
+          "result": "hit",
+          "why": "Team leader in receiving: 35 REC, 512 YDS, 2 TD."
+        },
+        {
+          "game": "w11-bal-car",
+          "team": "BAL",
+          "player": "Zay Flowers",
+          "bet": "50+ receiving yards",
+          "prob": 70,
+          "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50",
+          "result": null,
+          "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD.",
+          "live": 100
+        },
+        {
+          "game": "w11-tb-det",
+          "team": "DET",
+          "player": "Jahmyr Gibbs",
+          "bet": "20+ receiving yards",
+          "prob": 70,
+          "ticker": "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20",
+          "result": null,
+          "why": "Team leader in rushing: 199 CAR, 1,000 YDS, 11 TD.",
+          "live": 16
+        }
+      ]
+    },
+    {
+      "auto": true,
+      "key": "mix-payout",
+      "games": [
+        "w11-ten-dal",
+        "w11-mia-buf"
+      ],
+      "name": "Sunday high payout",
+      "tag": "High payout",
+      "note": "Two longer-shot Kalshi player props near 40% each, from different games. Fewer legs, bigger return. Small stake only.",
+      "legs": [
+        {
+          "game": "w11-ten-dal",
+          "team": "DAL",
+          "player": "Javonte Williams",
+          "bet": "3+ receptions",
+          "prob": 40,
+          "ticker": "KXNFLREC-26NOV22TENDAL-DALJWILLIAMS33-3",
+          "result": null,
+          "why": "Team leader in rushing: 170 CAR, 692 YDS, 9 TD.",
+          "live": 100
+        },
+        {
+          "game": "w11-mia-buf",
+          "team": "BUF",
+          "player": "Dalton Kincaid",
+          "bet": "40+ receiving yards",
+          "prob": 40,
+          "ticker": "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40",
+          "result": null,
+          "why": "Team leader in receiving: 32 REC, 487 YDS, 2 TD.",
+          "live": 40
+        }
+      ]
     }
   ],
   "markets": {
-    "KXNFLPASSYDS-26NOV22MIABUF-BUFJALLEN17-175": {
-      "game": "w11-mia-buf",
-      "player": "Josh Allen",
-      "bet": "175+ passing yards",
-      "prob": 80,
-      "result": null
-    },
     "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3": {
       "game": "w11-jac-nyg",
       "player": "Parker Washington",
@@ -5032,49 +5059,68 @@
       "player": "Zay Flowers",
       "bet": "40+ receiving yards",
       "prob": 80,
+      "result": null,
+      "live": 100,
+      "liveAt": "2026-11-22T20:28:20.269Z"
+    },
+    "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20": {
+      "game": "w11-lv-den",
+      "player": "Jaylen Waddle",
+      "bet": "20+ receiving yards",
+      "prob": 80,
       "result": null
+    },
+    "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
+      "game": "w11-no-chi",
+      "player": "Tyler Shough",
+      "bet": "200+ passing yards",
+      "prob": 70,
+      "result": null,
+      "live": 51,
+      "liveAt": "2026-11-22T20:28:20.269Z"
     },
     "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3": {
       "game": "w11-ari-kc",
       "player": "Travis Kelce",
       "bet": "3+ receptions",
       "prob": 70,
-      "result": null
-    },
-    "KXNFLREC-26NOV22PITPHI-PITDMETCALF4-3": {
-      "game": "w11-pit-phi",
-      "player": "DK Metcalf",
-      "bet": "3+ receptions",
-      "prob": 70,
-      "result": null
+      "result": "hit"
     },
     "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50": {
       "game": "w11-bal-car",
       "player": "Zay Flowers",
       "bet": "50+ receiving yards",
       "prob": 70,
-      "result": null
+      "result": null,
+      "live": 100,
+      "liveAt": "2026-11-22T20:28:20.269Z"
     },
     "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20": {
       "game": "w11-tb-det",
       "player": "Jahmyr Gibbs",
       "bet": "20+ receiving yards",
       "prob": 70,
-      "result": null
-    },
-    "KXNFLREC-26NOV22LVDEN-LVAJEANTY2-5": {
-      "game": "w11-lv-den",
-      "player": "Ashton Jeanty",
-      "bet": "5+ receptions",
-      "prob": 40,
-      "result": null
+      "result": null,
+      "live": 16,
+      "liveAt": "2026-11-22T20:28:20.269Z"
     },
     "KXNFLREC-26NOV22TENDAL-DALJWILLIAMS33-3": {
       "game": "w11-ten-dal",
       "player": "Javonte Williams",
       "bet": "3+ receptions",
       "prob": 40,
-      "result": null
+      "result": null,
+      "live": 100,
+      "liveAt": "2026-11-22T20:28:20.269Z"
+    },
+    "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40": {
+      "game": "w11-mia-buf",
+      "player": "Dalton Kincaid",
+      "bet": "40+ receiving yards",
+      "prob": 40,
+      "result": null,
+      "live": 40,
+      "liveAt": "2026-11-22T20:28:20.269Z"
     },
     "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250": {
       "game": "w11-cin-was",
@@ -5083,11 +5129,11 @@
       "prob": 80,
       "result": null
     },
-    "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3": {
+    "KXNFLRECYDS-26NOV23CINWAS-CINJCHASE1-60": {
       "game": "w11-cin-was",
-      "player": "Chase Brown",
-      "bet": "3+ receptions",
-      "prob": 80,
+      "player": "Ja'Marr Chase",
+      "bet": "60+ receiving yards",
+      "prob": 81,
       "result": null
     },
     "KXNFLRECYDS-26NOV23CINWAS-WASSDIGGS3-25": {
@@ -5121,31 +5167,17 @@
       "result": "hit",
       "actual": 22
     },
-    "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20": {
-      "game": "w11-lv-den",
-      "player": "Jaylen Waddle",
-      "bet": "20+ receiving yards",
-      "prob": 80,
+    "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
+      "game": "w11-cin-was",
+      "player": "Jayden Daniels",
+      "bet": "175+ passing yards",
+      "prob": 79,
       "result": null
     },
-    "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
-      "game": "w11-no-chi",
-      "player": "Tyler Shough",
-      "bet": "200+ passing yards",
-      "prob": 70,
-      "result": null
-    },
-    "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40": {
-      "game": "w11-mia-buf",
-      "player": "Dalton Kincaid",
-      "bet": "40+ receiving yards",
-      "prob": 40,
-      "result": null
-    },
-    "KXNFLRECYDS-26NOV23CINWAS-CINJCHASE1-60": {
+    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
       "game": "w11-cin-was",
       "player": "Ja'Marr Chase",
-      "bet": "60+ receiving yards",
+      "bet": "6+ receptions",
       "prob": 81,
       "result": null
     }
