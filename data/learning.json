@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T21:07:46.682Z",
+  "updated": "2026-11-22T21:57:57.474Z",
   "weeks": [
     10,
     11
@@ -9,18 +9,18 @@
   "maxAdj": 6,
   "ml": {
     "50-59": {
-      "n": 3,
-      "hits": 1,
-      "expected": 1.66,
-      "gap": -22,
+      "n": 4,
+      "hits": 2,
+      "expected": 2.24,
+      "gap": -6,
       "adj": 0
     },
     "60-71": {
-      "n": 6,
-      "hits": 4,
-      "expected": 3.9,
-      "gap": 1.7,
-      "adj": 0
+      "n": 8,
+      "hits": 5,
+      "expected": 5.19,
+      "gap": -2.4,
+      "adj": -0.3
     },
     "85+": {
       "n": 4,
@@ -38,25 +38,25 @@
     }
   },
   "props": {
+    "receiving yards": {
+      "n": 5,
+      "hits": 5,
+      "expected": 3.79,
+      "gap": 24.2,
+      "adj": 0
+    },
+    "passing yards": {
+      "n": 2,
+      "hits": 1,
+      "expected": 1.49,
+      "gap": -24.5,
+      "adj": 0
+    },
     "receptions": {
       "n": 2,
       "hits": 2,
       "expected": 1.1,
       "gap": 45,
-      "adj": 0
-    },
-    "receiving yards": {
-      "n": 2,
-      "hits": 2,
-      "expected": 1.59,
-      "gap": 20.5,
-      "adj": 0
-    },
-    "passing yards": {
-      "n": 1,
-      "hits": 0,
-      "expected": 0.79,
-      "gap": -79,
       "adj": 0
     }
   },
@@ -73,13 +73,18 @@
     },
     "Underdog swing": {
       "w": 0,
-      "l": 1,
-      "expected": 0.14
+      "l": 2,
+      "expected": 0.3
     },
     "Thu night safe bet": {
       "w": 0,
       "l": 1,
       "expected": 0.5
+    },
+    "Weekend medium bet": {
+      "w": 1,
+      "l": 0,
+      "expected": 0.24
     }
   }
 }

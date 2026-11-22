@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Sun Nov 22, 12:28 PM PT",
-  "refreshed": "Sun Nov 22, 1:07 PM PT",
+  "updated": "Sun Nov 22, 1:57 PM PT",
+  "refreshed": "Sun Nov 22, 1:57 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -1823,12 +1823,11 @@
       "note": "Buccaneers 3-6, Lions 7-2. Last week: Lions beat the Patriots 35-10. Kalshi has the Lions at 69%.",
       "start": "2026-11-22T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "live",
+      "status": "final",
       "score": [
         21,
         31
-      ],
-      "live": "4th qtr 0:07"
+      ]
     },
     {
       "id": "w11-ari-kc",
@@ -2576,12 +2575,11 @@
       "note": "Steelers 6-3, Eagles 2-7. Last week: Steelers lost to the Bengals 38-18. Kalshi has the Steelers at 65%.",
       "start": "2026-11-22T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "live",
+      "status": "final",
       "score": [
         16,
         19
-      ],
-      "live": "4th qtr 1:09"
+      ]
     },
     {
       "id": "w11-bal-car",
@@ -2942,21 +2940,17 @@
       "note": "Ravens 4-6, Panthers 4-5. Last week: Ravens lost to the Chargers 23-20; Panthers beat the Saints 20-17. Kalshi has the Panthers at 58%.",
       "start": "2026-11-22T18:00:00.000Z",
       "kick": "Sun 10:00 AM",
-      "status": "live",
+      "status": "final",
       "score": [
         33,
-        32
-      ],
-      "live": "4th qtr 1:58"
+        35
+      ]
     },
     {
       "id": "w11-nyj-lac",
       "espnId": "401873074",
       "away": "NYJ",
       "home": "LAC",
-      "start": "2026-11-22T21:05:00.000Z",
-      "kick": "Sun 1:05 PM",
-      "status": "live",
       "record": [
         "2-8",
         "1-8"
@@ -3295,20 +3289,20 @@
         61
       ],
       "note": "Jets 2-8, Chargers 1-8. Last week: Jets lost to the Bills 31-12; Chargers beat the Ravens 23-20. Kalshi has the Chargers at 61%.",
+      "start": "2026-11-22T21:05:00.000Z",
+      "kick": "Sun 1:05 PM",
+      "status": "live",
       "score": [
-        0,
-        0
+        10,
+        3
       ],
-      "live": "1st qtr 13:49"
+      "live": "2nd qtr 6:36"
     },
     {
       "id": "w11-lv-den",
       "espnId": "401873075",
       "away": "LV",
       "home": "DEN",
-      "start": "2026-11-22T21:25:00.000Z",
-      "kick": "Sun 1:25 PM",
-      "status": "upcoming",
       "record": [
         "4-6",
         "7-2"
@@ -3660,16 +3654,21 @@
         17,
         84
       ],
-      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 84%."
+      "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 84%.",
+      "start": "2026-11-22T21:25:00.000Z",
+      "kick": "Sun 1:25 PM",
+      "status": "live",
+      "score": [
+        0,
+        3
+      ],
+      "live": "2nd qtr 15:00"
     },
     {
       "id": "w11-jac-nyg",
       "espnId": "401873069",
       "away": "JAC",
       "home": "NYG",
-      "start": "2026-11-22T21:25:00.000Z",
-      "kick": "Sun 1:25 PM",
-      "status": "upcoming",
       "record": [
         "7-2",
         "5-3-1"
@@ -4013,7 +4012,15 @@
         72,
         29
       ],
-      "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 72%."
+      "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 72%.",
+      "start": "2026-11-22T21:25:00.000Z",
+      "kick": "Sun 1:25 PM",
+      "status": "live",
+      "score": [
+        3,
+        3
+      ],
+      "live": "1st qtr 4:59"
     },
     {
       "id": "w11-min-sf",
@@ -4036,7 +4043,7 @@
         "mlHome": "-190"
       },
       "report": {
-        "updated": "2026-11-22T20:28:12.850Z",
+        "updated": "2026-11-22T21:57:51.330Z",
         "fpi": [
           36.7,
           63
@@ -4376,12 +4383,12 @@
       },
       "pick": "SF",
       "prob": 63,
-      "source": "Draft Kings",
+      "source": "DraftKings",
       "kalshi": [
         37,
-        64
+        65
       ],
-      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 64%."
+      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 65%."
     },
     {
       "id": "w11-cin-was",
@@ -4398,14 +4405,14 @@
       "info": {
         "venue": "Northwest Stadium",
         "city": "Landover",
-        "weather": "53° Partly cloudy",
+        "weather": "54° Partly cloudy",
         "spread": "CIN -6",
         "total": 54.5,
         "mlAway": "-296",
         "mlHome": "+241"
       },
       "report": {
-        "updated": "2026-11-22T20:28:12.850Z",
+        "updated": "2026-11-22T21:57:51.330Z",
         "fpi": [
           76,
           23.8
@@ -4729,7 +4736,7 @@
       },
       "pick": "CIN",
       "prob": 72,
-      "source": "Draft Kings",
+      "source": "DraftKings",
       "kalshi": [
         73,
         28
@@ -4836,9 +4843,19 @@
         {
           "game": "w11-cin-was",
           "team": "CIN",
+          "player": "Chase Brown",
+          "bet": "3+ receptions",
+          "prob": 80,
+          "ticker": "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3",
+          "result": null,
+          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
+        },
+        {
+          "game": "w11-cin-was",
+          "team": "CIN",
           "player": "Joe Burrow",
           "bet": "250+ passing yards",
-          "prob": 80,
+          "prob": 81,
           "ticker": "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250",
           "result": null,
           "why": "Team leader in passing: 254/340, 2,795 YDS, 27 TD, 6 INT."
@@ -4852,16 +4869,6 @@
           "ticker": "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175",
           "result": null,
           "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT."
-        },
-        {
-          "game": "w11-cin-was",
-          "team": "CIN",
-          "player": "Ja'Marr Chase",
-          "bet": "6+ receptions",
-          "prob": 81,
-          "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
-          "result": null,
-          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
         }
       ]
     },
@@ -4928,7 +4935,8 @@
           "prob": 80,
           "ticker": "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3",
           "result": null,
-          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD."
+          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD.",
+          "live": 88
         },
         {
           "game": "w11-bal-car",
@@ -4937,9 +4945,9 @@
           "bet": "40+ receiving yards",
           "prob": 80,
           "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD.",
-          "live": 100
+          "actual": 97
         },
         {
           "game": "w11-lv-den",
@@ -4949,7 +4957,8 @@
           "prob": 80,
           "ticker": "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20",
           "result": null,
-          "why": "Team leader in receiving: 30 REC, 337 YDS, 2 TD."
+          "why": "Team leader in receiving: 30 REC, 337 YDS, 2 TD.",
+          "live": 90
         }
       ]
     },
@@ -4973,9 +4982,8 @@
           "bet": "200+ passing yards",
           "prob": 70,
           "ticker": "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in passing: 229/343, 2,173 YDS, 15 TD, 7 INT.",
-          "live": 100,
           "actual": 222
         },
         {
@@ -4996,9 +5004,9 @@
           "bet": "50+ receiving yards",
           "prob": 70,
           "ticker": "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in receiving: 49 REC, 688 YDS, 3 TD.",
-          "live": 100
+          "actual": 97
         },
         {
           "game": "w11-tb-det",
@@ -5007,9 +5015,9 @@
           "bet": "20+ receiving yards",
           "prob": 70,
           "ticker": "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in rushing: 199 CAR, 1,000 YDS, 11 TD.",
-          "live": 87
+          "actual": 20
         }
       ]
     },
@@ -5044,91 +5052,13 @@
           "ticker": "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40",
           "result": null,
           "why": "Team leader in receiving: 32 REC, 487 YDS, 2 TD.",
-          "live": 40,
+          "live": 50,
           "actual": 0
         }
       ]
     }
   ],
   "markets": {
-    "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3": {
-      "game": "w11-jac-nyg",
-      "player": "Parker Washington",
-      "bet": "3+ receptions",
-      "prob": 80,
-      "result": null
-    },
-    "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40": {
-      "game": "w11-bal-car",
-      "player": "Zay Flowers",
-      "bet": "40+ receiving yards",
-      "prob": 80,
-      "result": null,
-      "live": 100,
-      "liveAt": "2026-11-22T21:07:46.046Z"
-    },
-    "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20": {
-      "game": "w11-lv-den",
-      "player": "Jaylen Waddle",
-      "bet": "20+ receiving yards",
-      "prob": 80,
-      "result": null
-    },
-    "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
-      "game": "w11-no-chi",
-      "player": "Tyler Shough",
-      "bet": "200+ passing yards",
-      "prob": 70,
-      "result": null,
-      "live": 100,
-      "liveAt": "2026-11-22T21:07:46.046Z",
-      "actual": 222
-    },
-    "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3": {
-      "game": "w11-ari-kc",
-      "player": "Travis Kelce",
-      "bet": "3+ receptions",
-      "prob": 70,
-      "result": "hit",
-      "actual": 6
-    },
-    "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50": {
-      "game": "w11-bal-car",
-      "player": "Zay Flowers",
-      "bet": "50+ receiving yards",
-      "prob": 70,
-      "result": null,
-      "live": 100,
-      "liveAt": "2026-11-22T21:07:46.046Z"
-    },
-    "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20": {
-      "game": "w11-tb-det",
-      "player": "Jahmyr Gibbs",
-      "bet": "20+ receiving yards",
-      "prob": 70,
-      "result": null,
-      "live": 87,
-      "liveAt": "2026-11-22T21:07:46.046Z"
-    },
-    "KXNFLREC-26NOV22TENDAL-DALJWILLIAMS33-3": {
-      "game": "w11-ten-dal",
-      "player": "Javonte Williams",
-      "bet": "3+ receptions",
-      "prob": 40,
-      "result": "hit",
-      "liveAt": "2026-11-22T20:28:20.269Z",
-      "actual": 3
-    },
-    "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40": {
-      "game": "w11-mia-buf",
-      "player": "Dalton Kincaid",
-      "bet": "40+ receiving yards",
-      "prob": 40,
-      "result": null,
-      "live": 40,
-      "liveAt": "2026-11-22T21:07:46.046Z",
-      "actual": 0
-    },
     "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250": {
       "game": "w11-cin-was",
       "player": "Joe Burrow",
@@ -5136,18 +5066,18 @@
       "prob": 80,
       "result": null
     },
-    "KXNFLRECYDS-26NOV23CINWAS-CINJCHASE1-60": {
+    "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
       "game": "w11-cin-was",
-      "player": "Ja'Marr Chase",
-      "bet": "60+ receiving yards",
-      "prob": 81,
+      "player": "Jayden Daniels",
+      "bet": "175+ passing yards",
+      "prob": 79,
       "result": null
     },
-    "KXNFLRECYDS-26NOV23CINWAS-WASSDIGGS3-25": {
+    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
       "game": "w11-cin-was",
-      "player": "Stefon Diggs",
-      "bet": "25+ receiving yards",
-      "prob": 79,
+      "player": "Ja'Marr Chase",
+      "bet": "6+ receptions",
+      "prob": 81,
       "result": null
     },
     "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
@@ -5174,18 +5104,87 @@
       "result": "hit",
       "actual": 22
     },
-    "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
-      "game": "w11-cin-was",
-      "player": "Jayden Daniels",
-      "bet": "175+ passing yards",
-      "prob": 79,
-      "result": null
+    "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3": {
+      "game": "w11-jac-nyg",
+      "player": "Parker Washington",
+      "bet": "3+ receptions",
+      "prob": 80,
+      "result": null,
+      "live": 88,
+      "liveAt": "2026-11-22T21:57:56.586Z"
     },
-    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
+    "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40": {
+      "game": "w11-bal-car",
+      "player": "Zay Flowers",
+      "bet": "40+ receiving yards",
+      "prob": 80,
+      "result": "hit",
+      "actual": 97
+    },
+    "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20": {
+      "game": "w11-lv-den",
+      "player": "Jaylen Waddle",
+      "bet": "20+ receiving yards",
+      "prob": 80,
+      "result": null,
+      "live": 90,
+      "liveAt": "2026-11-22T21:57:56.586Z"
+    },
+    "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
+      "game": "w11-no-chi",
+      "player": "Tyler Shough",
+      "bet": "200+ passing yards",
+      "prob": 70,
+      "result": "hit",
+      "actual": 222
+    },
+    "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3": {
+      "game": "w11-ari-kc",
+      "player": "Travis Kelce",
+      "bet": "3+ receptions",
+      "prob": 70,
+      "result": "hit",
+      "actual": 6
+    },
+    "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50": {
+      "game": "w11-bal-car",
+      "player": "Zay Flowers",
+      "bet": "50+ receiving yards",
+      "prob": 70,
+      "result": "hit",
+      "actual": 97
+    },
+    "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20": {
+      "game": "w11-tb-det",
+      "player": "Jahmyr Gibbs",
+      "bet": "20+ receiving yards",
+      "prob": 70,
+      "result": "hit",
+      "actual": 20
+    },
+    "KXNFLREC-26NOV22TENDAL-DALJWILLIAMS33-3": {
+      "game": "w11-ten-dal",
+      "player": "Javonte Williams",
+      "bet": "3+ receptions",
+      "prob": 40,
+      "result": "hit",
+      "actual": 3
+    },
+    "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40": {
+      "game": "w11-mia-buf",
+      "player": "Dalton Kincaid",
+      "bet": "40+ receiving yards",
+      "prob": 40,
+      "result": null,
+      "live": 50,
+      "liveAt": "2026-11-22T21:57:56.586Z",
+      "actual": 0
+    },
+    "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3": {
       "game": "w11-cin-was",
-      "player": "Ja'Marr Chase",
-      "bet": "6+ receptions",
-      "prob": 81,
+      "player": "Chase Brown",
+      "bet": "3+ receptions",
+      "prob": 80,
       "result": null
     }
   }
