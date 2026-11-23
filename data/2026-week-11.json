@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Sun Nov 22, 4:14 PM PT",
-  "refreshed": "Sun Nov 22, 4:14 PM PT",
+  "refreshed": "Sun Nov 22, 5:51 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -3656,12 +3656,11 @@
       "note": "Raiders 4-6, Broncos 7-2. Last week: Raiders lost to the Seahawks 21-13. Kalshi has the Broncos at 84%.",
       "start": "2026-11-22T21:25:00.000Z",
       "kick": "Sun 1:25 PM",
-      "status": "live",
+      "status": "final",
       "score": [
-        17,
-        31
-      ],
-      "live": "4th qtr 6:35"
+        24,
+        38
+      ]
     },
     {
       "id": "w11-jac-nyg",
@@ -4014,12 +4013,11 @@
       "note": "Jaguars 7-2, Giants 5-3-1. Last week: Jaguars beat the Titans 40-23; Giants lost to the Commanders 24-21. Kalshi has the Jaguars at 72%.",
       "start": "2026-11-22T21:25:00.000Z",
       "kick": "Sun 1:25 PM",
-      "status": "live",
+      "status": "final",
       "score": [
-        9,
-        20
-      ],
-      "live": "4th qtr 11:02"
+        18,
+        23
+      ]
     },
     {
       "id": "w11-min-sf",
@@ -4028,7 +4026,7 @@
       "home": "SF",
       "start": "2026-11-23T01:20:00.000Z",
       "kick": "Sun 5:20 PM",
-      "status": "upcoming",
+      "status": "live",
       "record": [
         "7-2",
         "8-1"
@@ -4394,7 +4392,12 @@
         37,
         65
       ],
-      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 65%."
+      "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 65%.",
+      "score": [
+        0,
+        7
+      ],
+      "live": "1st qtr 3:44"
     },
     {
       "id": "w11-cin-was",
@@ -4941,7 +4944,8 @@
           "prob": 80,
           "ticker": "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3",
           "result": "hit",
-          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD."
+          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD.",
+          "actual": 8
         },
         {
           "game": "w11-bal-car",
@@ -4961,9 +4965,9 @@
           "bet": "20+ receiving yards",
           "prob": 80,
           "ticker": "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in receiving: 30 REC, 337 YDS, 2 TD.",
-          "live": 100
+          "actual": 61
         }
       ]
     },
@@ -5114,7 +5118,8 @@
       "player": "Parker Washington",
       "bet": "3+ receptions",
       "prob": 80,
-      "result": "hit"
+      "result": "hit",
+      "actual": 8
     },
     "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40": {
       "game": "w11-bal-car",
@@ -5129,9 +5134,9 @@
       "player": "Jaylen Waddle",
       "bet": "20+ receiving yards",
       "prob": 80,
-      "result": null,
-      "live": 100,
-      "liveAt": "2026-11-23T00:15:00.829Z"
+      "result": "hit",
+      "liveAt": "2026-11-23T00:15:00.829Z",
+      "actual": 61
     },
     "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
       "game": "w11-no-chi",
@@ -5180,7 +5185,7 @@
       "prob": 40,
       "result": null,
       "live": 50,
-      "liveAt": "2026-11-23T00:15:00.829Z",
+      "liveAt": "2026-11-23T01:51:27.566Z",
       "actual": 0
     },
     "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
