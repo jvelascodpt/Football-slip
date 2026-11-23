@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Sun Nov 22, 1:57 PM PT",
-  "refreshed": "Sun Nov 22, 1:57 PM PT",
+  "updated": "Sun Nov 22, 4:14 PM PT",
+  "refreshed": "Sun Nov 22, 4:14 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -3291,12 +3291,11 @@
       "note": "Jets 2-8, Chargers 1-8. Last week: Jets lost to the Bills 31-12; Chargers beat the Ravens 23-20. Kalshi has the Chargers at 61%.",
       "start": "2026-11-22T21:05:00.000Z",
       "kick": "Sun 1:05 PM",
-      "status": "live",
+      "status": "final",
       "score": [
-        10,
-        3
-      ],
-      "live": "2nd qtr 6:36"
+        27,
+        24
+      ]
     },
     {
       "id": "w11-lv-den",
@@ -3659,10 +3658,10 @@
       "kick": "Sun 1:25 PM",
       "status": "live",
       "score": [
-        0,
-        3
+        17,
+        31
       ],
-      "live": "2nd qtr 15:00"
+      "live": "4th qtr 6:35"
     },
     {
       "id": "w11-jac-nyg",
@@ -4017,10 +4016,10 @@
       "kick": "Sun 1:25 PM",
       "status": "live",
       "score": [
-        3,
-        3
+        9,
+        20
       ],
-      "live": "1st qtr 4:59"
+      "live": "4th qtr 11:02"
     },
     {
       "id": "w11-min-sf",
@@ -4037,13 +4036,13 @@
       "info": {
         "venue": "Estadio Banorte",
         "city": "Mexico City",
-        "spread": "SF -3.5",
-        "total": 46.5,
-        "mlAway": "+159",
-        "mlHome": "-190"
+        "spread": "SF -4.5",
+        "total": 44.5,
+        "mlAway": "+165",
+        "mlHome": "-197"
       },
       "report": {
-        "updated": "2026-11-22T21:57:51.330Z",
+        "updated": "2026-11-23T00:14:55.494Z",
         "fpi": [
           36.7,
           63
@@ -4099,9 +4098,22 @@
                 "status": "Out",
                 "detail": "Strain",
                 "why": "Quarterback"
+              },
+              {
+                "name": "Max Brosmer",
+                "pos": "QB",
+                "status": "Out",
+                "detail": "Coach's Decision",
+                "why": "Quarterback"
               }
             ],
             "injuries": [
+              {
+                "name": "Jay Ward",
+                "pos": "S",
+                "status": "Out",
+                "detail": "Knee"
+              },
               {
                 "name": "Kyler Murray",
                 "pos": "QB",
@@ -4109,10 +4121,10 @@
                 "detail": "Strain"
               },
               {
-                "name": "Bo Richter",
-                "pos": "LB",
-                "status": "Injured Reserve",
-                "detail": "Foot"
+                "name": "Isaiah Rodgers",
+                "pos": "CB",
+                "status": "Out",
+                "detail": "Quadriceps"
               },
               {
                 "name": "Jordan Addison",
@@ -4121,16 +4133,10 @@
                 "detail": "Surgery"
               },
               {
-                "name": "Isaiah Rodgers",
-                "pos": "CB",
-                "status": "Questionable",
-                "detail": "Quadriceps"
-              },
-              {
-                "name": "Jay Ward",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Knee"
+                "name": "Max Brosmer",
+                "pos": "QB",
+                "status": "Out",
+                "detail": "Coach's Decision"
               }
             ],
             "leaders": [
@@ -4260,7 +4266,7 @@
                 "name": "Mac Jones",
                 "pos": "QB",
                 "status": "Questionable",
-                "detail": "Illness",
+                "detail": "",
                 "why": "Quarterback"
               }
             ],
@@ -4272,10 +4278,10 @@
                 "detail": "Groin"
               },
               {
-                "name": "Mike Evans",
-                "pos": "WR",
-                "status": "Questionable",
-                "detail": "Tendinitis"
+                "name": "Isaac Guerendo",
+                "pos": "RB",
+                "status": "Out",
+                "detail": "Surgery"
               },
               {
                 "name": "Dre Greenlaw",
@@ -4287,13 +4293,13 @@
                 "name": "Jordan James",
                 "pos": "RB",
                 "status": "Questionable",
-                "detail": "Calf"
+                "detail": ""
               },
               {
                 "name": "Mac Jones",
                 "pos": "QB",
                 "status": "Questionable",
-                "detail": "Illness"
+                "detail": ""
               }
             ],
             "leaders": [
@@ -4382,7 +4388,7 @@
         }
       },
       "pick": "SF",
-      "prob": 63,
+      "prob": 64,
       "source": "DraftKings",
       "kalshi": [
         37,
@@ -4412,7 +4418,7 @@
         "mlHome": "+241"
       },
       "report": {
-        "updated": "2026-11-22T21:57:51.330Z",
+        "updated": "2026-11-23T00:14:55.494Z",
         "fpi": [
           76,
           23.8
@@ -4710,6 +4716,13 @@
             ],
             "news": [
               {
+                "h": "Can the Commanders win in the red zone?",
+                "d": "John Keim lays out the Commanders' path to victory against the Bengals.",
+                "url": "https://www.espn.com/video/clip/_/id/50566594/can-commanders-win-red-zone",
+                "video": true,
+                "at": "2026-11-22T23:12:10Z"
+              },
+              {
                 "h": "Back at practice again, Bengals QB Burrow optimistic he'll be at full strength",
                 "d": "A full participant at practice for the second straight day despite the bug that he has battled, Bengals quarterback Joe Burrow is optimistic that he'll be at full strength when Cincinnati plays the Washington Commanders on \"Monday Night Football.\"",
                 "url": "https://www.espn.com/nfl/story/_/id/50544261/burrow-practices-again-full-strength-mnf",
@@ -4722,13 +4735,6 @@
                 "url": "https://www.espn.com/video/clip/_/id/50543810/commanders-confident-jayden-daniels",
                 "video": true,
                 "at": "2026-11-20T22:18:02Z"
-              },
-              {
-                "h": "How will the Commanders blitz fare against Joe Burrow?",
-                "d": "John Keim previews the Commanders matchup against the Bengals on Monday night.",
-                "url": "https://www.espn.com/video/clip/_/id/50535562/how-commanders-blitz-fare-joe-burrow",
-                "video": true,
-                "at": "2026-11-20T00:32:01Z"
               }
             ]
           }
@@ -4843,19 +4849,9 @@
         {
           "game": "w11-cin-was",
           "team": "CIN",
-          "player": "Chase Brown",
-          "bet": "3+ receptions",
-          "prob": 80,
-          "ticker": "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3",
-          "result": null,
-          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
-        },
-        {
-          "game": "w11-cin-was",
-          "team": "CIN",
           "player": "Joe Burrow",
           "bet": "250+ passing yards",
-          "prob": 81,
+          "prob": 80,
           "ticker": "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250",
           "result": null,
           "why": "Team leader in passing: 254/340, 2,795 YDS, 27 TD, 6 INT."
@@ -4869,6 +4865,16 @@
           "ticker": "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175",
           "result": null,
           "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT."
+        },
+        {
+          "game": "w11-cin-was",
+          "team": "CIN",
+          "player": "Ja'Marr Chase",
+          "bet": "6+ receptions",
+          "prob": 81,
+          "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
+          "result": null,
+          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
         }
       ]
     },
@@ -4934,9 +4940,8 @@
           "bet": "3+ receptions",
           "prob": 80,
           "ticker": "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3",
-          "result": null,
-          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD.",
-          "live": 88
+          "result": "hit",
+          "why": "Team leader in receiving: 36 REC, 645 YDS, 6 TD."
         },
         {
           "game": "w11-bal-car",
@@ -4958,7 +4963,7 @@
           "ticker": "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20",
           "result": null,
           "why": "Team leader in receiving: 30 REC, 337 YDS, 2 TD.",
-          "live": 90
+          "live": 100
         }
       ]
     },
@@ -5059,11 +5064,18 @@
     }
   ],
   "markets": {
+    "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3": {
+      "game": "w11-cin-was",
+      "player": "Chase Brown",
+      "bet": "3+ receptions",
+      "prob": 80,
+      "result": null
+    },
     "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250": {
       "game": "w11-cin-was",
       "player": "Joe Burrow",
       "bet": "250+ passing yards",
-      "prob": 80,
+      "prob": 81,
       "result": null
     },
     "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
@@ -5071,13 +5083,6 @@
       "player": "Jayden Daniels",
       "bet": "175+ passing yards",
       "prob": 79,
-      "result": null
-    },
-    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
-      "game": "w11-cin-was",
-      "player": "Ja'Marr Chase",
-      "bet": "6+ receptions",
-      "prob": 81,
       "result": null
     },
     "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
@@ -5109,9 +5114,7 @@
       "player": "Parker Washington",
       "bet": "3+ receptions",
       "prob": 80,
-      "result": null,
-      "live": 88,
-      "liveAt": "2026-11-22T21:57:56.586Z"
+      "result": "hit"
     },
     "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40": {
       "game": "w11-bal-car",
@@ -5127,8 +5130,8 @@
       "bet": "20+ receiving yards",
       "prob": 80,
       "result": null,
-      "live": 90,
-      "liveAt": "2026-11-22T21:57:56.586Z"
+      "live": 100,
+      "liveAt": "2026-11-23T00:15:00.829Z"
     },
     "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
       "game": "w11-no-chi",
@@ -5177,14 +5180,14 @@
       "prob": 40,
       "result": null,
       "live": 50,
-      "liveAt": "2026-11-22T21:57:56.586Z",
+      "liveAt": "2026-11-23T00:15:00.829Z",
       "actual": 0
     },
-    "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3": {
+    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
       "game": "w11-cin-was",
-      "player": "Chase Brown",
-      "bet": "3+ receptions",
-      "prob": 80,
+      "player": "Ja'Marr Chase",
+      "bet": "6+ receptions",
+      "prob": 81,
       "result": null
     }
   }
