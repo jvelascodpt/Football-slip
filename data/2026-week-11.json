@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Sun Nov 22, 4:14 PM PT",
-  "refreshed": "Sun Nov 22, 5:51 PM PT",
+  "refreshed": "Sun Nov 22, 11:55 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -4026,7 +4026,7 @@
       "home": "SF",
       "start": "2026-11-23T01:20:00.000Z",
       "kick": "Sun 5:20 PM",
-      "status": "live",
+      "status": "final",
       "record": [
         "7-2",
         "8-1"
@@ -4394,10 +4394,9 @@
       ],
       "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 65%.",
       "score": [
-        0,
-        7
-      ],
-      "live": "1st qtr 3:44"
+        10,
+        35
+      ]
     },
     {
       "id": "w11-cin-was",
@@ -5185,7 +5184,7 @@
       "prob": 40,
       "result": null,
       "live": 50,
-      "liveAt": "2026-11-23T01:51:27.566Z",
+      "liveAt": "2026-11-23T07:55:01.135Z",
       "actual": 0
     },
     "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
