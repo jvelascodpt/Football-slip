@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T04:16:38.812Z",
+  "updated": "2026-11-24T12:38:32.426Z",
   "weeks": [
     10,
     11
@@ -30,33 +30,40 @@
       "adj": 0
     },
     "72-84": {
-      "n": 6,
+      "n": 7,
       "hits": 6,
-      "expected": 4.75,
-      "gap": 20.8,
+      "expected": 5.47,
+      "gap": 7.6,
       "adj": 0
     }
   },
   "props": {
+    "receptions": {
+      "n": 4,
+      "hits": 3,
+      "expected": 2.7,
+      "gap": 7.5,
+      "adj": 0
+    },
+    "rushing yards": {
+      "n": 1,
+      "hits": 0,
+      "expected": 0.8,
+      "gap": -80,
+      "adj": 0
+    },
+    "passing yards": {
+      "n": 3,
+      "hits": 2,
+      "expected": 2.27,
+      "gap": -9,
+      "adj": 0
+    },
     "receiving yards": {
       "n": 6,
       "hits": 6,
       "expected": 4.59,
       "gap": 23.5,
-      "adj": 0
-    },
-    "passing yards": {
-      "n": 2,
-      "hits": 1,
-      "expected": 1.49,
-      "gap": -24.5,
-      "adj": 0
-    },
-    "receptions": {
-      "n": 3,
-      "hits": 3,
-      "expected": 1.9,
-      "gap": 36.7,
       "adj": 0
     }
   },
@@ -90,6 +97,11 @@
       "w": 1,
       "l": 0,
       "expected": 0.24
+    },
+    "Mon night safe bet": {
+      "w": 0,
+      "l": 1,
+      "expected": 0.5
     }
   }
 }

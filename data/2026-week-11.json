@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Mon Nov 23, 8:16 PM PT",
-  "refreshed": "Mon Nov 23, 8:16 PM PT",
+  "refreshed": "Tue Nov 24, 4:38 AM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -4757,12 +4757,11 @@
       "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 74%.",
       "start": "2026-11-24T01:15:00.000Z",
       "kick": "Mon 5:15 PM",
-      "status": "live",
+      "status": "final",
       "score": [
         20,
-        19
-      ],
-      "live": "4th qtr 0:46"
+        22
+      ]
     }
   ],
   "parlays": [
@@ -5053,9 +5052,9 @@
           "bet": "6+ receptions",
           "prob": 80,
           "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
-          "result": null,
+          "result": "miss",
           "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD.",
-          "live": 1
+          "actual": 5
         },
         {
           "game": "w11-cin-was",
@@ -5064,9 +5063,9 @@
           "bet": "25+ rushing yards",
           "prob": 80,
           "ticker": "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25",
-          "result": null,
+          "result": "miss",
           "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD.",
-          "live": 1
+          "actual": 6
         },
         {
           "game": "w11-cin-was",
@@ -5075,9 +5074,9 @@
           "bet": "175+ passing yards",
           "prob": 78,
           "ticker": "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT.",
-          "live": 100
+          "actual": 289
         }
       ]
     }
@@ -5088,27 +5087,27 @@
       "player": "Ja'Marr Chase",
       "bet": "6+ receptions",
       "prob": 80,
-      "result": null,
-      "live": 1,
-      "liveAt": "2026-11-24T04:16:34.332Z"
+      "result": "miss",
+      "liveAt": "2026-11-24T04:16:34.332Z",
+      "actual": 5
     },
     "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25": {
       "game": "w11-cin-was",
       "player": "Chase Brown",
       "bet": "25+ rushing yards",
       "prob": 80,
-      "result": null,
-      "live": 1,
-      "liveAt": "2026-11-24T04:16:34.332Z"
+      "result": "miss",
+      "liveAt": "2026-11-24T04:16:34.332Z",
+      "actual": 6
     },
     "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
       "game": "w11-cin-was",
       "player": "Jayden Daniels",
       "bet": "175+ passing yards",
       "prob": 78,
-      "result": null,
-      "live": 100,
-      "liveAt": "2026-11-24T04:16:34.332Z"
+      "result": "hit",
+      "liveAt": "2026-11-24T04:16:34.332Z",
+      "actual": 289
     },
     "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
       "game": "w11-ind-hou",
@@ -5205,7 +5204,7 @@
       "prob": 40,
       "result": null,
       "live": 50,
-      "liveAt": "2026-11-24T04:16:34.332Z",
+      "liveAt": "2026-11-24T12:38:32.085Z",
       "actual": 0
     }
   }
