@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Sun Nov 22, 4:14 PM PT",
-  "refreshed": "Sun Nov 22, 11:55 PM PT",
+  "updated": "Mon Nov 23, 5:12 PM PT",
+  "refreshed": "Mon Nov 23, 5:12 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -4024,9 +4024,6 @@
       "espnId": "401873077",
       "away": "MIN",
       "home": "SF",
-      "start": "2026-11-23T01:20:00.000Z",
-      "kick": "Sun 5:20 PM",
-      "status": "final",
       "record": [
         "7-2",
         "8-1"
@@ -4393,6 +4390,9 @@
         65
       ],
       "note": "Vikings 7-2, 49ers 8-1. Last week: Vikings beat the Packers 30-10; 49ers beat the Cowboys 46-40. Kalshi has the 49ers at 65%.",
+      "start": "2026-11-23T01:20:00.000Z",
+      "kick": "Sun 5:20 PM",
+      "status": "final",
       "score": [
         10,
         35
@@ -4413,21 +4413,21 @@
       "info": {
         "venue": "Northwest Stadium",
         "city": "Landover",
-        "weather": "54° Partly cloudy",
+        "weather": "57° Showers",
         "spread": "CIN -6",
         "total": 54.5,
-        "mlAway": "-296",
-        "mlHome": "+241"
+        "mlAway": "-301",
+        "mlHome": "+245"
       },
       "report": {
-        "updated": "2026-11-23T00:14:55.494Z",
+        "updated": "2026-11-24T01:12:08.704Z",
         "fpi": [
-          76,
-          23.8
+          74.5,
+          25.3
         ],
         "edges": [
           "Bengals offense (3rd in scoring) vs Commanders defense (20th in points allowed): edge to the offense.",
-          "Commanders offense (21st in scoring) vs Bengals defense (10th in points allowed): edge to the defense."
+          "Commanders offense (20th in scoring) vs Bengals defense (13th in points allowed): even matchup."
         ],
         "teams": {
           "CIN": {
@@ -4438,7 +4438,7 @@
               ],
               "ypg": [
                 395.3,
-                7
+                6
               ],
               "pass": [
                 298.9,
@@ -4450,11 +4450,11 @@
               ],
               "oppg": [
                 21.4,
-                10
+                13
               ],
               "oypg": [
                 361,
-                21
+                22
               ],
               "opass": [
                 216.2,
@@ -4462,15 +4462,27 @@
               ],
               "orush": [
                 123.9,
-                21
+                22
               ],
               "to": [
                 2,
-                13
+                14
               ]
             },
             "key": [],
             "injuries": [
+              {
+                "name": "Kyle Dugger",
+                "pos": "S",
+                "status": "Out",
+                "detail": "Quadriceps"
+              },
+              {
+                "name": "Jalen Davis",
+                "pos": "CB",
+                "status": "Injured Reserve",
+                "detail": "Hamstring"
+              },
               {
                 "name": "Dalton Risner",
                 "pos": "G",
@@ -4478,28 +4490,16 @@
                 "detail": "Knee"
               },
               {
-                "name": "Andrei Iosivas",
-                "pos": "WR",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
+                "name": "Landon Robinson",
+                "pos": "DT",
+                "status": "Out",
+                "detail": "Coach's Decision"
               },
               {
-                "name": "Oren Burks",
-                "pos": "LB",
-                "status": "Injured Reserve",
-                "detail": "Groin"
-              },
-              {
-                "name": "Kyle Dugger",
-                "pos": "S",
-                "status": "Questionable",
-                "detail": "Quadriceps"
-              },
-              {
-                "name": "Dax Hill",
-                "pos": "CB",
-                "status": "Questionable",
-                "detail": "Illness"
+                "name": "Cam Grandy",
+                "pos": "TE",
+                "status": "Out",
+                "detail": "Coach's Decision"
               }
             ],
             "leaders": [
@@ -4563,25 +4563,25 @@
             ],
             "news": [
               {
-                "h": "Why Amarius Mims is an underrated key to Bengals' success",
-                "d": "Joe Burrow is on an MVP trajectory, and a big reason is his OL, led by Amarius Mims.",
-                "url": "https://www.espn.com/nfl/story/_/id/50543897/bengals-amarius-mims-pass-protection-joe-burrow",
-                "video": false,
-                "at": "2026-11-21T11:00:10Z"
-              },
-              {
-                "h": "Joe Burrow, Bengals gearing up for MNF",
-                "d": "Ben Baby previews Joe Burrow's mindset heading into Monday night against the Commanders.",
-                "url": "https://www.espn.com/video/clip/_/id/50545144/joe-burrow-bengals-gearing-mnf",
+                "h": "Nobody roots harder for Zac Taylor than his Special Olympics champion sister",
+                "d": "Nobody roots harder for Zac Taylor than his Special Olympics champion sister",
+                "url": "https://www.espn.com/video/clip/_/id/50574682/nobody-roots-harder-zac-taylor-special-olympics-champion-sister",
                 "video": true,
-                "at": "2026-11-21T01:08:04Z"
+                "at": "2026-11-24T00:44:06Z"
               },
               {
-                "h": "Back at practice again, Bengals QB Burrow optimistic he'll be at full strength",
-                "d": "A full participant at practice for the second straight day despite the bug that he has battled, Bengals quarterback Joe Burrow is optimistic that he'll be at full strength when Cincinnati plays the Washington Commanders on \"Monday Night Football.\"",
-                "url": "https://www.espn.com/nfl/story/_/id/50544261/burrow-practices-again-full-strength-mnf",
+                "h": "Bengals-Commanders odds, best bets: Tips, analysis and top plays",
+                "d": "Odds, analysis and recommended plays to help you bet the Bengals-Commanders matchup on Monday night.",
+                "url": "https://www.espn.com/espn/betting/story/_/id/50570381/nfl-week-11-odds-bengals-commanders-betting-preview-props",
                 "video": false,
-                "at": "2026-11-21T12:51:42Z"
+                "at": "2026-11-23T15:10:32Z"
+              },
+              {
+                "h": "Inside the gymnastics lore of Bengals star Ja'Marr Chase",
+                "d": "Ja'Marr Chase's skill set suggests formal gymnastics training, but the reality isn't quite that simple.",
+                "url": "https://www.espn.com/nfl/story/_/id/50565876/bengals-jamarr-chase-gymnastics",
+                "video": false,
+                "at": "2026-11-23T22:28:51Z"
               }
             ]
           },
@@ -4589,7 +4589,7 @@
             "rank": {
               "ppg": [
                 21.8,
-                21
+                20
               ],
               "ypg": [
                 341.8,
@@ -4597,11 +4597,11 @@
               ],
               "pass": [
                 210.2,
-                20
+                19
               ],
               "rush": [
                 116.8,
-                12
+                11
               ],
               "oppg": [
                 24.8,
@@ -4621,40 +4621,48 @@
               ],
               "to": [
                 7,
-                3
+                2
               ]
             },
-            "key": [],
+            "key": [
+              {
+                "name": "Athan Kaliakmanis",
+                "pos": "QB",
+                "status": "Out",
+                "detail": "Coach's Decision",
+                "why": "Quarterback"
+              }
+            ],
             "injuries": [
-              {
-                "name": "Jacory Croskey-Merritt",
-                "pos": "RB",
-                "status": "Injured Reserve",
-                "detail": "Groin"
-              },
-              {
-                "name": "Laremy Tunsil",
-                "pos": "OT",
-                "status": "Injured Reserve",
-                "detail": "Surgery"
-              },
-              {
-                "name": "Lucas Patrick",
-                "pos": "G",
-                "status": "Questionable",
-                "detail": "Concussion"
-              },
               {
                 "name": "Amik Robertson",
                 "pos": "CB",
-                "status": "Questionable",
+                "status": "Out",
                 "detail": "Ankle"
               },
               {
-                "name": "Rachaad White",
+                "name": "Athan Kaliakmanis",
+                "pos": "QB",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Tanoa Togiai",
+                "pos": "G",
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Robert Henry Jr.",
                 "pos": "RB",
-                "status": "Questionable",
-                "detail": "Heel"
+                "status": "Out",
+                "detail": "Coach's Decision"
+              },
+              {
+                "name": "Ricky Barber",
+                "pos": "DT",
+                "status": "Out",
+                "detail": "Coach's Decision"
               }
             ],
             "leaders": [
@@ -4718,25 +4726,25 @@
             ],
             "news": [
               {
-                "h": "Can the Commanders win in the red zone?",
-                "d": "John Keim lays out the Commanders' path to victory against the Bengals.",
-                "url": "https://www.espn.com/video/clip/_/id/50566594/can-commanders-win-red-zone",
+                "h": "Why the Commanders D/ST has top-10 fantasy upside in Week 12",
+                "d": "Why the Commanders D/ST has top-10 fantasy upside in Week 12",
+                "url": "https://www.espn.com/video/clip/_/id/50577618/why-commanders-d-st-top-10-fantasy-upside-week-12",
                 "video": true,
-                "at": "2026-11-22T23:12:10Z"
+                "at": "2026-11-24T00:12:38Z"
               },
               {
-                "h": "Back at practice again, Bengals QB Burrow optimistic he'll be at full strength",
-                "d": "A full participant at practice for the second straight day despite the bug that he has battled, Bengals quarterback Joe Burrow is optimistic that he'll be at full strength when Cincinnati plays the Washington Commanders on \"Monday Night Football.\"",
-                "url": "https://www.espn.com/nfl/story/_/id/50544261/burrow-practices-again-full-strength-mnf",
+                "h": "Commanders RB Jacory Croskey-Merritt activated from IR ahead of MNF",
+                "d": "The Commanders activated running back Jacory Croskey-Merritt off injured reserve Monday.",
+                "url": "https://www.espn.com/nfl/story/_/id/50576561/commanders-rb-jacory-croskey-merritt-activated-ir",
                 "video": false,
-                "at": "2026-11-21T12:51:42Z"
+                "at": "2026-11-23T23:48:49Z"
               },
               {
-                "h": "Commanders confident in Jayden Daniels",
-                "d": "John Keim breaks down why the Commanders believe in Jayden Daniels.",
-                "url": "https://www.espn.com/video/clip/_/id/50543810/commanders-confident-jayden-daniels",
+                "h": "What's next for Brandon Aiyuk after release by 49ers?",
+                "d": "What's next for Brandon Aiyuk after release by 49ers?",
+                "url": "https://www.espn.com/video/clip/_/id/50575458/next-brandon-aiyuk-release-49ers",
                 "video": true,
-                "at": "2026-11-20T22:18:02Z"
+                "at": "2026-11-23T19:29:43Z"
               }
             ]
           }
@@ -4746,10 +4754,10 @@
       "prob": 72,
       "source": "DraftKings",
       "kalshi": [
-        73,
+        74,
         28
       ],
-      "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 73%."
+      "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 74%."
     }
   ],
   "parlays": [
@@ -4851,32 +4859,32 @@
         {
           "game": "w11-cin-was",
           "team": "CIN",
-          "player": "Joe Burrow",
-          "bet": "250+ passing yards",
+          "player": "Ja'Marr Chase",
+          "bet": "6+ receptions",
           "prob": 80,
-          "ticker": "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250",
+          "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
           "result": null,
-          "why": "Team leader in passing: 254/340, 2,795 YDS, 27 TD, 6 INT."
+          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
+        },
+        {
+          "game": "w11-cin-was",
+          "team": "CIN",
+          "player": "Chase Brown",
+          "bet": "25+ rushing yards",
+          "prob": 80,
+          "ticker": "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25",
+          "result": null,
+          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
         },
         {
           "game": "w11-cin-was",
           "team": "WAS",
           "player": "Jayden Daniels",
           "bet": "175+ passing yards",
-          "prob": 79,
+          "prob": 78,
           "ticker": "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175",
           "result": null,
           "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT."
-        },
-        {
-          "game": "w11-cin-was",
-          "team": "CIN",
-          "player": "Ja'Marr Chase",
-          "bet": "6+ receptions",
-          "prob": 81,
-          "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
-          "result": null,
-          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
         }
       ]
     },
@@ -5067,18 +5075,11 @@
     }
   ],
   "markets": {
-    "KXNFLREC-26NOV23CINWAS-CINCBROWN30-3": {
-      "game": "w11-cin-was",
-      "player": "Chase Brown",
-      "bet": "3+ receptions",
-      "prob": 80,
-      "result": null
-    },
     "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250": {
       "game": "w11-cin-was",
       "player": "Joe Burrow",
       "bet": "250+ passing yards",
-      "prob": 81,
+      "prob": 80,
       "result": null
     },
     "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
@@ -5086,6 +5087,13 @@
       "player": "Jayden Daniels",
       "bet": "175+ passing yards",
       "prob": 79,
+      "result": null
+    },
+    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
+      "game": "w11-cin-was",
+      "player": "Ja'Marr Chase",
+      "bet": "6+ receptions",
+      "prob": 81,
       "result": null
     },
     "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
@@ -5134,7 +5142,6 @@
       "bet": "20+ receiving yards",
       "prob": 80,
       "result": "hit",
-      "liveAt": "2026-11-23T00:15:00.829Z",
       "actual": 61
     },
     "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
@@ -5184,14 +5191,14 @@
       "prob": 40,
       "result": null,
       "live": 50,
-      "liveAt": "2026-11-23T07:55:01.135Z",
+      "liveAt": "2026-11-24T01:12:13.193Z",
       "actual": 0
     },
-    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
+    "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25": {
       "game": "w11-cin-was",
-      "player": "Ja'Marr Chase",
-      "bet": "6+ receptions",
-      "prob": 81,
+      "player": "Chase Brown",
+      "bet": "25+ rushing yards",
+      "prob": 80,
       "result": null
     }
   }
