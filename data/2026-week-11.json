@@ -1,8 +1,8 @@
 {
   "season": 2026,
   "week": 11,
-  "updated": "Mon Nov 23, 5:12 PM PT",
-  "refreshed": "Mon Nov 23, 5:12 PM PT",
+  "updated": "Mon Nov 23, 8:16 PM PT",
+  "refreshed": "Mon Nov 23, 8:16 PM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -4403,9 +4403,6 @@
       "espnId": "401873078",
       "away": "CIN",
       "home": "WAS",
-      "start": "2026-11-24T01:15:00.000Z",
-      "kick": "Mon 5:15 PM",
-      "status": "upcoming",
       "record": [
         "7-2",
         "3-5-1"
@@ -4757,7 +4754,15 @@
         74,
         28
       ],
-      "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 74%."
+      "note": "Bengals 7-2, Commanders 3-5-1. Last week: Bengals beat the Steelers 38-18; Commanders beat the Giants 24-21. Kalshi has the Bengals at 74%.",
+      "start": "2026-11-24T01:15:00.000Z",
+      "kick": "Mon 5:15 PM",
+      "status": "live",
+      "score": [
+        20,
+        19
+      ],
+      "live": "4th qtr 0:46"
     }
   ],
   "parlays": [
@@ -4848,46 +4853,6 @@
     }
   ],
   "props": [
-    {
-      "auto": true,
-      "key": "w11-cin-was",
-      "game": "w11-cin-was",
-      "name": "Bengals at Commanders",
-      "tag": "Mon · Safe",
-      "note": "Safe bet: three Kalshi player props near 80% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
-      "legs": [
-        {
-          "game": "w11-cin-was",
-          "team": "CIN",
-          "player": "Ja'Marr Chase",
-          "bet": "6+ receptions",
-          "prob": 80,
-          "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
-          "result": null,
-          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD."
-        },
-        {
-          "game": "w11-cin-was",
-          "team": "CIN",
-          "player": "Chase Brown",
-          "bet": "25+ rushing yards",
-          "prob": 80,
-          "ticker": "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25",
-          "result": null,
-          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD."
-        },
-        {
-          "game": "w11-cin-was",
-          "team": "WAS",
-          "player": "Jayden Daniels",
-          "bet": "175+ passing yards",
-          "prob": 78,
-          "ticker": "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175",
-          "result": null,
-          "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT."
-        }
-      ]
-    },
     {
       "auto": true,
       "key": "w11-ind-hou",
@@ -5072,29 +5037,78 @@
           "actual": 0
         }
       ]
+    },
+    {
+      "auto": true,
+      "key": "w11-cin-was",
+      "game": "w11-cin-was",
+      "name": "Bengals at Commanders",
+      "tag": "Mon · Safe",
+      "note": "Safe bet: three Kalshi player props near 80% each, from three different players in this game. Same-game legs are related, so treat the combined chance as rough.",
+      "legs": [
+        {
+          "game": "w11-cin-was",
+          "team": "CIN",
+          "player": "Ja'Marr Chase",
+          "bet": "6+ receptions",
+          "prob": 80,
+          "ticker": "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6",
+          "result": null,
+          "why": "Team leader in receiving: 64 REC, 878 YDS, 7 TD.",
+          "live": 1
+        },
+        {
+          "game": "w11-cin-was",
+          "team": "CIN",
+          "player": "Chase Brown",
+          "bet": "25+ rushing yards",
+          "prob": 80,
+          "ticker": "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25",
+          "result": null,
+          "why": "Team leader in rushing: 113 CAR, 441 YDS, 1 TD.",
+          "live": 1
+        },
+        {
+          "game": "w11-cin-was",
+          "team": "WAS",
+          "player": "Jayden Daniels",
+          "bet": "175+ passing yards",
+          "prob": 78,
+          "ticker": "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175",
+          "result": null,
+          "why": "Team leader in passing: 138/213, 1,499 YDS, 10 TD, 2 INT.",
+          "live": 100
+        }
+      ]
     }
   ],
   "markets": {
-    "KXNFLPASSYDS-26NOV23CINWAS-CINJBURROW9-250": {
+    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
       "game": "w11-cin-was",
-      "player": "Joe Burrow",
-      "bet": "250+ passing yards",
+      "player": "Ja'Marr Chase",
+      "bet": "6+ receptions",
       "prob": 80,
-      "result": null
+      "result": null,
+      "live": 1,
+      "liveAt": "2026-11-24T04:16:34.332Z"
+    },
+    "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25": {
+      "game": "w11-cin-was",
+      "player": "Chase Brown",
+      "bet": "25+ rushing yards",
+      "prob": 80,
+      "result": null,
+      "live": 1,
+      "liveAt": "2026-11-24T04:16:34.332Z"
     },
     "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
       "game": "w11-cin-was",
       "player": "Jayden Daniels",
       "bet": "175+ passing yards",
-      "prob": 79,
-      "result": null
-    },
-    "KXNFLREC-26NOV23CINWAS-CINJCHASE1-6": {
-      "game": "w11-cin-was",
-      "player": "Ja'Marr Chase",
-      "bet": "6+ receptions",
-      "prob": 81,
-      "result": null
+      "prob": 78,
+      "result": null,
+      "live": 100,
+      "liveAt": "2026-11-24T04:16:34.332Z"
     },
     "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
       "game": "w11-ind-hou",
@@ -5191,15 +5205,8 @@
       "prob": 40,
       "result": null,
       "live": 50,
-      "liveAt": "2026-11-24T01:12:13.193Z",
+      "liveAt": "2026-11-24T04:16:34.332Z",
       "actual": 0
-    },
-    "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25": {
-      "game": "w11-cin-was",
-      "player": "Chase Brown",
-      "bet": "25+ rushing yards",
-      "prob": 80,
-      "result": null
     }
   }
 }
