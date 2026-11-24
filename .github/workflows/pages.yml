@@ -2,7 +2,9 @@ name: Update data and deploy
 
 on:
   push:
-    branches: [main]
+    # Pushes to the default branch deploy the site (GitHub Pages only accepts deploys from it);
+    # the weekly scheduled task builds data and pushes here to publish.
+    branches: [main, claude/sunday-slip-nfl-app-w473s3]
   workflow_dispatch:
     inputs:
       command:
