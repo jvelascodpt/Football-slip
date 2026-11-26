@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T14:16:39.810Z",
+  "updated": "2026-11-26T22:35:03.414Z",
   "weeks": [
     10,
     11,
@@ -10,10 +10,10 @@
   "maxAdj": 6,
   "ml": {
     "50-59": {
-      "n": 5,
-      "hits": 3,
-      "expected": 2.8,
-      "gap": 4,
+      "n": 6,
+      "hits": 4,
+      "expected": 3.32,
+      "gap": 11.3,
       "adj": 0
     },
     "60-71": {
@@ -47,17 +47,17 @@
       "adj": 0
     },
     "rushing yards": {
-      "n": 2,
-      "hits": 0,
-      "expected": 1.61,
-      "gap": -80.5,
+      "n": 3,
+      "hits": 1,
+      "expected": 2.4,
+      "gap": -46.7,
       "adj": 0
     },
     "passing yards": {
-      "n": 4,
-      "hits": 2,
-      "expected": 3.08,
-      "gap": -27,
+      "n": 6,
+      "hits": 4,
+      "expected": 4.66,
+      "gap": -11,
       "adj": 0
     },
     "receiving yards": {
@@ -81,13 +81,13 @@
     },
     "Underdog swing": {
       "w": 0,
-      "l": 2,
-      "expected": 0.3
+      "l": 3,
+      "expected": 0.51
     },
     "Thu night safe bet": {
-      "w": 0,
+      "w": 1,
       "l": 1,
-      "expected": 0.5
+      "expected": 0.99
     },
     "Weekend safe bet": {
       "w": 1,
