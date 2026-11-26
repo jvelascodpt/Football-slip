@@ -138,3 +138,13 @@ test("games lock at kickoff", () => {
   close(decimalFromAmerican(-150), 1 + 100 / 150);
   close(decimalFromAmerican(200), 3);
 });
+
+test("void legs drop out of a parlay; all void returns the stake", () => {
+  const v = { kind: "prop", game: "a", team: "BUF", player: "X", bet: "Y", result: "void" };
+  assert.equal(parlayState([v, ["a", "BUF"]], find), "hit");
+  assert.equal(parlayState([v, ["b", "IND"]], find), "miss");
+  assert.equal(parlayState([v], find), "void");
+  const r = betsNet([{ legs: [v], cost: 5, payout: 9 }, { legs: [v, ["a", "BUF"]], cost: 5, payout: 9 }], find);
+  assert.deepEqual([r.net, r.open, r.won], [4, 0, 1]);
+  assert.equal(parlayProgress([v, ["a", "BUF"]], find).n, 1);
+});

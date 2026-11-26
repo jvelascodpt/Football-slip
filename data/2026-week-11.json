@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 11,
   "updated": "Mon Nov 23, 8:16 PM PT",
-  "refreshed": "Wed Nov 25, 6:09 PM PT",
+  "refreshed": "Thu Nov 26, 6:16 AM PT",
   "games": [
     {
       "id": "w11-ind-hou",
@@ -5030,9 +5030,8 @@
           "bet": "40+ receiving yards",
           "prob": 40,
           "ticker": "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40",
-          "result": null,
+          "result": "void",
           "why": "Team leader in receiving: 32 REC, 487 YDS, 2 TD.",
-          "live": 50,
           "actual": 0
         }
       ]
@@ -5089,7 +5088,8 @@
       "prob": 80,
       "result": "miss",
       "liveAt": "2026-11-24T04:16:34.332Z",
-      "actual": 5
+      "actual": 5,
+      "played": true
     },
     "KXNFLRSHYDS-26NOV23CINWAS-CINCBROWN30-25": {
       "game": "w11-cin-was",
@@ -5098,7 +5098,8 @@
       "prob": 80,
       "result": "miss",
       "liveAt": "2026-11-24T04:16:34.332Z",
-      "actual": 6
+      "actual": 6,
+      "played": true
     },
     "KXNFLPASSYDS-26NOV23CINWAS-WASJDANIELS5-175": {
       "game": "w11-cin-was",
@@ -5107,7 +5108,8 @@
       "prob": 78,
       "result": "hit",
       "liveAt": "2026-11-24T04:16:34.332Z",
-      "actual": 289
+      "actual": 289,
+      "played": true
     },
     "KXNFLRECYDS-26NOV19INDHOU-HOUNCOLLINS12-40": {
       "game": "w11-ind-hou",
@@ -5115,7 +5117,8 @@
       "bet": "40+ receiving yards",
       "prob": 80,
       "result": "hit",
-      "actual": 58
+      "actual": 58,
+      "played": true
     },
     "KXNFLPASSYDS-26NOV19INDHOU-HOUCSTROUD7-200": {
       "game": "w11-ind-hou",
@@ -5123,7 +5126,8 @@
       "bet": "200+ passing yards",
       "prob": 79,
       "result": "miss",
-      "actual": 194
+      "actual": 194,
+      "played": true
     },
     "KXNFLRECYDS-26NOV19INDHOU-INDTWARREN84-20": {
       "game": "w11-ind-hou",
@@ -5131,7 +5135,8 @@
       "bet": "20+ receiving yards",
       "prob": 79,
       "result": "hit",
-      "actual": 22
+      "actual": 22,
+      "played": true
     },
     "KXNFLREC-26NOV22JACNYG-JACPWASHINGTON11-3": {
       "game": "w11-jac-nyg",
@@ -5139,7 +5144,8 @@
       "bet": "3+ receptions",
       "prob": 80,
       "result": "hit",
-      "actual": 8
+      "actual": 8,
+      "played": true
     },
     "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-40": {
       "game": "w11-bal-car",
@@ -5147,7 +5153,8 @@
       "bet": "40+ receiving yards",
       "prob": 80,
       "result": "hit",
-      "actual": 97
+      "actual": 97,
+      "played": true
     },
     "KXNFLRECYDS-26NOV22LVDEN-DENJWADDLE17-20": {
       "game": "w11-lv-den",
@@ -5155,7 +5162,8 @@
       "bet": "20+ receiving yards",
       "prob": 80,
       "result": "hit",
-      "actual": 61
+      "actual": 61,
+      "played": true
     },
     "KXNFLPASSYDS-26NOV22NOCHI-NOTSHOUGH6-200": {
       "game": "w11-no-chi",
@@ -5163,7 +5171,8 @@
       "bet": "200+ passing yards",
       "prob": 70,
       "result": "hit",
-      "actual": 222
+      "actual": 222,
+      "played": true
     },
     "KXNFLREC-26NOV22ARIKC-KCTKELCE87-3": {
       "game": "w11-ari-kc",
@@ -5171,7 +5180,8 @@
       "bet": "3+ receptions",
       "prob": 70,
       "result": "hit",
-      "actual": 6
+      "actual": 6,
+      "played": true
     },
     "KXNFLRECYDS-26NOV22BALCAR-BALZFLOWERS4-50": {
       "game": "w11-bal-car",
@@ -5179,7 +5189,8 @@
       "bet": "50+ receiving yards",
       "prob": 70,
       "result": "hit",
-      "actual": 97
+      "actual": 97,
+      "played": true
     },
     "KXNFLRECYDS-26NOV22TBDET-DETJGIBBS0-20": {
       "game": "w11-tb-det",
@@ -5187,7 +5198,8 @@
       "bet": "20+ receiving yards",
       "prob": 70,
       "result": "hit",
-      "actual": 20
+      "actual": 20,
+      "played": true
     },
     "KXNFLREC-26NOV22TENDAL-DALJWILLIAMS33-3": {
       "game": "w11-ten-dal",
@@ -5195,17 +5207,19 @@
       "bet": "3+ receptions",
       "prob": 40,
       "result": "hit",
-      "actual": 3
+      "actual": 3,
+      "played": true
     },
     "KXNFLRECYDS-26NOV22MIABUF-BUFDKINCAID86-40": {
       "game": "w11-mia-buf",
       "player": "Dalton Kincaid",
       "bet": "40+ receiving yards",
       "prob": 40,
-      "result": null,
-      "live": 50,
+      "result": "void",
       "liveAt": "2026-11-26T02:09:45.661Z",
-      "actual": 0
+      "actual": 0,
+      "settledAt": 42,
+      "played": false
     }
   }
 }

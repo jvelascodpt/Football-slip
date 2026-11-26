@@ -131,3 +131,29 @@ test("gradeProps saves each player's final stat from ESPN for finished games", a
   await gradeProps(week, async () => [], new Date(), async () => { calls++; return box; });
   assert.equal(calls, 1);   // saved once, not refetched
 });
+
+test("cancelled Kalshi markets (player didn't play) grade as void", async () => {
+  const week = { games: [{ ...game, status: "final" }], props: [{ auto: true, key: game.id, game: game.id, legs: [
+    { game: game.id, ticker: "K", player: "Dalton Kincaid", bet: "40+ receiving yards", prob: 42, result: null },
+  ] }] };
+  await gradeProps(week, async () => [{ ticker: "K", status: "finalized", result: "scalar", expiration_value: "Cancelled", settlement_value_dollars: "0.4200" }], new Date(), async () => ({}));
+  assert.equal(week.props[0].legs[0].result, "void");
+  assert.equal(week.markets.K.settledAt, 42);
+});
+
+test("safety net: 12+ hours after the game, ungraded legs are graded from the box score", async () => {
+  const start = "2026-11-22T18:00:00.000Z";
+  const g = { ...game, start, status: "final", espnId: "1" };
+  const week = { games: [g], props: [{ auto: true, key: g.id, game: g.id, legs: [
+    { game: g.id, ticker: "A", player: "Nico Collins", bet: "40+ receiving yards", prob: 80, result: null },
+    { game: g.id, ticker: "B", player: "Sat Out", bet: "20+ receiving yards", prob: 70, result: null },
+  ] }] };
+  const box = { boxscore: { players: [{ statistics: [{ name: "receiving", labels: ["REC", "YDS", "TD"], athletes: [{ athlete: { displayName: "Nico Collins" }, stats: ["4", "61", "0"] }] }] }] } };
+  const kalshiSilent = async () => [{ ticker: "A", status: "active" }, { ticker: "B", status: "active" }];
+  await gradeProps(week, kalshiSilent, new Date("2026-11-22T23:00:00Z"), async () => box);   // 5 h after kickoff: wait
+  assert.deepEqual(week.props[0].legs.map((l) => l.result), [null, null]);
+  await gradeProps(week, kalshiSilent, new Date("2026-11-23T12:00:00Z"), async () => box);   // next morning
+  assert.deepEqual(week.props[0].legs.map((l) => [l.result, l.source]), [["hit", "stats"], ["void", "stats"]]);
+  await gradeProps(week, async () => [{ ticker: "A", result: "no" }], new Date("2026-11-23T13:00:00Z"), async () => box);   // Kalshi later disagrees: official wins
+  assert.deepEqual([week.props[0].legs[0].result, week.props[0].legs[0].source], ["miss", undefined]);
+});

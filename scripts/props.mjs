@@ -1,7 +1,7 @@
 // Player-prop parlays from Kalshi's NFL player markets, built per game as soon as Kalshi opens
 // them (Thursday games are usually open by Tuesday). Kalshi also settles each market, so legs
 // are graded automatically. Parsing and selection are pure and tested in tests/props.test.mjs.
-import { TEAMS, parseBox, propLine, statFor } from "../js/core.js";
+import { TEAMS, normName, parseBox, propLine, statFor } from "../js/core.js";
 import { getJSON } from "./sources.mjs";
 import { propAdj } from "./learn.mjs";
 
@@ -213,14 +213,22 @@ const fetchSummary = (espnId) => getJSON(`https://site.api.espn.com/apis/site/v2
 export async function gradeProps(week, fetchMarkets = fetchMarketsBatch, now = new Date(), getSummary = fetchSummary) {
   const markets = trackMarkets(week);
   const status = (id) => week.games.find((g) => g.id === id)?.status;
-  const due = Object.keys(markets).filter((t) => !markets[t].result && status(markets[t].game) && status(markets[t].game) !== "upcoming");
+  const due = Object.keys(markets).filter((t) => (!markets[t].result || markets[t].source === "stats") && status(markets[t].game) && status(markets[t].game) !== "upcoming");
   let n = 0;
   if (due.length) {
     let fetched = [];
     try { fetched = await fetchMarkets(due); } catch (e) { return 0; }   // try again next run
     fetched.forEach((km) => {
       const m = markets[km.ticker]; if (!m) return;
-      if (km.result === "yes" || km.result === "no") { m.result = km.result === "yes" ? "hit" : "miss"; n++; delete m.live; return; }
+      if (km.result === "yes" || km.result === "no") { m.result = km.result === "yes" ? "hit" : "miss"; delete m.source; n++; delete m.live; return; }
+      // Kalshi cancels a player's market when he doesn't play ("scalar" result, expiration "Cancelled")
+      // and settles it at the pre-game price: the leg is void.
+      const done = km.status === "finalized" || km.status === "settled" || km.status === "determined";
+      if (done && (km.result === "scalar" || /cancel/i.test(km.expiration_value || "") || (km.result && km.result !== "yes" && km.result !== "no"))) {
+        m.result = "void"; delete m.source; delete m.live; n++;
+        const v = cents(km.settlement_value_dollars); if (v != null) m.settledAt = v;
+        return;
+      }
       const bid = cents(km.yes_bid_dollars), ask = cents(km.yes_ask_dollars), last = cents(km.last_price_dollars);
       const live = bid != null && ask != null && ask > 0 ? Math.round((bid + ask) / 2) : last;
       if (live != null) { m.live = live; m.liveAt = now.toISOString(); }
@@ -228,20 +236,33 @@ export async function gradeProps(week, fetchMarkets = fetchMarketsBatch, now = n
   }
   // Final games: save each player's final number (e.g. 183 passing yards) from ESPN's box score,
   // so a settled leg can show how it compared with its line.
-  const finals = [...new Set(Object.values(markets).filter((m) => m.actual == null && status(m.game) === "final").map((m) => m.game))];
+  const needsBox = (m) => m.actual == null || m.played === undefined;
+  const finals = [...new Set(Object.values(markets).filter((m) => needsBox(m) && status(m.game) === "final").map((m) => m.game))];
   for (const id of finals) {
     const g = week.games.find((x) => x.id === id);
     if (!g?.espnId) continue;
     let box;
     try { box = parseBox(await getSummary(g.espnId)); } catch (e) { continue; }   // try again next run
     if (!box || !Object.keys(box).length) continue;
-    Object.values(markets).filter((m) => m.game === id && m.actual == null).forEach((m) => {
-      const pl = propLine(m.bet); if (pl) m.actual = statFor(box, m.player, pl.key);
+    Object.values(markets).filter((m) => m.game === id && needsBox(m)).forEach((m) => {
+      const pl = propLine(m.bet); if (!pl) return;
+      m.actual = statFor(box, m.player, pl.key);
+      m.played = !!box[normName(m.player)];
     });
   }
+  // Safety net: 12 hours after a game ends, a leg Kalshi still hasn't graded is graded from the box
+  // score (void if the player didn't play). Kalshi's official result replaces it if it comes later.
+  Object.values(markets).forEach((m) => {
+    if (m.result || m.actual == null || m.played === undefined || status(m.game) !== "final") return;
+    const g = week.games.find((x) => x.id === m.game);
+    if (!g || now - Date.parse(g.start) < (4 + 12) * 3600e3) return;   // ~4 h game + 12 h
+    const pl = propLine(m.bet); if (!pl) return;
+    m.result = m.played === false ? "void" : m.actual >= pl.line ? "hit" : "miss";
+    m.source = "stats"; n++;
+  });
   (week.props || []).forEach((p) => (p.legs || []).forEach((l) => {
     const m = l.ticker && markets[l.ticker]; if (!m) return;
-    if (m.result) { l.result = m.result; delete l.live; } else if (m.live != null) l.live = m.live;
+    if (m.result) { l.result = m.result; delete l.live; if (m.source) l.source = m.source; else delete l.source; } else if (m.live != null) l.live = m.live;
     if (m.actual != null) l.actual = m.actual;
   }));
   return n;

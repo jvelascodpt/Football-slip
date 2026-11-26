@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T02:09:59.360Z",
+  "updated": "2026-11-26T14:16:39.810Z",
   "weeks": [
     10,
     11,
@@ -10,10 +10,10 @@
   "maxAdj": 6,
   "ml": {
     "50-59": {
-      "n": 4,
-      "hits": 2,
-      "expected": 2.24,
-      "gap": -6,
+      "n": 5,
+      "hits": 3,
+      "expected": 2.8,
+      "gap": 4,
       "adj": 0
     },
     "60-71": {
@@ -47,24 +47,24 @@
       "adj": 0
     },
     "rushing yards": {
-      "n": 1,
+      "n": 2,
       "hits": 0,
-      "expected": 0.8,
-      "gap": -80,
+      "expected": 1.61,
+      "gap": -80.5,
       "adj": 0
     },
     "passing yards": {
-      "n": 3,
+      "n": 4,
       "hits": 2,
-      "expected": 2.27,
-      "gap": -9,
+      "expected": 3.08,
+      "gap": -27,
       "adj": 0
     },
     "receiving yards": {
-      "n": 6,
-      "hits": 6,
-      "expected": 4.59,
-      "gap": 23.5,
+      "n": 7,
+      "hits": 7,
+      "expected": 5.38,
+      "gap": 23.1,
       "adj": 0
     }
   },
@@ -99,10 +99,20 @@
       "l": 0,
       "expected": 0.24
     },
+    "Weekend high payout": {
+      "w": 1,
+      "l": 0,
+      "expected": 0.16
+    },
     "Mon night safe bet": {
       "w": 0,
       "l": 1,
       "expected": 0.5
+    },
+    "Wed night safe bet": {
+      "w": 0,
+      "l": 1,
+      "expected": 0.52
     }
   }
 }

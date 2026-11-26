@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 12,
   "updated": "Wed Nov 25, 6:09 PM PT",
-  "refreshed": "Wed Nov 25, 6:09 PM PT",
+  "refreshed": "Thu Nov 26, 6:16 AM PT",
   "games": [
     {
       "id": "w12-gb-la",
@@ -363,12 +363,11 @@
       "note": "Packers 6-4, Rams 6-4. Kalshi has the Rams at 57%.",
       "start": "2026-11-26T01:00:00.000Z",
       "kick": "Wed 5:00 PM",
-      "status": "live",
+      "status": "final",
       "score": [
-        10,
-        13
-      ],
-      "live": "2nd qtr 8:06"
+        13,
+        26
+      ]
     },
     {
       "id": "w12-chi-det",
@@ -6180,9 +6179,9 @@
           "bet": "175+ passing yards",
           "prob": 81,
           "ticker": "KXNFLPASSYDS-26NOV25GBLAR-LARMSTAFFORD9-175",
-          "result": null,
+          "result": "miss",
           "why": "Team leader in passing: 248/372, 2,623 YDS, 19 TD, 10 INT.",
-          "live": 87
+          "actual": 140
         },
         {
           "game": "w12-gb-la",
@@ -6191,9 +6190,9 @@
           "bet": "40+ receiving yards",
           "prob": 79,
           "ticker": "KXNFLRECYDS-26NOV25GBLAR-GBCWATSON9-40",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in receiving: 52 REC, 916 YDS, 7 TD.",
-          "live": 100
+          "actual": 65
         },
         {
           "game": "w12-gb-la",
@@ -6202,9 +6201,9 @@
           "bet": "15+ rushing yards",
           "prob": 81,
           "ticker": "KXNFLRSHYDS-26NOV25GBLAR-GBKJOHNSON26-15",
-          "result": null,
+          "result": "miss",
           "why": "Team leader in rushing: 52 CAR, 214 YDS, 1 TD.",
-          "live": 39
+          "actual": 13
         }
       ]
     }
@@ -6215,27 +6214,30 @@
       "player": "Matthew Stafford",
       "bet": "175+ passing yards",
       "prob": 81,
-      "result": null,
-      "live": 87,
-      "liveAt": "2026-11-26T02:09:58.700Z"
+      "result": "miss",
+      "liveAt": "2026-11-26T02:09:58.700Z",
+      "actual": 140,
+      "played": true
     },
     "KXNFLRECYDS-26NOV25GBLAR-GBCWATSON9-40": {
       "game": "w12-gb-la",
       "player": "Christian Watson",
       "bet": "40+ receiving yards",
       "prob": 79,
-      "result": null,
-      "live": 100,
-      "liveAt": "2026-11-26T02:09:58.700Z"
+      "result": "hit",
+      "liveAt": "2026-11-26T02:09:58.700Z",
+      "actual": 65,
+      "played": true
     },
     "KXNFLRSHYDS-26NOV25GBLAR-GBKJOHNSON26-15": {
       "game": "w12-gb-la",
       "player": "Kaleb Johnson",
       "bet": "15+ rushing yards",
       "prob": 81,
-      "result": null,
-      "live": 39,
-      "liveAt": "2026-11-26T02:09:58.700Z"
+      "result": "miss",
+      "liveAt": "2026-11-26T02:09:58.700Z",
+      "actual": 13,
+      "played": true
     },
     "KXNFLPASSYDS-26NOV26CHIDET-CHICWILLIAMS18-200": {
       "game": "w12-chi-det",

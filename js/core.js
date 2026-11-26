@@ -137,8 +137,11 @@ export function legState(findGame) {
   };
 }
 
+// A "void" leg (Kalshi cancelled the market, e.g. the player didn't play) drops out: the other
+// legs decide the parlay. All legs void -> "void" (stake returned).
 export function parlayState(legs, findGame) {
-  const s = legs.map(legState(findGame));
+  const all = legs.map(legState(findGame)), s = all.filter((x) => x !== "void");
+  if (all.length && !s.length) return "void";
   if (s.includes("miss")) return "miss";
   if (s.length && s.every((x) => x === "hit")) return "hit";
   return s.some((x) => x !== "pending") ? "live" : "pending";
@@ -147,6 +150,7 @@ export function parlayState(legs, findGame) {
 // Progress toward a parlay hitting (0-1): a hit leg counts 1; a live team leg counts .5 if
 // leading, .25 if tied; a live prop leg counts its optional `progress`. Any miss busts it.
 export function parlayProgress(legs, findGame) {
+  legs = legs.filter((l) => legState(findGame)(l) !== "void");
   const st = legs.map(legState(findGame));
   const n = legs.length, hit = st.filter((s) => s === "hit").length, live = st.filter((s) => s === "live").length;
   const bust = st.includes("miss");
@@ -166,7 +170,7 @@ export function parlayProgress(legs, findGame) {
 
 export const parlayProb = (legs, findGame) =>
   legs.reduce((a, l) => {
-    if (isProp(l)) return a * (l.odds != null ? impliedFromAmerican(l.odds) || 0.5 : 0.5);
+    if (isProp(l)) return l.result === "void" ? a : a * (l.odds != null ? impliedFromAmerican(l.odds) || 0.5 : 0.5);
     const g = findGame(legGame(l));
     return a * (g ? probFor(g, legTeam(l)) : 0.5);
   }, 1);
@@ -202,7 +206,7 @@ export function betsNet(bets, findGame) {
     const s = parlayState(b.legs, findGame);
     if (s === "hit") { net += b.payout - b.cost; won++; }
     else if (s === "miss") { net -= b.cost; lost++; }
-    else open++;
+    else if (s !== "void") open++;   // all legs void: stake returned, nothing won or lost
   });
   return { net, open, won, lost };
 }
@@ -248,7 +252,7 @@ export function cleanLeg(l) {
   if (!l || typeof l !== "object" || typeof l.game !== "string" || typeof l.team !== "string") return null;
   if (l.kind === "prop") {
     if (typeof l.player !== "string" || typeof l.bet !== "string" || !l.player.trim() || !l.bet.trim()) return null;
-    return { kind: "prop", game: l.game, team: l.team, player: l.player.slice(0, 60), bet: l.bet.slice(0, 80), result: l.result === "hit" || l.result === "miss" ? l.result : null, ...(typeof l.ticker === "string" ? { ticker: l.ticker.slice(0, 80) } : {}) };
+    return { kind: "prop", game: l.game, team: l.team, player: l.player.slice(0, 60), bet: l.bet.slice(0, 80), result: ["hit", "miss", "void"].includes(l.result) ? l.result : null, ...(typeof l.ticker === "string" ? { ticker: l.ticker.slice(0, 80) } : {}) };
   }
   return { kind: "team", game: l.game, team: l.team };
 }
@@ -266,6 +270,7 @@ export function cleanBets(list) {
       name: typeof b.name === "string" ? b.name.slice(0, 40) : `${legs.length}-leg bet`,
       book: typeof b.book === "string" ? b.book.slice(0, 30) : "",
       placedAt: typeof b.placedAt === "string" ? b.placedAt : null,
+      ...(b.paidSet ? { paidSet: true } : {}),
     }];
   });
 }

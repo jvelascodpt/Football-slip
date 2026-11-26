@@ -32,7 +32,7 @@ const fmtOdds = (o) => (o > 0 ? "+" : "") + o;
 
 const allGames = () => DATA.weeks.flatMap((w) => w.games);
 const game = (id) => (wk && wk.games.find((g) => g.id === id)) || allGames().find((g) => g.id === id);
-const stateLabel = { hit: "Hit", miss: "Missed", live: "In play", pending: "Not started" };
+const stateLabel = { hit: "Hit", miss: "Missed", live: "In play", pending: "Not started", void: "Void" };
 const sameWeek = (a, w) => a.season === w.season && a.week === w.week;
 const betsFor = (w) => [
   ...(w.tickets || []).map((t, i) => ({ season: w.season, week: w.week, ...t, id: t.id || `file-${w.week}-${i}`, fromFile: true })),
@@ -238,6 +238,7 @@ function propLabel(l, s) {
   const stat = l.statNow != null ? `${l.statNow}/${l.statLine} ${l.statUnit}` : "";
   if (s === "hit") return stat ? `Hit · ${stat}` : "Hit";
   if (s === "miss") return stat ? `Missed · ${stat}` : "Missed";
+  if (s === "void") return "Void · didn't play";
   return s === "live" ? stat : "";
 }
 function legItem(l, i, opts = {}) {
@@ -329,7 +330,8 @@ function withKalshiResult(l) {
   const now = statFor(box, l.player, pl.key);
   Object.assign(extra, { statNow: now, progress: Math.min(now / pl.line, 0.99) });
   if (now >= pl.line) return { ...out, ...extra, result: "hit", provisional: true };
-  if (g.status === "final") return { ...out, ...extra, result: "miss", provisional: true };
+  // Final and not in the box score at all: he didn't play, so Kalshi will cancel (void) the leg.
+  if (g.status === "final") return { ...out, ...extra, result: box[normName(l.player)] ? "miss" : "void", provisional: true };
   return { ...out, ...extra };
 }
 
@@ -340,7 +342,7 @@ const periodLabel = (g) => (g.live || "").replace(/\s*\d+:\d+$/, "") || "live";
 // Chance (0-1) a leg hits now, and before kickoff.
 function legChanceNow(l) {
   const s = legState(game)(l);
-  if (s === "hit") return 1;
+  if (s === "hit" || s === "void") return 1;   // a void leg drops out of the parlay
   if (s === "miss") return 0;
   if (isProp(l)) return s === "live" && l.live != null ? l.live / 100 : l.prob != null ? l.prob / 100 : impliedFromAmerican(l.odds) || 0.5;
   const g = game(legGame(l)), t = legTeam(l);
@@ -372,6 +374,7 @@ function betCard(b, opts = {}) {
     ${progressBar(legs)}${betActive(legs) ? liveChanceLine(legs) : ""}${s === "hit" ? winBlock("b" + b.id, +b.cost, +b.payout) : ""}
     <div class="big"><b>${money(+b.payout)}</b><span>pays on ${money(+b.cost)}<br>Needs ${(b.cost / b.payout * 100).toFixed(1)}% to break even</span></div>
     ${needsManual && !opts.compact ? `<p class="hint">Mark hand-entered prop legs Hit or Miss once the game ends. Legs logged from the Props tab grade themselves.</p>` : ""}
+    ${legs.some((l) => legState(game)(l) === "void") ? `<p class="verdict"><b class="w">A leg was voided:</b> Kalshi cancelled it because the player didn't play, and the rest of the bet decides it. Kalshi pays a combo with a voided leg differently, so check what it actually paid${b.fromFile ? " and tell Claude to update it." : ":"}</p>${b.fromFile ? "" : `<div class="fields"><label>Kalshi paid ($)<input type="number" inputmode="decimal" min="0" step="0.01" data-paid="${esc(b.id)}" value="${b.paidSet ? (+b.payout).toFixed(2) : ""}" placeholder="${(+b.payout).toFixed(2)}"></label></div>`}` : ""}
     ${del ? `<div class="btnrow">${del}</div>` : ""}</article>`;
 }
 
@@ -418,13 +421,14 @@ function saveDraft() {
 function viewParlays() {
   const bets = betsFor(wk).map((b) => ({ b, s: parlayState(b.legs.map(withKalshiResult), game), started: betLocked(b.legs.map(withKalshiResult)) }));
   const group = (label, list) => (list.length ? `<p class="rsub grp">${label} · ${list.length}</p>${list.map((x) => betCard(x.b)).join("")}` : "");
-  const live = bets.filter((x) => x.s !== "hit" && x.s !== "miss" && x.started);
-  const won = bets.filter((x) => x.s === "hit"), busted = bets.filter((x) => x.s === "miss");
-  const waiting = bets.filter((x) => x.s !== "hit" && x.s !== "miss" && !x.started);
-  const summary = bets.length ? `${live.length} in play · ${won.length} won · ${busted.length} busted${waiting.length ? ` · ${waiting.length} not started` : ""}` : "Resets Tuesday";
+  const done = (x) => ["hit", "miss", "void"].includes(x.s);
+  const live = bets.filter((x) => !done(x) && x.started);
+  const won = bets.filter((x) => x.s === "hit"), busted = bets.filter((x) => x.s === "miss"), voided = bets.filter((x) => x.s === "void");
+  const waiting = bets.filter((x) => !done(x) && !x.started);
+  const summary = bets.length ? `${live.length} in play · ${won.length} won · ${busted.length} busted${voided.length ? ` · ${voided.length} void` : ""}${waiting.length ? ` · ${waiting.length} not started` : ""}` : "Resets Tuesday";
   return `<section class="sec"><div class="sechead"><h2>Your bets</h2><small>${summary}</small></div>
     ${betForm()}
-    ${bets.length ? group("In play", live) + group("Won", won) + group("Busted", busted) + group("Not started", waiting)
+    ${bets.length ? group("In play", live) + group("Won", won) + group("Busted", busted) + group("Void, stake back", voided) + group("Not started", waiting)
       : `<div class="card"><p class="empty">No bets for week ${wk.week} yet. Log one below from the suggested parlays or the Props tab, or tap + Log a bet. This list starts fresh each Tuesday with the new week.</p></div>`}</section>
   <section class="sec"><div class="sechead"><h2>Suggested for week ${wk.week}</h2></div>
     ${(wk.parlays || []).map(parlayCard).join("") || `<p class="empty">No suggestions yet.</p>`}</section>`;
@@ -760,6 +764,12 @@ document.addEventListener("input", (e) => {
   if (draft && e.target.dataset.lf) { const l = draft.legs[+e.target.dataset.leg]; if (l) { l[e.target.dataset.lf] = e.target.value; if (e.target.dataset.lf === "kind") render(); } }
 });
 document.addEventListener("change", (e) => {
+  const paid = e.target.closest && e.target.closest("[data-paid]");
+  if (paid) {
+    const b = myBets.find((x) => x.id === paid.dataset.paid), v = parseFloat(paid.value);
+    if (b && v > 0) { b.payout = v; b.paidSet = true; saveBets(); render(); toast("Payout updated."); }
+    return;
+  }
   if (e.target.id === "importFile" && e.target.files[0]) importData(e.target.files[0]);
 });
 
