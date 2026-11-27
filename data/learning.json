@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T11:00:06.653Z",
+  "updated": "2026-11-27T22:19:47.311Z",
   "weeks": [
     10,
     11,
@@ -72,12 +72,12 @@
     "Safe three": {
       "w": 2,
       "l": 1,
-      "expected": 1.84
+      "expected": 1.83
     },
     "Five favorites": {
       "w": 2,
       "l": 1,
-      "expected": 1.06
+      "expected": 1.05
     },
     "Underdog swing": {
       "w": 0,
