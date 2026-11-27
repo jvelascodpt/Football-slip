@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T22:35:03.414Z",
+  "updated": "2026-11-27T02:08:50.683Z",
   "weeks": [
     10,
     11,
@@ -31,11 +31,11 @@
       "adj": 0
     },
     "72-84": {
-      "n": 7,
+      "n": 8,
       "hits": 6,
-      "expected": 5.47,
-      "gap": 7.6,
-      "adj": 0
+      "expected": 6.27,
+      "gap": -3.4,
+      "adj": -0.5
     }
   },
   "props": {
@@ -47,17 +47,17 @@
       "adj": 0
     },
     "rushing yards": {
-      "n": 3,
-      "hits": 1,
-      "expected": 2.4,
-      "gap": -46.7,
+      "n": 5,
+      "hits": 2,
+      "expected": 3.99,
+      "gap": -39.8,
       "adj": 0
     },
     "passing yards": {
-      "n": 6,
-      "hits": 4,
-      "expected": 4.66,
-      "gap": -11,
+      "n": 7,
+      "hits": 5,
+      "expected": 5.47,
+      "gap": -6.7,
       "adj": 0
     },
     "receiving yards": {
@@ -71,13 +71,13 @@
   "parlays": {
     "Safe three": {
       "w": 2,
-      "l": 0,
-      "expected": 1.26
+      "l": 1,
+      "expected": 1.84
     },
     "Five favorites": {
       "w": 2,
-      "l": 0,
-      "expected": 0.74
+      "l": 1,
+      "expected": 1.06
     },
     "Underdog swing": {
       "w": 0,
@@ -86,8 +86,8 @@
     },
     "Thu night safe bet": {
       "w": 1,
-      "l": 1,
-      "expected": 0.99
+      "l": 2,
+      "expected": 1.5
     },
     "Weekend safe bet": {
       "w": 1,
