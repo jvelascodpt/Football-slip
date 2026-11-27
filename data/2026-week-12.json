@@ -2,7 +2,7 @@
   "season": 2026,
   "week": 12,
   "updated": "Thu Nov 26, 6:08 PM PT",
-  "refreshed": "Thu Nov 26, 6:08 PM PT",
+  "refreshed": "Fri Nov 27, 3:00 AM PT",
   "games": [
     {
       "id": "w12-gb-la",
@@ -1472,12 +1472,11 @@
       "note": "Chiefs 8-2, Bills 9-1. Last week: Chiefs beat the Cardinals 34-7; Bills beat the Dolphins 26-9. Kalshi has the Bills at 61%.",
       "start": "2026-11-27T01:20:00.000Z",
       "kick": "Thu 5:20 PM",
-      "status": "live",
+      "status": "final",
       "score": [
-        0,
-        7
-      ],
-      "live": "2nd qtr 14:32"
+        10,
+        13
+      ]
     },
     {
       "id": "w12-den-pit",
@@ -6271,9 +6270,9 @@
           "bet": "15+ receiving yards",
           "prob": 81,
           "ticker": "KXNFLRECYDS-26NOV26KCBUF-BUFKSHAKIR10-15",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in receiving: 38 REC, 539 YDS, 1 TD.",
-          "live": 100
+          "actual": 33
         },
         {
           "game": "w12-kc-buf",
@@ -6282,9 +6281,9 @@
           "bet": "20+ receiving yards",
           "prob": 81,
           "ticker": "KXNFLRECYDS-26NOV26KCBUF-KCTKELCE87-20",
-          "result": null,
+          "result": "hit",
           "why": "Team leader in receiving: 41 REC, 586 YDS, 4 TD.",
-          "live": 75
+          "actual": 71
         },
         {
           "game": "w12-kc-buf",
@@ -6293,9 +6292,9 @@
           "bet": "175+ passing yards",
           "prob": 79,
           "ticker": "KXNFLPASSYDS-26NOV26KCBUF-KCPMAHOMES15-175",
-          "result": null,
+          "result": "miss",
           "why": "Team leader in passing: 226/337, 2,709 YDS, 22 TD, 4 INT.",
-          "live": 61
+          "actual": 174
         }
       ]
     }
@@ -6306,27 +6305,30 @@
       "player": "Khalil Shakir",
       "bet": "15+ receiving yards",
       "prob": 81,
-      "result": null,
-      "live": 100,
-      "liveAt": "2026-11-27T02:08:50.169Z"
+      "result": "hit",
+      "liveAt": "2026-11-27T02:08:50.169Z",
+      "actual": 33,
+      "played": true
     },
     "KXNFLRECYDS-26NOV26KCBUF-KCTKELCE87-20": {
       "game": "w12-kc-buf",
       "player": "Travis Kelce",
       "bet": "20+ receiving yards",
       "prob": 81,
-      "result": null,
-      "live": 75,
-      "liveAt": "2026-11-27T02:08:50.169Z"
+      "result": "hit",
+      "liveAt": "2026-11-27T02:08:50.169Z",
+      "actual": 71,
+      "played": true
     },
     "KXNFLPASSYDS-26NOV26KCBUF-KCPMAHOMES15-175": {
       "game": "w12-kc-buf",
       "player": "Patrick Mahomes",
       "bet": "175+ passing yards",
       "prob": 79,
-      "result": null,
-      "live": 61,
-      "liveAt": "2026-11-27T02:08:50.169Z"
+      "result": "miss",
+      "liveAt": "2026-11-27T02:08:50.169Z",
+      "actual": 174,
+      "played": true
     },
     "KXNFLRECYDS-26NOV27DENPIT-DENJWADDLE17-20": {
       "game": "w12-den-pit",
